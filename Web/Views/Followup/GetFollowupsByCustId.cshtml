@@ -1,0 +1,152 @@
+﻿@using ApplicationCore.DtoModels
+@model FollowupDetailsByIdDto
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-controller="Followup" asp-action="AddNewFollowup" asp-route-id=@Model.CustomerId>Add New Followup</a>
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <div class="row">
+                    <div class="col-6">
+                        <p><i class="fa fa-list-ul"></i> Daily Followup Customer List </p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a asp-action="AddNewFollowup" asp-controller="Floowup" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i>Add New Followup</a>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="form-group row">
+                        <label asp-for="@Model.CustomerName" class="col-2 control-label">Client Name/Organization</label>
+                        <div class="col-sm-4">
+                            <input asp-for="@Model.CustomerName" class="form-control" />
+                            <span asp-validation-for="@Model.CustomerName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="@Model.ContractPerson" class="col-2 control-label">Contract Person</label>
+                        <div class="col-sm-4">
+                            <input asp-for="@Model.ContractPerson" class="form-control" />
+                            <span asp-validation-for="@Model.ContractPerson" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label asp-for="MobileNo" class="control-label col-2">Mobile No</label>
+                        <div class="col-sm-4">
+                            <input asp-for="MobileNo" class="form-control" />
+                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                        </div>
+                            <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-sm-4">
+                            <input asp-for="Address" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label asp-for="@Model.AreaName" class="control-label col-2">Area</label>
+                        <div class="col-4">
+                            <input asp-for="@Model.AreaName" class="form-control" />
+                        </div>
+                            <label asp-for="BuildingDetails" class="control-label col-2">Building Details</label>
+                        <div class="col-4">
+                            <input asp-for="BuildingDetails" class="form-control" />
+                            <span asp-validation-for="BuildingDetails" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                            <label asp-for="@Model.EmployeeName" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-4">
+                            <input asp-for="@Model.EmployeeName" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Calling Date
+            </th>
+            <th>
+                Opinion And Plan
+            </th>
+            <th>
+                OfferAmount
+            </th>
+            <th>
+                AgreeAmount
+            </th>
+            <th>
+                CustomerDoTheWorkingMonth
+            </th>
+            <th>
+                Remarks
+            </th>
+            <th>
+                PositiveOrNegative
+            </th>
+            <th>
+                DiscussionDetailsNote
+            </th>
+            <th>
+                MarketingNextPlan
+            </th>
+            <th>
+                FollowupCallDate
+            </th>
+            <th>
+                Status
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.followups)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CallingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpinionAndPlan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfferAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgreeAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerDoTheWorkingMonth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remarks)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositiveOrNegative)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiscussionDetailsNote)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MarketingNextPlan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FollowupCallDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                @*            <td>
+            @Html.ActionLink("Details", "GetFollowupsByCustId", new {  id=item.CustomerId }) |
+            @Html.ActionLink("Add New Followup", "AddFollowup", new {  id=item.CustomerId  })
+            </td>
+            *@
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Web.ViewModels.DailyFollowupListVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <h5><i class="fa fa-list-ul"></i> Daily Followup Customer List</h5>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CustomerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ContractPerson)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MobileNo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BuildingDetails)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AreaName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MpoName)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ContractPerson)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MobileNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BuildingDetails)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AreaName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MpoName)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "GetFollowupsByCustId", new {  id=item.CustomerId }) |
+                                @Html.ActionLink("Add New Followup", "AddNewFollowup", new {  id=item.CustomerId  })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

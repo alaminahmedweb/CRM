@@ -1,0 +1,480 @@
+﻿@using ApplicationCore.Entities
+@model Web.ViewModels.CustomerFollowupVM
+
+@{
+    ViewData["Title"] = "Customer Followup";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add Customer with a Followup</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="Index">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="CallingDate" class="col-sm-2 control-label">Calling Date</label>
+                        <div class="col-2">
+                            <input asp-for="CallingDate" class="col-sm-2 form-control" />
+                            <span asp-validation-for="CallingDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="serviceTypeId" class="col-sm-2 control-label">Service Name</label>
+                        <div class="col-2">
+                            <select asp-for="serviceTypeId" class="col-sm-2 form-control">
+                                <option value="-1">Select Service Type</option>
+                                @foreach (var item in ViewBag.ServiceList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="serviceTypeId" class="text-danger"></span>
+                        </div>
+
+                        <label asp-for="Name" class="col-sm-2 control-label">Client Name/Organization</label>
+                        <div class="col-2">
+                            <input asp-for="Name" class="col-sm-2 form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="ContractPerson" class="col-sm-2 control-label">Contract Person</label>
+                        <div class="col-2">
+                            <input asp-for="ContractPerson" class="col-sm-2 form-control" />
+                            <span asp-validation-for="ContractPerson" class="text-danger"></span>
+                        </div>
+                        <label asp-for="DesignationId" class="col-sm-2 control-label">Designation</label>
+                        <div class="col-2">
+                            <select asp-for="DesignationId" class="col-sm-2 form-control">
+                                <option value="-1">Select Designation</option>
+                                @foreach (var item in ViewBag.DesignationList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="DesignationId" class="text-danger"></span>
+                        </div>
+
+                        <label asp-for="MobileNo" class="control-label col-sm-1">Mobile No</label>
+                        <div class="col-2">
+                            <input asp-for="MobileNo" class="form-control col-sm-2" />
+                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                        </div>
+                        <input type="button" id="btnAddPerson" value="Add" class="btn btn-success col-sm-1" />
+                    </div>
+                    <table id="tblPersonDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Contract Person</th>
+                                <th>DesignationId</th>
+                                <th>Designation</th>
+                                <th>Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
+                        <div class="col-2">
+                            <input asp-for="OfferAmount" class="form-control" />
+                            <span asp-validation-for="OfferAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AgreeAmount" class="control-label col-2">Agree/Booking Amount</label>
+                        <div class="col-2">
+                            <input asp-for="AgreeAmount" class="form-control" />
+                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
+                        <div class="col-sm-2">
+                            <select asp-for="CustomerDoTheWorkingMonth" class="col-sm-2 form-control">
+                                <option value="-1">Select Working Month</option>
+                                @foreach (var item in ViewBag.MonthList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CityId" class="control-label col-1">City</label>
+                        <div class="col-1">
+                            <select asp-for="CityId" class="form-control">
+                                <option value="-1">Select City</option>
+                                @foreach (var data in ViewBag.CityList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CityId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AreaId" class="control-label col-1">Area</label>
+                        <div class="col-2">
+                            <select asp-for="AreaId" class="form-control">
+                                <option value="-1">Select Area</option>
+                            </select>
+                            <span asp-validation-for="AreaId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaId" class="control-label col-1">Sub Area</label>
+                        <div class="col-2">
+                            <select asp-for="SubAreaId" class="form-control">
+                                <option value="-1">Select Sub Area</option>
+                            </select>
+                            <span asp-validation-for="SubAreaId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Remarks" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <input asp-for="Remarks" class="form-control" />
+                            <span asp-validation-for="Remarks" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ContactId" class="control-label col-2">Contact</label>
+                        <div class="col-2">
+                            <select asp-for="ContactId" class="form-control">
+                                <option value="-1">Select Contact</option>
+                                @foreach (var data in ViewBag.ContactList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="ContactId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="PositiveOrNegative" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <select asp-for="PositiveOrNegative" class="form-control">
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                            </select>
+                            <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a)No Of Floor</label>
+                        <div class="col-3">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                            <span asp-validation-for="NoOfFloor" class="text-danger"></span>
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <div class="col-4">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                            <span asp-validation-for="NoOfFlat" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="BrandId" class="control-label col-2">Building Details b)Brand</label>
+                        <div class="col-3">
+                            <select asp-for="BrandId" class="form-control">
+                                <option value="-1">Select Brand</option>
+                                @foreach (var item in ViewBag.BrandList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="BrandId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Quantity" class="control-label col-1">Quantity</label>
+                        <div class="col-2">
+                            <input asp-for="Quantity" class="form-control" />
+                            <span asp-validation-for="Quantity" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Capacity" class="control-label col-1">Capacity</label>
+                        <div class="col-2">
+                            <input asp-for="Capacity" class="form-control" />
+                            <span asp-validation-for="Capacity" class="text-danger"></span>
+                        </div>
+                        <input type="button" id="btnAddBuildingDetails" value="Add" class="btn btn-success col-sm-1" />
+                    </div>
+                    <table id="tblBuldingDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Brand Id</th>
+                                <th>Brand Name</th>
+                                <th>Quantity</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                    <div class="form-group row">
+                        <label asp-for="DiscussionDetailsNote" class="control-label col-2">Customer Discussion Details Note</label>
+                        <div class="col-4">
+                            <textarea asp-for="DiscussionDetailsNote" class="form-control"></textarea>
+                            <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
+                        </div>
+                        <label asp-for="MarketingNextPlan" class="control-label col-2">Marketing Next Plan</label>
+                        <div class="col-4">
+                            <input asp-for="MarketingNextPlan" class="form-control" />
+                            <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="FollowupCallDate" class="control-label col-2">Follow-up Call Date</label>
+                        <div class="col-4">
+                            <input asp-for="FollowupCallDate" class="form-control" />
+                            <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="MpoId" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-4">
+                            <select asp-for="MpoId" class="form-control">
+                                <option value="-1">Select Mpo</option>
+                                @foreach (var data in ViewBag.MpoList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="MpoId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Status" class="control-label col-2"></label>
+                        <div class="col-4">
+                            <select asp-for="Status" class="form-control">
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" id="SaveCustomerAndFollowup" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btnAddPerson').click(function() {
+                var contractPerson = $('#ContractPerson').val();
+                var designationId = $('#DesignationId').val();
+                var designationName = $('#DesignationId option:selected').text();
+                var mobileNo = $('#MobileNo').val();
+                var contractTable = $('#tblPersonDetails tbody');
+                contractTable.append('<tr><td>' + contractPerson + '</td><td>' + designationId + '</td><td>'
+                    + designationName + '</td><td>' + mobileNo + '</td></tr>');
+                $('#MobileNo').val("");
+                $('#ContractPerson').val("");
+            });
+
+            $('#btnAddBuildingDetails').click(function() {
+                var brandId = $('#BrandId').val();
+                var brandName = $('#BrandId option:selected').text();
+                var quantity = $('#Quantity').val();
+                var capacity = $('#Capacity').val();
+                var buildingDetailsTable = $('#tblBuldingDetails tbody');
+                buildingDetailsTable.append('<tr><td>' + brandId + '</td><td>' + brandName + '</td><td>'
+                    + quantity + '</td><td>' + capacity + '</td></tr>');
+                $('#BrandId').val("-1");
+                $('#Quantity').val("");
+                $('#Capacity').val("");
+
+            });
+
+            var cityId = $('#CityId');
+            var areaId = $('#AreaId');
+            var subAreaId = $('#SubAreaId');
+
+            $('#CityId').change(function() {
+                if ($(this).val() == "-1") {
+                    areaId.empty();
+                    subAreaId.empty();
+                    $('#AreaId').prepend($('<option>', { value: '-1', text: 'Select Area' }));
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    areaId.prop('disable', true);
+                    subAreaId.prop('disable', true);
+                } else {
+                    areaId.empty();
+                    subAreaId.empty();
+                    $('#AreaId').prepend($('<option>', { value: '-1', text: 'Select Area' }));
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    areaId.prop('disable', false);
+                    subAreaId.prop('disable', true);
+                    $.ajax({
+                        url: '@Url.Action("GetAreaByCityId")',
+                        type: "GET",
+                        data: { id: $(this).val() },
+                        dataType: 'json',
+                        success: function(response) {
+                            areaId.prop('disable', false),
+                                $.each(response, function(index, item) {
+                                    areaId.append($("<option>", {
+                                        value: item.id,
+                                        text: item.name
+                                    }));
+                                });
+                        }
+                    });
+                }
+                //}
+            });
+            $('#AreaId').change(function() {
+                if ($(this).val() == "-1") {
+                    subAreaId.empty();
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    subAreaId.prop('disable', true);
+                } else {
+                    subAreaId.empty();
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    subAreaId.prop('disable', true);
+                    $.ajax({
+                        url: '@Url.Action("GetSubAreaByAreaId")',
+                        type: "GET",
+                        data: { id: $(this).val() },
+                        dataType: 'json',
+                        success: function(response) {
+                            areaId.prop('disable', false),
+                                $.each(response, function(index, item) {
+                                    subAreaId.append($("<option>", {
+                                        value: item.id,
+                                        text: item.name
+                                    }));
+                                });
+                        }
+                    });
+                }
+                //}
+            });
+            $('#SaveCustomerAndFollowup').click(function() {
+                var BuildingDetails = [];
+
+                //var buildingDetail = {};
+                //$('#tblBuldingDetails tr').each(function() {
+                //    $(this).find("td").each(function(index) {
+                //        switch (index) {
+                //            case 0:
+                //                buildingDetail.BrandId = $(this).text();
+                //                break;
+                //            case 2:
+                //                buildingDetail.Quantity = $(this).text();
+                //                break;
+                //            case 3:
+                //                buildingDetail.Capacity = $(this).text();
+                //                break;
+                //        }
+                //    });
+                //    console.log(buildingDetail);
+                //    BuildingDetails.push(buildingDetail);
+                //});
+
+                var tblBuldingDetails = $('#tblBuldingDetails');
+                tblBuldingDetails.find('tr').each(function() {
+                    tBuldingDetails = $(this).find('td').text();
+                    if (tBuldingDetails != '') {
+                        var $buldingDetails = $(this).find('td'),
+                            BrandId = $buldingDetails.eq(0).text(),
+                            Quantity = $buldingDetails.eq(1).text();
+                        Capacity = $buldingDetails.eq(3).text();
+                        var buldingDetail = {
+                            BrandId: BrandId,
+                            Quantity: Quantity,
+                            Capacity: Capacity
+                        };
+                        BuildingDetails.push(buldingDetail);
+                    }
+                });
+
+
+                var ContractDetails = [];
+                $('#tblPersonDetails tr').each(function() {
+                    var ContractDetail = {};
+                    $(this).find("td").each(function(index) {
+                        switch (index) {
+                            case 0:
+                                ContractDetail.Name = $(this).text();
+                                break;
+                            case 1:
+                                ContractDetail.DesignationId = $(this).text();
+                                break;
+                            case 3:
+                                ContractDetail.MobileNo = $(this).text();
+                                break;
+                        }
+                    });
+                    ContractDetails.push(ContractDetail);
+                });
+
+                var CallingDate = $('#CallingDate').val();
+                var serviceTypeId = $('#serviceTypeId option:selected').val();
+                var Name = $('#Name').val();
+                var OfferAmount = $('#OfferAmount').val();
+                var AgreeAmount = $('#AgreeAmount').val();
+                var CustomerDoTheWorkingMonth = $('#CustomerDoTheWorkingMonth option:selected').val();
+                var Address = $('#Address').val();
+                var SubAreaId = $('#SubAreaId option:selected').val();
+                var Remarks = $('#Remarks').val();
+                var ContactId = $('#ContactId option:selected').val();
+                var PositiveOrNegative = $('#PositiveOrNegative option:selected').val();
+                var NoOfFloor = $('#NoOfFloor').val();
+                var NoOfFlat = $('#NoOfFlat').val();
+                var DiscussionDetailsNote = $('#DiscussionDetailsNote').val();
+                var MarketingNextPlan = $('#MarketingNextPlan').val();
+                var FollowupCallDate = $('#FollowupCallDate').val();
+                var MpoId = $('#MpoId option:selected').val();
+                var Status = $('#Status option:selected').val();
+
+                //var customerFollowupVM = JSON.stringify(
+                //    {
+                //        CustomerFollowupVM :
+                //        {
+                //            CallingDate: CallingDate,
+                //            serviceTypeId: serviceTypeId,
+                //            Name: name,
+                //            OfferAmount: OfferAmount,
+                //            AgreeAmount: AgreeAmount,
+                //            CustomerDoTheWorkingMonth: CustomerDoTheWorkingMonth,
+                //            Address: Address,
+                //            SubAreaId: SubAreaId,
+                //            Remarks: Remarks,
+                //            ContactId: ContactId,
+                //            PositiveOrNegative: PositiveOrNegative,
+                //            NoOfFloor: NoOfFloor,
+                //            NoOfFlat: NoOfFlat,
+                //            DiscussionDetailsNote: DiscussionDetailsNote,
+                //            MarketingNextPlan: MarketingNextPlan,
+                //            FollowupCallDate: FollowupCallDate,
+                //            MpoId: MpoId,
+                //            Status: Status,
+                //        },
+                //        BuildingDetails: BuildingDetails,
+                //        ContractDetails: ContractDetails,
+                //    });
+
+                console.log(customerFollowupVM);
+
+                $.ajax({
+                    type: 'POST',
+                    url:'@Url.Action("Index", "Customer")',// 'Customer/Index',
+                    data: customerFollowupVM,
+                    contentType: 'application/json; charset=utf-8',
+                    dataType:'json',
+                    success: function(result) {
+
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+
+                });
+            });
+        });
+    </script>
+}

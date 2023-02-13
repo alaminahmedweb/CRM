@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ApplicationCore.Entities.Area>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-6">
+                        <p><i class="fa fa-list-ul"></i> List of Area</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a asp-action="Create" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i>Add New</a>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    <a asp-action="Update" asp-route-id="@item.Id"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var bookingItems = @ViewBag.BookingItems;
+}
+<h1>Service Booking</h1>
+<div class="row col-sm-12">
+    <div class="col-sm-6">
+        <label class="col-sm-3 control-label">Booking Date</label>
+        <input type="date" id="BookingDate" name="BookingDate" class="col-sm-3 form-control" />
+    </div>
+</div>
+<br />
+
+
+<table id="bookinginfo" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Team Name
+            </th>
+            <th>
+                Shift Name
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Entry Date
+            </th>
+            <th>
+                Booking Date
+            </th>
+            <th>
+                Organization Name
+            </th>
+            <th>
+                Contract Person
+            </th>
+            <th>
+                MobileNo
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                AreaName
+            </th>
+            <th>
+                BuildingDetails
+            </th>
+            <th>
+                Amount
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (bookingItems != null)
+        {
+            @foreach (var item in @ViewBag.BookingItems)
+            {
+                <tr>
+                    <td>
+                        @item.TeamName
+                    </td>
+                    <td>
+                        @item.ShiftName
+                    </td>
+                    <td>
+                        @item.Status
+                    </td>
+                    <td>
+                        @item.EntryDate
+                    </td>
+                    <td>
+                        @item.BookingDate
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        @item.ContractPerson
+                    </td>
+                    <td>
+                        @item.MobileNo
+                    </td>
+                    <td>
+                        @item.Address
+                    </td>
+                    <td>
+                        @item.AreaName
+                    </td>
+                    <td>
+                        @item.BuildingDetails
+                    </td>
+                    <td>
+                        @item.AgreeAmount
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            today = dd + '/' + mm + '/' + yyyy;
+            $("#BookingDate").val(today);
+
+
+
+            $('#BookingDate').change(function() {
+                //alert("Js Works..");
+                $.ajax({
+                    type: "GET",
+                    url: "/Booking/ShowBookingData",
+                    data: { date: $(this).val() },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        // process the result here
+                        //bookinginfo
+                        var bookingTable = $('#bookinginfo tbody');
+                        bookingTable.empty();
+                        $(result).each(function(index, data) {
+                            //console.log(data);
+                            bookingTable.append('<tr><td>' + data.teamName + '</td><td>' +
+                                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.entryDate + '</td><td>' +
+                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.contractPerson + '</td><td>' + data.mobileNo +
+                                '</td><td>' + data.address + '</td><td>' + data.areaName + '</td><td>' + data.buildingDetails +
+                                '</td><td>' + data.agreeAmount + '</td></tr>');
+                        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
+}

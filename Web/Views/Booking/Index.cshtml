@@ -1,0 +1,237 @@
+﻿@model Web.ViewModels.BookingVM
+
+@{
+    ViewData["Title"] = "Index";
+    var bookingItems = @ViewBag.BookingItems;
+}
+
+<h1>Service Booking</h1>
+
+@*<a asp-controller="Followup" asp-action="Index" asp-route-id=@Model.CustomerId>Add New Followup</a>
+*@@*<a class="nav-link text-dark" asp-area="" asp-controller="Followup" asp-action="GetFollowupsByCustId">Daily Followup</a>*@
+<form asp-action="SaveBooking">
+    <input asp-for="@Model.FollowupId" class="col-sm-3 form-control" hidden />
+
+    <div class="container">
+
+        <div class="row col-sm-12">
+
+            <div class="col-sm-6">
+                <label asp-for="@Model.Name" class="col-sm-3 control-label">ClientName</label>
+                <input asp-for="@Model.Name" class="col-sm-3 form-control" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="@Model.ContractPerson" class="col-sm-3 control-label">Contract Person</label>
+                <input asp-for="@Model.ContractPerson" class="col-sm-3 form-control" />
+                <span asp-validation-for="@Model.ContractPerson" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="MobileNo" class="control-label col-sm-3">Mobile No</label>
+                <input asp-for="MobileNo" class="form-control col-sm-3" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="Address" class="control-label">Location/Address</label>
+                <input asp-for="Address" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="@Model.AreaName" class="control-label">Area</label>
+                <input asp-for="@Model.AreaName" class="form-control" />
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="BuildingDetails" class="control-label">Building Details</label>
+                <input asp-for="BuildingDetails" class="form-control" />
+                <span asp-validation-for="BuildingDetails" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="@Model.AgreeAmount" class="control-label">Amount</label>
+                <input asp-for="@Model.AgreeAmount" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="@Model.EntryDate" class="col-sm-3 control-label">Entry Date</label>
+                <input asp-for="@Model.EntryDate" class="col-sm-3 form-control" />
+                <span asp-validation-for="@Model.EntryDate" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="@Model.BookingDate" class="col-sm-3 control-label">Booking Date</label>
+                <input asp-for="@Model.BookingDate" class="col-sm-3 form-control" />
+                <span asp-validation-for="@Model.BookingDate" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="@Model.TeamId" class="control-label">Team</label>
+                <select asp-for="@Model.TeamId" class="form-control">
+                    @foreach (var item in @ViewBag.TeamInfo)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="@Model.ShiftId" class="control-label">Shift</label>
+                <select asp-for="@Model.ShiftId" class="form-control">
+                    <option value="1">Morning</option>
+                    <option value="2">Evening</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary">
+    </div>
+</form>
+<br />
+<hr />
+<table class="table table-bordered" id="bookinginfo">
+    <thead>
+        <tr>
+            <th>
+                Team Name
+            </th>
+            <th>
+                Shift Name
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Entry Date
+            </th>
+            <th>
+                Booking Date
+            </th>
+            <th>
+                Organization Name
+            </th>
+            <th>
+                Contract Person
+            </th>
+            <th>
+                MobileNo
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                AreaName
+            </th>
+            <th>
+                BuildingDetails
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (bookingItems != null)
+        {
+            @foreach (var item in @ViewBag.BookingItems)
+            {
+                <tr>
+                    <td>
+                        @item.TeamName
+                    </td>
+                    <td>
+                        @item.ShiftName
+                    </td>
+                    <td>
+                        @item.Status
+                    </td>
+                    <td>
+                        @item.EntryDate
+                    </td>
+                    <td>
+                        @item.BookingDate
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+
+                    <td>
+                        @item.ContractPerson
+                    </td>
+                    <td>
+                        @item.MobileNo
+                    </td>
+                    <td>
+                        @item.Address
+                    </td>
+                    <td>
+                        @item.AreaName
+                    </td>
+                    <td>
+                        @item.BuildingDetails
+                    </td>
+                    <td>
+                        @item.AgreeAmount
+                    </td>
+                    <td>
+                        @Html.ActionLink("Cancel", "GetFollowupsByCustId", new {  id=@Model.FollowupId})
+                        |
+                        @Html.ActionLink("Transfer", "AddFollowup", new { id = @Model.FollowupId })
+                    </td>
+                    @*            <td>
+
+            </td>
+            *@
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#BookingDate').change(function() {
+                //alert("Js Works..");
+                $.ajax({
+                    type: "GET",
+                    url: "/Booking/ShowBookingData",
+                    data: { date: $(this).val() },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        // process the result here
+                        //bookinginfo
+                        var bookingTable = $('#bookinginfo tbody');
+                        bookingTable.empty();
+                        $(result).each(function(index, data) {
+                            //console.log(data);
+                            bookingTable.append('<tr><td>' + data.teamName + '</td><td>' +
+                                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.entryDate + '</td><td>' +
+                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.contractPerson + '</td><td>' + data.mobileNo +
+                                '</td><td>' + data.address + '</td><td>' + data.areaName + '</td><td>' + data.buildingDetails +
+                                '</td><td>' + data.agreeAmount + '</td></tr>');
+                        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
+}

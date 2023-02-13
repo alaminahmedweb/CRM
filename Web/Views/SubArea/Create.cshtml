@@ -1,0 +1,50 @@
+﻿@model ApplicationCore.Entities.SubArea
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 col-offset-3">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add New Sub Area</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group row">
+                        <label asp-for="Name" class="control-label col-4">Sub Area Name</label>
+                        <div class="col-8">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="AreaId" class="control-label col-4">Area Name</label>
+                        <div class="col-8">
+                            <select asp-for="AreaId" class="form-control">
+                                @foreach(var item in ViewBag.AreaList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="AreaId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a type="button" class="btn btn-info" asp-action="Index"><li class="fa fa-list-ul"></li> List </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

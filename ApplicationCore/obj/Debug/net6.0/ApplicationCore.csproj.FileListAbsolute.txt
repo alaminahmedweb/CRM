@@ -1,0 +1,36 @@
+D:\CleanSource\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+D:\CleanSource\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+D:\CleanSource\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+D:\CleanSource\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
+D:\CRM_Solution\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+D:\CRM_Solution\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+D:\CRM_Solution\CRM_Solution\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+D:\CRM_Solution\CRM_Solution\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll

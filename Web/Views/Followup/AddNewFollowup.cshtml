@@ -1,0 +1,162 @@
+﻿@using ApplicationCore.Entities
+@model Web.ViewModels.AddFollowupVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Add New Followup</h4>
+<hr />
+<div class="container">
+    <form asp-action="Index">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="CustomerId" class="col-sm-3 form-control" hidden/>
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="CustomerName" class="col-sm-3 control-label">ClientName</label>
+                <input asp-for="CustomerName" class="col-sm-3 form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="ContractPerson" class="col-sm-3 control-label">Contract Person</label>
+                <input asp-for="ContractPerson" class="col-sm-3 form-control" />
+                <span asp-validation-for="ContractPerson" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="MobileNo" class="control-label col-sm-3">Mobile No</label>
+                <input asp-for="MobileNo" class="form-control col-sm-3" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="Address" class="control-label">Location/Address</label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="AreaName" class="control-label">Area</label>
+                <input asp-for="AreaName" class="form-control" />
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="MpoName" class="control-label">Marketing Officer Name</label>
+                <input asp-for="MpoName" class="form-control" />
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="CallingDate" class="col-sm-3 control-label">Calling Date</label>
+                <input asp-for="CallingDate" class="col-sm-2 form-control" />
+                <span asp-validation-for="CallingDate" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="OpinionAndPlan" class="control-label">Opinion And Plan</label>
+                <input asp-for="OpinionAndPlan" class="form-control" />
+                <span asp-validation-for="OpinionAndPlan" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="OfferAmount" class="control-label">Marketing Offer Amount</label>
+                <input asp-for="OfferAmount" class="form-control" />
+                <span asp-validation-for="OfferAmount" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="AgreeAmount" class="control-label">Customer Agree Amount</label>
+                <input asp-for="AgreeAmount" class="form-control" />
+                <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="CustomerDoTheWorkingMonth" class="control-label">Customer Do The Working Month</label>
+                <input asp-for="CustomerDoTheWorkingMonth" class="form-control" />
+                <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="Remarks" class="control-label"></label>
+                <input asp-for="Remarks" class="form-control" />
+                <span asp-validation-for="Remarks" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="BuildingDetails" class="control-label">Building Details</label>
+                <input asp-for="BuildingDetails" class="form-control" />
+                <span asp-validation-for="BuildingDetails" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="PositiveOrNegative" class="control-label"></label>
+                <select asp-for="PositiveOrNegative" class="form-control">
+                    <option value="Positive">Positive</option>
+                    <option value="Negative">Negative</option>
+                </select>
+
+                <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="DiscussionDetailsNote" class="control-label">Customer Discussion Details Note</label>
+                <textarea asp-for="DiscussionDetailsNote" class="form-control"></textarea>
+                <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="MarketingNextPlan" class="control-label">Marketing Next Plan</label>
+                <input asp-for="MarketingNextPlan" class="form-control" />
+                <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row col-sm-12">
+            <div class="col-sm-6">
+                <label asp-for="FollowupCallDate" class="control-label">Follow-up Call Date</label>
+                <input asp-for="FollowupCallDate" class="form-control" />
+                <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
+            </div>
+            <div class="col-sm-6">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control">
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Save" asp-action="AddNewFollowup" asp-controller="Followup" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //alert("JS Working");
+            //$('#CallingDate').datepicker(
+            //    {
+            //        dateFormat : 'dd/mm/yy',
+            //        changeMonth : true ,
+            //        changeYear : true
+
+            //    });
+            //$('#FollowupCallDate').datepicker({
+            //    dateFormat : 'dd/mm/yy',
+            //    changeMonth : true,
+            //    changeYear : true
+            //});
+        });
+    </script>
+}
