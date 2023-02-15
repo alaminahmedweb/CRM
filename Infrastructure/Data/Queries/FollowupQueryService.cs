@@ -27,10 +27,7 @@ namespace Infrastructure.Data.Queries
                           {
                               CustomerId = cus.Id,
                               CustomerName = cus.ClientName,
-                              ContractPerson = "",//cus.ContractPerson,
-                              MobileNo = "",//cus.MobileNo,
                               Address = cus.Address,
-                              BuildingDetails = "",//cus.BuildingDetails,
                               AreaName = ar.Name,
                               EmployeeName = emp.Name,
                           }).ToList();
@@ -39,12 +36,44 @@ namespace Infrastructure.Data.Queries
             {
                 customerDto.CustomerId = data.CustomerId;
                 customerDto.CustomerName = data.CustomerName;
-                customerDto.ContractPerson = data.ContractPerson;
-                customerDto.MobileNo = data.MobileNo;
                 customerDto.Address = data.Address;
-                customerDto.BuildingDetails = data.BuildingDetails;
                 customerDto.AreaName = data.AreaName;
                 customerDto.EmployeeName = data.EmployeeName;
+            }
+            var buildingDetails = (from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == id)
+                                   join brnd in _dbContext.Brands
+                                   on bld.BrandId equals brnd.Id
+                                   select new
+                                   {
+                                       BrandName = brnd.Name,
+                                       Quantity = bld.Quantity,
+                                       Capacity = bld.Capacity
+                                   });
+            foreach (var item in buildingDetails)
+            {
+                BuildingDetailsDto building = new BuildingDetailsDto();
+                building.BrandName = item.BrandName;
+                building.Quantity = item.Quantity;
+                building.Capacity = item.Capacity;
+                customerDto.BuildingDetails.Add(building);
+            }
+
+            var contractDetails = (from con in _dbContext.ContractDetails.Where(a => a.CustomerId == id)
+                                   join des in _dbContext.Designations
+                                   on con.DesignationId equals des.Id
+                                   select new
+                                   {
+                                       ClientName = con.Name,
+                                       MobileNo = con.MobileNo,
+                                       Designation = des.Name
+                                   });
+            foreach (var contract in contractDetails)
+            {
+                ContractDetailsDto contractDetailsDto = new ContractDetailsDto();
+                contractDetailsDto.Name = contract.ClientName;
+                contractDetailsDto.MobileNo = contract.MobileNo;
+                contractDetailsDto.Designation = contract.Designation;
+                customerDto.ContractDetails.Add(contractDetailsDto);
             }
 
             return customerDto;
@@ -61,24 +90,19 @@ namespace Infrastructure.Data.Queries
                           {
                               CustomerId = cus.Id,
                               CustomerName = cus.ClientName,
-                              ContractPerson = "",//cus.ContractPerson,
-                              MobileNo = "",//cus.MobileNo,
                               Address = cus.Address,
-                              BuildingDetails ="",// cus.BuildingDetails,
                               AreaName = ar.Name,
                               EmployeeName = emp.Name,
                               FollowupDate = fol.FollowupCallDate.ToString("dd/MM/yyyy")
                           }).Distinct().ToList();
+
             List<CustomerDto> followupDtos = new List<CustomerDto>();
             foreach (var data in result)
             {
                 CustomerDto follouwupdto = new CustomerDto();
                 follouwupdto.CustomerId = data.CustomerId;
                 follouwupdto.CustomerName = data.CustomerName;
-                follouwupdto.ContractPerson = data.ContractPerson;
-                follouwupdto.MobileNo = data.MobileNo;
                 follouwupdto.Address = data.Address;
-                follouwupdto.BuildingDetails = data.BuildingDetails;
                 follouwupdto.AreaName = data.AreaName;
                 follouwupdto.EmployeeName = data.EmployeeName;
                 followupDtos.Add(follouwupdto);
@@ -113,7 +137,9 @@ namespace Infrastructure.Data.Queries
                               DiscussionDetailsNote=fol.DiscussionDetailsNote,
                               MarketingNextPlan=fol.MarketingNextPlan,
                               FollowupCallDate=fol.FollowupCallDate,//.ToString("dd/MM/yyyy"),
-                              Status=fol.Status
+                              Status=fol.Status,
+                              NoOfFloor=cus.NoOfFloor,
+                              NoOfFlat=cus.NoOfFlat
                           }).ToList();
 
             FollowupDetailsByIdDto follouwupdto = new FollowupDetailsByIdDto();
@@ -121,12 +147,11 @@ namespace Infrastructure.Data.Queries
             {
                 follouwupdto.CustomerId = data.CustomerId;
                 follouwupdto.CustomerName = data.CustomerName;
-                follouwupdto.ContractPerson = data.ContractPerson;
-                follouwupdto.MobileNo = data.MobileNo;
                 follouwupdto.Address = data.Address;
-                follouwupdto.BuildingDetails = data.BuildingDetails;
                 follouwupdto.AreaName = data.AreaName;
                 follouwupdto.EmployeeName = data.EmployeeName;
+                follouwupdto.NoOfFlat = data.NoOfFlat;
+                follouwupdto.NoOfFloor = data.NoOfFloor;
 
                 FollowupDto followupDetailsDto = new FollowupDto();
                 followupDetailsDto.CallingDate = data.CallingDate;
@@ -142,6 +167,41 @@ namespace Infrastructure.Data.Queries
                 follouwupdto.followups.Add(followupDetailsDto);
             }
 
+            var buildingDetails = (from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == id)
+                                   join brnd in _dbContext.Brands
+                                   on bld.BrandId equals brnd.Id
+                                   select new
+                                   {
+                                       BrandName = brnd.Name,
+                                       Quantity = bld.Quantity,
+                                       Capacity = bld.Capacity
+                                   });                                  
+            foreach(var item in buildingDetails)
+            {
+                BuildingDetailsDto building = new BuildingDetailsDto();
+                building.BrandName= item.BrandName;
+                building.Quantity= item.Quantity;
+                building.Capacity= item.Capacity;
+                follouwupdto.BuildingDetails.Add(building);
+            }
+
+            var contractDetails = (from con in _dbContext.ContractDetails.Where(a => a.CustomerId == id)
+                                   join des in _dbContext.Designations
+                                   on con.DesignationId equals des.Id
+                                   select new
+                                   {
+                                       ClientName=con.Name,
+                                       MobileNo=con.MobileNo,
+                                       Designation=des.Name
+                                   });
+            foreach(var contract in contractDetails)
+            {
+                ContractDetailsDto contractDetailsDto = new ContractDetailsDto();
+                contractDetailsDto.Name = contract.ClientName;
+                contractDetailsDto.MobileNo = contract.MobileNo;
+                contractDetailsDto.Designation=contract.Designation;
+                follouwupdto.ContractDetails.Add(contractDetailsDto);
+            }
             return follouwupdto;
         }
     }

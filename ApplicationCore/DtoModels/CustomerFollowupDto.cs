@@ -8,18 +8,22 @@ namespace ApplicationCore.DtoModels
 {
     public class CustomerFollowupDto
     {
+        //Customer Portion
         public string? Name { get; set; } = String.Empty;
-        public string? ContractPerson { get; set; } = String.Empty;
-        public string? MobileNo { get; set; } = String.Empty;
         public string? Address { get; set; } = String.Empty;
-        public string? BuildingDetails { get; set; } = String.Empty;
         public string AreaName { get; set; } = "";//FK
         public string EmployeeName { get; set; } = "";//FK
+        public int NoOfFloor { get; set; } = 0;
+        public int NoOfFlat { get; set; }
+        public List<BuildingDetailsDto> BuildingDetails { get; set; }
+        public List<ContractDetailsDto> ContractDetails { get; set; }
+
+
+        //Followup Portion
         public DateTime? CallingDate { get; set; } = DateTime.Now;
-        public string? OpinionAndPlan { get; set; } = String.Empty;
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
-        public string? CustomerDoTheWorkingMonth { get; set; } = String.Empty;
+        public int CustomerDoTheWorkingMonth { get; set; } = 0;
         public string? Remarks { get; set; } = String.Empty;
         public string? PositiveOrNegative { get; set; } = String.Empty;
         public string? DiscussionDetailsNote { get; set; } = String.Empty;

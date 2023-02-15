@@ -9,8 +9,8 @@ namespace Web.Controllers
 {
     public class FollowupController : Controller
     {
-        private readonly IFollowupService followupService;
-        private readonly IFollowupQueryService followupQueryService;
+        private readonly IFollowupService _followupService;
+        private readonly IFollowupQueryService _followupQueryService;
         private readonly IMapper _mapper;
 
         public FollowupController(IFollowupService followupService,
@@ -18,13 +18,13 @@ namespace Web.Controllers
             IMapper mapper
             )
         {
-            this.followupService = followupService;
-            this.followupQueryService = followupQueryService;
+            this._followupService = followupService;
+            this._followupQueryService = followupQueryService;
             this._mapper = mapper;  
         }
         public IActionResult Index()
         {
-            IEnumerable<CustomerDto> followupList = followupQueryService.GetDailyFollowupList(DateTime.Now);
+            IEnumerable<CustomerDto> followupList = _followupQueryService.GetDailyFollowupList(DateTime.Now);
             IEnumerable<DailyFollowupListVM> Viewresult = _mapper.Map<IEnumerable<CustomerDto>,
                 IEnumerable<DailyFollowupListVM>>(followupList);
             return View(Viewresult);
@@ -32,13 +32,13 @@ namespace Web.Controllers
 
         public IActionResult GetFollowupsByCustId(int id)
         {
-            FollowupDetailsByIdDto followupList = followupQueryService.GetFollowupDetailsByCustId(id);
+            FollowupDetailsByIdDto followupList = _followupQueryService.GetFollowupDetailsByCustId(id);
             return View(followupList);
         }
 
         public IActionResult AddNewFollowup(int id)
         {
-            CustomerDto customerDto = followupQueryService.GetCustomerDetailsByCustId(id);
+            CustomerDto customerDto = _followupQueryService.GetCustomerDetailsByCustId(id);
             AddFollowupVM Viewresult = _mapper.Map<CustomerDto,
                 AddFollowupVM>(customerDto);
             return View(Viewresult);
@@ -51,14 +51,14 @@ namespace Web.Controllers
                 var followup = _mapper.Map<AddFollowupVM, Followup>(addFollowupVM);
                 if (followup != null)
                 {
-                    int followupId = await followupService.AddEntity(followup);
+                    int followupId = await _followupService.AddEntity(followup);
                     if(followup.Status=="Confirmed")
                     {
                         return RedirectToAction("Index", "Booking",new { id = followupId });
                     }
                     else
                     {
-                        IEnumerable<CustomerDto> followupList = followupQueryService.GetDailyFollowupList(DateTime.Now);
+                        IEnumerable<CustomerDto> followupList = _followupQueryService.GetDailyFollowupList(DateTime.Now);
                         IEnumerable<DailyFollowupListVM> Viewresult = _mapper.Map<IEnumerable<CustomerDto>, 
                             IEnumerable<DailyFollowupListVM>>(followupList);
                         return RedirectToAction("Index");

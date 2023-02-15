@@ -119,7 +119,7 @@ namespace Infrastructure.Migrations
                     b.Property<double>("Capacity")
                         .HasColumnType("float");
 
-                    b.Property<int>("CusotmerId")
+                    b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -129,7 +129,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.HasIndex("CusotmerId");
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("BuildingDetails");
                 });
@@ -593,7 +593,7 @@ namespace Infrastructure.Migrations
 
                     b.HasOne("ApplicationCore.Entities.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CusotmerId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
