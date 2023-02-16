@@ -15,8 +15,10 @@ namespace ApplicationCore.DtoModels
         public string EmployeeName { get; set; } = "";//FK
         public int NoOfFloor { get; set; } = 0;
         public int NoOfFlat { get; set; }
-        public List<BuildingDetailsDto> BuildingDetails { get; set; }
-        public List<ContractDetailsDto> ContractDetails { get; set; }
+        public string CityName { get; set; }
+        public string SubAreaName { get; set; }
+        public List<BuildingDetailsDto> BuildingDetails { get; set; }= new List<BuildingDetailsDto>();
+        public List<ContractDetailsDto> ContractDetails { get; set; }=new List<ContractDetailsDto>();
 
 
         //Followup Portion
@@ -30,6 +32,7 @@ namespace ApplicationCore.DtoModels
         public string? MarketingNextPlan { get; set; } = String.Empty;
         public DateTime FollowupCallDate { get; set; } = DateTime.Now;
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
+        public int serviceTypeId { get; set; } = 0;
         public int CustomerId { get; set; } = 0;//FK
 
     }

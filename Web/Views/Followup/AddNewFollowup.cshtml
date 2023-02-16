@@ -2,20 +2,111 @@
 @model Web.ViewModels.AddFollowupVM
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Add New Followup";
 }
 
-<h4>Add New Followup</h4>
 <hr />
 <div class="row">
     <div class="col-12">
         <div class="box box-success">
             <div class="box-header" style="border-bottom:1px solid black">
-                <p>Add Customer with a Followup</p>
+                <p>Add New Followup</p>
             </div>
             <div class="box-body">
                 <form asp-action="Index">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="CustomerId" hidden class="col-sm-2 form-control" />
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-sm-2 control-label">Client Name/Organization</label>
+                        <div class="col-2">
+                            <input asp-for="Name" class="col-sm-2 form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <label asp-for="EmployeeName" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-4">
+                            <input asp-for="EmployeeName" class="form-control" />
+                            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <table id="tblPersonDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Contract Person</th>
+                                <th>DesignationId</th>
+                                <th>Designation</th>
+                                <th>Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ContractDetails)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Designation</td>
+                                    <td>@item.MobileNo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CityName" class="control-label col-1">City</label>
+                        <div class="col-1">
+                            <input asp-for="CityName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="CityName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AreaName" class="control-label col-1">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="AreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label col-1">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="SubAreaName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a)No Of Floor</label>
+                        <div class="col-3">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                            <span asp-validation-for="NoOfFloor" class="text-danger"></span>
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <div class="col-4">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                            <span asp-validation-for="NoOfFlat" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <table id="tblBuldingDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Brand Id</th>
+                                <th>Brand Name</th>
+                                <th>Quantity</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.BuildingDetails)
+                            {
+                                <tr>
+                                    <td>@item.BrandName</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Capacity</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <br />
                     <div class="form-group row">
                         <label asp-for="CallingDate" class="col-sm-2 control-label">Calling Date</label>
                         <div class="col-2">
@@ -33,42 +124,8 @@
                             </select>
                             <span asp-validation-for="serviceTypeId" class="text-danger"></span>
                         </div>
-
-@*                        <label asp-for="Name" class="col-sm-2 control-label">Client Name/Organization</label>
-                        <div class="col-2">
-                            <input asp-for="Name" class="col-sm-2 form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-*@                    </div>
-
-                    <div class="form-group row">
-@*                        <label asp-for="DesignationId" class="col-sm-2 control-label">Designation</label>
-                        <div class="col-2">
-                            <select asp-for="DesignationId" class="col-sm-2 form-control">
-                                <option value="-1">Select Designation</option>
-                                @foreach (var item in ViewBag.DesignationList)
-                                {
-                                    <option value="@item.Id">@item.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="DesignationId" class="text-danger"></span>
-                        </div>
-
-*@/>
                     </div>
-                    <table id="tblPersonDetails" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Contract Person</th>
-                                <th>DesignationId</th>
-                                <th>Designation</th>
-                                <th>Mobile No</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                    <br />
+
                     <div class="form-group row">
                         <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
                         <div class="col-2">
@@ -91,39 +148,6 @@
                             </select>
                             <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
                         </div>
-
-                    </div>
-                    <div class="form-group row">
-                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
-                        <div class="col-2">
-                            <input asp-for="Address" class="form-control" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>@*
-                        <label asp-for="CityId" class="control-label col-1">City</label>
-                        <div class="col-1">
-                            <select asp-for="CityId" class="form-control">
-                                <option value="-1">Select City</option>
-                                @foreach (var data in ViewBag.CityList)
-                                {
-                                    <option value="@data.Id">@data.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="CityId" class="text-danger"></span>
-                        </div>
-                        <label asp-for="AreaId" class="control-label col-1">Area</label>
-                        <div class="col-2">
-                            <select asp-for="AreaId" class="form-control">
-                                <option value="-1">Select Area</option>
-                            </select>
-                            <span asp-validation-for="AreaId" class="text-danger"></span>
-                        </div>
-                        <label asp-for="SubAreaId" class="control-label col-1">Sub Area</label>
-                        <div class="col-2">
-                            <select asp-for="SubAreaId" class="form-control">
-                                <option value="-1">Select Sub Area</option>
-                            </select>
-                            <span asp-validation-for="SubAreaId" class="text-danger"></span>
-                        </div>*@
                     </div>
                     <div class="form-group row">
                         <label asp-for="Remarks" class="control-label col-2"></label>
@@ -131,18 +155,7 @@
                             <input asp-for="Remarks" class="form-control" />
                             <span asp-validation-for="Remarks" class="text-danger"></span>
                         </div>
-@*                        <label asp-for="ContactId" class="control-label col-2">Contact</label>
-                        <div class="col-2">
-                            <select asp-for="ContactId" class="form-control">
-                                <option value="-1">Select Contact</option>
-                                @foreach (var data in ViewBag.ContactList)
-                                {
-                                    <option value="@data.Id">@data.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="ContactId" class="text-danger"></span>
-                        </div>
-*@                        <label asp-for="PositiveOrNegative" class="control-label col-2"></label>
+                        <label asp-for="PositiveOrNegative" class="control-label col-2"></label>
                         <div class="col-2">
                             <select asp-for="PositiveOrNegative" class="form-control">
                                 <option value="Positive">Positive</option>
@@ -152,55 +165,6 @@
                         </div>
 
                     </div>
-                    <div class="form-group row">
-                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a)No Of Floor</label>
-                        <div class="col-3">
-                            <input asp-for="NoOfFloor" class="form-control" />
-                            <span asp-validation-for="NoOfFloor" class="text-danger"></span>
-                        </div>
-                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
-                        <div class="col-4">
-                            <input asp-for="NoOfFlat" class="form-control" />
-                            <span asp-validation-for="NoOfFlat" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        @*<label asp-for="BrandId" class="control-label col-2">Building Details b)Brand</label>
-                        <div class="col-3">
-                            <select asp-for="BrandId" class="form-control">
-                                <option value="-1">Select Brand</option>
-                                @foreach (var item in ViewBag.BrandList)
-                                {
-                                    <option value="@item.Id">@item.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="BrandId" class="text-danger"></span>
-                        </div>
-                        <label asp-for="Quantity" class="control-label col-1">Quantity</label>
-                        <div class="col-2">
-                            <input asp-for="Quantity" class="form-control" />
-                            <span asp-validation-for="Quantity" class="text-danger"></span>
-                        </div>
-                        <label asp-for="Capacity" class="control-label col-1">Capacity</label>
-                        <div class="col-2">
-                            <input asp-for="Capacity" class="form-control" />
-                            <span asp-validation-for="Capacity" class="text-danger"></span>
-                        </div>*@
-                        <input type="button" id="btnAddBuildingDetails" value="Add" class="btn btn-success col-sm-1" />
-                    </div>
-                    <table id="tblBuldingDetails" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Brand Id</th>
-                                <th>Brand Name</th>
-                                <th>Quantity</th>
-                                <th>Capacity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-
                     <div class="form-group row">
                         <label asp-for="DiscussionDetailsNote" class="control-label col-2">Customer Discussion Details Note</label>
                         <div class="col-4">
@@ -219,17 +183,7 @@
                             <input asp-for="FollowupCallDate" class="form-control" />
                             <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
                         </div>
-                        @*<label asp-for="MpoId" class="control-label col-2">Marketing Officer Name</label>
-                        <div class="col-4">
-                            <select asp-for="MpoId" class="form-control">
-                                <option value="-1">Select Mpo</option>
-                                @foreach (var data in ViewBag.MpoList)
-                                {
-                                    <option value="@data.Id">@data.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="MpoId" class="text-danger"></span>
-                        </div>*@
+
                     </div>
                     <div class="form-group row">
                         <label asp-for="Status" class="control-label col-2"></label>

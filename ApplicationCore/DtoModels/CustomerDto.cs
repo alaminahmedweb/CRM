@@ -16,6 +16,7 @@ namespace ApplicationCore.DtoModels
         public int NoOfFloor { get; set; } = 0;
         public int NoOfFlat { get; set; } = 0;
         public int ContactName { get; set; } = 0;//FK
+        public string CityName { get; set; }
 
         public List<BuildingDetailsDto> BuildingDetails { get; set; } = new List<BuildingDetailsDto>();
         public List<ContractDetailsDto> ContractDetails { get; set; }=new List<ContractDetailsDto>();

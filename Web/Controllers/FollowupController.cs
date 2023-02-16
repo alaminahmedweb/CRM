@@ -12,15 +12,22 @@ namespace Web.Controllers
         private readonly IFollowupService _followupService;
         private readonly IFollowupQueryService _followupQueryService;
         private readonly IMapper _mapper;
+        private readonly IServiceTypeService _serviceTypeService;
+        private readonly IMonthListService _monthListService;
 
         public FollowupController(IFollowupService followupService,
             IFollowupQueryService followupQueryService,
-            IMapper mapper
+            IMapper mapper            ,
+            IServiceTypeService serviceTypeService,
+            IMonthListService monthListService
             )
         {
             this._followupService = followupService;
             this._followupQueryService = followupQueryService;
-            this._mapper = mapper;  
+            this._mapper = mapper;
+            this._serviceTypeService = serviceTypeService;
+            this._monthListService = monthListService;
+
         }
         public IActionResult Index()
         {
@@ -36,11 +43,14 @@ namespace Web.Controllers
             return View(followupList);
         }
 
-        public IActionResult AddNewFollowup(int id)
+        public async Task<IActionResult> AddNewFollowup(int id)
         {
-            CustomerDto customerDto = _followupQueryService.GetCustomerDetailsByCustId(id);
-            AddFollowupVM Viewresult = _mapper.Map<CustomerDto,
+            CustomerFollowupDto customerDto = _followupQueryService.GetCustomerDetailsByCustId(id);
+            AddFollowupVM Viewresult = _mapper.Map<CustomerFollowupDto,
                 AddFollowupVM>(customerDto);
+            ViewBag.ServiceList = await _serviceTypeService.GetAllAsync();
+            ViewBag.MonthList = await _monthListService.GetAllAsync();
+
             return View(Viewresult);
         }
         [HttpPost]

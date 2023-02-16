@@ -16,9 +16,9 @@ namespace Web.Controllers
         private readonly IMapper _mapper;
         private readonly IDesignationService _designationService;
         private readonly IServiceTypeService _serviceTypeService;
+        private readonly IMonthListService _monthListService;
         private readonly ICityService _cityService;
         private readonly ISubAreaService _subAreaService;
-        private readonly IMonthListService _monthListService;
         private readonly IBrandService _brandService;
 
         public CustomerFollowupController(IContactByService contactByService,
