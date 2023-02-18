@@ -10,13 +10,29 @@ namespace Web.ViewModels
         }
 
         public string? Name { get; set; } = String.Empty;
-        public string? ContractPerson { get; set; } = String.Empty;
-        public string? MobileNo { get; set; } = String.Empty;
         public string? Address { get; set; } = String.Empty;
-        [Required]
-        public string? BuildingDetails { get; set; } = String.Empty;
-        public string AreaName { get; set; } = "";
+        public string AreaName { get; set; } = "";//FK
+        public string EmployeeName { get; set; } = "";//FK
+        public int NoOfFloor { get; set; } = 0;
+        public int NoOfFlat { get; set; }
+        public string CityName { get; set; }
+        public string SubAreaName { get; set; }
+        public List<BuildingDetailsVM> BuildingDetails { get; set; } = new List<BuildingDetailsVM>();
+        public List<ContractDetailsVM> ContractDetails { get; set; } = new List<ContractDetailsVM>();
+
+
+        //Followup Portion
+        public DateTime? CallingDate { get; set; } = DateTime.Now;
+        public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
+        public string CustomerDoTheWorkingMonth { get; set; } = "";
+        public string? Remarks { get; set; } = String.Empty;
+        public string? PositiveOrNegative { get; set; } = String.Empty;
+        public string? DiscussionDetailsNote { get; set; } = String.Empty;
+        public string? MarketingNextPlan { get; set; } = String.Empty;
+        public string ServiceName { get; set; } = "";
+        public int CustomerId { get; set; } = 0;//FK
+
         [DataType(DataType.Date)]
         public DateTime EntryDate { get; set; } = DateTime.Now;
         [DataType(DataType.Date)]

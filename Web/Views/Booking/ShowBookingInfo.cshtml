@@ -15,42 +15,18 @@
 <table id="bookinginfo" class="table table-bordered">
     <thead>
         <tr>
-            <th>
-                Team Name
-            </th>
-            <th>
-                Shift Name
-            </th>
-            <th>
-                Status
-            </th>
-            <th>
-                Entry Date
-            </th>
-            <th>
-                Booking Date
-            </th>
-            <th>
-                Organization Name
-            </th>
-            <th>
-                Contract Person
-            </th>
-            <th>
-                MobileNo
-            </th>
-            <th>
-                Address
-            </th>
-            <th>
-                AreaName
-            </th>
-            <th>
-                BuildingDetails
-            </th>
-            <th>
-                Amount
-            </th>
+            <th>Team Leader Name</th>
+            <th>Team Name</th>
+            <th>Shift Name</th>
+            <th>Status</th>
+            <th>Entry Date</th>
+            <th>Booking Date</th>
+            <th>Organization Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Sub Area</th>
+            <th>Amount</th>
         </tr>
     </thead>
     <tbody>
@@ -59,43 +35,18 @@
             @foreach (var item in @ViewBag.BookingItems)
             {
                 <tr>
-                    <td>
-                        @item.TeamName
-                    </td>
-                    <td>
-                        @item.ShiftName
-                    </td>
-                    <td>
-                        @item.Status
-                    </td>
-                    <td>
-                        @item.EntryDate
-                    </td>
-                    <td>
-                        @item.BookingDate
-                    </td>
-                    <td>
-                        @item.Name
-                    </td>
-
-                    <td>
-                        @item.ContractPerson
-                    </td>
-                    <td>
-                        @item.MobileNo
-                    </td>
-                    <td>
-                        @item.Address
-                    </td>
-                    <td>
-                        @item.AreaName
-                    </td>
-                    <td>
-                        @item.BuildingDetails
-                    </td>
-                    <td>
-                        @item.AgreeAmount
-                    </td>
+                    <td>@item.TeamLeaderName</td>
+                    <td>@item.TeamName</td>
+                    <td>@item.ShiftName</td>
+                    <td>@item.Status</td>
+                    <td>@item.EntryDate</td>
+                    <td>@item.BookingDate</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.CityName</td>
+                    <td>@item.AreaName</td>
+                    <td>@item.SubAreaName</td>
+                    <td>@item.AgreeAmount</td>
                 </tr>
             }
         }
@@ -142,12 +93,11 @@
                         var bookingTable = $('#bookinginfo tbody');
                         bookingTable.empty();
                         $(result).each(function(index, data) {
-                            //console.log(data);
-                            bookingTable.append('<tr><td>' + data.teamName + '</td><td>' +
-                                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.entryDate + '</td><td>' +
-                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.contractPerson + '</td><td>' + data.mobileNo +
-                                '</td><td>' + data.address + '</td><td>' + data.areaName + '</td><td>' + data.buildingDetails +
-                                '</td><td>' + data.agreeAmount + '</td></tr>');
+                            console.log(data);
+                            bookingTable.append('<tr><td>' + data.teamLeaderName + '</td><td>' + data.teamName + '</td><td>' +
+                                data.shiftName + '</td><td>' + data.status + '</td><td>' +  data.entryDate + '</td><td>' +
+                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.address + '</td><td>' + data.cityName +
+                                '</td><td>' + data.areaName + '</td><td>' + data.subAreaName + '</td><td>' + data.agreeAmount + '</td></tr>');
                         });
                     },
                     error: function(xhr, ajaxOptions, thrownError) {

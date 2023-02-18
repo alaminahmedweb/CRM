@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-4"></div>
-    <div class="col-4 col-offset-3">
+    <div class="col-5 col-offset-3">
         <div class="box">
             <div class="box-header" style="border-bottom:1px solid black">
                 <p>Add New Team</p>
@@ -16,22 +16,22 @@
                 <form asp-action="Create" autocomplete="off">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group row">
-                        <label asp-for="Name" class="col-sm-2 control-label">Team Name</label>
-                        <div class="col-sm-10">
+                        <label asp-for="Name" class="col-sm-4 control-label">Team Name</label>
+                        <div class="col-sm-8">
                             <input asp-for="Name" class="form-control" />
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label asp-for="TeamLeaderName" class="col-sm-2 control-label">Team Leader Name</label>
-                        <div class="col-sm-10">
+                        <label asp-for="TeamLeaderName" class="col-sm-4 control-label">Team Leader Name</label>
+                        <div class="col-sm-8">
                             <input asp-for="TeamLeaderName" class="form-control" />
                             <span asp-validation-for="TeamLeaderName" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label asp-for="Status" class="col-sm-2 control-label">Status</label>
-                        <div class="col-sm-10">
+                        <label asp-for="Status" class="col-sm-4 control-label">Status</label>
+                        <div class="col-sm-8">
                             <select asp-for="Status" class="form-control">
                                 <option value="Active">Active</option>
                                 <option value="Inactive">Inactive</option>

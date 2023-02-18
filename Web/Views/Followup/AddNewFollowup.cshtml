@@ -124,6 +124,18 @@
                             </select>
                             <span asp-validation-for="serviceTypeId" class="text-danger"></span>
                         </div>
+                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
+                        <div class="col-sm-2">
+                            <select asp-for="CustomerDoTheWorkingMonth" class="col-sm-2 form-control">
+                                <option value="-1">Select Working Month</option>
+                                @foreach (var item in ViewBag.MonthList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+                        </div>
+
                     </div>
 
                     <div class="form-group row">
@@ -136,17 +148,6 @@
                         <div class="col-2">
                             <input asp-for="AgreeAmount" class="form-control" />
                             <span asp-validation-for="AgreeAmount" class="text-danger"></span>
-                        </div>
-                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
-                        <div class="col-sm-2">
-                            <select asp-for="CustomerDoTheWorkingMonth" class="col-sm-2 form-control">
-                                <option value="-1">Select Working Month</option>
-                                @foreach (var item in ViewBag.MonthList)
-                                {
-                                    <option value="@item.Id">@item.Name</option>
-                                }
-                            </select>
-                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -163,7 +164,6 @@
                             </select>
                             <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
                         </div>
-
                     </div>
                     <div class="form-group row">
                         <label asp-for="DiscussionDetailsNote" class="control-label col-2">Customer Discussion Details Note</label>
@@ -183,9 +183,6 @@
                             <input asp-for="FollowupCallDate" class="form-control" />
                             <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
                         </div>
-
-                    </div>
-                    <div class="form-group row">
                         <label asp-for="Status" class="control-label col-2"></label>
                         <div class="col-4">
                             <select asp-for="Status" class="form-control">

@@ -5,139 +5,191 @@
     var bookingItems = @ViewBag.BookingItems;
 }
 
-<h1>Service Booking</h1>
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add New Booking</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="SaveBooking">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="@Model.CustomerId" hidden class="col-sm-2 form-control" />
+                    <input asp-for="@Model.FollowupId" class="col-sm-3 form-control" hidden />
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-sm-2 control-label">Client Name/Organization</label>
+                        <div class="col-2">
+                            <input asp-for="Name" class="col-sm-2 form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <label asp-for="EmployeeName" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-4">
+                            <input asp-for="EmployeeName" class="form-control" />
+                            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                        </div>
 
-@*<a asp-controller="Followup" asp-action="Index" asp-route-id=@Model.CustomerId>Add New Followup</a>
-*@@*<a class="nav-link text-dark" asp-area="" asp-controller="Followup" asp-action="GetFollowupsByCustId">Daily Followup</a>*@
-<form asp-action="SaveBooking">
-    <input asp-for="@Model.FollowupId" class="col-sm-3 form-control" hidden />
+                    </div>
 
-    <div class="container">
+                    <table id="tblPersonDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Contract Person</th>
+                                <th>DesignationId</th>
+                                <th>Designation</th>
+                                <th>Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ContractDetails)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Designation</td>
+                                    <td>@item.MobileNo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CityName" class="control-label col-1">City</label>
+                        <div class="col-1">
+                            <input asp-for="CityName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="CityName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AreaName" class="control-label col-1">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="AreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label col-1">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="SubAreaName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a)No Of Floor</label>
+                        <div class="col-3">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                            <span asp-validation-for="NoOfFloor" class="text-danger"></span>
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <div class="col-4">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                            <span asp-validation-for="NoOfFlat" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <table id="tblBuldingDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Brand Id</th>
+                                <th>Brand Name</th>
+                                <th>Quantity</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.BuildingDetails)
+                            {
+                                <tr>
+                                    <td>@item.BrandName</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Capacity</td>
+                                </tr>
+                            }
 
-        <div class="row col-sm-12">
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="ServiceName" class="col-sm-2 control-label">Service Name</label>
+                        <div class="col-2">
+                            <input asp-for="ServiceName" class="form-control" />
+                            <span asp-validation-for="ServiceName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
+                        <div class="col-sm-2">
+                            <input asp-for="CustomerDoTheWorkingMonth" class="form-control" />
+                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+                        </div>
 
-            <div class="col-sm-6">
-                <label asp-for="@Model.Name" class="col-sm-3 control-label">ClientName</label>
-                <input asp-for="@Model.Name" class="col-sm-3 form-control" />
-                <span asp-validation-for="@Model.Name" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="@Model.ContractPerson" class="col-sm-3 control-label">Contract Person</label>
-                <input asp-for="@Model.ContractPerson" class="col-sm-3 form-control" />
-                <span asp-validation-for="@Model.ContractPerson" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="MobileNo" class="control-label col-sm-3">Mobile No</label>
-                <input asp-for="MobileNo" class="form-control col-sm-3" />
-                <span asp-validation-for="MobileNo" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="Address" class="control-label">Location/Address</label>
-                <input asp-for="Address" class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="@Model.AreaName" class="control-label">Area</label>
-                <input asp-for="@Model.AreaName" class="form-control" />
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="BuildingDetails" class="control-label">Building Details</label>
-                <input asp-for="BuildingDetails" class="form-control" />
-                <span asp-validation-for="BuildingDetails" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="@Model.AgreeAmount" class="control-label">Amount</label>
-                <input asp-for="@Model.AgreeAmount" class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="@Model.EntryDate" class="col-sm-3 control-label">Entry Date</label>
-                <input asp-for="@Model.EntryDate" class="col-sm-3 form-control" />
-                <span asp-validation-for="@Model.EntryDate" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="@Model.BookingDate" class="col-sm-3 control-label">Booking Date</label>
-                <input asp-for="@Model.BookingDate" class="col-sm-3 form-control" />
-                <span asp-validation-for="@Model.BookingDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
+                        <div class="col-2">
+                            <input asp-for="OfferAmount" class="form-control" />
+                            <span asp-validation-for="OfferAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AgreeAmount" class="control-label col-2">Agree/Booking Amount</label>
+                        <div class="col-2">
+                            <input asp-for="AgreeAmount" class="form-control" />
+                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row col-sm-12">
+                        <div class="col-sm-6">
+                            <label asp-for="@Model.EntryDate" class="col-sm-3 control-label">Entry Date</label>
+                            <input asp-for="@Model.EntryDate" class="col-sm-3 form-control" />
+                            <span asp-validation-for="@Model.EntryDate" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="@Model.BookingDate" class="col-sm-3 control-label">Booking Date</label>
+                            <input asp-for="@Model.BookingDate" class="col-sm-3 form-control" />
+                            <span asp-validation-for="@Model.BookingDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row col-sm-12">
+                        <div class="col-sm-6">
+                            <label asp-for="@Model.TeamId" class="control-label">Team</label>
+                            <select asp-for="@Model.TeamId" class="form-control">
+                                @foreach (var item in @ViewBag.TeamInfo)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label asp-for="@Model.ShiftId" class="control-label">Shift</label>
+                            <select asp-for="@Model.ShiftId" class="form-control">
+                                <option value="1">Morning</option>
+                                <option value="2">Evening</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <input type="submit" value="Save" class="btn btn-primary">
+                </form>
             </div>
         </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="@Model.TeamId" class="control-label">Team</label>
-                <select asp-for="@Model.TeamId" class="form-control">
-                    @foreach (var item in @ViewBag.TeamInfo)
-                    {
-                        <option value="@item.Id">@item.Name</option>
-                    }
-                </select>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="@Model.ShiftId" class="control-label">Shift</label>
-                <select asp-for="@Model.ShiftId" class="form-control">
-                    <option value="1">Morning</option>
-                    <option value="2">Evening</option>
-                </select>
-            </div>
-        </div>
-        <br />
-        <input type="submit" value="Save" class="btn btn-primary">
     </div>
-</form>
+</div>
+
 <br />
 <hr />
 <table class="table table-bordered" id="bookinginfo">
     <thead>
         <tr>
-            <th>
-                Team Name
-            </th>
-            <th>
-                Shift Name
-            </th>
-            <th>
-                Status
-            </th>
-            <th>
-                Entry Date
-            </th>
-            <th>
-                Booking Date
-            </th>
-            <th>
-                Organization Name
-            </th>
-            <th>
-                Contract Person
-            </th>
-            <th>
-                MobileNo
-            </th>
-            <th>
-                Address
-            </th>
-            <th>
-                AreaName
-            </th>
-            <th>
-                BuildingDetails
-            </th>
-            <th>
-                Amount
-            </th>
-            <th>
-                Action
-            </th>
+            <th>Team Leader Name</th>
+            <th>Team Name</th>
+            <th>Shift Name</th>
+            <th>Status</th>
+            <th>Entry Date</th>
+            <th>Booking Date</th>
+            <th>Organization Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Sub Area</th>
+            <th>Amount</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -146,52 +198,22 @@
             @foreach (var item in @ViewBag.BookingItems)
             {
                 <tr>
+                    <td>@item.TeamLeaderName</td>
+                    <td>@item.TeamName</td>
+                    <td>@item.ShiftName</td>
+                    <td>@item.Status</td>
+                    <td>@item.EntryDate</td>
+                    <td>@item.BookingDate</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.CityName</td>
+                    <td>@item.AreaName</td>
+                    <td>@item.SubAreaName</td>
+                    <td>@item.AgreeAmount</td>
                     <td>
-                        @item.TeamName
+                        <a asp-action="GetFollowupsByCustId" asp-route-id="@Model.FollowupId">Cancel</a> |
+                        <a asp-action="AddFollowup" asp-route-id="@Model.FollowupId">Transfer</a>
                     </td>
-                    <td>
-                        @item.ShiftName
-                    </td>
-                    <td>
-                        @item.Status
-                    </td>
-                    <td>
-                        @item.EntryDate
-                    </td>
-                    <td>
-                        @item.BookingDate
-                    </td>
-                    <td>
-                        @item.Name
-                    </td>
-
-                    <td>
-                        @item.ContractPerson
-                    </td>
-                    <td>
-                        @item.MobileNo
-                    </td>
-                    <td>
-                        @item.Address
-                    </td>
-                    <td>
-                        @item.AreaName
-                    </td>
-                    <td>
-                        @item.BuildingDetails
-                    </td>
-                    <td>
-                        @item.AgreeAmount
-                    </td>
-                    <td>
-                        @Html.ActionLink("Cancel", "GetFollowupsByCustId", new {  id=@Model.FollowupId})
-                        |
-                        @Html.ActionLink("Transfer", "AddFollowup", new { id = @Model.FollowupId })
-                    </td>
-                    @*            <td>
-
-            </td>
-            *@
                 </tr>
             }
         }
@@ -219,11 +241,10 @@
                         bookingTable.empty();
                         $(result).each(function(index, data) {
                             //console.log(data);
-                            bookingTable.append('<tr><td>' + data.teamName + '</td><td>' +
+                            bookingTable.append('<tr><td>'+ data.teamLeaderName + '</td><td>' + data.teamName + '</td><td>' +
                                 data.shiftName + '</td><td>' + data.status + '</td><td>' + data.entryDate + '</td><td>' +
-                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.contractPerson + '</td><td>' + data.mobileNo +
-                                '</td><td>' + data.address + '</td><td>' + data.areaName + '</td><td>' + data.buildingDetails +
-                                '</td><td>' + data.agreeAmount + '</td></tr>');
+                                data.bookingDate + '</td><td>' + data.name + '</td><td>' + data.address+ '</td><td>' + data.cityName  +
+                                '</td><td>' + data.areaName  + '</td><td>' + data.subAreaName + '</td><td>' + data.agreeAmount + '</td></tr>');
                         });
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
