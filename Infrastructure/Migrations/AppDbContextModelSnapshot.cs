@@ -431,12 +431,16 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("EntryDateTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FeedbackDetails")
+                    b.Property<string>("CompanyFeedback")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerFeedback")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EntryDateTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("bookingId")
                         .HasColumnType("int");

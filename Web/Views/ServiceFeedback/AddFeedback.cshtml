@@ -1,0 +1,108 @@
+﻿@model Web.ViewModels.ServiceFeedbackVM
+
+@{
+    ViewData["Title"] = "AddFeedback";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add Feedback</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="AddFeedback">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="BookingId" hidden/>
+
+                    <div class="form-group row">
+                        <label asp-for="CustomerName" class="col-sm-2 control-label">Customer Name</label>
+                        <div class="col-2">
+                            <input asp-for="CustomerName" class="col-sm-2 form-control" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Address" class="col-sm-2 control-label">Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="col-sm-2 form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <label asp-for="CityName" class="control-label col-sm-1">City</label>
+                        <div class="col-2">
+                            <input asp-for="CityName" class="form-control col-sm-2" />
+                            <span asp-validation-for="CityName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="AreaName" class="control-label col-2">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="form-control" />
+                            <span asp-validation-for="AreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label col-2">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="form-control" />
+                            <span asp-validation-for="SubAreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="BookingDate" class="control-label col-2">Booking Date</label>
+                        <div class="col-2">
+                            <input asp-for="BookingDate" class="form-control" />
+                            <span asp-validation-for="BookingDate" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="TeamLeaderName" class="control-label col-2">Team Leader Name</label>
+                        <div class="col-2">
+                            <input asp-for="TeamLeaderName" class="form-control" />
+                            <span asp-validation-for="TeamLeaderName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="TeamName" class="control-label col-2">Team Name</label>
+                        <div class="col-2">
+                            <input asp-for="TeamName" class="form-control" />
+                            <span asp-validation-for="TeamName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ShiftName" class="control-label col-1">Shift</label>
+                        <div class="col-1">
+                            <input asp-for="ShiftName" class="form-control" />
+                            <span asp-validation-for="ShiftName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Amount" class="control-label col-1">Amount</label>
+                        <div class="col-1">
+                            <input asp-for="Amount" class="form-control" />
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="EntryDateTime" class="control-label col-2">Feedback Entry Date</label>
+                        <div class="col-2">
+                            <input asp-for="EntryDateTime" class="form-control" />
+                            <span asp-validation-for="EntryDateTime" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CustomerFeedback" class="control-label col-2">Customer Feedback</label>
+                        <div class="col-2">
+                            <input asp-for="CustomerFeedback" class="form-control" />
+                            <span asp-validation-for="CustomerFeedback" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CompanyFeedback" class="control-label col-2">Company Feedback</label>
+                        <div class="col-2">
+                            <input asp-for="CompanyFeedback" class="form-control" />
+                            <span asp-validation-for="CompanyFeedback" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" id="SaveFeedback" class="btn btn-primary" />
+                            <a asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

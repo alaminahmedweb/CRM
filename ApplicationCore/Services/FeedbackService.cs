@@ -14,7 +14,8 @@ namespace ApplicationCore.Services
         private readonly IRepository<ServiceFeedback> _repository;
         private readonly IUnitOfWok _unitOfWok;
 
-        public FeedbackService(IRepository<ServiceFeedback> repository,IUnitOfWok unitOfWok)
+        public FeedbackService(IRepository<ServiceFeedback> repository,
+            IUnitOfWok unitOfWok)
         {
             this._repository = repository;
             this._unitOfWok = unitOfWok;

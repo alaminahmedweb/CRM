@@ -20,10 +20,16 @@
                             @Html.DisplayNameFor(model => model.Address)
                         </th>
                         <th>
+                            @Html.DisplayNameFor(model => model.CityName)
+                        </th>
+                        <th>
                             @Html.DisplayNameFor(model => model.AreaName)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.MpoName)
+                            @Html.DisplayNameFor(model => model.SubAreaName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeName)
                         </th>
                         <th>Action</th>
                     </tr>
@@ -39,10 +45,16 @@
                                 @Html.DisplayFor(modelItem => item.Address)
                             </td>
                             <td>
+                                @Html.DisplayFor(modelItem => item.CityName)
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.AreaName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.MpoName)
+                                @Html.DisplayFor(modelItem => item.SubAreaName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeName)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "GetFollowupsByCustId", new {  id=item.CustomerId }) |
@@ -54,5 +66,4 @@
             </table>
         </div>
     </div>
-</div>
 </div>

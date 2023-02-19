@@ -115,7 +115,9 @@ namespace Infrastructure.Data.Queries
         public IEnumerable<CustomerDto> GetDailyFollowupList(DateTime date)
         {
             var result = (from cus in _dbContext.Customers
-                          join ar in _dbContext.Areas on cus.SubAreaId equals ar.Id
+                          join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                          join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                          join cty in _dbContext.Cities on ar.CityId equals cty.Id
                           join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
                           join fol in _dbContext.Followups.Where(a=>a.FollowupCallDate==date.Date) 
                           on cus.Id equals fol.CustomerId 
@@ -124,7 +126,9 @@ namespace Infrastructure.Data.Queries
                               CustomerId = cus.Id,
                               CustomerName = cus.ClientName,
                               Address = cus.Address,
+                              CityName=cty.Name,
                               AreaName = ar.Name,
+                              SubAreaName=sar.Name,
                               EmployeeName = emp.Name,
                               FollowupDate = fol.FollowupCallDate.ToString("dd/MM/yyyy")
                           }).Distinct().ToList();
@@ -136,7 +140,9 @@ namespace Infrastructure.Data.Queries
                 follouwupdto.CustomerId = data.CustomerId;
                 follouwupdto.CustomerName = data.CustomerName;
                 follouwupdto.Address = data.Address;
+                follouwupdto.CityName = data.CityName;
                 follouwupdto.AreaName = data.AreaName;
+                follouwupdto.SubAreaName = data.SubAreaName;
                 follouwupdto.EmployeeName = data.EmployeeName;
                 followupDtos.Add(follouwupdto);
             }

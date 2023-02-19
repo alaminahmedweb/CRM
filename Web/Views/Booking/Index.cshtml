@@ -30,27 +30,6 @@
 
                     </div>
 
-                    <table id="tblPersonDetails" class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Contract Person</th>
-                                <th>DesignationId</th>
-                                <th>Designation</th>
-                                <th>Mobile No</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.ContractDetails)
-                            {
-                                <tr>
-                                    <td>@item.Name</td>
-                                    <td>@item.Designation</td>
-                                    <td>@item.MobileNo</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                    <br />
                     <div class="form-group row">
                         <label asp-for="Address" class="control-label col-2">Location/Address</label>
                         <div class="col-2">
@@ -106,7 +85,26 @@
 
                         </tbody>
                     </table>
-                    <br />
+                    <table id="tblPersonDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Contract Person</th>
+                                <th>DesignationId</th>
+                                <th>Designation</th>
+                                <th>Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ContractDetails)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Designation</td>
+                                    <td>@item.MobileNo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                     <div class="form-group row">
                         <label asp-for="ServiceName" class="col-sm-2 control-label">Service Name</label>
                         <div class="col-2">
@@ -118,20 +116,14 @@
                             <input asp-for="CustomerDoTheWorkingMonth" class="form-control" />
                             <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
                         </div>
-
-                    </div>
-
-                    <div class="form-group row">
-                        <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
-                        <div class="col-2">
-                            <input asp-for="OfferAmount" class="form-control" />
-                            <span asp-validation-for="OfferAmount" class="text-danger"></span>
-                        </div>
-                        <label asp-for="AgreeAmount" class="control-label col-2">Agree/Booking Amount</label>
+                        <label asp-for="AgreeAmount" class="control-label col-2">Booking Amount</label>
                         <div class="col-2">
                             <input asp-for="AgreeAmount" class="form-control" />
                             <span asp-validation-for="AgreeAmount" class="text-danger"></span>
                         </div>
+                    </div>
+
+                    <div class="form-group row">
                     </div>
                     <div class="row col-sm-12">
                         <div class="col-sm-6">

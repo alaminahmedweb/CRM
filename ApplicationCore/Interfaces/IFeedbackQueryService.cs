@@ -10,5 +10,6 @@ namespace ApplicationCore.Interfaces
     public interface IFeedbackQueryService
     {
         List<ServiceFeedbackDto> GetBookingList(DateTime date);
+        ServiceFeedbackDto GetBookingListByid(int id);
     }
 }

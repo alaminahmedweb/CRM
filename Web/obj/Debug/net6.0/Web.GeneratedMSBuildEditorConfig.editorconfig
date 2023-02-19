@@ -147,6 +147,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/AddFeedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZEZlZWRiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
