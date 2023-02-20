@@ -87,7 +87,8 @@
                     @Html.DisplayFor(modelItem => item.EntryDateTime)
                 </td>
                 <td>
-                    @Html.ActionLink("Add feedback", "AddFeedback", new { BookingId=item.BookingId })
+                    @Html.ActionLink("Add feedback", "AddFeedback", new { BookingId=item.BookingId })|
+                    @Html.ActionLink("Add Complain", "AddComplain", new { BookingId=item.BookingId })
                 </td>
             </tr>
         }

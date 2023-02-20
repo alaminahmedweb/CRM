@@ -12,15 +12,18 @@ namespace Web.Controllers
         private readonly IFeedbackQueryService _feedbackQueryService;
         private readonly IMapper _mapper;
         private readonly IFeedbackService _feedbackService;
+        private readonly IComplainRegisterService _complainRegisterService;
 
         public ServiceFeedbackController(IFeedbackQueryService feedbackQueryService,
             IMapper mapper,
-            IFeedbackService feedbackService
+            IFeedbackService feedbackService,
+            IComplainRegisterService complainRegisterService
             )
         {
             this._feedbackQueryService = feedbackQueryService;
             this._mapper = mapper;
             this._feedbackService = feedbackService;
+            this._complainRegisterService = complainRegisterService;
         }
         public IActionResult Index()
         {
@@ -35,12 +38,41 @@ namespace Web.Controllers
             return View(bookingInfoVM);
         }
         [HttpPost]
-        public IActionResult AddFeedback(ServiceFeedback serviceFeedback)
+        public async Task<IActionResult> AddFeedback(ServiceFeedback serviceFeedback)
         {
             try
             {
-                _feedbackService.AddEntity(serviceFeedback);
-                return RedirectToAction("Index");
+                int id= await _feedbackService.AddEntity(serviceFeedback);
+                if(id!=0)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.Message);
+                throw new Exception();
+            }
+        }
+        //
+        public IActionResult AddComplain(int BookingId)
+        {
+            var bookingInfo = _feedbackQueryService.GetBookingListByid(BookingId);
+            var bookingInfoVM = _mapper.Map<ServiceFeedbackDto, ComplainRegisterVM>(bookingInfo);
+            return View(bookingInfoVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddComplain(ComplainRegister complainRegister)
+        {
+            try
+            {
+                int id= await _complainRegisterService.AddEntity(complainRegister);
+                if(id!=0)
+                {
+                    return RedirectToAction("Index");
+                }
+                return View();
 
             }
             catch (Exception ex)

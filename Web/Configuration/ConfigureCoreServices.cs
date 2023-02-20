@@ -31,6 +31,7 @@ namespace Web.Configuration
             services.AddScoped<IBrandService, BrandService>();
             services.AddScoped<IDesignationService, DesignationService>();
             services.AddScoped<IMonthListService, MonthListService>();
+            services.AddScoped<IComplainRegisterService, ComplainRegisterService>();
 
             return services;
         }

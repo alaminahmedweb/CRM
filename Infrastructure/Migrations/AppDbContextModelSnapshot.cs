@@ -151,6 +151,31 @@ namespace Infrastructure.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("ApplicationCore.Entities.ComplainRegister", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ComplainDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ComplainDetails")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookingId");
+
+                    b.ToTable("Complains");
+                });
+
             modelBuilder.Entity("ApplicationCore.Entities.ContactBy", b =>
                 {
                     b.Property<int>("Id")
@@ -431,6 +456,9 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("BookingId")
+                        .HasColumnType("int");
+
                     b.Property<string>("CompanyFeedback")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -442,12 +470,9 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("EntryDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("bookingId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("bookingId");
+                    b.HasIndex("BookingId");
 
                     b.ToTable("ServiceFeedbacks");
                 });
@@ -606,6 +631,17 @@ namespace Infrastructure.Migrations
                     b.Navigation("Customer");
                 });
 
+            modelBuilder.Entity("ApplicationCore.Entities.ComplainRegister", b =>
+                {
+                    b.HasOne("ApplicationCore.Entities.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("BookingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+                });
+
             modelBuilder.Entity("ApplicationCore.Entities.ContractDetails", b =>
                 {
                     b.HasOne("ApplicationCore.Entities.Customer", "Customer")
@@ -675,7 +711,7 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("ApplicationCore.Entities.Booking", "Booking")
                         .WithMany()
-                        .HasForeignKey("bookingId")
+                        .HasForeignKey("BookingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
