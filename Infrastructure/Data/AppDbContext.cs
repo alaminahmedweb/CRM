@@ -79,5 +79,6 @@ namespace Infrastructure.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<MonthList> MonthList { get; set; }
         public DbSet<ComplainRegister> Complains { get; set; }
+        public DbSet<ComplainFeedback> ComplainFeedback { get; set; }
     }
 }

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Web.ViewModels.ComplainFeedbackVM>
+
+@{
+    ViewData["Title"] = "Daily Complain List";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamLeaderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TeamName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubAreaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplainDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComplainDetails)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionTakenDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActionTakenAgainstComplain)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeamLeaderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShiftName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AreaName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubAreaName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComplainDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ComplainDetails)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionTakenDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionTakenAgainstComplain)
+                </td>
+                <td>
+                    @Html.ActionLink("Add feedback", "AddComplainFeedback", new { ComplainId=item.ComplainId }))
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

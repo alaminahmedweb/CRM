@@ -151,6 +151,31 @@ namespace Infrastructure.Migrations
                     b.ToTable("Cities");
                 });
 
+            modelBuilder.Entity("ApplicationCore.Entities.ComplainFeedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActionTakenAgainstComplain")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ActionTakenDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ComplainId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComplainId");
+
+                    b.ToTable("ComplainFeedback");
+                });
+
             modelBuilder.Entity("ApplicationCore.Entities.ComplainRegister", b =>
                 {
                     b.Property<int>("Id")
@@ -629,6 +654,17 @@ namespace Infrastructure.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("ApplicationCore.Entities.ComplainFeedback", b =>
+                {
+                    b.HasOne("ApplicationCore.Entities.ComplainRegister", "ComplainRegister")
+                        .WithMany()
+                        .HasForeignKey("ComplainId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ComplainRegister");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.ComplainRegister", b =>

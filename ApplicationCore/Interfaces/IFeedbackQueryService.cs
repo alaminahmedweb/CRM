@@ -11,5 +11,7 @@ namespace ApplicationCore.Interfaces
     {
         List<ServiceFeedbackDto> GetBookingList(DateTime date);
         ServiceFeedbackDto GetBookingListByid(int id);
+        List<ComplainFeedbackDto> GetDailyComplainList(DateTime date);
+        ComplainFeedbackDto GetComplainDetailsById(int id);
     }
 }

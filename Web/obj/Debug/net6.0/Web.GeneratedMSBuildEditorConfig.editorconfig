@@ -151,8 +151,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZENvbXBsYWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/AddComplainFeedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZENvbXBsYWluRmVlZGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/AddFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZEZlZWRiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/DailyComplainList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXERhaWx5Q29tcGxhaW5MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CRM_Solution/CRM_Solution/Web/Views/ServiceFeedback/Index.cshtml]

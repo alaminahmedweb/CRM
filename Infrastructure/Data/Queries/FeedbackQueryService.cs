@@ -147,5 +147,118 @@ namespace Infrastructure.Data.Queries
 
         }
 
+        public ComplainFeedbackDto GetComplainDetailsById(int id)
+        {
+            var complainInfo = (from comp in _dbContext.Complains.Where(a => a.Id == id)
+                                join bk in _dbContext.Bookings on comp.BookingId equals bk.Id
+                                join tm in _dbContext.Teams on bk.TeamId equals tm.Id
+                                join sft in _dbContext.ShiftInfos on bk.ShiftId equals sft.Id
+                                join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                                join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                                join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                                join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                                select new
+                                {
+                                    CompainId = comp.Id,
+                                    CompainDate = comp.ComplainDate,
+                                    ComplainDetails = comp.ComplainDetails,
+                                    TeamName = tm.Name,
+                                    TeamLeaderName = tm.TeamLeaderName,
+                                    ShiftName = sft.Name,
+                                    BookingDate = bk.BookingDate,
+                                    AgreeAmount = fol.AgreeAmount,
+                                    OrganizationName = cus.ClientName,
+                                    Address = cus.Address,
+                                    CityName = cty.Name,
+                                    AreaName = ar.Name,
+                                    SubAreaName = sar.Name
+                                }).ToList();
+
+            ComplainFeedbackDto feedbackDto = new ComplainFeedbackDto();
+            foreach (var item in complainInfo)
+            {
+                feedbackDto.ComplainId = item.CompainId;
+                feedbackDto.ComplainDetails = item.ComplainDetails;
+                feedbackDto.ComplainDate = item.CompainDate;
+                feedbackDto.TeamName = item.TeamName;
+                feedbackDto.TeamLeaderName = item.TeamLeaderName;
+                feedbackDto.ShiftName = item.ShiftName;
+                feedbackDto.BookingDate = item.BookingDate;
+                feedbackDto.Amount = item.AgreeAmount;
+                feedbackDto.CustomerName = item.OrganizationName;
+                feedbackDto.Address = item.Address;
+                feedbackDto.CityName = item.CityName;
+                feedbackDto.AreaName = item.AreaName;
+                feedbackDto.SubAreaName = item.SubAreaName;
+            }
+
+            return feedbackDto;
+        }
+
+        public List<ComplainFeedbackDto> GetDailyComplainList(DateTime date)
+        {
+            var complainInfo = (from comp in _dbContext.Complains.Where(a=> a.ComplainDate==date.Date)
+                               join bk in _dbContext.Bookings on comp.BookingId equals bk.Id
+                               join tm in _dbContext.Teams on bk.TeamId equals tm.Id
+                               join sft in _dbContext.ShiftInfos on bk.ShiftId equals sft.Id
+                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                               join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                               select new
+                               {
+                                   CompainId=comp.Id,
+                                   CompainDate = comp.ComplainDate,
+                                   ComplainDetails=comp.ComplainDetails,
+                                   TeamName = tm.Name,
+                                   TeamLeaderName = tm.TeamLeaderName,
+                                   ShiftName = sft.Name,
+                                   BookingDate = bk.BookingDate,
+                                   AgreeAmount = fol.AgreeAmount,
+                                   OrganizationName = cus.ClientName,
+                                   Address = cus.Address,
+                                   CityName = cty.Name,
+                                   AreaName = ar.Name,
+                                   SubAreaName = sar.Name
+                               }).ToList();
+
+            var resultFinal = from comp in complainInfo
+                              join fd in _dbContext.ComplainFeedback
+                              on comp.CompainId equals fd.ComplainId
+                              into compfd
+                              from result in compfd.DefaultIfEmpty()
+                              orderby comp.CompainId
+                              select new
+                              {
+                                  comp,
+                                  result
+                              };
+            List<ComplainFeedbackDto> feedbackDtos = new List<ComplainFeedbackDto>();
+            foreach (var item in resultFinal)
+            {
+                ComplainFeedbackDto feedbackDto = new ComplainFeedbackDto();
+                feedbackDto.ComplainId = item.comp.CompainId;
+                feedbackDto.ComplainDetails = item.comp.ComplainDetails;
+                feedbackDto.ComplainDate = item.comp.CompainDate;
+                feedbackDto.TeamName = item.comp.TeamName;
+                feedbackDto.TeamLeaderName = item.comp.TeamLeaderName;
+                feedbackDto.ShiftName = item.comp.ShiftName;
+                feedbackDto.BookingDate = item.comp.BookingDate;
+                feedbackDto.Amount = item.comp.AgreeAmount;
+                feedbackDto.CustomerName = item.comp.OrganizationName;
+                feedbackDto.Address = item.comp.Address;
+                feedbackDto.CityName = item.comp.CityName;
+                feedbackDto.AreaName = item.comp.AreaName;
+                feedbackDto.SubAreaName = item.comp.SubAreaName;
+                feedbackDto.ActionTakenAgainstComplain = item.result == null ? "" : item.result.ActionTakenAgainstComplain;
+                feedbackDto.ActionTakenDate = item.result == null ? null : item.result.ActionTakenDate;
+                feedbackDtos.Add(feedbackDto);
+            }
+
+            return feedbackDtos;
+
+        }
     }
 }

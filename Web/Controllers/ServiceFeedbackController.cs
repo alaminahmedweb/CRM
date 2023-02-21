@@ -13,17 +13,20 @@ namespace Web.Controllers
         private readonly IMapper _mapper;
         private readonly IFeedbackService _feedbackService;
         private readonly IComplainRegisterService _complainRegisterService;
+        private readonly IComplainFeedbackService _complainFeedbackService;
 
         public ServiceFeedbackController(IFeedbackQueryService feedbackQueryService,
             IMapper mapper,
             IFeedbackService feedbackService,
-            IComplainRegisterService complainRegisterService
+            IComplainRegisterService complainRegisterService,
+            IComplainFeedbackService complainFeedbackService
             )
         {
             this._feedbackQueryService = feedbackQueryService;
             this._mapper = mapper;
             this._feedbackService = feedbackService;
             this._complainRegisterService = complainRegisterService;
+            this._complainFeedbackService = complainFeedbackService;
         }
         public IActionResult Index()
         {
@@ -81,5 +84,37 @@ namespace Web.Controllers
                 throw;
             }
         }
+        public IActionResult DailyComplainList()
+        {
+            var complainInfo = _feedbackQueryService.GetDailyComplainList(DateTime.Now);
+            var complainInfoVM = _mapper.Map<List<ComplainFeedbackDto>, List<ComplainFeedbackVM>>(complainInfo);
+            return View(complainInfoVM);
+        }
+
+        public IActionResult AddComplainFeedback(int ComplainId)
+        {
+            var complainInfo =_feedbackQueryService.GetComplainDetailsById(ComplainId);
+            var complainInfoVM =_mapper.Map<ComplainFeedbackDto, ComplainFeedbackVM>(complainInfo);
+            return View(complainInfoVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddComplainFeedback(ComplainFeedback complainFeedback)
+        {
+            try
+            {
+                int id = await _complainFeedbackService.AddEntity(complainFeedback);
+                if (id != 0)
+                {
+                    return RedirectToAction("DailyComplainList");
+                }
+                return View();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.Message);
+                throw new Exception();
+            }
+        }
+
     }
 }
