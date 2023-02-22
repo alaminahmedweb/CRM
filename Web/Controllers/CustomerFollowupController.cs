@@ -1,4 +1,5 @@
-﻿using ApplicationCore.Entities;
+﻿using ApplicationCore.DtoModels;
+using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ namespace Web.Controllers
         private readonly ICityService _cityService;
         private readonly ISubAreaService _subAreaService;
         private readonly IBrandService _brandService;
+        private readonly ICustomerFollowupService _customerFollowupService;
 
         public CustomerFollowupController(IContactByService contactByService,
             IEmployeeService mpoService,
@@ -32,7 +34,8 @@ namespace Web.Controllers
             ICityService cityService,
             ISubAreaService subAreaService,
             IMonthListService monthListService,
-            IBrandService brandService
+            IBrandService brandService,
+            ICustomerFollowupService customerFollowupService
             )
         {
             this._mpoService = mpoService;
@@ -47,6 +50,7 @@ namespace Web.Controllers
             this._monthListService = monthListService;
             this._brandService = brandService;
             this._customerService = customerService;
+            this._customerFollowupService = customerFollowupService;
         }
         public async Task<IActionResult> Index()
         {
@@ -62,35 +66,76 @@ namespace Web.Controllers
             return View(customerFollowupVM);
         }
         [HttpPost]
-        public async Task<ActionResult> Index(CustomerFollowupVM customerFollowupVM)
+        public async Task<ActionResult> Save(CustomerFollowupMasterVM customerFollowupVM)
         {
             try
             {
-                ViewBag.ContactList = await _contactByService.GetAllAsync();
-                ViewBag.MpoList = await _mpoService.GetAllAsync();
-                ViewBag.AreaList = await _areaService.GetAllAsync();
-                ViewBag.MonthList = await _monthListService.GetAllAsync();
+                CustomerFollowupDto customerFollowupDto = new CustomerFollowupDto();
+                customerFollowupDto.Name = customerFollowupVM.CustomerFollowup.Name;
+                customerFollowupDto.Address = customerFollowupVM.CustomerFollowup.Address;
+                customerFollowupDto.SubAreaId = customerFollowupVM.CustomerFollowup.SubAreaId;
+                customerFollowupDto.NoOfFloor = customerFollowupVM.CustomerFollowup.NoOfFloor;
+                customerFollowupDto.NoOfFlat = customerFollowupVM.CustomerFollowup.NoOfFlat;
+                customerFollowupDto.ContactId = customerFollowupVM.CustomerFollowup.ContactId;
+                customerFollowupDto.EmployeeId = customerFollowupVM.CustomerFollowup.EmployeeId;
 
-                var customer = _mapper.Map<CustomerFollowupVM, Customer>(customerFollowupVM);//await _customerService.GetByIdAsync(customerFollowupVM.CustomerId);
-                if (customer != null)
+                customerFollowupDto.CallingDate = customerFollowupVM.CustomerFollowup.CallingDate;
+                customerFollowupDto.OfferAmount = customerFollowupVM.CustomerFollowup.OfferAmount;
+                customerFollowupDto.AgreeAmount = customerFollowupVM.CustomerFollowup.AgreeAmount;
+                customerFollowupDto.CustomerDoTheWorkingMonth = customerFollowupVM.CustomerFollowup.CustomerDoTheWorkingMonth;
+                customerFollowupDto.Remarks = customerFollowupVM.CustomerFollowup.Remarks;
+                customerFollowupDto.PositiveOrNegative = customerFollowupVM.CustomerFollowup.PositiveOrNegative;
+                customerFollowupDto.DiscussionDetailsNote = customerFollowupVM.CustomerFollowup.DiscussionDetailsNote;
+                customerFollowupDto.MarketingNextPlan = customerFollowupVM.CustomerFollowup.MarketingNextPlan;
+                customerFollowupDto.FollowupCallDate = customerFollowupVM.CustomerFollowup.FollowupCallDate;
+                customerFollowupDto.Status = customerFollowupVM.CustomerFollowup.Status;
+                customerFollowupDto.ServiceTypeId = customerFollowupVM.CustomerFollowup.ServiceTypeId;
+
+                foreach (var item in customerFollowupVM.BuildingDetails)
                 {
-                    int custId = await _customerService.AddEntity(customer);
-                    Followup followup = _mapper.Map<CustomerFollowupVM, Followup>(customerFollowupVM);
-                    followup.CustomerId = custId;
-                    int followupId = await _followupService.AddEntity(followup);
-                    if (followup.Status == "Confirmed")
-                    {
-                        return RedirectToAction("Index", "Booking", new { id = followupId });
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index");
-                    }
+                    BuildingDetailsDto buildingDetails = new BuildingDetailsDto();
+                    buildingDetails.BrandId = item.BrandId;
+                    buildingDetails.Quantity = item.Quantity;
+                    buildingDetails.Capacity = item.Capacity;
+                    customerFollowupDto.BuildingDetails.Add(buildingDetails);
                 }
-                else
+                foreach (var item in customerFollowupVM.ContractDetails)
                 {
-                    return View();
+                    ContractDetailsDto contractDetails = new ContractDetailsDto();
+                    contractDetails.Name = item.Name;
+                    contractDetails.MobileNo = item.MobileNo;
+                    contractDetails.DesignationId = item.DesignationId;
+                    customerFollowupDto.ContractDetails.Add(contractDetails);
                 }
+
+
+                //var customerFollowup =_mapper.Map<CustomerFollowupMasterVM, CustomerFollowupMasterDto>(customerFollowupVM);
+                await _customerFollowupService.AddEntity(customerFollowupDto);
+                return View();
+            //    var customer = _mapper.Map<CustomerFollowupMasterVM, Customer>(customerFollowupVM);
+            //    if (customer != null)
+            //    {
+            //        int custId = await _customerService.AddEntity(customer);
+            //        Followup followup = _mapper.Map<CustomerFollowupMasterVM, Followup>(customerFollowupVM);
+            //        followup.CustomerId = custId;
+            //        int followupId = await _followupService.AddEntity(followup);
+            //        if (followup.Status == "Confirmed")
+            //        {
+            //            return RedirectToAction("Index", "Booking", new { id = followupId });
+            //        }
+            //        else
+            //        {
+            //            ViewBag.ContactList = await _contactByService.GetAllAsync();
+            //            ViewBag.MpoList = await _mpoService.GetAllAsync();
+            //            ViewBag.AreaList = await _areaService.GetAllAsync();
+            //            ViewBag.MonthList = await _monthListService.GetAllAsync();
+            //            return RedirectToAction("Index");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        return View();
+            //    }
             }
             catch (Exception ex)
             {

@@ -258,7 +258,6 @@ namespace Infrastructure.Data.Queries
             }
 
             return feedbackDtos;
-
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Infrastructure.Data.Queries
                               SubAreaName=subar.Name,
                               NoOfFloor=cus.NoOfFloor,
                               NoOfFlat=cus.NoOfFlat,
-                              serviceTypeId=fol.ServiceTypeId,
+                              ServiceTypeId=fol.ServiceTypeId,
                               OfferAmount=fol.OfferAmount,
                               AgreeAmount=fol.AgreeAmount,
                               CustomerDoTheWorkingMonth=fol.CustomerDoTheWorkingMonth,
@@ -61,7 +61,7 @@ namespace Infrastructure.Data.Queries
                 customerFollowupDto.SubAreaName = data.SubAreaName;
                 customerFollowupDto.NoOfFloor = data.NoOfFloor;
                 customerFollowupDto.NoOfFlat = data.NoOfFlat;
-                customerFollowupDto.serviceTypeId = data.serviceTypeId;
+                customerFollowupDto.ServiceTypeId = data.ServiceTypeId;
                 customerFollowupDto.OfferAmount = data.OfferAmount;
                 customerFollowupDto.AgreeAmount = data.AgreeAmount;
                 customerFollowupDto.CustomerDoTheWorkingMonth = data.CustomerDoTheWorkingMonth;
@@ -130,7 +130,7 @@ namespace Infrastructure.Data.Queries
                               AreaName = ar.Name,
                               SubAreaName=sar.Name,
                               EmployeeName = emp.Name,
-                              FollowupDate = fol.FollowupCallDate.ToString("dd/MM/yyyy")
+                              FollowupDate = fol.FollowupCallDate//.ToString("dd/MM/yyyy")
                           }).Distinct().ToList();
 
             List<CustomerDto> followupDtos = new List<CustomerDto>();
@@ -196,7 +196,7 @@ namespace Infrastructure.Data.Queries
                 followupDetailsDto.CallingDate = data.CallingDate;
                 followupDetailsDto.OfferAmount = data.OfferAmount;
                 followupDetailsDto.AgreeAmount = data.AgreeAmount;
-                followupDetailsDto.CustomerDoTheWorkingMonth = data.CustomerDoTheWorkingMonth.ToString();
+                followupDetailsDto.CustomerDoTheWorkingMonthName = data.CustomerDoTheWorkingMonth.ToString();
                 followupDetailsDto.Remarks = data.Remarks;
                 followupDetailsDto.PositiveOrNegative = data.PositiveOrNegative;
                 followupDetailsDto.DiscussionDetailsNote = data.DiscussionDetailsNote;

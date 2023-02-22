@@ -33,6 +33,7 @@ namespace Web.Configuration
             services.AddScoped<IMonthListService, MonthListService>();
             services.AddScoped<IComplainRegisterService, ComplainRegisterService>();
             services.AddScoped<IComplainFeedbackService, ComplainFeedbackService>();
+            services.AddScoped<ICustomerFollowupService, CustomerFollowupService>();
 
             return services;
         }

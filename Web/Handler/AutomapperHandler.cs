@@ -21,6 +21,7 @@ namespace Web.Handler
             CreateMap<ContractDetailsDto, ContractDetailsVM>().ReverseMap();
             CreateMap<ServiceFeedbackDto, ComplainRegisterVM>().ReverseMap();
             CreateMap<ComplainFeedbackDto, ComplainFeedbackVM>().ReverseMap();
+            CreateMap<CustomerFollowupMasterDto, CustomerFollowupMasterVM>().ReverseMap();
         }
     }
 }

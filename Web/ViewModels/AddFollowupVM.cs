@@ -41,7 +41,7 @@ namespace Web.ViewModels
         public DateTime FollowupCallDate { get; set; } = DateTime.Now;
         [Required]
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
-        public int serviceTypeId { get; set; }
+        public int ServiceTypeId { get; set; }
 
         public int CustomerId { get; set; } = 0;//FK
 

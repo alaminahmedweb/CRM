@@ -113,16 +113,16 @@
                             <input asp-for="CallingDate" class="col-sm-2 form-control" />
                             <span asp-validation-for="CallingDate" class="text-danger"></span>
                         </div>
-                        <label asp-for="serviceTypeId" class="col-sm-2 control-label">Service Name</label>
+                        <label asp-for="ServiceTypeId" class="col-sm-2 control-label">Service Name</label>
                         <div class="col-2">
-                            <select asp-for="serviceTypeId" class="col-sm-2 form-control">
+                            <select asp-for="ServiceTypeId" class="col-sm-2 form-control">
                                 <option value="-1">Select Service Type</option>
                                 @foreach (var item in ViewBag.ServiceList)
                                 {
                                     <option value="@item.Id">@item.Name</option>
                                 }
                             </select>
-                            <span asp-validation-for="serviceTypeId" class="text-danger"></span>
+                            <span asp-validation-for="ServiceTypeId" class="text-danger"></span>
                         </div>
                         <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
                         <div class="col-sm-2">
