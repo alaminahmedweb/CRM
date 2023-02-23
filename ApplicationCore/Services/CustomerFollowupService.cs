@@ -79,7 +79,7 @@ namespace ApplicationCore.Services
                 followup.ServiceTypeId = entity.ServiceTypeId;
                 await _followupRepository.AddEntity(followup);
                 await _unitOfWok.SaveChangesAsync();
-                return customer.Id;
+                return followup.Id;
             }
             catch (Exception ex)
             {

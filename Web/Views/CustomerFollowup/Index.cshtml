@@ -260,8 +260,8 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#btnAddPerson').click(function () {
+        $(document).ready(function() {
+            $('#btnAddPerson').click(function() {
                 var contractPerson = $('#ContractPerson').val();
                 var designationId = $('#DesignationId').val();
                 var designationName = $('#DesignationId option:selected').text();
@@ -273,7 +273,7 @@
                 $('#ContractPerson').val("");
             });
 
-            $('#btnAddBuildingDetails').click(function () {
+            $('#btnAddBuildingDetails').click(function() {
                 var brandId = $('#BrandId').val();
                 var brandName = $('#BrandId option:selected').text();
                 var quantity = $('#Quantity').val();
@@ -291,7 +291,7 @@
             var areaId = $('#AreaId');
             var subAreaId = $('#SubAreaId');
 
-            $('#CityId').change(function () {
+            $('#CityId').change(function() {
                 if ($(this).val() == "-1") {
                     areaId.empty();
                     subAreaId.empty();
@@ -311,9 +311,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function (response) {
+                        success: function(response) {
                             areaId.prop('disable', false),
-                                $.each(response, function (index, item) {
+                                $.each(response, function(index, item) {
                                     areaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -324,7 +324,7 @@
                 }
                 //}
             });
-            $('#AreaId').change(function () {
+            $('#AreaId').change(function() {
                 if ($(this).val() == "-1") {
                     subAreaId.empty();
                     $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
@@ -338,9 +338,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function (response) {
+                        success: function(response) {
                             areaId.prop('disable', false),
-                                $.each(response, function (index, item) {
+                                $.each(response, function(index, item) {
                                     subAreaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -350,134 +350,91 @@
                     });
                 }
             });
-        });
 
+            $('#SaveCustomerAndFollowup').click(function() {
+                var customers = [];
+                var buildings = [];
 
+                var tContact = $("table #tblPersonDetails");
+                tContact.find('tr').each(function() {
+                    tContactInfo = $(this).find('td').text();
+                    if (tContactInfo != '') {
+                        var $ctd = $(this).find('td'),
+                            tcPerson = $ctd.eq(0).text(),
+                            tcDesignationId = $ctd.eq(1).text(),
+                            tcDesignation = $ctd.eq(2).text(),
+                            tcMobile = $ctd.eq(3).text();
+                        var Customer = {
+                            Name: tcPerson,
+                            DesignationId: tcDesignationId,
+                            MobileNo: tcMobile,
+                        };
+                        customers.push(Customer);
+                    }
+                });
 
+                var tblBuilding = $("table #tblBuldingDetails");
+                tblBuilding.find('tr').each(function() {
+                    tBuldingInfo = $(this).find('td').text();
+                    if (tBuldingInfo != '') {
+                        var $btd = $(this).find('td'),
+                            tbId = $btd.eq(0).text(),
+                            tbName = $btd.eq(1).text(),
+                            tbQuantity = $btd.eq(2).text(),
+                            tbCapacity = $btd.eq(3).text();
+                        var Building = {
+                            BrandId: tbId,
+                            Quantity: tbQuantity,
+                            Capacity: tbCapacity,
+                        };
+                        buildings.push(Building);
+                    }
+                });
 
-
-        $('#SaveCustomerAndFollowup').click(function () {
-            var customers = [];
-            var buildings = [];
-
-            var tContact = $("table #tblPersonDetails");
-            tContact.find('tr').each(function () {
-                tContactInfo = $(this).find('td').text();
-                if (tContactInfo != '') {
-                    var $ctd = $(this).find('td'),
-                        tcPerson = $ctd.eq(0).text(),
-                        tcDesignationId = $ctd.eq(1).text(),
-                        tcDesignation = $ctd.eq(2).text(),
-                        tcMobile = $ctd.eq(3).text();
-                    var Customer = {
-                        Name: tcPerson,
-                        DesignationId: tcDesignationId,
-                        MobileNo: tcMobile,
-                    };
-                    customers.push(Customer);
+                var followup = {
+                    CallingDate: $('#CallingDate').val(),
+                    ServiceTypeId: $('#ServiceTypeId option:selected').val(),
+                    Name: $('#Name').val(),
+                    OfferAmount: $('#OfferAmount').val(),
+                    AgreeAmount: $('#AgreeAmount').val(),
+                    CustomerDoTheWorkingMonth: $('#CustomerDoTheWorkingMonth option:selected').val(),
+                    Address: $('#Address').val(),
+                    SubAreaId: $('#SubAreaId option:selected').val(),
+                    Remarks: $('#Remarks').val(),
+                    ContactId: $('#ContactId option:selected').val(),
+                    PositiveOrNegative: $('#PositiveOrNegative option:selected').val(),
+                    NoOfFloor: $('#NoOfFloor').val(),
+                    NoOfFlat: $('#NoOfFlat').val(),
+                    DiscussionDetailsNote: $('#DiscussionDetailsNote').val(),
+                    MarketingNextPlan: $('#MarketingNextPlan').val(),
+                    FollowupCallDate: $('#FollowupCallDate').val(),
+                    EmployeeId: $('#EmployeeId option:selected').val(),
+                    Status: $('#Status option:selected').val(),
                 }
-            });
 
-            var tblBuilding = $("table #tblBuldingDetails");
-            tblBuilding.find('tr').each(function () {
-                tBuldingInfo = $(this).find('td').text();
-                if (tBuldingInfo != '') {
-                    var $btd = $(this).find('td'),
-                        tbId = $btd.eq(0).text(),
-                        tbName = $btd.eq(1).text(),
-                        tbQuantity = $btd.eq(2).text(),
-                        tbCapacity = $btd.eq(3).text();
-                    var Building = {
-                        BrandId: tbId,
-                        Quantity: tbQuantity,
-                        Capacity: tbCapacity,
-                    };
-                    buildings.push(Building);
+                var model = {
+                    "CustomerFollowup": followup,
+                    "ContractDetails": customers,
+                    "BuildingDetails": buildings,
                 }
+
+                $.ajax({
+                    type: "post",
+                    url: "/CustomerFollowup/Save",
+                    data: model,
+                    datatype: "json",
+                    //cache: false,
+                    success: function(data) {
+                        //alert("You Multiple Data Passed Successfully");
+                        alert(data.redirecturl);
+                        window.location.href = data.redirecturl;
+                        //window.location.replace(data.redirecturl);
+                    },
+                    error: function(xhr) {
+                        alert('No Valid Data');
+                    }
+                });
             });
-
-            var followup = {
-                CallingDate: $('#CallingDate').val(),
-                ServiceTypeId: $('#ServiceTypeId option:selected').val(),
-                Name: $('#Name').val(),
-                OfferAmount: $('#OfferAmount').val(),
-                AgreeAmount: $('#AgreeAmount').val(),
-                CustomerDoTheWorkingMonth: $('#CustomerDoTheWorkingMonth option:selected').val(),
-                Address: $('#Address').val(),
-                SubAreaId: $('#SubAreaId option:selected').val(),
-                Remarks: $('#Remarks').val(),
-                ContactId: $('#ContactId option:selected').val(),
-                PositiveOrNegative: $('#PositiveOrNegative option:selected').val(),
-                NoOfFloor: $('#NoOfFloor').val(),
-                NoOfFlat: $('#NoOfFlat').val(),
-                DiscussionDetailsNote: $('#DiscussionDetailsNote').val(),
-                MarketingNextPlan: $('#MarketingNextPlan').val(),
-                FollowupCallDate: $('#FollowupCallDate').val(),
-                EmployeeId: $('#EmployeeId option:selected').val(),
-                Status: $('#Status option:selected').val(),
-            }
-
-            var model = {
-                "CustomerFollowup": followup,
-                "ContractDetails": customers,
-                "BuildingDetails": buildings,
-            }
-
-            //var model = {
-            //    //CustomerFollowup:
-            //    //{
-            //    //    CallingDate : $('#CallingDate').val(),
-            //    //    serviceTypeId : $('#serviceTypeId option:selected').val(),
-            //    //    Name : $('#Name').val(),
-            //    //    OfferAmount : $('#OfferAmount').val(),
-            //    //    AgreeAmount : $('#AgreeAmount').val(),
-            //    //    CustomerDoTheWorkingMonth : $('#CustomerDoTheWorkingMonth option:selected').val(),
-            //    //    Address : $('#Address').val(),
-            //    //    SubAreaId : $('#SubAreaId option:selected').val(),
-            //    //    Remarks : $('#Remarks').val(),
-            //    //    ContactId : $('#ContactId option:selected').val(),
-            //    //    PositiveOrNegative : $('#PositiveOrNegative option:selected').val(),
-            //    //    NoOfFloor : $('#NoOfFloor').val(),
-            //    //    NoOfFlat : $('#NoOfFlat').val(),
-            //    //    DiscussionDetailsNote : $('#DiscussionDetailsNote').val(),
-            //    //    MarketingNextPlan : $('#MarketingNextPlan').val(),
-            //    //    FollowupCallDate : $('#FollowupCallDate').val(),
-            //    //    MpoId : $('#MpoId option:selected').val(),
-            //    //    Status : $('#Status option:selected').val(),
-            //    //},
-            //    "Building": customer,
-            //    "ContractDetails": customers,
-            //    "BuildingDetails": buildings,
-            //};
-
-            //console.log(model); return false;
-
-            $.ajax({
-                type: "post",
-                url: "/CustomerFollowup/Save",
-                data: model,
-                datatype: "json",
-                cache: false,
-                success: function (data) {
-                    alert("You Multiple Data Passed Successfully");
-                },
-                error: function (xhr) {
-                    alert('No Valid Data');
-                }
-            });
-            //$.ajax({
-            //    type: "POST",
-            //    url: '@Url.Action("Index", "CustomerFollowup")', // 'Customer/Index',
-            //    data: model,
-            //    contentType: "application/json; charset=utf-8",
-            //    datatype: "json",
-            //    success: function (result) {
-
-            //    },
-            //    error: function (err) {
-            //        console.log(err);
-            //    }
-            //});
         });
     </script>
 }

@@ -108,34 +108,20 @@ namespace Web.Controllers
                     customerFollowupDto.ContractDetails.Add(contractDetails);
                 }
 
+                int followupId= await _customerFollowupService.AddEntity(customerFollowupDto);
 
-                //var customerFollowup =_mapper.Map<CustomerFollowupMasterVM, CustomerFollowupMasterDto>(customerFollowupVM);
-                await _customerFollowupService.AddEntity(customerFollowupDto);
-                return View();
-            //    var customer = _mapper.Map<CustomerFollowupMasterVM, Customer>(customerFollowupVM);
-            //    if (customer != null)
-            //    {
-            //        int custId = await _customerService.AddEntity(customer);
-            //        Followup followup = _mapper.Map<CustomerFollowupMasterVM, Followup>(customerFollowupVM);
-            //        followup.CustomerId = custId;
-            //        int followupId = await _followupService.AddEntity(followup);
-            //        if (followup.Status == "Confirmed")
-            //        {
-            //            return RedirectToAction("Index", "Booking", new { id = followupId });
-            //        }
-            //        else
-            //        {
-            //            ViewBag.ContactList = await _contactByService.GetAllAsync();
-            //            ViewBag.MpoList = await _mpoService.GetAllAsync();
-            //            ViewBag.AreaList = await _areaService.GetAllAsync();
-            //            ViewBag.MonthList = await _monthListService.GetAllAsync();
-            //            return RedirectToAction("Index");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        return View();
-            //    }
+                if (customerFollowupDto.Status == "Confirmed")
+                {
+                    return Json(new { redirecturl = "/Booking/Index/"+ followupId });
+                }
+                else
+                {
+                    ViewBag.ContactList = await _contactByService.GetAllAsync();
+                    ViewBag.MpoList = await _mpoService.GetAllAsync();
+                    ViewBag.AreaList = await _areaService.GetAllAsync();
+                    ViewBag.MonthList = await _monthListService.GetAllAsync();
+                    return Json(new { redirecturl = "/CustomerFollowup/Index/" });
+                }
             }
             catch (Exception ex)
             {
