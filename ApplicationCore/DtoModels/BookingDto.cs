@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ namespace ApplicationCore.DtoModels
 
 
         //Followup Portion
+        [DataType(DataType.Date)]
         public DateTime? CallingDate { get; set; } = DateTime.Now;
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
@@ -37,7 +39,9 @@ namespace ApplicationCore.DtoModels
         public string ServiceName { get; set; } = "";
         public int CustomerId { get; set; } = 0;//FK
 
+        [DataType(DataType.Date)]
         public DateTime? EntryDate { get; set; }=DateTime.Now;
+        [DataType(DataType.Date)]
         public DateTime? BookingDate { get; set; } = DateTime.Now;
 
         public int TeamId { get; set; }

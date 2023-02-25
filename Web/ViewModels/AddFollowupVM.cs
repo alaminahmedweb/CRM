@@ -44,8 +44,5 @@ namespace Web.ViewModels
         public int ServiceTypeId { get; set; }
 
         public int CustomerId { get; set; } = 0;//FK
-
-
-
     }
 }

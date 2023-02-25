@@ -4,6 +4,7 @@ namespace Web.ViewModels
 {
     public class BookingItemVM
     {
+        [DataType(DataType.Date)]
         public string? EntryDate { get; set; }
         [DataType(DataType.Date)]
         public string? BookingDate { get; set; }

@@ -1,7 +1,7 @@
 ﻿@model Web.ViewModels.ComplainRegisterVM
 
 @{
-    ViewData["Title"] = "AddFeedback";
+    ViewData["Title"] = "Add Complain";
 }
 
 <div class="row">
@@ -18,18 +18,18 @@
                     <div class="form-group row">
                         <label asp-for="CustomerName" class="col-sm-2 control-label">Customer Name</label>
                         <div class="col-2">
-                            <input asp-for="CustomerName" class="col-sm-2 form-control" />
+                            <input asp-for="CustomerName" class="form-control" />
                             <span asp-validation-for="CustomerName" class="text-danger"></span>
                         </div>
                         <label asp-for="Address" class="col-sm-2 control-label">Address</label>
                         <div class="col-2">
-                            <input asp-for="Address" class="col-sm-2 form-control" />
+                            <input asp-for="Address" class="form-control" />
                             <span asp-validation-for="Address" class="text-danger"></span>
                         </div>
 
                         <label asp-for="CityName" class="control-label col-sm-1">City</label>
                         <div class="col-2">
-                            <input asp-for="CityName" class="form-control col-sm-2" />
+                            <input asp-for="CityName" class="form-control" />
                             <span asp-validation-for="CityName" class="text-danger"></span>
                         </div>
                     </div>

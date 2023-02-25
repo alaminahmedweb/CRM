@@ -22,7 +22,7 @@ namespace ApplicationCore.DtoModels
         public double Amount { get; set; }
         public string CustomerFeedback { get; set; }
         public string CompanyFeedback { get; set; }
-        public DateTime? EntryDateTime { get; set; }
-
+        public DateTime? EntryDateTime { get; set; }=DateTime.Now;
+        public DateTime ComplainDate { get; set; } = DateTime.Now;
     }
 }

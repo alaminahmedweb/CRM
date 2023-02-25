@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace ApplicationCore.DtoModels
     public class ComplainFeedbackDto
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? BookingDate { get; set; }
         public string TeamName { get; set; }
         public string TeamLeaderName { get; set; }
@@ -20,8 +22,10 @@ namespace ApplicationCore.DtoModels
         public string SubAreaName { get; set; }
         public double Amount { get; set; }
         public int ComplainId { get; set; }
-        public DateTime ComplainDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime ComplainDate { get; set; } = DateTime.Now;
         public string ComplainDetails { get; set; }
+        [DataType(DataType.Date)]
         public DateTime? ActionTakenDate { get; set; } = DateTime.Now;
         public string? ActionTakenAgainstComplain { get; set; }
 

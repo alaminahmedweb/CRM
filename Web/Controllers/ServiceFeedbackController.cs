@@ -34,9 +34,9 @@ namespace Web.Controllers
             var bookingInfoVM= _mapper.Map<List<ServiceFeedbackDto>, List<ServiceFeedbackVM>>(bookingInfo);
             return View(bookingInfoVM);
         }
-        public IActionResult AddFeedback(int BookingId)
+        public IActionResult AddFeedback(int Id)
         {
-            var bookingInfo = _feedbackQueryService.GetBookingListByid(BookingId);
+            var bookingInfo = _feedbackQueryService.GetBookingListByid(Id);
             var bookingInfoVM = _mapper.Map<ServiceFeedbackDto, ServiceFeedbackVM>(bookingInfo);
             return View(bookingInfoVM);
         }
@@ -45,6 +45,7 @@ namespace Web.Controllers
         {
             try
             {
+                serviceFeedback.Id = 0;
                 int id= await _feedbackService.AddEntity(serviceFeedback);
                 if(id!=0)
                 {
@@ -59,9 +60,9 @@ namespace Web.Controllers
             }
         }
         //
-        public IActionResult AddComplain(int BookingId)
+        public IActionResult AddComplain(int Id)
         {
-            var bookingInfo = _feedbackQueryService.GetBookingListByid(BookingId);
+            var bookingInfo = _feedbackQueryService.GetBookingListByid(Id);
             var bookingInfoVM = _mapper.Map<ServiceFeedbackDto, ComplainRegisterVM>(bookingInfo);
             return View(bookingInfoVM);
         }
@@ -70,6 +71,7 @@ namespace Web.Controllers
         {
             try
             {
+                complainRegister.Id = 0;
                 int id= await _complainRegisterService.AddEntity(complainRegister);
                 if(id!=0)
                 {
@@ -91,9 +93,9 @@ namespace Web.Controllers
             return View(complainInfoVM);
         }
 
-        public IActionResult AddComplainFeedback(int ComplainId)
+        public IActionResult AddComplainFeedback(int Id)
         {
-            var complainInfo =_feedbackQueryService.GetComplainDetailsById(ComplainId);
+            var complainInfo =_feedbackQueryService.GetComplainDetailsById(Id);
             var complainInfoVM =_mapper.Map<ComplainFeedbackDto, ComplainFeedbackVM>(complainInfo);
             return View(complainInfoVM);
         }
@@ -102,6 +104,7 @@ namespace Web.Controllers
         {
             try
             {
+                complainFeedback.Id = 0;
                 int id = await _complainFeedbackService.AddEntity(complainFeedback);
                 if (id != 0)
                 {
@@ -115,6 +118,15 @@ namespace Web.Controllers
                 throw new Exception();
             }
         }
-
+        public JsonResult GetDailyBookingList(DateTime date)
+        {
+            var bookingInfo = _feedbackQueryService.GetBookingList(date);
+            return Json(bookingInfo);
+        }
+        public JsonResult DailyComplainListByDate(DateTime date)
+        {
+            var complainInfo = _feedbackQueryService.GetDailyComplainList(date);
+            return Json(complainInfo);
+        }
     }
 }

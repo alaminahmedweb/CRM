@@ -3,105 +3,174 @@
 @{
     ViewData["Title"] = "Daily Complain List";
 }
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <h5><i class="fa fa-list-ul"></i> Daily Complain List</h5>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 control-label">Complain Date</label>
+                <div class="col-2">
+                    <input type="date" id="ComplainDate" name="ComplainDate" class="form-control" />
+                </div>
+            </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BookingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamLeaderName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ShiftName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CityName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AreaName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubAreaName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ComplainDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ComplainDetails)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActionTakenDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActionTakenAgainstComplain)
-            </th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BookingDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamLeaderName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TeamName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShiftName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CityName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AreaName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SubAreaName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Amount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ComplainDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ComplainDetails)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActionTakenDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ActionTakenAgainstComplain)
-                </td>
-                <td>
-                    @Html.ActionLink("Add feedback", "AddComplainFeedback", new { ComplainId=item.ComplainId }))
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <br />
+
+            <table class="table" id="complainTable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamLeaderName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShiftName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CustomerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        @*                        <th>
+                        @Html.DisplayNameFor(model => model.CityName)
+                        </th>
+                        <th>
+                        @Html.DisplayNameFor(model => model.AreaName)
+                        </th>
+                        <th>
+                        @Html.DisplayNameFor(model => model.SubAreaName)
+                        </th>
+                        *@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplainDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ComplainDetails)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ActionTakenDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ActionTakenAgainstComplain)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamLeaderName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShiftName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            @*                            <td>
+                        @Html.DisplayFor(modelItem => item.CityName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.AreaName)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.SubAreaName)
+                        </td>
+                        *@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplainDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplainDetails)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ActionTakenDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ActionTakenAgainstComplain)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Add feedback", "AddComplainFeedback", new { Id=item.ComplainId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#ComplainDate').change(function() {
+                //alert("Js Works..");
+                $.ajax({
+                    type: "GET",
+                    url: "/ServiceFeedback/DailyComplainListByDate",
+                    data: { date: $(this).val() },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        console.log(result);
+                        // process the result here
+                        //bookinginfo
+                        var complainTable = $('#complainTable tbody');
+                        complainTable.empty();
+                        $(result).each(function(index, data) {
+                            //console.log(data);
+                            var linkcomplainDetails = '<a href="/ServiceFeedback/AddComplainFeedback/' + data.complainId + '">Add feedback</a>';
+                            complainTable.append('<tr><td>' + data.bookingDate + '</td><td>' + data.teamLeaderName + '</td><td>' +
+                                data.teamName + '</td><td>' + data.shiftName + '</td><td>' + data.customerName + '</td><td>'
+                                + data.address + '</td><td>' + data.amount + '</td><td>'
+                                + data.complainDate + '</td><td>' + data.complainDetails + '</td><td>'
+                                + data.actionTakenDate + '</td><td>' + data.actionTakenAgainstComplain + '</td><td>'
+                                + linkcomplainDetails + '</td></tr>');
+
+                            //complainTable.append('<tr><td>' + data.bookingDate + '</td><td>' + data.teamLeaderName + '</td><td>' +
+                            //    data.teamName + '</td><td>' + data.shiftName + '</td><td>' + data.customerName + '</td><td>'
+                            //    + data.address + '</td><td>' + data.cityName + '</td><td>'
+                            //    + data.areaName + '</td><td>' + data.subAreaName + '</td><td>' + data.amount + '</td><td>'
+                            //    + data.complainDate + '</td><td>' + data.complainDetails + '</td><td>'
+                            //    + data.actionTakenDate + '</td><td>'+ data.actionTakenAgainstComplain + '</td><td>'
+                            //    + linkcomplainDetails + '</td></tr>');
+                        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
+}

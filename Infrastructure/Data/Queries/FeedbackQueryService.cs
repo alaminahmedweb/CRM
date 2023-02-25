@@ -139,7 +139,7 @@ namespace Infrastructure.Data.Queries
                 feedbackDto.CityName = item.bk.CityName;
                 feedbackDto.AreaName = item.bk.AreaName;
                 feedbackDto.SubAreaName = item.bk.SubAreaName;
-                feedbackDto.EntryDateTime = item.result == null ? null : item.result.EntryDateTime;
+                feedbackDto.EntryDateTime = item.result == null ? DateTime.Now : item.result.EntryDateTime;
                 feedbackDto.CustomerFeedback = item.result == null ? "" : item.result.CustomerFeedback;
             }
 
@@ -253,7 +253,7 @@ namespace Infrastructure.Data.Queries
                 feedbackDto.AreaName = item.comp.AreaName;
                 feedbackDto.SubAreaName = item.comp.SubAreaName;
                 feedbackDto.ActionTakenAgainstComplain = item.result == null ? "" : item.result.ActionTakenAgainstComplain;
-                feedbackDto.ActionTakenDate = item.result == null ? null : item.result.ActionTakenDate;
+                feedbackDto.ActionTakenDate = item.result == null ? DateTime.Now : item.result.ActionTakenDate;
                 feedbackDtos.Add(feedbackDto);
             }
 

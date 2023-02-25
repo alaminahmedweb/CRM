@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace ApplicationCore.DtoModels
 {
     public class BookingItemDto
     {
+        [DataType(DataType.Date)]
         public string? EntryDate { get; set; }
+        [DataType(DataType.Date)]
         public string? BookingDate { get; set; }
         public int? ShiftId { get; set; }
         public string ShiftName { get; set; }

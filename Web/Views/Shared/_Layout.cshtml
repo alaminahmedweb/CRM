@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>CRM-@ViewData["Title"]</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/datetimepicker.css" rel="stylesheet" />
     <link href="~/css/main.min.css" rel="stylesheet" />
     <link href="~/css/adminlte.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Web.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/fontawesome.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"  />
+    <link rel="stylesheet" href="~/css/fontawesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
         .footer[b-lzldzk1rll] {
             line-height: 10px !important;
@@ -31,84 +31,86 @@
             border-radius: 3px;
             padding: 1px 15px;
         }
-    </style> 
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-@*                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/lib/Images/Background.png" alt="Header Image" width="100px" height="50px"></a>*@
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-@*                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-*@                        @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceType" asp-action="Index">Service List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Team" asp-action="Index">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="City" asp-action="Index">City</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Area" asp-action="Index">Area</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SubArea" asp-action="Index">Sub Area</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ContactBy" asp-action="Index">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Brand" asp-action="Index">Brand List</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Designation" asp-action="Index">Designation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CustomerFollowup" asp-action="Index">Add Customer & Followup</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Followup" asp-action="Index">Daily Followup</a>
-                        </li>
-
-@*                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="Index">Add Booking</a>
-                        </li>
-*@                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" target="_blank" asp-controller="Booking" asp-action="ShowBookingInfo">Booking Info</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceFeedback" asp-action="Index">Service Feedback</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ServiceFeedback" asp-action="DailyComplainList">Complain Feedback</a>
-                        </li>
-                        
-                    </ul>
-                </div>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>CRM MIS <span><img src="~/lib/Images/Background.png" alt="Header Image" width="80px" height="50px"></span></h3>
             </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="/home/index">Home</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="ServiceType" asp-action="Index">Service List</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Team" asp-action="Index">Team</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="City" asp-action="Index">City</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Area" asp-action="Index">Area</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="SubArea" asp-action="Index">Sub Area</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="ContactBy" asp-action="Index">Contact</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Index">Brand List</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Designation" asp-action="Index">Designation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Customer</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="CustomerFollowup" asp-action="Index">Customer & Followup</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Followup" asp-action="Index">Daily Followup</a>
+                        </li>
+                        @*<li>
+                            <a class="nav-link" asp-area="" asp-controller="Booking" asp-action="Index">Add Booking</a>
+                        </li>*@
+                        <li>
+                            <a class="nav-link" asp-area="" target="_blank" asp-controller="Booking" asp-action="ShowBookingInfo">Booking Info</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="ServiceFeedback" asp-action="Index">Service Feedback</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="ServiceFeedback" asp-action="DailyComplainList">Complain Feedback</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Users</a>
+                </li>
+            </ul>
         </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
+
 
 @*    <footer class="border-top footer text-muted">
         <div class="container">
@@ -121,11 +123,18 @@
     <script src="~/js/jquery.validate.min.js"></script>
     <script src="~/js/jquery-ui.min.js"></script>
     <script src="~/js/jquery.datatables.js"></script>
-    <link rel="stylesheet" href="~/css/jquery-ui.css"/>
+    <link rel="stylesheet" href="~/css/jquery-ui.css" />
     <script src="~/lib/jquery/dist/jquery-ui.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/bootstrap.bundle.min.js"></script>
 
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $("#sidebarCollapse").on('click', function () {
+                $("#sidebar").toggleClass('active');
+            });
+        });
+    </script>
 </body>
 </html>

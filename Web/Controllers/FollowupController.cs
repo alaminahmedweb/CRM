@@ -84,6 +84,12 @@ namespace Web.Controllers
                 return View("Error");
             }
        }
+        public JsonResult GetDailyFollowupList(DateTime followupdate)
+        {
+            IEnumerable<CustomerDto> followupList = _followupQueryService.GetDailyFollowupList(followupdate);
+            return Json(followupList);
+        }
+
 
     }
 }

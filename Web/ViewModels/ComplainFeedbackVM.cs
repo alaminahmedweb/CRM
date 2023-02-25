@@ -19,7 +19,7 @@ namespace Web.ViewModels
         public double Amount { get; set; }
         public int ComplainId { get; set; }
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; }
+        public DateTime ComplainDate { get; set; } = DateTime.Now;
         public string ComplainDetails { get; set; }
         [Required]
         [DataType(DataType.Date)]

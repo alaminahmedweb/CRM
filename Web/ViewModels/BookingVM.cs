@@ -22,6 +22,7 @@ namespace Web.ViewModels
 
 
         //Followup Portion
+        [DataType(DataType.Date)]
         public DateTime? CallingDate { get; set; } = DateTime.Now;
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;

@@ -21,6 +21,7 @@ namespace Web.ViewModels
         public string CompanyFeedback { get; set; }
         [DataType(DataType.Date)]
         public DateTime? EntryDateTime { get; set; } = DateTime.Now;
-
+        [DataType(DataType.Date)]
+        public DateTime ComplainDate { get; set; } = DateTime.Now;
     }
 }
