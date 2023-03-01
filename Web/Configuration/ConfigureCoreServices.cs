@@ -2,6 +2,7 @@
 using ApplicationCore.Services;
 using Infrastructure.Data;
 using Infrastructure.Data.Queries;
+using Infrastructure.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -34,6 +35,7 @@ namespace Web.Configuration
             services.AddScoped<IComplainRegisterService, ComplainRegisterService>();
             services.AddScoped<IComplainFeedbackService, ComplainFeedbackService>();
             services.AddScoped<ICustomerFollowupService, CustomerFollowupService>();
+            services.AddScoped<ITokenClaimService, TokenClaimService>();
 
             return services;
         }

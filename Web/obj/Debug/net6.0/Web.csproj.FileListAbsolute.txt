@@ -583,6 +583,14 @@ E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\re
 E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.pdb
 E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
 E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\ref\Web.dll
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\appsettings.Development.json
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\appsettings.json
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.staticwebassets.runtime.json
@@ -598,6 +606,10 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Azure.Identity.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Humanizer.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.dll
@@ -621,7 +633,6 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
@@ -629,7 +640,8 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.M
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
@@ -653,7 +665,6 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.Cod
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Common.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Configuration.dll
@@ -664,7 +675,6 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Packaging.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.ProjectModel.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Protocol.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Versioning.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.CodeDom.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Convention.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Hosting.dll
@@ -678,8 +688,6 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Reflection.MetadataLoad
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Runtime.Caching.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Json.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Windows.Extensions.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -848,20 +856,11 @@ D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Syste
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.dll
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.pdb
 D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.pdb
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.build.json
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.development.json
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -873,3 +872,13 @@ D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\refint\Web.dll
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.pdb
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
 D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\ref\Web.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.CodeDom.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Json.dll
+D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cs

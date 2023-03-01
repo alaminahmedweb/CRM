@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<ApplicationUser> signInManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -86,7 +88,7 @@
                             <a class="nav-link" asp-area="" asp-controller="Followup" asp-action="Index">Daily Followup</a>
                         </li>
                         @*<li>
-                            <a class="nav-link" asp-area="" asp-controller="Booking" asp-action="Index">Add Booking</a>
+                        <a class="nav-link" asp-area="" asp-controller="Booking" asp-action="Index">Add Booking</a>
                         </li>*@
                         <li>
                             <a class="nav-link" asp-area="" target="_blank" asp-controller="Booking" asp-action="ShowBookingInfo">Booking Info</a>
@@ -100,8 +102,25 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Users</a>
+                    <a href="#pageUser" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User</a>
+                    <ul class="collapse list-unstyled" id="pageUser">
+                        <li>
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
+                        </li>
+                    </ul>
                 </li>
+
+                @if (signInManager.IsSignedIn(User))
+                {
+                    <li class="nav-link">
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <button type="submit" class="nav-link btn btn-link py-0" style="width:auto">
+                                Logout @User.Identity.Name
+                            </button>
+                        </form>
+                    </li>
+                }
+
             </ul>
         </nav>
         <div class="container">
@@ -112,12 +131,12 @@
     </div>
 
 
-@*    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    @*    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2023 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
     </footer>
-*@
+    *@
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/jquery.validate.min.js"></script>
@@ -130,8 +149,8 @@
 
     @await RenderSectionAsync("Scripts", required: false)
     <script>
-        $(document).ready(function () {
-            $("#sidebarCollapse").on('click', function () {
+        $(document).ready(function() {
+            $("#sidebarCollapse").on('click', function() {
                 $("#sidebar").toggleClass('active');
             });
         });
