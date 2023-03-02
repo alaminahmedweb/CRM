@@ -58,8 +58,9 @@ namespace Web.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginVM model, string ReturnUrl)
+        public async Task<IActionResult> Login(LoginVM model)
         {
+            //string ReturnUrl = "";
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(model.UserName);
@@ -78,9 +79,9 @@ namespace Web.Controllers
                 //var jwtToken =await _tokenClaimService.GetTokenAsync(model.UserName);
                 if (result.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect(ReturnUrl);
+                        return Redirect(model.ReturnUrl);
                     }
                     else
                     {
