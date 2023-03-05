@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+asdfvar builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
