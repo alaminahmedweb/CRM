@@ -2,140 +2,201 @@
 @model Web.ViewModels.AddFollowupVM
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Add New Followup";
 }
 
-<h4>Add New Followup</h4>
 <hr />
-<div class="container">
-    <form asp-action="Index">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="CustomerId" class="col-sm-3 form-control" hidden/>
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="CustomerName" class="col-sm-3 control-label">ClientName</label>
-                <input asp-for="CustomerName" class="col-sm-3 form-control" />
-                <span asp-validation-for="CustomerName" class="text-danger"></span>
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add New Followup</p>
             </div>
-            <div class="col-sm-6">
-                <label asp-for="ContractPerson" class="col-sm-3 control-label">Contract Person</label>
-                <input asp-for="ContractPerson" class="col-sm-3 form-control" />
-                <span asp-validation-for="ContractPerson" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="MobileNo" class="control-label col-sm-3">Mobile No</label>
-                <input asp-for="MobileNo" class="form-control col-sm-3" />
-                <span asp-validation-for="MobileNo" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="Address" class="control-label">Location/Address</label>
-                <input asp-for="Address" class="form-control" />
-                <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="AreaName" class="control-label">Area</label>
-                <input asp-for="AreaName" class="form-control" />
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="MpoName" class="control-label">Marketing Officer Name</label>
-                <input asp-for="MpoName" class="form-control" />
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="CallingDate" class="col-sm-3 control-label">Calling Date</label>
-                <input asp-for="CallingDate" class="col-sm-2 form-control" />
-                <span asp-validation-for="CallingDate" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="OpinionAndPlan" class="control-label">Opinion And Plan</label>
-                <input asp-for="OpinionAndPlan" class="form-control" />
-                <span asp-validation-for="OpinionAndPlan" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="OfferAmount" class="control-label">Marketing Offer Amount</label>
-                <input asp-for="OfferAmount" class="form-control" />
-                <span asp-validation-for="OfferAmount" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="AgreeAmount" class="control-label">Customer Agree Amount</label>
-                <input asp-for="AgreeAmount" class="form-control" />
-                <span asp-validation-for="AgreeAmount" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="CustomerDoTheWorkingMonth" class="control-label">Customer Do The Working Month</label>
-                <input asp-for="CustomerDoTheWorkingMonth" class="form-control" />
-                <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="Remarks" class="control-label"></label>
-                <input asp-for="Remarks" class="form-control" />
-                <span asp-validation-for="Remarks" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="BuildingDetails" class="control-label">Building Details</label>
-                <input asp-for="BuildingDetails" class="form-control" />
-                <span asp-validation-for="BuildingDetails" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="PositiveOrNegative" class="control-label"></label>
-                <select asp-for="PositiveOrNegative" class="form-control">
-                    <option value="Positive">Positive</option>
-                    <option value="Negative">Negative</option>
-                </select>
+            <div class="box-body">
+                <form asp-action="Index">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="CustomerId" hidden/>
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-2 control-label">Client Name/Organization</label>
+                        <div class="col-6">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <label asp-for="EmployeeName" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-2">
+                            <input asp-for="EmployeeName" class="form-control" />
+                            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                        </div>
+                    </div>
 
-                <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+                    <table id="tblPersonDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Contract Person</th>
+                                <th class="none">DesignationId</th>
+                                <th>Designation</th>
+                                <th>Mobile No</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ContractDetails)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.Designation</td>
+                                    <td>@item.MobileNo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CityName" class="control-label col-1">City</label>
+                        <div class="col-1">
+                            <input asp-for="CityName" class="form-control" />
+                            <span asp-validation-for="CityName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AreaName" class="control-label col-1">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="form-control" />
+                            <span asp-validation-for="AreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label col-1">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="form-control" />
+                            <span asp-validation-for="SubAreaName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a) No Of Floor</label>
+                        <div class="col-3">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                            <span asp-validation-for="NoOfFloor" class="text-danger"></span>
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <div class="col-4">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                            <span asp-validation-for="NoOfFlat" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <table id="tblBuldingDetails" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="none">Brand Id</th>
+                                <th>Brand Name</th>
+                                <th>Quantity</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.BuildingDetails)
+                            {
+                                <tr>
+                                    <td>@item.BrandName</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Capacity</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="CallingDate" class="col-sm-2 control-label">Calling Date</label>
+                        <div class="col-2">
+                            <input asp-for="CallingDate" class="form-control" />
+                            <span asp-validation-for="CallingDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ServiceTypeId" class="col-sm-2 control-label">Service Name</label>
+                        <div class="col-2">
+                            <select asp-for="ServiceTypeId" class="form-control">
+                                <option value="-1">Select Service Type</option>
+                                @foreach (var item in ViewBag.ServiceList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="ServiceTypeId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
+                        <div class="col-sm-2">
+                            <select asp-for="CustomerDoTheWorkingMonth" class="form-control">
+                                <option value="-1">Select Working Month</option>
+                                @foreach (var item in ViewBag.MonthList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
+                        <div class="col-2">
+                            <input asp-for="OfferAmount" class="form-control" />
+                            <span asp-validation-for="OfferAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AgreeAmount" class="control-label col-2">Agree/Booking Amount</label>
+                        <div class="col-2">
+                            <input asp-for="AgreeAmount" class="form-control" />
+                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Remarks" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <input asp-for="Remarks" class="form-control" />
+                            <span asp-validation-for="Remarks" class="text-danger"></span>
+                        </div>
+                        <label asp-for="PositiveOrNegative" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <select asp-for="PositiveOrNegative" class="form-control">
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                            </select>
+                            <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="DiscussionDetailsNote" class="control-label col-2">Customer Discussion Details Note</label>
+                        <div class="col-4">
+                            <textarea asp-for="DiscussionDetailsNote" class="form-control"></textarea>
+                            <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
+                        </div>
+                        <label asp-for="MarketingNextPlan" class="control-label col-2">Marketing Next Plan</label>
+                        <div class="col-4">
+                            <input asp-for="MarketingNextPlan" class="form-control" />
+                            <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="FollowupCallDate" class="control-label col-2">Follow-up Call Date</label>
+                        <div class="col-4">
+                            <input asp-for="FollowupCallDate" class="form-control" />
+                            <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Status" class="control-label col-2"></label>
+                        <div class="col-4">
+                            <select asp-for="Status" class="form-control">
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" asp-action="AddNewFollowup" asp-controller="Followup" class="btn btn-primary" />
+                    </div>
+                </form>
             </div>
         </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="DiscussionDetailsNote" class="control-label">Customer Discussion Details Note</label>
-                <textarea asp-for="DiscussionDetailsNote" class="form-control"></textarea>
-                <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="MarketingNextPlan" class="control-label">Marketing Next Plan</label>
-                <input asp-for="MarketingNextPlan" class="form-control" />
-                <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
-            </div>
-        </div>
-        <br />
-        <div class="row col-sm-12">
-            <div class="col-sm-6">
-                <label asp-for="FollowupCallDate" class="control-label">Follow-up Call Date</label>
-                <input asp-for="FollowupCallDate" class="form-control" />
-                <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
-            </div>
-            <div class="col-sm-6">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control">
-                    <option value="Pending">Pending</option>
-                    <option value="Confirmed">Confirmed</option>
-                </select>
-            </div>
-        </div>
-        <br />
-        <div class="form-group">
-            <input type="submit" value="Save" asp-action="AddNewFollowup" asp-controller="Followup" class="btn btn-primary" />
-        </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

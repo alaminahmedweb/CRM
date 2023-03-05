@@ -15,39 +15,39 @@
                 <form asp-action="Index">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group row">
-                        <label asp-for="CallingDate" class="col-sm-2 control-label">Calling Date</label>
+                        <label asp-for="CallingDate" class="col-2 control-label">Calling Date</label>
                         <div class="col-2">
-                            <input asp-for="CallingDate" class="col-sm-2 form-control" />
+                            <input asp-for="CallingDate" class="form-control" />
                             <span asp-validation-for="CallingDate" class="text-danger"></span>
                         </div>
-                        <label asp-for="serviceTypeId" class="col-sm-2 control-label">Service Name</label>
+                        <label asp-for="ServiceTypeId" class="col-2 control-label">Service Name</label>
                         <div class="col-2">
-                            <select asp-for="serviceTypeId" class="col-sm-2 form-control">
+                            <select asp-for="ServiceTypeId" class="form-control">
                                 <option value="-1">Select Service Type</option>
                                 @foreach (var item in ViewBag.ServiceList)
                                 {
                                     <option value="@item.Id">@item.Name</option>
                                 }
                             </select>
-                            <span asp-validation-for="serviceTypeId" class="text-danger"></span>
+                            <span asp-validation-for="ServiceTypeId" class="text-danger"></span>
                         </div>
 
-                        <label asp-for="Name" class="col-sm-2 control-label">Client Name/Organization</label>
+                        <label asp-for="Name" class="col-2 control-label">Client Name/Organization</label>
                         <div class="col-2">
-                            <input asp-for="Name" class="col-sm-2 form-control" />
+                            <input asp-for="Name" class="form-control" />
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label asp-for="ContractPerson" class="col-sm-2 control-label">Contract Person</label>
+                        <label asp-for="ContractPerson" class="col-2 control-label">Contract Person</label>
                         <div class="col-2">
-                            <input asp-for="ContractPerson" class="col-sm-2 form-control" />
+                            <input asp-for="ContractPerson" class="form-control" />
                             <span asp-validation-for="ContractPerson" class="text-danger"></span>
                         </div>
-                        <label asp-for="DesignationId" class="col-sm-2 control-label">Designation</label>
+                        <label asp-for="DesignationId" class="col-2 control-label">Designation</label>
                         <div class="col-2">
-                            <select asp-for="DesignationId" class="col-sm-2 form-control">
+                            <select asp-for="DesignationId" class="form-control">
                                 <option value="-1">Select Designation</option>
                                 @foreach (var item in ViewBag.DesignationList)
                                 {
@@ -56,25 +56,25 @@
                             </select>
                             <span asp-validation-for="DesignationId" class="text-danger"></span>
                         </div>
-
-                        <label asp-for="MobileNo" class="control-label col-sm-1">Mobile No</label>
+                        <label asp-for="MobileNo" class="control-label col-1">Mobile No</label>
                         <div class="col-2">
-                            <input asp-for="MobileNo" class="form-control col-sm-2" />
+                            <input asp-for="MobileNo" class="form-control" />
                             <span asp-validation-for="MobileNo" class="text-danger"></span>
                         </div>
-                        <input type="button" id="btnAddPerson" value="Add" class="btn btn-success col-sm-1" />
+                        <div class="col-1">
+                            <input type="button" id="btnAddPerson" value="Add" class="btn btn-success" />
+                        </div>
                     </div>
-                    <table id="tblPersonDetails" class="table table-bordered">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>Contract Person</th>
-                                <th>DesignationId</th>
+                                <th class="none">DesignationId</th>
                                 <th>Designation</th>
                                 <th>Mobile No</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody id="tblPersonDetails"></tbody>
                     </table>
                     <br />
                     <div class="form-group row">
@@ -89,8 +89,8 @@
                             <span asp-validation-for="AgreeAmount" class="text-danger"></span>
                         </div>
                         <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-2">Working Month</label>
-                        <div class="col-sm-2">
-                            <select asp-for="CustomerDoTheWorkingMonth" class="col-sm-2 form-control">
+                        <div class="col-2">
+                            <select asp-for="CustomerDoTheWorkingMonth" class="form-control">
                                 <option value="-1">Select Working Month</option>
                                 @foreach (var item in ViewBag.MonthList)
                                 {
@@ -194,19 +194,20 @@
                             <input asp-for="Capacity" class="form-control" />
                             <span asp-validation-for="Capacity" class="text-danger"></span>
                         </div>
-                        <input type="button" id="btnAddBuildingDetails" value="Add" class="btn btn-success col-sm-1" />
+                        <div class="col-1">
+                            <input type="button" id="btnAddBuildingDetails" value="Add" class="btn btn-success" />
+                        </div>
                     </div>
-                    <table id="tblBuldingDetails" class="table table-bordered">
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Brand Id</th>
+                                <th class="none">Brand Id</th>
                                 <th>Brand Name</th>
                                 <th>Quantity</th>
                                 <th>Capacity</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody id="tblBuldingDetails"></tbody>
                     </table>
 
                     <div class="form-group row">
@@ -227,16 +228,16 @@
                             <input asp-for="FollowupCallDate" class="form-control" />
                             <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
                         </div>
-                        <label asp-for="MpoId" class="control-label col-2">Marketing Officer Name</label>
+                        <label asp-for="EmployeeId" class="control-label col-2">Marketing Officer Name</label>
                         <div class="col-4">
-                            <select asp-for="MpoId" class="form-control">
+                            <select asp-for="EmployeeId" class="form-control">
                                 <option value="-1">Select Mpo</option>
                                 @foreach (var data in ViewBag.MpoList)
                                 {
                                     <option value="@data.Id">@data.Name</option>
                                 }
                             </select>
-                            <span asp-validation-for="MpoId" class="text-danger"></span>
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -249,7 +250,7 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                        <input type="submit" value="Save" id="SaveCustomerAndFollowup" class="btn btn-primary" />
+                        <input type="button" value="Save" id="SaveCustomerAndFollowup" class="btn btn-primary" />
                     </div>
                 </form>
             </div>
@@ -262,26 +263,26 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#btnAddPerson').click(function() {
+        $(document).ready(function () {
+            $('#btnAddPerson').click(function () {
                 var contractPerson = $('#ContractPerson').val();
                 var designationId = $('#DesignationId').val();
                 var designationName = $('#DesignationId option:selected').text();
                 var mobileNo = $('#MobileNo').val();
-                var contractTable = $('#tblPersonDetails tbody');
-                contractTable.append('<tr><td>' + contractPerson + '</td><td>' + designationId + '</td><td>'
+                var contractTable = $('#tblPersonDetails');
+                contractTable.append('<tr><td>' + contractPerson + '</td><td class="none">' + designationId + '</td><td>'
                     + designationName + '</td><td>' + mobileNo + '</td></tr>');
                 $('#MobileNo').val("");
                 $('#ContractPerson').val("");
             });
 
-            $('#btnAddBuildingDetails').click(function() {
+            $('#btnAddBuildingDetails').click(function () {
                 var brandId = $('#BrandId').val();
                 var brandName = $('#BrandId option:selected').text();
                 var quantity = $('#Quantity').val();
                 var capacity = $('#Capacity').val();
-                var buildingDetailsTable = $('#tblBuldingDetails tbody');
-                buildingDetailsTable.append('<tr><td>' + brandId + '</td><td>' + brandName + '</td><td>'
+                var buildingDetailsTable = $('#tblBuldingDetails');
+                buildingDetailsTable.append('<tr><td class="none">' + brandId + '</td><td>' + brandName + '</td><td>'
                     + quantity + '</td><td>' + capacity + '</td></tr>');
                 $('#BrandId').val("-1");
                 $('#Quantity').val("");
@@ -293,7 +294,7 @@
             var areaId = $('#AreaId');
             var subAreaId = $('#SubAreaId');
 
-            $('#CityId').change(function() {
+            $('#CityId').change(function () {
                 if ($(this).val() == "-1") {
                     areaId.empty();
                     subAreaId.empty();
@@ -313,9 +314,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function(response) {
+                        success: function (response) {
                             areaId.prop('disable', false),
-                                $.each(response, function(index, item) {
+                                $.each(response, function (index, item) {
                                     areaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -326,7 +327,7 @@
                 }
                 //}
             });
-            $('#AreaId').change(function() {
+            $('#AreaId').change(function () {
                 if ($(this).val() == "-1") {
                     subAreaId.empty();
                     $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
@@ -340,9 +341,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function(response) {
+                        success: function (response) {
                             areaId.prop('disable', false),
-                                $.each(response, function(index, item) {
+                                $.each(response, function (index, item) {
                                     subAreaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -351,128 +352,90 @@
                         }
                     });
                 }
-                //}
             });
-            $('#SaveCustomerAndFollowup').click(function() {
-                var BuildingDetails = [];
 
-                //var buildingDetail = {};
-                //$('#tblBuldingDetails tr').each(function() {
-                //    $(this).find("td").each(function(index) {
-                //        switch (index) {
-                //            case 0:
-                //                buildingDetail.BrandId = $(this).text();
-                //                break;
-                //            case 2:
-                //                buildingDetail.Quantity = $(this).text();
-                //                break;
-                //            case 3:
-                //                buildingDetail.Capacity = $(this).text();
-                //                break;
-                //        }
-                //    });
-                //    console.log(buildingDetail);
-                //    BuildingDetails.push(buildingDetail);
-                //});
+            $('#SaveCustomerAndFollowup').click(function () {
+                var customers = [];
+                var buildings = [];
 
-                var tblBuldingDetails = $('#tblBuldingDetails');
-                tblBuldingDetails.find('tr').each(function() {
-                    tBuldingDetails = $(this).find('td').text();
-                    if (tBuldingDetails != '') {
-                        var $buldingDetails = $(this).find('td'),
-                            BrandId = $buldingDetails.eq(0).text(),
-                            Quantity = $buldingDetails.eq(1).text();
-                        Capacity = $buldingDetails.eq(3).text();
-                        var buldingDetail = {
-                            BrandId: BrandId,
-                            Quantity: Quantity,
-                            Capacity: Capacity
+                var tContact = $("table #tblPersonDetails");
+                tContact.find('tr').each(function () {
+                    tContactInfo = $(this).find('td').text();
+                    if (tContactInfo != '') {
+                        var $ctd = $(this).find('td'),
+                            tcPerson = $ctd.eq(0).text(),
+                            tcDesignationId = $ctd.eq(1).text(),
+                            tcDesignation = $ctd.eq(2).text(),
+                            tcMobile = $ctd.eq(3).text();
+                        var Customer = {
+                            Name: tcPerson,
+                            DesignationId: tcDesignationId,
+                            MobileNo: tcMobile,
                         };
-                        BuildingDetails.push(buldingDetail);
+                        customers.push(Customer);
                     }
                 });
 
-
-                var ContractDetails = [];
-                $('#tblPersonDetails tr').each(function() {
-                    var ContractDetail = {};
-                    $(this).find("td").each(function(index) {
-                        switch (index) {
-                            case 0:
-                                ContractDetail.Name = $(this).text();
-                                break;
-                            case 1:
-                                ContractDetail.DesignationId = $(this).text();
-                                break;
-                            case 3:
-                                ContractDetail.MobileNo = $(this).text();
-                                break;
-                        }
-                    });
-                    ContractDetails.push(ContractDetail);
+                var tblBuilding = $("table #tblBuldingDetails");
+                tblBuilding.find('tr').each(function () {
+                    tBuldingInfo = $(this).find('td').text();
+                    if (tBuldingInfo != '') {
+                        var $btd = $(this).find('td'),
+                            tbId = $btd.eq(0).text(),
+                            tbName = $btd.eq(1).text(),
+                            tbQuantity = $btd.eq(2).text(),
+                            tbCapacity = $btd.eq(3).text();
+                        var Building = {
+                            BrandId: tbId,
+                            Quantity: tbQuantity,
+                            Capacity: tbCapacity,
+                        };
+                        buildings.push(Building);
+                    }
                 });
 
-                var CallingDate = $('#CallingDate').val();
-                var serviceTypeId = $('#serviceTypeId option:selected').val();
-                var Name = $('#Name').val();
-                var OfferAmount = $('#OfferAmount').val();
-                var AgreeAmount = $('#AgreeAmount').val();
-                var CustomerDoTheWorkingMonth = $('#CustomerDoTheWorkingMonth option:selected').val();
-                var Address = $('#Address').val();
-                var SubAreaId = $('#SubAreaId option:selected').val();
-                var Remarks = $('#Remarks').val();
-                var ContactId = $('#ContactId option:selected').val();
-                var PositiveOrNegative = $('#PositiveOrNegative option:selected').val();
-                var NoOfFloor = $('#NoOfFloor').val();
-                var NoOfFlat = $('#NoOfFlat').val();
-                var DiscussionDetailsNote = $('#DiscussionDetailsNote').val();
-                var MarketingNextPlan = $('#MarketingNextPlan').val();
-                var FollowupCallDate = $('#FollowupCallDate').val();
-                var MpoId = $('#MpoId option:selected').val();
-                var Status = $('#Status option:selected').val();
+                var followup = {
+                    CallingDate: $('#CallingDate').val(),
+                    ServiceTypeId: $('#ServiceTypeId option:selected').val(),
+                    Name: $('#Name').val(),
+                    OfferAmount: $('#OfferAmount').val(),
+                    AgreeAmount: $('#AgreeAmount').val(),
+                    CustomerDoTheWorkingMonth: $('#CustomerDoTheWorkingMonth option:selected').val(),
+                    Address: $('#Address').val(),
+                    SubAreaId: $('#SubAreaId option:selected').val(),
+                    Remarks: $('#Remarks').val(),
+                    ContactId: $('#ContactId option:selected').val(),
+                    PositiveOrNegative: $('#PositiveOrNegative option:selected').val(),
+                    NoOfFloor: $('#NoOfFloor').val(),
+                    NoOfFlat: $('#NoOfFlat').val(),
+                    DiscussionDetailsNote: $('#DiscussionDetailsNote').val(),
+                    MarketingNextPlan: $('#MarketingNextPlan').val(),
+                    FollowupCallDate: $('#FollowupCallDate').val(),
+                    EmployeeId: $('#EmployeeId option:selected').val(),
+                    Status: $('#Status option:selected').val(),
+                }
 
-                //var customerFollowupVM = JSON.stringify(
-                //    {
-                //        CustomerFollowupVM :
-                //        {
-                //            CallingDate: CallingDate,
-                //            serviceTypeId: serviceTypeId,
-                //            Name: name,
-                //            OfferAmount: OfferAmount,
-                //            AgreeAmount: AgreeAmount,
-                //            CustomerDoTheWorkingMonth: CustomerDoTheWorkingMonth,
-                //            Address: Address,
-                //            SubAreaId: SubAreaId,
-                //            Remarks: Remarks,
-                //            ContactId: ContactId,
-                //            PositiveOrNegative: PositiveOrNegative,
-                //            NoOfFloor: NoOfFloor,
-                //            NoOfFlat: NoOfFlat,
-                //            DiscussionDetailsNote: DiscussionDetailsNote,
-                //            MarketingNextPlan: MarketingNextPlan,
-                //            FollowupCallDate: FollowupCallDate,
-                //            MpoId: MpoId,
-                //            Status: Status,
-                //        },
-                //        BuildingDetails: BuildingDetails,
-                //        ContractDetails: ContractDetails,
-                //    });
-
-                console.log(customerFollowupVM);
+                var model = {
+                    "CustomerFollowup": followup,
+                    "ContractDetails": customers,
+                    "BuildingDetails": buildings,
+                }
 
                 $.ajax({
-                    type: 'POST',
-                    url:'@Url.Action("Index", "Customer")',// 'Customer/Index',
-                    data: customerFollowupVM,
-                    contentType: 'application/json; charset=utf-8',
-                    dataType:'json',
-                    success: function(result) {
-
+                    type: "post",
+                    url: "/CustomerFollowup/Save",
+                    data: model,
+                    datatype: "json",
+                    //cache: false,
+                    success: function (data) {
+                        //alert("You Multiple Data Passed Successfully");
+                        //alert(data.redirecturl);
+                        window.location.href = data.redirecturl;
+                        //window.location.replace(data.redirecturl);
                     },
-                    error: function(err) {
-                        console.log(err);
+                    error: function (xhr) {
+                        alert('No Valid Data');
                     }
-
                 });
             });
         });

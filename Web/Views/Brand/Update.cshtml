@@ -1,7 +1,7 @@
 ﻿@model ApplicationCore.Entities.Brand
 
 @{
-    ViewData["Title"] = "Team";
+    ViewData["Title"] = "Update Brand";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -15,12 +15,13 @@
                 <form asp-action="Update" autocomplete="off">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group row">
-                        <label asp-for="Name" class="col-sm-2 control-label"></label>
-                        <div class="col-sm-10">
+                        <label asp-for="Name" class="col-4 control-label"></label>
+                        <div class="col-8">
                             <input asp-for="Name" class="form-control" />
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
+                    <br />
                     <div class="form-group text-center">
                         <input type="submit" value="Update" class="btn btn-primary" />
                         <a type="button" class="btn btn-info" asp-action="Index"><li class="fa fa-list-ul"></li> List </a>

@@ -2,10 +2,10 @@
 @model FollowupDetailsByIdDto
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Daily Followup Customer List ";
 }
 
-<a asp-controller="Followup" asp-action="AddNewFollowup" asp-route-id=@Model.CustomerId>Add New Followup</a>
+@*<a asp-controller="Followup" asp-action="AddNewFollowup" asp-route-id=@Model.CustomerId>Add New Followup</a>*@
 <div class="row">
     <div class="col-12">
         <div class="box box-success">
@@ -15,7 +15,7 @@
                         <p><i class="fa fa-list-ul"></i> Daily Followup Customer List </p>
                     </div>
                     <div class="col-6 text-end">
-                        <a asp-action="AddNewFollowup" asp-controller="Floowup" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i>Add New Followup</a>
+                        <a asp-action="AddNewFollowup" asp-controller="Followup" asp-route-id=@Model.CustomerId class="btn btn-outline-primary"><i class="fa fa-plus-square"></i>Add New Followup</a>
                     </div>
                 </div>
                 <div class="container">
@@ -25,40 +25,74 @@
                             <input asp-for="@Model.CustomerName" class="form-control" />
                             <span asp-validation-for="@Model.CustomerName" class="text-danger"></span>
                         </div>
-                        <label asp-for="@Model.ContractPerson" class="col-2 control-label">Contract Person</label>
-                        <div class="col-sm-4">
-                            <input asp-for="@Model.ContractPerson" class="form-control" />
-                            <span asp-validation-for="@Model.ContractPerson" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                            <label asp-for="MobileNo" class="control-label col-2">Mobile No</label>
-                        <div class="col-sm-4">
-                            <input asp-for="MobileNo" class="form-control" />
-                            <span asp-validation-for="MobileNo" class="text-danger"></span>
-                        </div>
-                            <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
                         <div class="col-sm-4">
                             <input asp-for="Address" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group row">
-                            <label asp-for="@Model.AreaName" class="control-label col-2">Area</label>
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Designation</th>
+                                    <th>Mobile No</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.ContractDetails)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Designation</td>
+                                        <td>@item.MobileNo</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="@Model.AreaName" class="control-label col-2">Area</label>
                         <div class="col-4">
                             <input asp-for="@Model.AreaName" class="form-control" />
                         </div>
-                            <label asp-for="BuildingDetails" class="control-label col-2">Building Details</label>
-                        <div class="col-4">
-                            <input asp-for="BuildingDetails" class="form-control" />
-                            <span asp-validation-for="BuildingDetails" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                            <label asp-for="@Model.EmployeeName" class="control-label col-2">Marketing Officer Name</label>
+                        <label asp-for="@Model.EmployeeName" class="control-label col-2">Marketing Officer Name</label>
                         <div class="col-4">
                             <input asp-for="@Model.EmployeeName" class="form-control" />
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label asp-for="@Model.NoOfFloor" class="control-label col-2">No Of Floor</label>
+                        <div class="col-4">
+                            <input asp-for="@Model.NoOfFloor" class="form-control" />
+                        </div>
+                        <label asp-for="@Model.NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <div class="col-4">
+                            <input asp-for="@Model.NoOfFlat" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Brand Name</th>
+                                    <th>Quantity</th>
+                                    <th>Capacity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.BuildingDetails)
+                                {
+                                    <tr>
+                                        <td>@item.BrandName</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.Capacity</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -73,31 +107,22 @@
                 Calling Date
             </th>
             <th>
-                Opinion And Plan
+                Offer Amount
             </th>
             <th>
-                OfferAmount
-            </th>
-            <th>
-                AgreeAmount
-            </th>
-            <th>
-                CustomerDoTheWorkingMonth
+                Agree Amount
             </th>
             <th>
                 Remarks
             </th>
             <th>
-                PositiveOrNegative
+                Feedback
             </th>
             <th>
-                DiscussionDetailsNote
+                Discussion Details
             </th>
             <th>
-                MarketingNextPlan
-            </th>
-            <th>
-                FollowupCallDate
+                Followup Date
             </th>
             <th>
                 Status
@@ -112,16 +137,10 @@
                     @Html.DisplayFor(modelItem => item.CallingDate)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.OpinionAndPlan)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.OfferAmount)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AgreeAmount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustomerDoTheWorkingMonth)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Remarks)
@@ -131,9 +150,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DiscussionDetailsNote)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MarketingNextPlan)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FollowupCallDate)

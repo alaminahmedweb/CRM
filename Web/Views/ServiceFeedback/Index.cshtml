@@ -1,94 +1,156 @@
 ﻿@model IEnumerable<Web.ViewModels.ServiceFeedbackVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Daily Booking List";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.BookingDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ShiftName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CustomerName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ContractPerson)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AreaName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MobileNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Amount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BuildingDetails)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FeedbackDetails)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FeedbackEntryDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BookingDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TeamName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShiftName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContractPerson)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MobileNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BuildingDetails)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FeedbackDetails)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FeedbackEntryDate)
-            </td>
-            <td>
-                @Html.ActionLink("Add feedback", "Edit", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <h5><i class="fa fa-list-ul"></i> Daily Customer Service List</h5>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 control-label">Service Date</label>
+                <div class="col-2">
+                    <input type="date" id="ServiceDate" name="ServiceDate" class="form-control" />
+                </div>
+            </div>
+
+            <br />
+
+            <table class="table" id="bookingTable">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BookingDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamLeaderName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ShiftName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CustomerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CityName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AreaName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SubAreaName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CustomerFeedback)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EntryDateTime)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamLeaderName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShiftName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CityName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AreaName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SubAreaName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerFeedback)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EntryDateTime)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Add feedback", "AddFeedback", new { Id=item.BookingId })|
+                                @Html.ActionLink("Add Complain", "AddComplain", new { Id=item.BookingId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#ServiceDate').change(function() {
+                //alert("Js Works..");
+                $.ajax({
+                    type: "GET",
+                    url: "ServiceFeedback/GetDailyBookingList",
+                    data: { date: $(this).val() },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        console.log(result);
+                        // process the result here
+                        //bookinginfo
+                        var bookingTable = $('#bookingTable tbody');
+                        bookingTable.empty();
+                        $(result).each(function(index, data) {
+                            console.log(data);
+                            var linkcustomerDetails = '<a href="ServiceFeedback/AddFeedback/' + data.bookingId + '">Add feedback</a>';
+                            var linkAddNewFollowup = '<a href="ServiceFeedback/AddComplain/' + data.bookingId + '">Add Complain</a>';
+                            bookingTable.append('<tr><td>' + data.bookingDate + '</td><td>' + data.teamLeaderName + '</td><td>' +
+                                data.teamName + '</td><td>' + data.shiftName + '</td><td>' + data.customerName + '</td><td>'  
+                                + data.address + '</td><td>' + data.cityName + '</td><td>'
+                                + data.areaName + '</td><td>'  + data.subAreaName + '</td><td>'+ data.amount + '</td><td>'
+                                 + data.customerFeedback + '</td><td>' + data.entryDateTime + '</td><td>'
+                                + linkcustomerDetails + '|' + linkAddNewFollowup + '</td></tr>');
+                        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
 }
-    </tbody>
-</table>

@@ -13,13 +13,14 @@ namespace ApplicationCore.Entities
         public int Id { get; set; }
         [Required]
         [MinLength(4)]
-        public string FeedbackDetails { get; set; }
+        public string CustomerFeedback { get; set; }
+        [Required]
+        public string CompanyFeedback { get; set; }
         [Required]
         public DateTime EntryDateTime { get; set; }
 
         [ForeignKey("Booking")]
-        [Required]
-        public int bookingId { get; set; }
+        public int BookingId { get; set; }
         public Booking Booking { get; set; }
     }
 }

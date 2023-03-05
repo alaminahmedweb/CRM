@@ -1,38 +1,44 @@
 ﻿@model IEnumerable<Web.ViewModels.DailyFollowupListVM>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Daily Followup Customer List";
 }
 
 <div class="row">
+
     <div class="col-12">
         <div class="box box-success">
             <div class="box-header">
                 <h5><i class="fa fa-list-ul"></i> Daily Followup Customer List</h5>
             </div>
-            <table class="table">
+            <div class="form-group row">
+                <label class="col-2 control-label">Followup Date</label>
+                <div class="col-2">
+                    <input type="date" id="FollowupDate" name="FollowupDate" class="form-control" />
+                </div>
+            </div>
+
+            <br />
+            <table class="table" id="followupTable">
                 <thead>
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.CustomerName)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.ContractPerson)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.MobileNo)
-                        </th>
-                        <th>
                             @Html.DisplayNameFor(model => model.Address)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.BuildingDetails)
+                            @Html.DisplayNameFor(model => model.CityName)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.AreaName)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.MpoName)
+                            @Html.DisplayNameFor(model => model.SubAreaName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmployeeName)
                         </th>
                         <th>Action</th>
                     </tr>
@@ -45,22 +51,19 @@
                                 @Html.DisplayFor(modelItem => item.CustomerName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.ContractPerson)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.MobileNo)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(modelItem => item.Address)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.BuildingDetails)
+                                @Html.DisplayFor(modelItem => item.CityName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.AreaName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.MpoName)
+                                @Html.DisplayFor(modelItem => item.SubAreaName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeName)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "GetFollowupsByCustId", new {  id=item.CustomerId }) |
@@ -73,4 +76,42 @@
         </div>
     </div>
 </div>
-</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#FollowupDate').change(function() {
+                //alert("Js Works..");
+                $.ajax({
+                    type: "GET",
+                    url: "Followup/GetDailyFollowupList",
+                    data: { followupdate: $(this).val() },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        console.log(result);
+                        // process the result here
+                        //bookinginfo
+                        var followupTable = $('#followupTable tbody');
+                        followupTable.empty();
+                        $(result).each(function(index, data) {
+                            //console.log(data);
+                            var linkcustomerDetails = '<a href="Followup/GetFollowupsByCustId/' + data.customerId + '">Details</a>';
+                            var linkAddNewFollowup= '<a href="Followup/AddNewFollowup/' + data.customerId + '">Add New Followup</a>';
+                            followupTable.append('<tr><td>'+ data.customerName + '</td><td>' + data.address + '</td><td>' +
+                                data.cityName+ '</td><td>' + data.areaName + '</td><td>' + data.subAreaName + '</td><td>' +
+                                data.employeeName + '</td><td>' + linkcustomerDetails+'|'+ linkAddNewFollowup + '</td></tr>');
+                        });
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
+}

@@ -18,7 +18,7 @@ namespace ApplicationCore.Entities
         public double Capacity { get; set; }
 
         [ForeignKey("Customer")]
-        public int CusotmerId { get; set; }
+        public int CustomerId { get; set; }
         public Customer Customer { get; set; }
     }
 }

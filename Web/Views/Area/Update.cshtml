@@ -1,7 +1,7 @@
 ﻿@model ApplicationCore.Entities.Area
 
 @{
-    ViewData["Title"] = "Update";
+    ViewData["Title"] = "Update Area";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -44,6 +44,7 @@
                             <span asp-validation-for="Status" class="text-danger"></span>
                         </div>
                     </div>
+                    <br />
                     <div class="form-group text-center">
                         <input type="submit" value="Update" class="btn btn-primary" />
                         <a type="button" class="btn btn-info" asp-action="Index"><li class="fa fa-list-ul"></li> List </a>

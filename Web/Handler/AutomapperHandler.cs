@@ -12,11 +12,16 @@ namespace Web.Handler
             CreateMap<CustomerFollowupVM, Customer>().ReverseMap();
             CreateMap<CustomerFollowupVM, Followup>().ReverseMap();
             CreateMap<CustomerDto, DailyFollowupListVM>();
-            CreateMap<CustomerDto, AddFollowupVM>().ReverseMap();
+            CreateMap<CustomerFollowupDto, AddFollowupVM>().ReverseMap();
             CreateMap<AddFollowupVM, Followup>().ReverseMap();
             CreateMap<AddFollowupVM, BookingVM>().ReverseMap();
             CreateMap<BookingDto, BookingVM>().ReverseMap();
             CreateMap<ServiceFeedbackDto, ServiceFeedbackVM>().ReverseMap();
+            CreateMap<BuildingDetailsDto, BuildingDetailsVM>().ReverseMap();
+            CreateMap<ContractDetailsDto, ContractDetailsVM>().ReverseMap();
+            CreateMap<ServiceFeedbackDto, ComplainRegisterVM>().ReverseMap();
+            CreateMap<ComplainFeedbackDto, ComplainFeedbackVM>().ReverseMap();
+            CreateMap<CustomerFollowupMasterDto, CustomerFollowupMasterVM>().ReverseMap();
         }
     }
 }

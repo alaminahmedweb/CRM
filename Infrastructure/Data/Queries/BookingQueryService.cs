@@ -27,6 +27,7 @@ namespace Infrastructure.Data.Queries
                                     TeamName = tm.Name,
                                     ShiftId = sft.Id,
                                     ShiftName = sft.Name,
+                                    TeamLeaderName=tm.TeamLeaderName,
                                     TeamAndShift=tm.Id+sft.Id
                                 }).ToList();
 
@@ -34,7 +35,9 @@ namespace Infrastructure.Data.Queries
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate == date.Date)
                                join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
-                               join ar in _dbContext.Areas on cus.SubAreaId equals ar.Id
+                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
                                select new
                                {
                                    BookingId = bk.Id,
@@ -47,11 +50,11 @@ namespace Infrastructure.Data.Queries
                                    Status = bk.Status,
                                    AgreeAmount = fol.AgreeAmount,
                                    OrganizationName = cus.ClientName,
-                                   ContractPerson = "",//cus.ContractPerson,
-                                   MobileNo = "",//cus.MobileNo,
                                    Address = cus.Address,
-                                   BuildingDetails = "",//cus.BuildingDetails,
-                                   AreaName = ar.Name
+                                   CityName=cty.Name,
+                                   AreaName = ar.Name,
+                                   SubAreaName=sar.Name
+
                                }).ToList();
 
             //left join between teamAndShift and bookings
@@ -74,55 +77,119 @@ namespace Infrastructure.Data.Queries
                 BookingItemDto bookingItemDto = new BookingItemDto();
                 bookingItemDto.TeamId = item.tmSft.TeamId;
                 bookingItemDto.TeamName = item.tmSft.TeamName;
+                bookingItemDto.TeamLeaderName = item.tmSft.TeamLeaderName;
                 bookingItemDto.ShiftId = item.tmSft.ShiftId;
                 bookingItemDto.ShiftName = item.tmSft.ShiftName;
-                bookingItemDto.EntryDate = item.result == null? null: item.result.EntryDate;
-                bookingItemDto.BookingDate = item.result == null ? null : item.result.BookingDate;
+                bookingItemDto.EntryDate = item.result == null? "": item.result.EntryDate.ToString();
+                bookingItemDto.BookingDate = item.result == null ? "" : item.result.BookingDate.ToString();
                 bookingItemDto.FollowupId = item.result==null ? 0: item.result.FollowupId;
                 bookingItemDto.Status = item.result==null? "-----":"Booked";
-                bookingItemDto.AgreeAmount = item.result == null ?null: item.result.AgreeAmount;
+                bookingItemDto.AgreeAmount = item.result == null ?"": item.result.AgreeAmount.ToString();
                 bookingItemDto.Name = item.result==null?"": item.result.OrganizationName;
-                bookingItemDto.ContractPerson = item.result==null? "": item.result.ContractPerson;
-                bookingItemDto.MobileNo = item.result==null?"":item.result.MobileNo;
                 bookingItemDto.Address = item.result==null?"": item.result.Address;
-                bookingItemDto.BuildingDetails = item.result==null ? "": item.result.BuildingDetails;
+                bookingItemDto.CityName = item.result == null ? "" : item.result.CityName;
                 bookingItemDto.AreaName = item.result==null? "":item.result.AreaName;
+                bookingItemDto.SubAreaName = item.result == null ? "" : item.result.SubAreaName;
                 bookingDtos.Add(bookingItemDto);
             }
 
             return bookingDtos;
         }
 
+
         public BookingDto GetFollowupDetailsById(int id)
         {
-            var followupDetails = (from fol in _dbContext.Followups.Where(a => a.Id == id)
-                                   join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
-                                   join ar in _dbContext.Areas on cus.SubAreaId equals ar.Id
+            
+            var result = (from cus in _dbContext.Customers
+                          join fol in _dbContext.Followups.Where(a => a.Id == id) on cus.Id equals fol.CustomerId
+                          join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                          join subar in _dbContext.SubAreas on cus.SubAreaId equals subar.Id
+                          join ar in _dbContext.Areas on subar.AreaId equals ar.Id
+                          join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                          join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
+                          join mnt in _dbContext.MonthList on fol.CustomerDoTheWorkingMonth equals mnt.Id
+                          select new
+                          {
+                              CustomerId = cus.Id,
+                              CustomerName = cus.ClientName,
+                              Address = cus.Address,
+                              AreaName = ar.Name,
+                              EmployeeName = emp.Name,
+                              CityName = cty.Name,
+                              SubAreaName = subar.Name,
+                              NoOfFloor = cus.NoOfFloor,
+                              NoOfFlat = cus.NoOfFlat,
+                              ServiceName = srv.Name,
+                              OfferAmount = fol.OfferAmount,
+                              AgreeAmount = fol.AgreeAmount,
+                              CustomerDoTheWorkingMonth = mnt.Name,
+                              Remarks = fol.Remarks,
+                              PositiveOrNegative = fol.PositiveOrNegative,
+                              DiscussionDetailsNote = fol.DiscussionDetailsNote,
+                              MarketingNextPlan = fol.MarketingNextPlan
+                          }).ToList();
+            BookingDto bookingDto = new BookingDto();
+
+            foreach (var data in result)
+            {
+                bookingDto.CustomerId = data.CustomerId;
+                bookingDto.Name = data.CustomerName;
+                bookingDto.Address = data.Address;
+                bookingDto.AreaName = data.AreaName;
+                bookingDto.EmployeeName = data.EmployeeName;
+                bookingDto.CityName = data.CityName;
+                bookingDto.SubAreaName = data.SubAreaName;
+                bookingDto.NoOfFloor = data.NoOfFloor;
+                bookingDto.NoOfFlat = data.NoOfFlat;
+                bookingDto.ServiceName = data.ServiceName;
+                bookingDto.OfferAmount = data.OfferAmount;
+                bookingDto.AgreeAmount = data.AgreeAmount;
+                bookingDto.CustomerDoTheWorkingMonth = data.CustomerDoTheWorkingMonth;
+                bookingDto.Remarks = data.Remarks;
+                bookingDto.PositiveOrNegative = data.PositiveOrNegative;
+                bookingDto.DiscussionDetailsNote = data.DiscussionDetailsNote;
+                bookingDto.MarketingNextPlan = data.MarketingNextPlan;
+                bookingDto.FollowupId = id;
+            }
+            var buildingDetails = (from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == bookingDto.CustomerId)
+                                   join brnd in _dbContext.Brands
+                                   on bld.BrandId equals brnd.Id
                                    select new
                                    {
-                                       CustomerId = fol.CustomerId,
-                                       CustomerName = cus.ClientName,
-                                       ContractPerson = "",//cus.ContractPerson,
-                                       MobileNo ="" ,//cus.MobileNo,
-                                       Address = cus.Address,
-                                       BuildingDetails = "",//cus.BuildingDetails,
-                                       AreaName = ar.Name,
-                                       AgreeAmount=fol.AgreeAmount,
-                                       FollowupId=fol.Id
-                                   }).ToList();
-            BookingDto followupDetailsDto = new BookingDto();
-            foreach(var item in followupDetails)
+                                       BrandName = brnd.Name,
+                                       Quantity = bld.Quantity,
+                                       Capacity = bld.Capacity
+                                   });
+            foreach (var item in buildingDetails)
             {
-                followupDetailsDto.Name = item.CustomerName;
-                followupDetailsDto.ContractPerson = item.ContractPerson;
-                followupDetailsDto.MobileNo = item.MobileNo;
-                followupDetailsDto.Address = item.Address;  
-                followupDetailsDto.BuildingDetails = item.BuildingDetails;  
-                followupDetailsDto.AreaName = item.AreaName;
-                followupDetailsDto.AgreeAmount = item.AgreeAmount;
-                followupDetailsDto.FollowupId = item.FollowupId;
+                BuildingDetailsDto building = new BuildingDetailsDto();
+                building.BrandName = item.BrandName;
+                building.Quantity = item.Quantity;
+                building.Capacity = item.Capacity;
+                bookingDto.BuildingDetails.Add(building);
             }
-            return followupDetailsDto;
+
+            var contractDetails = (from con in _dbContext.ContractDetails.Where(a => a.CustomerId == bookingDto.CustomerId)
+                                   join des in _dbContext.Designations
+                                   on con.DesignationId equals des.Id
+                                   select new
+                                   {
+                                       ClientName = con.Name,
+                                       MobileNo = con.MobileNo,
+                                       Designation = des.Name
+                                   });
+            foreach (var contract in contractDetails)
+            {
+                ContractDetailsDto contractDetailsDto = new ContractDetailsDto();
+                contractDetailsDto.Name = contract.ClientName;
+                contractDetailsDto.MobileNo = contract.MobileNo;
+                contractDetailsDto.Designation = contract.Designation;
+                bookingDto.ContractDetails.Add(contractDetailsDto);
+            }
+
+            return bookingDto;
         }
+
+
     }
 }
