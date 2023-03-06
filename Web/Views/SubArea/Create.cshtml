@@ -1,7 +1,7 @@
 ﻿@model ApplicationCore.Entities.SubArea
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add New Sub Area";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
@@ -33,6 +33,7 @@
                             <span asp-validation-for="AreaId" class="text-danger"></span>
                         </div>
                     </div>
+                    <br />
                     <div class="form-group text-center">
                         <input type="submit" value="Save" class="btn btn-primary" />
                         <a type="button" class="btn btn-info" asp-action="Index"><li class="fa fa-list-ul"></li> List </a>

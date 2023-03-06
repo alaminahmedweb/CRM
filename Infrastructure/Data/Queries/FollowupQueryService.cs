@@ -18,11 +18,16 @@ namespace Infrastructure.Data.Queries
             _dbContext = dbContext;
         }
 
-        public CustomerDto GetCustomerDetailsByCustId(int id)
+        public CustomerFollowupDto GetCustomerDetailsByCustId(int id)
         {
+            int lastFollowupId = _dbContext.Followups.Where(a => a.CustomerId == id).Max(a => a.Id);
+
             var result = (from cus in _dbContext.Customers.Where(a => a.Id == id)
-                          join ar in _dbContext.Areas on cus.SubAreaId equals ar.Id
+                          join fol in _dbContext.Followups.Where(a=>a.Id==lastFollowupId) on cus.Id equals fol.CustomerId
                           join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                          join subar in _dbContext.SubAreas on cus.SubAreaId equals subar.Id
+                          join ar in _dbContext.Areas on subar.AreaId equals ar.Id
+                          join cty in _dbContext.Cities on ar.CityId equals cty.Id
                           select new
                           {
                               CustomerId = cus.Id,
@@ -30,15 +35,41 @@ namespace Infrastructure.Data.Queries
                               Address = cus.Address,
                               AreaName = ar.Name,
                               EmployeeName = emp.Name,
+                              CityName=cty.Name,
+                              SubAreaName=subar.Name,
+                              NoOfFloor=cus.NoOfFloor,
+                              NoOfFlat=cus.NoOfFlat,
+                              ServiceTypeId=fol.ServiceTypeId,
+                              OfferAmount=fol.OfferAmount,
+                              AgreeAmount=fol.AgreeAmount,
+                              CustomerDoTheWorkingMonth=fol.CustomerDoTheWorkingMonth,
+                              Remarks=fol.Remarks,
+                              PositiveOrNegative=fol.PositiveOrNegative,
+                              DiscussionDetailsNote=fol.DiscussionDetailsNote,
+                              MarketingNextPlan=fol.MarketingNextPlan
                           }).ToList();
-            CustomerDto customerDto = new CustomerDto();
+            CustomerFollowupDto customerFollowupDto = new CustomerFollowupDto();
+            
             foreach (var data in result)
             {
-                customerDto.CustomerId = data.CustomerId;
-                customerDto.CustomerName = data.CustomerName;
-                customerDto.Address = data.Address;
-                customerDto.AreaName = data.AreaName;
-                customerDto.EmployeeName = data.EmployeeName;
+                customerFollowupDto.CustomerId = data.CustomerId;
+                customerFollowupDto.Name = data.CustomerName;
+                customerFollowupDto.Address = data.Address;
+                customerFollowupDto.AreaName = data.AreaName;
+                customerFollowupDto.EmployeeName = data.EmployeeName;
+                customerFollowupDto.CityName = data.CityName;
+                customerFollowupDto.SubAreaName = data.SubAreaName;
+                customerFollowupDto.NoOfFloor = data.NoOfFloor;
+                customerFollowupDto.NoOfFlat = data.NoOfFlat;
+                customerFollowupDto.ServiceTypeId = data.ServiceTypeId;
+                customerFollowupDto.OfferAmount = data.OfferAmount;
+                customerFollowupDto.AgreeAmount = data.AgreeAmount;
+                customerFollowupDto.CustomerDoTheWorkingMonth = data.CustomerDoTheWorkingMonth;
+                customerFollowupDto.Remarks = data.Remarks;
+                customerFollowupDto.PositiveOrNegative = data.PositiveOrNegative;
+                customerFollowupDto.DiscussionDetailsNote = data.DiscussionDetailsNote;
+                customerFollowupDto.MarketingNextPlan = data.MarketingNextPlan;
+
             }
             var buildingDetails = (from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == id)
                                    join brnd in _dbContext.Brands
@@ -55,7 +86,7 @@ namespace Infrastructure.Data.Queries
                 building.BrandName = item.BrandName;
                 building.Quantity = item.Quantity;
                 building.Capacity = item.Capacity;
-                customerDto.BuildingDetails.Add(building);
+                customerFollowupDto.BuildingDetails.Add(building);
             }
 
             var contractDetails = (from con in _dbContext.ContractDetails.Where(a => a.CustomerId == id)
@@ -73,16 +104,20 @@ namespace Infrastructure.Data.Queries
                 contractDetailsDto.Name = contract.ClientName;
                 contractDetailsDto.MobileNo = contract.MobileNo;
                 contractDetailsDto.Designation = contract.Designation;
-                customerDto.ContractDetails.Add(contractDetailsDto);
+                customerFollowupDto.ContractDetails.Add(contractDetailsDto);
             }
 
-            return customerDto;
+
+
+            return customerFollowupDto;
         }
 
         public IEnumerable<CustomerDto> GetDailyFollowupList(DateTime date)
         {
             var result = (from cus in _dbContext.Customers
-                          join ar in _dbContext.Areas on cus.SubAreaId equals ar.Id
+                          join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                          join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                          join cty in _dbContext.Cities on ar.CityId equals cty.Id
                           join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
                           join fol in _dbContext.Followups.Where(a=>a.FollowupCallDate==date.Date) 
                           on cus.Id equals fol.CustomerId 
@@ -91,9 +126,11 @@ namespace Infrastructure.Data.Queries
                               CustomerId = cus.Id,
                               CustomerName = cus.ClientName,
                               Address = cus.Address,
+                              CityName=cty.Name,
                               AreaName = ar.Name,
+                              SubAreaName=sar.Name,
                               EmployeeName = emp.Name,
-                              FollowupDate = fol.FollowupCallDate.ToString("dd/MM/yyyy")
+                              FollowupDate = fol.FollowupCallDate//.ToString("dd/MM/yyyy")
                           }).Distinct().ToList();
 
             List<CustomerDto> followupDtos = new List<CustomerDto>();
@@ -103,7 +140,9 @@ namespace Infrastructure.Data.Queries
                 follouwupdto.CustomerId = data.CustomerId;
                 follouwupdto.CustomerName = data.CustomerName;
                 follouwupdto.Address = data.Address;
+                follouwupdto.CityName = data.CityName;
                 follouwupdto.AreaName = data.AreaName;
+                follouwupdto.SubAreaName = data.SubAreaName;
                 follouwupdto.EmployeeName = data.EmployeeName;
                 followupDtos.Add(follouwupdto);
             }
@@ -157,7 +196,7 @@ namespace Infrastructure.Data.Queries
                 followupDetailsDto.CallingDate = data.CallingDate;
                 followupDetailsDto.OfferAmount = data.OfferAmount;
                 followupDetailsDto.AgreeAmount = data.AgreeAmount;
-                followupDetailsDto.CustomerDoTheWorkingMonth = data.CustomerDoTheWorkingMonth.ToString();
+                followupDetailsDto.CustomerDoTheWorkingMonthName = data.CustomerDoTheWorkingMonth.ToString();
                 followupDetailsDto.Remarks = data.Remarks;
                 followupDetailsDto.PositiveOrNegative = data.PositiveOrNegative;
                 followupDetailsDto.DiscussionDetailsNote = data.DiscussionDetailsNote;

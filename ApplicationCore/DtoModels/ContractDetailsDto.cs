@@ -12,6 +12,7 @@ namespace ApplicationCore.DtoModels
 
         public string MobileNo { get; set; }
 
+        public int DesignationId { get; set; }
         public string Designation { get; set; }
 
     }

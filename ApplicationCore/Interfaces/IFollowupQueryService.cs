@@ -11,6 +11,6 @@ namespace ApplicationCore.Interfaces
     {
         IEnumerable<CustomerDto> GetDailyFollowupList(DateTime date);
         FollowupDetailsByIdDto GetFollowupDetailsByCustId(int id);
-        CustomerDto GetCustomerDetailsByCustId(int id);
+        CustomerFollowupDto GetCustomerDetailsByCustId(int id);
     }
 }

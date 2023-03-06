@@ -54,7 +54,6 @@ namespace Web.Controllers
         public JsonResult ShowBookingData(DateTime date)
         {
             var bookingItems = _bookingQueryService.GetBookingDetailsByDate(date.Date).ToList();
-            
             return Json(bookingItems);
         }
 

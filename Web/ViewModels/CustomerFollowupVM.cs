@@ -11,7 +11,7 @@ namespace Web.ViewModels
             ContractDetails= new List<ContractDetailsVM>();
         }
         public int Id { get; set; } = 0;
-        public int serviceTypeId { get; set; }
+        public int ServiceTypeId { get; set; }
         public string? Name { get; set; } = String.Empty;
         public string? ContractPerson { get; set; } = String.Empty;
 
@@ -36,14 +36,14 @@ namespace Web.ViewModels
         public int Quantity { get; set; }
         public int Capacity { get; set; }
         public int ContactId { get; set; } = 0;//FK
-        public int MpoId { get; set; } = 0;//FK
+        public int EmployeeId { get; set; }//FK
 
         public List<BuildingDetailsVM> BuildingDetails { get; set; }
         public List<ContractDetailsVM> ContractDetails { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime? CallingDate { get; set; } = DateTime.Now;
+        public DateTime CallingDate { get; set; } = DateTime.Now;
         [Required]
         public string? OpinionAndPlan { get; set; } = String.Empty;
         [Required]

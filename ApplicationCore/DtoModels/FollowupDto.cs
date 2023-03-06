@@ -16,13 +16,15 @@ namespace ApplicationCore.DtoModels
         public string OpinionAndPlan { get; set; } = String.Empty;
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
-        public string CustomerDoTheWorkingMonth { get; set; } = String.Empty;
+        public int CustomerDoTheWorkingMonth { get; set; } = 0;
+        public string CustomerDoTheWorkingMonthName { get; set; } = "";
         public string Remarks { get; set; } = String.Empty;
         public string PositiveOrNegative { get; set; } = String.Empty;
         public string DiscussionDetailsNote { get; set; } = String.Empty;
         public string MarketingNextPlan { get; set; } = String.Empty;
         [DataType(DataType.Date)]
         public DateTime FollowupCallDate { get; set; }=DateTime.Now;
+        public int ServiceTypeId { get; set; }
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
 
     }

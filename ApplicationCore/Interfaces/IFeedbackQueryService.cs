@@ -10,5 +10,8 @@ namespace ApplicationCore.Interfaces
     public interface IFeedbackQueryService
     {
         List<ServiceFeedbackDto> GetBookingList(DateTime date);
+        ServiceFeedbackDto GetBookingListByid(int id);
+        List<ComplainFeedbackDto> GetDailyComplainList(DateTime date);
+        ComplainFeedbackDto GetComplainDetailsById(int id);
     }
 }
