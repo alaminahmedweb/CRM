@@ -55,7 +55,7 @@ namespace Infrastructure.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=ALAMIN-PC;database=CRMDB;User Id=sa;Password = Admin@123!@#;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("server=ANONYMOUS;database=CRMDB;User Id=sa;Password = 1;TrustServerCertificate=True;");
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{

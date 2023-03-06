@@ -1402,3 +1402,7 @@ a[b-lzldzk1rll] {
 @media (min-width: 1200px) .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 100% !important;
 }
+.table-scrollable {
+    height: 250px;
+    overflow-x: auto;
+}
