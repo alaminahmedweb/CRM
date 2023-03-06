@@ -7,7 +7,7 @@ using Web.ViewModels.Account;
 
 namespace Web.Controllers
 {
-    [Authorize(Roles ="Super Admin,Admin")]
+    [Authorize]
     public class AccountController : Controller
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -98,12 +98,6 @@ namespace Web.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
-        }
-
-        [AllowAnonymous]
-        public IActionResult AccessDenied()
-        {
-            return View();
         }
     }
 }

@@ -1,884 +1,304 @@
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\appsettings.Development.json
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\appsettings.json
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.staticwebassets.runtime.json
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.exe
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.deps.json
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.runtimeconfig.json
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Web.pdb
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Azure.Core.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Azure.Identity.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Humanizer.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.Annotations.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Common.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Configuration.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Frameworks.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.LibraryModel.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Packaging.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.ProjectModel.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Protocol.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Versioning.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.CodeDom.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.AttributedModel.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Convention.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Hosting.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Runtime.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.TypedParts.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Memory.Data.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Json.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.dll
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.pdb
-D:\CleanSource\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.pdb
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.build.json
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.development.json
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\bundle\Web.styles.css
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\projectbundle\Web.bundle.scp.css
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CopyComplete
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.dll
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\refint\Web.dll
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.pdb
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
-D:\CleanSource\CRM_Solution\Web\obj\Debug\net6.0\ref\Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\appsettings.Development.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\appsettings.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.staticwebassets.runtime.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.exe
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.deps.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.runtimeconfig.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Web.pdb
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Azure.Core.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Azure.Identity.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Humanizer.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.Annotations.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Newtonsoft.Json.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Common.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Configuration.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Frameworks.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.LibraryModel.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Packaging.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.ProjectModel.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Protocol.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Versioning.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.CodeDom.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.AttributedModel.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Convention.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Hosting.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Runtime.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.TypedParts.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Drawing.Common.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Memory.Data.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Runtime.Caching.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Permissions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Json.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\System.Windows.Extensions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.pdb
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.pdb
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.props
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.props
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.pack.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.build.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.development.json
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\bundle\Web.styles.css
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\projectbundle\Web.bundle.scp.css
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CopyComplete
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\refint\Web.dll
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.pdb
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
-E:\Asp.NET\ZA\CRM_Solution\CRM_Solution (1)\CRM_Solution\Web\obj\Debug\net6.0\ref\Web.dll
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\appsettings.Development.json
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\appsettings.json
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.staticwebassets.runtime.json
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.exe
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.deps.json
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.runtimeconfig.json
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Web.pdb
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Azure.Core.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Azure.Identity.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Humanizer.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\MessagePack.Annotations.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Newtonsoft.Json.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Common.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Configuration.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Frameworks.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.LibraryModel.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Packaging.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.ProjectModel.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Protocol.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\NuGet.Versioning.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.AttributedModel.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Convention.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Hosting.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.Runtime.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Composition.TypedParts.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Drawing.Common.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Memory.Data.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Runtime.Caching.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Security.Permissions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Windows.Extensions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\ApplicationCore.pdb
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Infrastructure.pdb
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.build.json
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\staticwebassets.development.json
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\bundle\Web.styles.css
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\scopedcss\projectbundle\Web.bundle.scp.css
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.csproj.CopyComplete
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.dll
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\refint\Web.dll
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.pdb
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\ref\Web.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.CodeDom.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\System.Text.Json.dll
-D:\CRM_Solution\CRM_Solution\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-D:\CRM_Solution\CRM_Solution\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cs
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\appsettings.Development.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\appsettings.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.staticwebassets.runtime.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.exe
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.deps.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.runtimeconfig.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Web.pdb
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\AutoMapper.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Azure.Core.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Azure.Identity.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Humanizer.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\MessagePack.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\MessagePack.Annotations.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Build.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Features.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Features.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Scripting.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Features.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.DiaSymReader.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.DotNet.Scaffolding.Shared.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\dotnet-aspnet-codegenerator-design.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Common.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Configuration.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Frameworks.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.LibraryModel.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Packaging.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.ProjectModel.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Protocol.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\NuGet.Versioning.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.CodeDom.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Composition.AttributedModel.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Composition.Convention.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Composition.Hosting.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Composition.Runtime.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Composition.TypedParts.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Text.Json.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ApplicationCore.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Infrastructure.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\ApplicationCore.pdb
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\bin\Debug\net6.0\Infrastructure.pdb
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.csproj.AssemblyReference.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.AssemblyInfoInputs.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.AssemblyInfo.cs
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.csproj.CoreCompileInputs.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cs
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.RazorAssemblyInfo.cs
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.props
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.props
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets.build.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\staticwebassets.development.json
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\scopedcss\bundle\Web.styles.css
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\scopedcss\projectbundle\Web.bundle.scp.css
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.csproj.CopyComplete
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\refint\Web.dll
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.pdb
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
+D:\Asp.NET\ZA\CRM_Solution\CRM\Web\obj\Debug\net6.0\ref\Web.dll

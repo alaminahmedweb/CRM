@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CRM_Solution\\CRM_Solution\\Web\\Web.csproj": {}
+    "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\Web.csproj": {}
   },
   "projects": {
-    "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj": {
+    "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj",
+        "projectUniqueName": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\obj\\",
+        "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj",
+        "packagesPath": "C:\\Users\\zahid\\.nuget\\packages\\",
+        "outputPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,21 +61,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\obj\\",
+        "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\zahid\\.nuget\\packages\\",
+        "outputPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj"
+              "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj"
               }
             }
           }
@@ -147,7 +148,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -156,21 +158,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\CRM_Solution\\CRM_Solution\\Web\\Web.csproj": {
+    "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CRM_Solution\\CRM_Solution\\Web\\Web.csproj",
+        "projectUniqueName": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\Web.csproj",
         "projectName": "Web",
-        "projectPath": "D:\\CRM_Solution\\CRM_Solution\\Web\\Web.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\CRM_Solution\\CRM_Solution\\Web\\obj\\",
+        "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\Web.csproj",
+        "packagesPath": "C:\\Users\\zahid\\.nuget\\packages\\",
+        "outputPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\zahid\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -184,11 +186,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj": {
-                "projectPath": "D:\\CRM_Solution\\CRM_Solution\\ApplicationCore\\ApplicationCore.csproj"
+              "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj": {
+                "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\ApplicationCore\\ApplicationCore.csproj"
               },
-              "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\CRM_Solution\\CRM_Solution\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -232,7 +234,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -244,7 +247,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
