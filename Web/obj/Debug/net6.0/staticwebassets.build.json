@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZNjDHbB7PlU1scttuhgf3U6WXd9s9H6uEnRJWIGsQ5Y=",
+  "Hash": "qub2UO5C54awZ8WFBTBjGDN4pUy/kM9i0fZs+IWpGQ8=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -2378,6 +2378,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\Images\\Background.png"
+    },
+    {
+      "Identity": "D:\\CRM_Solution\\CRM_Solution\\Web\\wwwroot\\lib\\Images\\noaccess.png",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CRM_Solution\\CRM_Solution\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "lib/Images/noaccess.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\Images\\noaccess.png"
     },
     {
       "Identity": "D:\\CRM_Solution\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",

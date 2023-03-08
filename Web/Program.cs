@@ -3,6 +3,7 @@ using ApplicationCore.Services;
 using AutoMapper;
 using Infrastructure;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Web.Configuration;
 using Web.Handler;
@@ -22,6 +23,22 @@ builder.Services.AddCoreServices(builder.Configuration);
 
 
 var app = builder.Build();
+
+using(var scope=app.Services.CreateScope())
+{
+    var scopedprovider=scope.ServiceProvider;
+    try
+    {
+        var usermanager = scopedprovider.GetRequiredService<UserManager<ApplicationUser>>();
+        var rolemanager = scopedprovider.GetRequiredService<RoleManager<IdentityRole>>();
+        var identityContext = scopedprovider.GetRequiredService<AppDbContext>();
+        await AppIdentityDbContextSeed.SeedAsync(identityContext,usermanager, rolemanager);
+    }
+    catch(Exception ex)
+    {
+        //throw new Exception(ex.Message);
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -104,12 +104,27 @@
                 <li>
                     <a href="#pageUser" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User</a>
                     <ul class="collapse list-unstyled" id="pageUser">
-                        <li>
-                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="CreateRole">Create Role</a>
-                        </li>
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="ListRoles">Roles List</a>
+                            </li>
+                        }
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Super Admin"))
+                        {
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="CreateRole">Create Role</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="ListRoles">Roles List</a>
+                            </li>
+                        }
                     </ul>
                 </li>
 
