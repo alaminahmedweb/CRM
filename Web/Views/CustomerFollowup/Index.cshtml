@@ -312,41 +312,82 @@
             var person = [];
             var brand = [];
             $('#btnAddPerson').click(function () {
+
                 var contractPerson = $('#ContractPerson').val();
                 var designationId = $('#DesignationId').val();
                 var designationName = $('#DesignationId option:selected').text();
                 var mobileNo = $('#MobileNo').val();
+<<<<<<< HEAD
                 if (contractPerson == "") { $('#ContractPerson').focus(); return false; }
                 if (designationId == "-1") { $('#DesignationId').focus(); return false; }
                 if (mobileNo.length < 5) { $('#MobileNo').focus(); return false; }
+=======
+
+                if (contractPerson == "") { $('#ContractPerson').focus(); return false; }
+                if (designationId == "-1") { $('#DesignationId').focus(); return false; }
+                if (mobileNo.length < 5) { $('#MobileNo').focus(); return false; }
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
                 let isExist = person.includes(contractPerson);
                 if (isExist == true) {
                     alert("Already Exist" + contractPerson); return false;
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
                 var contractTable = $('#tblPersonDetails');
                 contractTable.append('<tr><td>' + contractPerson + '</td><td class="none">' + designationId + '</td><td>'
                     + designationName + '</td><td>' + mobileNo + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
                 $('#MobileNo').val("");
                 $('#ContractPerson').val("");
                 person.push(contractPerson);
+<<<<<<< HEAD
             });
             $("table #tblPersonDetails").on("click", "a.deleteRow", function (event) {
                 event.preventDefault();
                 $(this).closest('tr').remove();
                 return false;
             });
+=======
+            });
+
+
+
+            $("table #tblPersonDetails").on("click", "a.deleteRow", function (event) {
+                event.preventDefault();
+                $(this).closest('tr').remove();
+                return false;
+            });
+
+
+
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
             $('#btnAddBuildingDetails').click(function () {
                 var brandId = $('#BrandId').val();
                 var brandName = $('#BrandId option:selected').text();
                 var quantity = $('#Quantity').val();
                 var capacity = $('#Capacity').val();
+<<<<<<< HEAD
                 if (brandId == "-1") { $('#BrandId').focus(); return false; }
                 if (quantity == "0" || quantity == "") { $('#Quantity').focus(); return false; }
                 if (capacity == "0" || capacity == "") { $('#Capacity').focus(); return false; }
+=======
+
+                if (brandId == "-1") { $('#BrandId').focus(); return false; }
+                if (quantity == "0" || quantity == "") { $('#Quantity').focus(); return false; }
+                if (capacity == "0" || capacity == "") { $('#Capacity').focus(); return false; }
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
                 let isExist = brand.includes(brandId);
                 if (isExist == true) {
                     alert("Already Exist " + brandName); return false;
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
                 var buildingDetailsTable = $('#tblBuldingDetails');
                 buildingDetailsTable.append('<tr><td class="none">' + brandId + '</td><td>' + brandName + '</td><td>'
                     + quantity + '</td><td>' + capacity + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
@@ -354,12 +395,25 @@
                 $('#Quantity').val("");
                 $('#Capacity').val("");
                 brand.push(brandId);
+<<<<<<< HEAD
             });
             $("table #tblBuldingDetails").on("click", "a.deleteRow", function (event) {
                 event.preventDefault();
                 $(this).closest('tr').remove();
                 return false;
             });
+=======
+            });
+
+
+            $("table #tblBuldingDetails").on("click", "a.deleteRow", function (event) {
+                event.preventDefault();
+                $(this).closest('tr').remove();
+                return false;
+            });
+
+
+>>>>>>> 961171bbbce663c0506f97e3dc7d9772209f1df8
             var cityId = $('#CityId');
             var areaId = $('#AreaId');
             var subAreaId = $('#SubAreaId');

@@ -1,347 +1,371 @@
 {
   "Files": [
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css",
       "PackagePath": "staticwebassets\\Web.bundle.scp.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\adminlte.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\adminlte.min.css",
       "PackagePath": "staticwebassets\\css\\adminlte.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\buttons.dataTables.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\buttons.dataTables.min.css",
       "PackagePath": "staticwebassets\\css\\buttons.dataTables.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\datetimepicker.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\datetimepicker.css",
       "PackagePath": "staticwebassets\\css\\datetimepicker.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\fontawesome.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\fontawesome.css",
       "PackagePath": "staticwebassets\\css\\fontawesome.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\jquery-editable-select.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\jquery-editable-select.min.css",
       "PackagePath": "staticwebassets\\css\\jquery-editable-select.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\jquery-ui.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\jquery-ui.css",
       "PackagePath": "staticwebassets\\css\\jquery-ui.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\jquery-ui.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\jquery-ui.min.css",
       "PackagePath": "staticwebassets\\css\\jquery-ui.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\jquery-ui.structure.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\jquery-ui.structure.css",
       "PackagePath": "staticwebassets\\css\\jquery-ui.structure.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\jquery-ui.structure.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\jquery-ui.structure.min.css",
       "PackagePath": "staticwebassets\\css\\jquery-ui.structure.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\main.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\main.min.css",
       "PackagePath": "staticwebassets\\css\\main.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\site.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\css\\sweetalert2.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\css\\sweetalert2.min.css",
       "PackagePath": "staticwebassets\\css\\sweetalert2.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\favicon.ico",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\dataTables.buttons.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\dataTables.buttons.min.js",
       "PackagePath": "staticwebassets\\js\\dataTables.buttons.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\datetimepicker.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\datetimepicker.js",
       "PackagePath": "staticwebassets\\js\\datetimepicker.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\jquery-editable-select.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\jquery-editable-select.min.js",
       "PackagePath": "staticwebassets\\js\\jquery-editable-select.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\jquery-ui.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\jquery-ui.min.js",
       "PackagePath": "staticwebassets\\js\\jquery-ui.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\jquery.dataTables.bootstrap.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\jquery.dataTables.bootstrap.js",
       "PackagePath": "staticwebassets\\js\\jquery.dataTables.bootstrap.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\jquery.dataTables.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\jquery.dataTables.js",
       "PackagePath": "staticwebassets\\js\\jquery.dataTables.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\jquery.validate.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\modal.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\modal.js",
       "PackagePath": "staticwebassets\\js\\modal.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\moment.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\moment.min.js",
       "PackagePath": "staticwebassets\\js\\moment.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\pace.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\pace.min.js",
       "PackagePath": "staticwebassets\\js\\pace.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\site.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\sweetalert2.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\sweetalert2.min.js",
       "PackagePath": "staticwebassets\\js\\sweetalert2.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\js\\validation_rules_message.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\js\\validation_rules_message.js",
       "PackagePath": "staticwebassets\\js\\validation_rules_message.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\Images\\Background.png",
+      "PackagePath": "staticwebassets\\lib\\Images\\Background.png"
+    },
+    {
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery-ui.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\dist\\jquery-ui.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery-ui.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery-ui.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\dist\\jquery-ui.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery-ui.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "E:\\Asp.NET\\ZA\\CRM_Solution\\CRM_Solution (1)\\CRM_Solution\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\Asp.NET\\ZA\\CRM_Solution\\CRM\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
