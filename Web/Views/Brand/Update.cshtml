@@ -1,8 +1,14 @@
 ﻿@model ApplicationCore.Entities.Brand
+@inject UserManager<ApplicationUser> userManager;
 
 @{
     ViewData["Title"] = "Update Brand";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
 }
 <div class="row">
     <div class="col-4"></div>
@@ -14,6 +20,7 @@
             <div class="box-body">
                 <form asp-action="Update" autocomplete="off">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
                     <div class="form-group row">
                         <label asp-for="Name" class="col-4 control-label"></label>
                         <div class="col-8">

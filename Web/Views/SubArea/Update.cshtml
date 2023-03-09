@@ -1,8 +1,15 @@
 ﻿@model ApplicationCore.Entities.SubArea
+@inject UserManager<ApplicationUser> userManager;
 
 @{
     ViewData["Title"] = "Update Sub Area";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+
 }
 <div class="row">
     <div class="col-4"></div>
@@ -14,6 +21,7 @@
             <div class="box-body">
                 <form asp-action="Update">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
                     <div class="form-group row">
                         <label asp-for="Name" class="control-label col-4">Sub Area</label>
                         <div class="col-8">

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class ContractDetails
+    public class ContractDetails : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
         public string MobileNo { get; set; }

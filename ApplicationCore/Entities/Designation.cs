@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class Designation
+    public class Designation : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
     }

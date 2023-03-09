@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class MonthList
+    public class MonthList 
     {
         public int Id { get; set; }
         public string Name { get; set; }

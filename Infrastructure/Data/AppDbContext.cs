@@ -50,7 +50,14 @@ namespace Infrastructure.Data
                 new MonthList { Id = 11, Name = "November" },
                 new MonthList { Id = 12, Name = "December" }
                 );
+                
             base.OnModelCreating(modelBuilder);
+
+            //This Code will restrict default cascading behaviour
+            foreach(var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e=>e.GetForeignKeys()))
+            {
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

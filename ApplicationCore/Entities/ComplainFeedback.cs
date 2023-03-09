@@ -8,9 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApplicationCore.Entities
 {
-    public class ComplainFeedback
+    public class ComplainFeedback : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public string ActionTakenAgainstComplain { get; set; } = "";
         [Required]

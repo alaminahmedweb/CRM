@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class ServiceFeedback
+    public class ServiceFeedback : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         [MinLength(4)]
         public string CustomerFeedback { get; set; }

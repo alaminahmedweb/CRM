@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class Customer
+    public class Customer : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [MinLength(3, ErrorMessage = "Name at least 3 Character")]
         public string ClientName { get; set; } = String.Empty;

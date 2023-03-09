@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class SubArea
+    public class SubArea : BaseEntity
     {
-        public int Id { get; set; } 
-
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         [ForeignKey("Area")]
         public int AreaId { get; set; }
-        public Area Area { get; set; }
+        public Area? Area { get; set; }
     }
 }

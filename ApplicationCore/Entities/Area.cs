@@ -8,10 +8,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ApplicationCore.Entities
 {
-    public class Area
+    public class Area :BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [MinLength(3, ErrorMessage = "Area Name at least 3 Character")]
         public string Name { get; set; }=String.Empty;
@@ -21,6 +19,6 @@ namespace ApplicationCore.Entities
 
         [ForeignKey("City")]
         public int CityId { get; set; }
-        public City City { get; set; }
+        public City? City { get; set; }
     }
 }

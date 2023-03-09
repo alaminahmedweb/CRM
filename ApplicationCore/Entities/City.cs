@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class City
+    public class City : BaseEntity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
+        public string Name { get; set; } = "";
     }
 }

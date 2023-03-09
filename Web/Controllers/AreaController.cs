@@ -1,9 +1,12 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class AreaController : Controller
     {
         private readonly IAreaService _areaService;
@@ -30,15 +33,31 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Area area)
+        public async Task<IActionResult> Create(Area model)
         {
-            int id= await _areaService.AddEntity(area);
-            if (id!=0)
+            try
             {
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    int id = await _areaService.AddEntity(model);
+                    if (id != 0)
+                    {
+                        TempData["SuccessMessage"] = "Created Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
             }
-            return View();
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+
+            }
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var _data = await _areaService.GetByIdAsync(id);
@@ -48,16 +67,32 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Update")]
-        public async Task<IActionResult> UpdateMpo(Area area)
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> UpdateMpo(Area model)
         {
-            bool isSuccess = await _areaService.UpdateEntity(area);
-            if (isSuccess)
+            try
             {
+                if (ModelState.IsValid)
+                {
+                    bool isSuccess = await _areaService.UpdateEntity(model);
+                    if (isSuccess)
+                    {
+                        TempData["SuccessMessage"] = "Updated Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
                 return RedirectToAction("Index");
             }
-            return View();
         }
 
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var _data = await _areaService.GetByIdAsync(id);
@@ -66,14 +101,29 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> DeleteArea(int id)
         {
-            var _data = await _areaService.DeleteEntity(id);
-            if (_data == true)
+            try
             {
+                var isSuccess = await _areaService.DeleteEntity(id);
+                if (isSuccess == true)
+                {
+                    TempData["SuccessMessage"] = "Deleted Successfully..";
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            catch (DbUpdateException ex)
+            {
+                TempData["ErrorMessage"] = "Area can't be delete because some records are in database need to be deleted first....";
                 return RedirectToAction("Index");
             }
-            return View();
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
         }
 
     }

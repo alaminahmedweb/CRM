@@ -45,7 +45,7 @@ namespace Web.Controllers
         {
             try
             {
-                serviceFeedback.Id = 0;
+                
                 int id= await _feedbackService.AddEntity(serviceFeedback);
                 if(id!=0)
                 {
@@ -71,7 +71,6 @@ namespace Web.Controllers
         {
             try
             {
-                complainRegister.Id = 0;
                 int id= await _complainRegisterService.AddEntity(complainRegister);
                 if(id!=0)
                 {
@@ -104,7 +103,6 @@ namespace Web.Controllers
         {
             try
             {
-                complainFeedback.Id = 0;
                 int id = await _complainFeedbackService.AddEntity(complainFeedback);
                 if (id != 0)
                 {

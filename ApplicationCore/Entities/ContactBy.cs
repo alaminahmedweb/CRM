@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class ContactBy
+    public class ContactBy : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [MinLength(3, ErrorMessage = "Contact Name at least 3 Character")]
         public string Name { get; set; }= string.Empty;

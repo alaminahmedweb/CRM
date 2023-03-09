@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class Employee
+    public class Employee : BaseEntity
     {
-        public int Id { get; set; }
         
         [Required]
         [MinLength(3, ErrorMessage = "Mpo Name at least 3 Character")]

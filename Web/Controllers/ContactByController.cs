@@ -1,9 +1,12 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class ContactByController : Controller
     {
         private readonly IContactByService _contactService;
@@ -26,15 +29,30 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ContactBy contact)
+        public async Task<IActionResult> Create(ContactBy model)
         {
-            int id = await _contactService.AddEntity(contact);
-            if (id!=0)
+            try
             {
+                if(ModelState.IsValid)
+                {
+                    int id = await _contactService.AddEntity(model);
+                    if (id != 0)
+                    {
+                        TempData["SuccessMessage"] = "Created Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
                 return RedirectToAction("Index");
             }
-            return View();
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var _data = await _contactService.GetByIdAsync(id);
@@ -43,16 +61,31 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Update")]
-        public async Task<IActionResult> UpdateContact(ContactBy contact)
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> UpdateContact(ContactBy model)
         {
-            bool isSuccess = await _contactService.UpdateEntity(contact);
-            if (isSuccess)
+            try
             {
+                if(ModelState.IsValid)
+                {
+                    bool isSuccess = await _contactService.UpdateEntity(model);
+                    if (isSuccess)
+                    {
+                        TempData["SuccessMessage"] = "Updated Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
                 return RedirectToAction("Index");
             }
-            return View();
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var _data = await _contactService.GetByIdAsync(id);
@@ -61,14 +94,29 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> DeleteContact(int id)
         {
-            var _data = await _contactService.DeleteEntity(id);
-            if (_data == true)
+            try
             {
+                var isSuccess = await _contactService.DeleteEntity(id);
+                if (isSuccess == true)
+                {
+                    TempData["SuccessMessage"] = "Deleted Successfully..";
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            catch (DbUpdateException ex)
+            {
+                TempData["ErrorMessage"] = "Can't be delete because some records are in database need to be deleted first....";
                 return RedirectToAction("Index");
             }
-            return View();
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
         }
 
     }

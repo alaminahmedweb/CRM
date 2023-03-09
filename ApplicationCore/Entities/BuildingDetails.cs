@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class BuildingDetails
+    public class BuildingDetails : BaseEntity
     {
-        public int Id { get; set; }
-
         [ForeignKey("Brand")]
         public int BrandId { get; set; }
         public Brand Brand { get; set; }

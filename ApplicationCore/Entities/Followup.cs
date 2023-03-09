@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class Followup
+    public class Followup : BaseEntity
     {
-        public int Id { get; set; }
 
         [Required]
         [DataType(DataType.Date)]

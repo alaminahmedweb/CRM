@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class ServiceType
+    public class ServiceType : BaseEntity
     {
-        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]

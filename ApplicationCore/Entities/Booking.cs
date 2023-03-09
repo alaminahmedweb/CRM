@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Entities
 {
-    public class Booking
+    public class Booking : BaseEntity
     {
-        public int Id { get; set; }
-
         [Required]
         [ForeignKey("Team")]
         public int TeamId { get; set; }
