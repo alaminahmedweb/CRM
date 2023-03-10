@@ -1,9 +1,12 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeService _employeeService;
@@ -15,8 +18,8 @@ namespace Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Employee> listMpo = await _employeeService.GetAllAsync();
-            return View(listMpo);
+            IEnumerable<Employee> listEmployee = await _employeeService.GetAllAsync();
+            return View(listEmployee);
         }
 
         [HttpGet]
@@ -26,15 +29,30 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Employee employee)
+        public async Task<IActionResult> Create(Employee model)
         {
-            int id=await _employeeService.AddEntity(employee);
-            if (id!=0)
+            try
             {
-                return RedirectToAction("Index"); 
+                if (ModelState.IsValid)
+                {
+                    int id = await _employeeService.AddEntity(model);
+                    if (id != 0)
+                    {
+                        TempData["SuccessMessage"] = "Created Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
             }
-            return View();
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var _data=await _employeeService.GetByIdAsync(id);
@@ -43,16 +61,32 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Update")]
-        public async Task<IActionResult> UpdateMpo(Employee employee)
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> UpdateEmployee(Employee model)
         {
-            bool isSuccess=await _employeeService.UpdateEntity(employee);
-            if(isSuccess)
+            try
             {
+                if(ModelState.IsValid)
+                {
+                    var isSuccess = await _employeeService.UpdateEntity(model);
+                    if (isSuccess)
+                    {
+                        TempData["SuccessMessage"] = "Updated Successfully..";
+                        return RedirectToAction("Index");
+                    }
+                }
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
                 return RedirectToAction("Index");
             }
-            return View();
         }
 
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var _data = await _employeeService.GetByIdAsync(id);
@@ -61,14 +95,29 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public async Task<IActionResult> DeleteMpo(int id)
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> DeleteEmployee(int id)
         {
-            var _data = await _employeeService.DeleteEntity(id);
-            if(_data==true)
+            try
             {
+                var isSuccess = await _employeeService.DeleteEntity(id);
+                if (isSuccess)
+                {
+                    TempData["SuccessMessage"] = "Deleted Successfully..";
+                    return RedirectToAction("Index");
+                }
+                return View();
+            }
+            catch (DbUpdateException ex)
+            {
+                TempData["ErrorMessage"] = "Can't be delete because some records are in database need to be deleted first....";
                 return RedirectToAction("Index");
             }
-            return View();
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
+            }
         }
 
     }
