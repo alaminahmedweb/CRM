@@ -2,11 +2,13 @@
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class CustomerFollowupController : Controller
     {
         private readonly ICustomerService _customerService;
@@ -35,8 +37,7 @@ namespace Web.Controllers
             ISubAreaService subAreaService,
             IMonthListService monthListService,
             IBrandService brandService,
-            ICustomerFollowupService customerFollowupService
-            )
+            ICustomerFollowupService customerFollowupService)
         {
             this._mpoService = mpoService;
             this._contactByService = contactByService;
@@ -52,6 +53,8 @@ namespace Web.Controllers
             this._customerService = customerService;
             this._customerFollowupService = customerFollowupService;
         }
+
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
 
@@ -65,75 +68,84 @@ namespace Web.Controllers
             CustomerFollowupVM customerFollowupVM = new CustomerFollowupVM();
             return View(customerFollowupVM);
         }
+
         [HttpPost]
         public async Task<ActionResult> Save(CustomerFollowupMasterVM customerFollowupVM)
         {
+            
             try
             {
-                CustomerFollowupDto customerFollowupDto = new CustomerFollowupDto();
-                customerFollowupDto.Name = customerFollowupVM.CustomerFollowup.Name;
-                customerFollowupDto.Address = customerFollowupVM.CustomerFollowup.Address;
-                customerFollowupDto.SubAreaId = customerFollowupVM.CustomerFollowup.SubAreaId;
-                customerFollowupDto.NoOfFloor = customerFollowupVM.CustomerFollowup.NoOfFloor;
-                customerFollowupDto.NoOfFlat = customerFollowupVM.CustomerFollowup.NoOfFlat;
-                customerFollowupDto.ContactId = customerFollowupVM.CustomerFollowup.ContactId;
-                customerFollowupDto.EmployeeId = customerFollowupVM.CustomerFollowup.EmployeeId;
-
-                customerFollowupDto.CallingDate = customerFollowupVM.CustomerFollowup.CallingDate;
-                customerFollowupDto.OfferAmount = customerFollowupVM.CustomerFollowup.OfferAmount;
-                customerFollowupDto.AgreeAmount = customerFollowupVM.CustomerFollowup.AgreeAmount;
-                customerFollowupDto.CustomerDoTheWorkingMonth = customerFollowupVM.CustomerFollowup.CustomerDoTheWorkingMonth;
-                customerFollowupDto.Remarks = customerFollowupVM.CustomerFollowup.Remarks;
-                customerFollowupDto.PositiveOrNegative = customerFollowupVM.CustomerFollowup.PositiveOrNegative;
-                customerFollowupDto.DiscussionDetailsNote = customerFollowupVM.CustomerFollowup.DiscussionDetailsNote;
-                customerFollowupDto.MarketingNextPlan = customerFollowupVM.CustomerFollowup.MarketingNextPlan;
-                customerFollowupDto.FollowupCallDate = customerFollowupVM.CustomerFollowup.FollowupCallDate;
-                customerFollowupDto.Status = customerFollowupVM.CustomerFollowup.Status;
-                customerFollowupDto.ServiceTypeId = customerFollowupVM.CustomerFollowup.ServiceTypeId;
-
-                foreach (var item in customerFollowupVM.BuildingDetails)
+                if (ModelState.IsValid)
                 {
-                    BuildingDetailsDto buildingDetails = new BuildingDetailsDto();
-                    buildingDetails.BrandId = item.BrandId;
-                    buildingDetails.Quantity = item.Quantity;
-                    buildingDetails.Capacity = item.Capacity;
-                    customerFollowupDto.BuildingDetails.Add(buildingDetails);
-                }
-                foreach (var item in customerFollowupVM.ContractDetails)
-                {
-                    ContractDetailsDto contractDetails = new ContractDetailsDto();
-                    contractDetails.Name = item.Name;
-                    contractDetails.MobileNo = item.MobileNo;
-                    contractDetails.DesignationId = item.DesignationId;
-                    customerFollowupDto.ContractDetails.Add(contractDetails);
-                }
+                    CustomerFollowupDto customerFollowupDto = new CustomerFollowupDto();
+                    customerFollowupDto.Name = customerFollowupVM.CustomerFollowup.Name;
+                    customerFollowupDto.Address = customerFollowupVM.CustomerFollowup.Address;
+                    customerFollowupDto.SubAreaId = customerFollowupVM.CustomerFollowup.SubAreaId;
+                    customerFollowupDto.NoOfFloor = customerFollowupVM.CustomerFollowup.NoOfFloor;
+                    customerFollowupDto.NoOfFlat = customerFollowupVM.CustomerFollowup.NoOfFlat;
+                    customerFollowupDto.ContactId = customerFollowupVM.CustomerFollowup.ContactId;
+                    customerFollowupDto.EmployeeId = customerFollowupVM.CustomerFollowup.EmployeeId;
+                    customerFollowupDto.ModifiedBy = customerFollowupVM.CustomerFollowup.ModifiedBy;
 
-                int followupId= await _customerFollowupService.AddEntity(customerFollowupDto);
+                    customerFollowupDto.CallingDate = customerFollowupVM.CustomerFollowup.CallingDate;
+                    customerFollowupDto.OfferAmount = customerFollowupVM.CustomerFollowup.OfferAmount;
+                    customerFollowupDto.AgreeAmount = customerFollowupVM.CustomerFollowup.AgreeAmount;
+                    customerFollowupDto.CustomerDoTheWorkingMonth = customerFollowupVM.CustomerFollowup.CustomerDoTheWorkingMonth;
+                    customerFollowupDto.Remarks = customerFollowupVM.CustomerFollowup.Remarks;
+                    customerFollowupDto.PositiveOrNegative = customerFollowupVM.CustomerFollowup.PositiveOrNegative;
+                    customerFollowupDto.DiscussionDetailsNote = customerFollowupVM.CustomerFollowup.DiscussionDetailsNote;
+                    customerFollowupDto.MarketingNextPlan = customerFollowupVM.CustomerFollowup.MarketingNextPlan;
+                    customerFollowupDto.FollowupCallDate = customerFollowupVM.CustomerFollowup.FollowupCallDate;
+                    customerFollowupDto.Status = customerFollowupVM.CustomerFollowup.Status;
+                    customerFollowupDto.ServiceTypeId = customerFollowupVM.CustomerFollowup.ServiceTypeId;
 
-                if (customerFollowupDto.Status == "Confirmed")
-                {
-                    return Json(new { redirecturl = "/Booking/Index/"+ followupId });
+                    foreach (var item in customerFollowupVM.BuildingDetails)
+                    {
+                        BuildingDetailsDto buildingDetails = new BuildingDetailsDto();
+                        buildingDetails.BrandId = item.BrandId;
+                        buildingDetails.Quantity = item.Quantity;
+                        buildingDetails.Capacity = item.Capacity;
+                        customerFollowupDto.BuildingDetails.Add(buildingDetails);
+                    }
+                    foreach (var item in customerFollowupVM.ContractDetails)
+                    {
+                        ContractDetailsDto contractDetails = new ContractDetailsDto();
+                        contractDetails.Name = item.Name;
+                        contractDetails.MobileNo = item.MobileNo;
+                        contractDetails.DesignationId = item.DesignationId;
+                        customerFollowupDto.ContractDetails.Add(contractDetails);
+                    }
+
+                    int followupId = await _customerFollowupService.AddEntity(customerFollowupDto);
+
+                    if (customerFollowupDto.Status == "Confirmed")
+                    {
+                        TempData["SuccessMessage"] = "Saved Successfully..";
+                        return Json(new { redirecturl = "/Booking/Index/" + followupId });
+                    }
+                    else
+                    {
+                        TempData["SuccessMessage"] = "Saved Successfully..";
+                        return Json(new { redirecturl = "/CustomerFollowup/Index/" });
+                    }
                 }
-                else
-                {
-                    ViewBag.ContactList = await _contactByService.GetAllAsync();
-                    ViewBag.MpoList = await _mpoService.GetAllAsync();
-                    ViewBag.AreaList = await _areaService.GetAllAsync();
-                    ViewBag.MonthList = await _monthListService.GetAllAsync();
-                    return Json(new { redirecturl = "/CustomerFollowup/Index/" });
-                }
+                return View(customerFollowupVM);
             }
             catch (Exception ex)
             {
-                return View("Error");
+                TempData["ErrorMessage"] = ex.Message;
+                return RedirectToAction("Index");
             }
         }
 
+        [HttpGet]
         public JsonResult GetAreaByCityId(int id)
         {
             var data = _areaService.Find(a => a.CityId == id);
             return Json(data);
         }
+
+        [HttpGet]
         public JsonResult GetSubAreaByAreaId(int id)
         {
             var data = _subAreaService.Find(a=>a.AreaId== id);

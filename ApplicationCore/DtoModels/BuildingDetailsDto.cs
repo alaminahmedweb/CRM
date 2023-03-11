@@ -12,5 +12,6 @@ namespace ApplicationCore.DtoModels
         public string BrandName { get; set; } = "";
         public int Quantity { get; set; } = 0;
         public double Capacity { get; set; } = 0;
+        public string ModifiedBy { get; set; } = "";
     }
 }

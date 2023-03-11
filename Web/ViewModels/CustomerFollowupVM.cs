@@ -8,44 +8,29 @@ namespace Web.ViewModels
         public CustomerFollowupVM()
         {
             BuildingDetails = new List<BuildingDetailsVM>();
-            ContractDetails= new List<ContractDetailsVM>();
+            ContractDetails = new List<ContractDetailsVM>();
         }
-        public int Id { get; set; } = 0;
-        public int ServiceTypeId { get; set; }
+        public int ServiceTypeId { get; set; } = 0;
+
         public string? Name { get; set; } = String.Empty;
-        public string? ContractPerson { get; set; } = String.Empty;
-
-        public string? DesignationId { get; set; } = String.Empty;
-        public string? MobileNo { get; set; } = String.Empty;
-
         [Required]
         [MinLength(5, ErrorMessage = "Address at least 5 Character")]
         public string? Address { get; set; } = String.Empty;
 
         [Required]
-        public int CityId { get; set; }
-
-        [Required]
-        public int AreaId { get; set; } = 0;//FK
-
-        [Required]
         public int SubAreaId { get; set; } = 0;//FK
         public int NoOfFloor { get; set; } = 0;
-        public int NoOfFlat { get; set; }
-        public int BrandId { get; set; } = 0;
-        public int Quantity { get; set; }
-        public int Capacity { get; set; }
+        public int NoOfFlat { get; set; } = 0;
         public int ContactId { get; set; } = 0;//FK
-        public int EmployeeId { get; set; }//FK
+        public int EmployeeId { get; set; } = 0;//FK
+        public string? ModifiedBy { get; set; } = "";
 
-        public List<BuildingDetailsVM> BuildingDetails { get; set; }
-        public List<ContractDetailsVM> ContractDetails { get; set; }
+        public List<BuildingDetailsVM>? BuildingDetails { get; set; }
+        public List<ContractDetailsVM>? ContractDetails { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
         public DateTime CallingDate { get; set; } = DateTime.Now;
-        [Required]
-        public string? OpinionAndPlan { get; set; } = String.Empty;
         [Required]
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
@@ -63,7 +48,7 @@ namespace Web.ViewModels
         [DataType(DataType.Date)]
         public DateTime FollowupCallDate { get; set; } = DateTime.Now;
         [Required]
-        public string Status { get; set; } = String.Empty;//Pending Or Confirm
+        public string? Status { get; set; } = String.Empty;//Pending Or Confirm
 
         public int CustomerId { get; set; } = 0;//FK
 

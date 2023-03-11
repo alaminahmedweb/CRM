@@ -32,6 +32,7 @@ namespace ApplicationCore.Services
         }
         public async Task<int> AddEntity(CustomerFollowupDto entity)
         {
+            _unitOfWok.BeginTransaction();
             try
             {
                 Customer customer = new Customer();
@@ -42,6 +43,7 @@ namespace ApplicationCore.Services
                 customer.NoOfFlat = entity.NoOfFlat;
                 customer.ContactId = entity.ContactId;
                 customer.EmployeeId = entity.EmployeeId;
+                customer.ModifiedBy = entity.ModifiedBy;
 
                 int Id = await _customerRepository.AddEntity(customer);
                 await _unitOfWok.SaveChangesAsync();
@@ -53,6 +55,7 @@ namespace ApplicationCore.Services
                     buildingDetails.Quantity = item.Quantity;
                     buildingDetails.Capacity = item.Capacity;
                     buildingDetails.CustomerId = customer.Id;
+                    buildingDetails.ModifiedBy=customer.ModifiedBy;
                     await _buildingDetailsRepository.AddEntity(buildingDetails);
                 }
                 foreach (var item in entity.ContractDetails)
@@ -62,6 +65,7 @@ namespace ApplicationCore.Services
                     contractDetails.MobileNo = item.MobileNo;
                     contractDetails.DesignationId = item.DesignationId;
                     contractDetails.CustomerId = customer.Id;
+                    contractDetails.ModifiedBy = customer.ModifiedBy;
                     await _contractDetailsRepository.AddEntity(contractDetails);
                 }
                 Followup followup = new Followup();
@@ -77,12 +81,16 @@ namespace ApplicationCore.Services
                 followup.Status = entity.Status;
                 followup.CustomerId = customer.Id;
                 followup.ServiceTypeId = entity.ServiceTypeId;
+                followup.ModifiedBy = customer.ModifiedBy;
+
                 await _followupRepository.AddEntity(followup);
                 await _unitOfWok.SaveChangesAsync();
+                _unitOfWok.CommitTransaction();
                 return followup.Id;
             }
             catch (Exception ex)
             {
+                _unitOfWok.RollbackTransaction();
                 Console.WriteLine(ex.ToString());
                 return 0;
             }

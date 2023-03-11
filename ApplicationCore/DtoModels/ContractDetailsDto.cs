@@ -14,6 +14,7 @@ namespace ApplicationCore.DtoModels
 
         public int DesignationId { get; set; }
         public string Designation { get; set; }
+        public string ModifiedBy { get; set; } = "";
 
     }
 }

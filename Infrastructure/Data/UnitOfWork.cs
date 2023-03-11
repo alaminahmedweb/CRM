@@ -15,6 +15,21 @@ namespace Infrastructure.Data
             this._dbContext = dbContext;
         }
 
+        public void BeginTransaction()
+        {
+            this._dbContext.Database.BeginTransaction();
+        }
+
+        public void CommitTransaction()
+        {
+            this._dbContext.Database.CommitTransaction();
+        }
+
+        public void RollbackTransaction()
+        {
+            this._dbContext.Database.RollbackTransaction();
+        }
+
         public async Task SaveChangesAsync()
         {
             await this._dbContext.SaveChangesAsync(); 

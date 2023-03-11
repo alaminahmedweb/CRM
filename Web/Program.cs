@@ -16,6 +16,12 @@ var automapper = new MapperConfiguration(item => item.AddProfile(new AutomapperH
 IMapper mapper=automapper.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
+//Adding Expiration Time
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+});
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddInfrastructureServices(builder.Configuration);

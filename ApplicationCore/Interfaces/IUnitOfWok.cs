@@ -8,6 +8,9 @@ namespace ApplicationCore.Interfaces
 {
     public interface IUnitOfWok
     {
+        void BeginTransaction();
+        void CommitTransaction();
+        void RollbackTransaction();
         Task SaveChangesAsync();
     }
 }

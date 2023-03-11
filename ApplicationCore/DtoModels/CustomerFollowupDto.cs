@@ -40,6 +40,7 @@ namespace ApplicationCore.DtoModels
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
         public int ServiceTypeId { get; set; }
         public int CustomerId { get; set; } = 0;//FK
+        public string ModifiedBy { get; set; } = "";
 
     }
 }
