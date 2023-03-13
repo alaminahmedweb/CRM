@@ -19,8 +19,8 @@
             </div>
             <div class="box-body">
                 <form asp-action="Index">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
+                    <div asp-validation-summary="All" class="text-danger" id="validationSummary"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
                     <div class="form-group row">
                         <label asp-for="ServiceTypeId" class="col-2 control-label">Service Name</label>
                         <div class="col-4">
@@ -36,7 +36,7 @@
 
                         <label asp-for="CallingDate" class="col-4 control-label">Calling Date</label>
                         <div class="col-2">
-                            <input asp-for="CallingDate" class="form-control" />
+                            <input asp-for="CallingDate" class="form-control"   />
                             <span asp-validation-for="CallingDate" class="text-danger"></span>
                         </div>
                     </div>
@@ -45,14 +45,14 @@
                         <label class="col-2 control-label">Client Name/Organization</label>
                         <div class="col-4">
                             <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <span asp-validation-for="Name"  class="text-danger"></span>
                         </div>
-                        <label asp-for="NoOfFloor" class="control-label col-2">Building Details a) No Of Floor</label>
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a) No Of Floor</label>
                         <div class="col-1">
                             <input asp-for="NoOfFloor" class="form-control" />
                             <span asp-validation-for="NoOfFloor" class="text-danger"></span>
                         </div>
-                        <label asp-for="NoOfFlat" class="control-label col-2">No Of Flat</label>
+                        <label asp-for="NoOfFlat" class="control-label col-1">No Of Flat</label>
                         <div class="col-1">
                             <input asp-for="NoOfFlat" class="form-control" />
                             <span asp-validation-for="NoOfFlat" class="text-danger"></span>
@@ -258,10 +258,10 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             var person = [];
             var brand = [];
-            $('#btnAddPerson').click(function () {
+            $('#btnAddPerson').click(function() {
 
                 var contractPerson = $('#ContractPerson').val();
                 var designationId = $('#DesignationId').val();
@@ -277,17 +277,35 @@
                     alert("Already Exist" + contractPerson); return false;
                 }
 
-                var contractTable = $('#tblPersonDetails');
-                contractTable.append('<tr><td>' + contractPerson + '</td><td class="none">' + designationId + '</td><td>'
-                    + designationName + '</td><td>' + mobileNo + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
-                $('#MobileNo').val("");
-                $('#ContractPerson').val("");
-                person.push(contractPerson);
+                $.ajax({
+                    url: 'CustomerFollowup/IsMobileNoAlreadyExists',
+                    method: 'get',
+                    data: { mobileNo: mobileNo },
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data == false) {
+                            var contractTable = $('#tblPersonDetails');
+                            contractTable.append('<tr><td>' + contractPerson + '</td><td class="none">' + designationId + '</td><td>'
+                                + designationName + '</td><td>' + mobileNo + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
+                            $('#MobileNo').val("");
+                            $('#ContractPerson').val("");
+                            person.push(contractPerson);
+                        }
+                        else {
+                            alert("Mobile No already exists..Please Check..");
+                        }
+                    },
+                    error: function(xhr) {
+                        return false;
+                    }
+                });
+
+
             });
 
 
 
-            $("table #tblPersonDetails").on("click", "a.deleteRow", function (event) {
+            $("table #tblPersonDetails").on("click", "a.deleteRow", function(event) {
                 event.preventDefault();
                 $(this).closest('tr').remove();
                 return false;
@@ -296,7 +314,7 @@
 
 
 
-            $('#btnAddBuildingDetails').click(function () {
+            $('#btnAddBuildingDetails').click(function() {
                 var brandId = $('#BrandId').val();
                 var brandName = $('#BrandId option:selected').text();
                 var quantity = $('#Quantity').val();
@@ -321,7 +339,7 @@
             });
 
 
-            $("table #tblBuldingDetails").on("click", "a.deleteRow", function (event) {
+            $("table #tblBuldingDetails").on("click", "a.deleteRow", function(event) {
                 event.preventDefault();
                 $(this).closest('tr').remove();
                 return false;
@@ -332,7 +350,7 @@
             var areaId = $('#AreaId');
             var subAreaId = $('#SubAreaId');
 
-            $('#CityId').change(function () {
+            $('#CityId').change(function() {
                 if ($(this).val() == "-1") {
                     areaId.empty();
                     subAreaId.empty();
@@ -352,9 +370,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function (response) {
+                        success: function(response) {
                             areaId.prop('disable', false),
-                                $.each(response, function (index, item) {
+                                $.each(response, function(index, item) {
                                     areaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -365,7 +383,7 @@
                 }
                 //}
             });
-            $('#AreaId').change(function () {
+            $('#AreaId').change(function() {
                 if ($(this).val() == "-1") {
                     subAreaId.empty();
                     $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
@@ -379,9 +397,9 @@
                         type: "GET",
                         data: { id: $(this).val() },
                         dataType: 'json',
-                        success: function (response) {
+                        success: function(response) {
                             areaId.prop('disable', false),
-                                $.each(response, function (index, item) {
+                                $.each(response, function(index, item) {
                                     subAreaId.append($("<option>", {
                                         value: item.id,
                                         text: item.name
@@ -392,12 +410,12 @@
                 }
             });
 
-            $('#SaveCustomerAndFollowup').click(function () {
+            $('#SaveCustomerAndFollowup').click(function() {
                 var customers = [];
                 var buildings = [];
 
                 var tContact = $("table #tblPersonDetails");
-                tContact.find('tr').each(function () {
+                tContact.find('tr').each(function() {
                     tContactInfo = $(this).find('td').text();
                     if (tContactInfo != '') {
                         var $ctd = $(this).find('td'),
@@ -415,7 +433,7 @@
                 });
 
                 var tblBuilding = $("table #tblBuldingDetails");
-                tblBuilding.find('tr').each(function () {
+                tblBuilding.find('tr').each(function() {
                     tBuldingInfo = $(this).find('td').text();
                     if (tBuldingInfo != '') {
                         var $btd = $(this).find('td'),
@@ -451,7 +469,7 @@
                     FollowupCallDate: $('#FollowupCallDate').val(),
                     EmployeeId: $('#EmployeeId option:selected').val(),
                     Status: $('#Status option:selected').val(),
-                    ModifiedBy : $('#ModifiedBy').val(),
+                    ModifiedBy: $('#ModifiedBy').val(),
                 }
 
                 var model = {
@@ -466,14 +484,35 @@
                     data: model,
                     datatype: "json",
                     //cache: false,
-                    success: function (data) {
+                    success: function(data) {
                         //alert("You Multiple Data Passed Successfully");
                         //alert(data.redirecturl);
                         window.location.href = data.redirecturl;
                         //window.location.replace(data.redirecturl);
                     },
-                    error: function (xhr) {
-                        alert('No Valid Data');
+                    error: function(response) {
+                        if (response.status == 400) {
+                            var errors = response.responseJSON;
+                            for (var fieldName in errors) {
+                                var errorMessage = errors[fieldName].join('<br>');
+                                fieldName = fieldName.substr(fieldName.indexOf(".")+1, 100);
+                                $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
+                            }
+                            //var errorMessage="";
+                            //for (var fieldName in errors) {
+                            //    if (errorMessage == "") {
+                            //        errorMessage  = errors[fieldName]+'<br>';
+                            //    }
+                            //    else{
+                            //       errorMessage  += errors[fieldName]+'<br>';
+                            //    }
+                            //}
+                            //console.log(errorMessage);
+                            //$('#validationSummary').html(errorMessage);
+                        }
+                        else {
+                            alert('No Valid Data');
+                        }
                     }
                 });
             });

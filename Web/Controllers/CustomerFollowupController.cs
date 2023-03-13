@@ -24,6 +24,7 @@ namespace Web.Controllers
         private readonly ISubAreaService _subAreaService;
         private readonly IBrandService _brandService;
         private readonly ICustomerFollowupService _customerFollowupService;
+        private readonly ICustomerQueryService _customerQueryService;
 
         public CustomerFollowupController(IContactByService contactByService,
             IEmployeeService mpoService,
@@ -37,7 +38,8 @@ namespace Web.Controllers
             ISubAreaService subAreaService,
             IMonthListService monthListService,
             IBrandService brandService,
-            ICustomerFollowupService customerFollowupService)
+            ICustomerFollowupService customerFollowupService,
+            ICustomerQueryService customerQueryService)
         {
             this._mpoService = mpoService;
             this._contactByService = contactByService;
@@ -52,6 +54,7 @@ namespace Web.Controllers
             this._brandService = brandService;
             this._customerService = customerService;
             this._customerFollowupService = customerFollowupService;
+            this._customerQueryService = customerQueryService;
         }
 
         [HttpGet]
@@ -129,7 +132,8 @@ namespace Web.Controllers
                         return Json(new { redirecturl = "/CustomerFollowup/Index/" });
                     }
                 }
-                return View(customerFollowupVM);
+                //return View(customerFollowupVM);
+                return BadRequest(ModelState);
             }
             catch (Exception ex)
             {
@@ -150,6 +154,12 @@ namespace Web.Controllers
         {
             var data = _subAreaService.Find(a=>a.AreaId== id);
             return Json(data);
+        }
+        [HttpGet]
+        public JsonResult IsMobileNoAlreadyExists(string mobileNo)
+        {
+            bool isMobileNoAlreadyExists=_customerQueryService.IsMobileNoAlreadyExists(mobileNo);
+            return Json(isMobileNoAlreadyExists);
         }
     }
 }

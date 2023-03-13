@@ -36,6 +36,7 @@ namespace Web.Configuration
             services.AddScoped<IComplainFeedbackService, ComplainFeedbackService>();
             services.AddScoped<ICustomerFollowupService, CustomerFollowupService>();
             services.AddScoped<ITokenClaimService, TokenClaimService>();
+            services.AddScoped<ICustomerQueryService, CustomerQueryService>();
 
             return services;
         }

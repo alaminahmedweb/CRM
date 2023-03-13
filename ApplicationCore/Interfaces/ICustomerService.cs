@@ -9,5 +9,6 @@ namespace ApplicationCore.Interfaces
 {
     public interface ICustomerService : IRepository<Customer>
     {
+       
     }
 }
