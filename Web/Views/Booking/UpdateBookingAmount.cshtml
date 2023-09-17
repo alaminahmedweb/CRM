@@ -1,0 +1,88 @@
+﻿@model Web.ViewModels.UpdateBookingAmountVM
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Add New Followup";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-3 col-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-8">
+        <div class="card">
+            @*            <div class="card-header">
+            Add New Service
+            </div>
+            *@
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Update Booking Amount</h4>
+                <hr />
+                <form asp-action="UpdateBookingAmount" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+                    <input asp-for="FollowupId" hidden />
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="AgreeAmount" placeholder="Booking Amt/Slot" />
+                            <label for="AgreeAmount">Booking Amt/Slot</label>
+                        </div>
+                        <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="text-center mt-3">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@*
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 col-offset-3">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Update Booking Amount</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="UpdateBookingAmount">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
+                    <input asp-for="FollowupId" hidden />
+                    <div class="form-group row">
+                        <label asp-for="AgreeAmount" class="control-label col-4">Booking Amt/Slot</label>
+                        <div class="col-8">
+                            <input asp-for="AgreeAmount" class="form-control" />
+                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group text-center">
+                        <input type="submit" value="Update" asp-action="UpdateBookingAmount" asp-controller="Booking" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>*@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[title="searchableDropdown"]').select2();
+        });
+    </script>
+}

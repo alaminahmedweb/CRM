@@ -1,0 +1,709 @@
+﻿@using ApplicationCore.Entities
+@model Web.ViewModels.CustomerVM
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Update Customer Information";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+<div class="container-fluid bg-white" style="margin-top:-26px;">
+
+    <form asp-action="UpdateCustomerDetails" autocomplete="off">
+        <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+        <input type="hidden" asp-for="ModifiedDate" value="@Model.ModifiedDate" />
+        <input type="hidden" asp-for="Id" value="@Model.CustomerId" />
+        <div asp-validation-summary="ModelOnly" class="text-danger" id="validationSummary"></div>
+        <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+        <div class="row" style="margin-top:-11px;margin-bottom:5px;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-6 col-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <h3 style="font-family:Verdana;margin-left:45px;">Update Customer Details</h3>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-6 col-6 col-offset-1 text-end">
+                                <a asp-action="AddNewContractDetails" asp-route-customerId="@Model.CustomerId" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i> Add New Mobile No</a>
+                                <a asp-action="AddNewBuildingDetails" asp-route-customerId="@Model.CustomerId" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i> Add New Building Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row mt-3">
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="CategoryId" class="form-control">
+                        <option value="-1">Select Category</option>
+                        @if (@Model.CategoryList != null)
+                        {
+                            @foreach (var item in @Model.CategoryList)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        }
+                    </select>
+                    <label for="CategoryId">Category</label>
+                </div>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="ReferenceBy" class="form-control">
+                        <option value="">Select Reference</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Company">Company</option>
+                        <option value="Both">Both</option>
+                    </select>
+                    <label for="ReferenceBy">Reference By</label>
+                </div>
+                <span asp-validation-for="ReferenceBy" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="EmployeeId" class="form-control" title="searchableDropdown">
+                        <option value="-1">Select Mpo</option>
+                        @if (Model.EmployeeList != null)
+                        {
+                            @foreach (var data in @Model.EmployeeList)
+                            {
+                                <option value="@data.Id">@data.Name</option>
+                            }
+                        }
+                    </select>
+                    <label asp-for="EmployeeId">Marketing Officer Name</label>
+                </div>
+                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="ContactId" class="form-control">
+                        <option value="-1">Select Contact</option>
+                        @if (Model.ContactList != null)
+                        {
+                            @foreach (var data in @Model.ContactList)
+                            {
+                                <option value="@data.Id">@data.Name</option>
+                            }
+                        }
+                    </select>
+                    <label asp-for="ContactId">Contact</label>
+                </div>
+                <span asp-validation-for="ContactId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row mt-2">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="ClientName" placeholder="Customer Name" />
+                    <label for="ClientName">Client Name/Organization</label>
+                </div>
+                <span asp-validation-for="ClientName" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                <div class="form-floating">
+                    <input asp-for="NoOfFloor" class="form-control" />
+                    <label asp-for="NoOfFloor">Building Details a) No Of Floor</label>
+                </div>
+                <span asp-validation-for="NoOfFloor" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-12">
+                <div class="form-floating">
+                    <input asp-for="NoOfFlat" class="form-control" />
+                    <label asp-for="NoOfFlat">No Of Flat</label>
+                </div>
+                <span asp-validation-for="NoOfFlat" class="text-danger"></span>
+            </div>
+
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <table class="table table-bordered cell-border hover stripe dataTable">
+                    <thead>
+                        <tr>
+                            <th>Contract Person</th>
+                            <th>Designation</th>
+                            <th>Mobile No</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ContractDetails)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Designation</td>
+                                <td>@item.MobileNo</td>
+                                <td>
+                                    <a asp-action="UpdateContractDetails" asp-controller="Customer" asp-route-id="@item.Id">Edit </a>|
+                                    <a asp-action="DeleteContractDetails" asp-controller="Customer" asp-route-id="@item.Id"> Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <table class="table table-bordered cell-border hover stripe dataTable">
+                    <thead>
+                        <tr>
+                            <th class="col-5">Brand Name</th>
+                            <th class="col-2">Quantity</th>
+                            <th class="col-2">Capacity</th>
+                            <th class="col-3">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBuldingDetails">
+                        @foreach (var item in Model.BuildingDetails)
+                        {
+                            <tr>
+                                <td>@item.BrandName</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.Capacity</td>
+                                <td>
+                                    <a asp-action="UpdateBuildingDetails" asp-controller="Customer" asp-route-id="@item.Id">Edit </a>|
+                                    <a asp-action="DeleteBuildingDetails" asp-controller="Customer" asp-route-id="@item.Id"> Delete</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="Address" placeholder="Address" />
+                    <label for="Address">Location/Address</label>
+                </div>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="CityId" class="form-control">
+                        <option value="-1">Select City</option>
+                        @foreach (var data in @Model.CityList)
+                        {
+                            <option value="@data.Id">@data.Name</option>
+                        }
+                    </select>
+                    <label asp-for="CityId">City</label>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="AreaId" class="form-control" title="searchableDropdown">
+                        <option value="-1">Select Area</option>
+                        @foreach (var data in @Model.AreaList)
+                        {
+                            <option value="@data.Id">@data.Name</option>
+                        }
+                    </select>
+                    <label asp-for="AreaId">Area</label>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="SubAreaId" class="form-control" title="searchableDropdown">
+                        <option value="-1">Select Sub Area</option>
+                        @if (@Model.SubAreaList != null)
+                        {
+                            @foreach (var data in @Model.SubAreaList)
+                            {
+                                <option value="@data.Id">@data.Name</option>
+                            }
+                        }
+                    </select>
+                    <label asp-for="SubAreaId">Sub Area</label>
+                    <span asp-validation-for="SubAreaId" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <input type="submit" value="Update" id="UpdateCustomerInfo" class="btn btn-primary" />
+@*            <a class="btn btn-primary" href="/Followup/GetFollowupsByCustId?customerId=@Model.CustomerId&followupId=@ViewBag.FollowupId">Back</a>
+*@
+        </div>
+    </form>
+</div>
+@*
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Update Customer Information</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="box-body">
+                <form asp-action="UpdateCustomerDetails">
+                    <div asp-validation-summary="All" class="text-danger" id="validationSummary"></div>
+                    <div class="form-group row">
+                        <label asp-for="CategoryId" class="col-1 control-label">Category</label>
+                        <div class="col-2">
+                            <select asp-for="CategoryId" class="form-control">
+                                <option value="-1">Select Category</option>
+                                @foreach (var item in @Model.CategoryList)
+                                {
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ReferenceBy" class="col-1 control-label">Reference By</label>
+                        <div class="col-2">
+                            <select asp-for="ReferenceBy" class="form-control">
+                                <option value="">Select Reference</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Company">Company</option>
+                                <option value="Both">Both</option>
+                            </select>
+                            <span asp-validation-for="ReferenceBy" class="text-danger"></span>
+                        </div>
+
+                        <label asp-for="EmployeeId" class="control-label col-2">Marketing Officer Name</label>
+                        <div class="col-4">
+                            <select asp-for="EmployeeId" class="form-control" title="searchableDropdown">
+                                <option value="-1">Select Mpo</option>
+                                @foreach (var data in @Model.EmployeeList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-1">
+                        <label class="col-2 control-label">Client Name/Organization</label>
+                        <div class="col-4">
+                            <input asp-for="ClientName" class="form-control" />
+                        </div>
+                        <span asp-validation-for="ClientName" class="text-danger"></span>
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a) No Of Floor</label>
+                        <div class="col-1">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-1">No Of Flat</label>
+                        <div class="col-1">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Contract Person</th>
+                                        <th>Designation</th>
+                                        <th>Mobile No</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.ContractDetails)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Designation</td>
+                                            <td>@item.MobileNo</td>
+                                            <td>
+                                                <a asp-action="UpdateContractDetails" asp-controller="Customer" asp-route-id="@item.Id">Edit</a>|
+                                                <a asp-action="DeleteContractDetails" asp-controller="Customer" asp-route-id="@item.Id">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="col-6">Brand Name</th>
+                                        <th class="col-2">Quantity</th>
+                                        <th class="col-2">Capacity</th>
+                                        <th class="col-2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblBuldingDetails">
+                                    @foreach (var item in Model.BuildingDetails)
+                                    {
+                                        <tr>
+                                            <td>@item.BrandName</td>
+                                            <td>@item.Quantity</td>
+                                            <td>@item.Capacity</td>
+                                            <td>
+                                                <a asp-action="UpdateBuildingDetails" asp-controller="Customer" asp-route-id="@item.Id">Edit</a>|
+                                                <a asp-action="DeleteBuildingDetails" asp-controller="Customer" asp-route-id="@item.Id">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label col-2">Location/Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                        </div>
+                        <label class="control-label col-1">City</label>
+                        <div class="col-1">
+                            <select asp-for="CityId" class="form-control">
+                                <option value="-1">Select City</option>
+                                @foreach (var data in @Model.CityList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <label class="control-label col-1">Area</label>
+                        <div class="col-2">
+                            <select asp-for="AreaId" class="form-control" title="searchableDropdown">
+                                <option value="-1">Select Area</option>
+                                @foreach (var data in @Model.AreaList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <label asp-for="SubAreaId" class="control-label col-1">Sub Area</label>
+                        <div class="col-2">
+                            <select asp-for="SubAreaId" class="form-control" title="searchableDropdown">
+                                <option value="-1">Select Sub Area</option>
+                                @foreach (var data in @Model.SubAreaList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="SubAreaId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="ContactId" class="control-label col-2">Contact</label>
+                        <div class="col-4">
+                            <select asp-for="ContactId" class="form-control">
+                                <option value="-1">Select Contact</option>
+                                @foreach (var data in @Model.ContactList)
+                                {
+                                    <option value="@data.Id">@data.Name</option>
+                                }
+                            </select>
+                            <span asp-validation-for="ContactId" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group text-center mt-1">
+                        <input type="submit" value="Update" id="UpdateCustomerInfo" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('[title="searchableDropdown"]').select2();
+
+            var person = [];
+            var brand = [];
+            $('#btnAddPerson').click(function () {
+
+                var contractPerson = $('#ContractPerson').val();
+                var designationId = $('#DesignationId').val();
+                var designationName = $('#DesignationId option:selected').text();
+                var mobileNo = $('#MobileNo').val();
+
+                if (contractPerson == "") { $('#ContractPerson').focus(); return false; }
+                if (designationId == "-1") { $('#DesignationId').focus(); return false; }
+                if (mobileNo.length < 5) { $('#MobileNo').focus(); return false; }
+
+                let isExist = person.includes(contractPerson);
+                if (isExist == true) {
+                    alert("Already Exist" + contractPerson); return false;
+                }
+
+                $.ajax({
+                    url: '/CustomerFollowup/IsMobileNoAlreadyExists',
+                    method: 'get',
+                    data: { mobileNo: mobileNo },
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data == false) {
+                            var contractTable = $('#tblPersonDetails');
+                            contractTable.append('<tr><td>' + contractPerson + '</td><td class="none">' + designationId + '</td><td>'
+                                + designationName + '</td><td>' + mobileNo + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
+                            $('#MobileNo').val("");
+                            $('#ContractPerson').val("");
+                            person.push(contractPerson);
+                        }
+                        else {
+                            alert("Mobile No already exists..Please Check..");
+                        }
+                    },
+                    error: function (xhr) {
+                        return false;
+                    }
+                });
+
+
+            });
+
+
+
+            $("table #tblPersonDetails").on("click", "a.deleteRow", function (event) {
+                event.preventDefault();
+                $(this).closest('tr').remove();
+                return false;
+            });
+
+
+
+
+            $('#btnAddBuildingDetails').click(function () {
+                var brandId = $('#BrandId').val();
+                var brandName = $('#BrandId option:selected').text();
+                var quantity = $('#Quantity').val();
+                var capacity = $('#Capacity').val();
+
+                if (brandId == "-1") { $('#BrandId').focus(); return false; }
+                if (quantity == "0" || quantity == "") { $('#Quantity').focus(); return false; }
+                if (capacity == "0" || capacity == "") { $('#Capacity').focus(); return false; }
+
+                let isExist = brand.includes(brandId);
+                if (isExist == true) {
+                    alert("Already Exist " + brandName); return false;
+                }
+
+                var buildingDetailsTable = $('#tblBuldingDetails');
+                buildingDetailsTable.append('<tr><td class="none">' + brandId + '</td><td>' + brandName + '</td><td>'
+                    + quantity + '</td><td>' + capacity + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
+                $('#BrandId').val("-1");
+                $('#Quantity').val("");
+                $('#Capacity').val("");
+                brand.push(brandId);
+            });
+
+
+            $("table #tblBuldingDetails").on("click", "a.deleteRow", function (event) {
+                event.preventDefault();
+                $(this).closest('tr').remove();
+                return false;
+            });
+
+
+            var cityId = $('#CityId');
+            var areaId = $('#AreaId');
+            var subAreaId = $('#SubAreaId');
+
+            $('#CityId').change(function () {
+                if ($(this).val() == "-1") {
+                    areaId.empty();
+                    subAreaId.empty();
+                    $('#AreaId').prepend($('<option>', { value: '-1', text: 'Select Area' }));
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    areaId.prop('disable', true);
+                    subAreaId.prop('disable', true);
+                } else {
+                    areaId.empty();
+                    subAreaId.empty();
+                    $('#AreaId').prepend($('<option>', { value: '-1', text: 'Select Area' }));
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    areaId.prop('disable', false);
+                    subAreaId.prop('disable', true);
+                    $.ajax({
+                        url: '/CustomerFollowup/GetAreaByCityId',
+                        type: "GET",
+                        data: { id: $(this).val() },
+                        dataType: 'json',
+                        success: function (response) {
+                            areaId.prop('disable', false),
+                                $.each(response, function (index, item) {
+                                    areaId.append($("<option>", {
+                                        value: item.id,
+                                        text: item.name
+                                    }));
+                                });
+                        }
+                    });
+                }
+                //}
+            });
+            $('#AreaId').change(function () {
+                if ($(this).val() == "-1") {
+                    subAreaId.empty();
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    subAreaId.prop('disable', true);
+                } else {
+                    subAreaId.empty();
+                    $('#SubAreaId').prepend($('<option>', { value: '-1', text: 'Select Sub Area' }));
+                    subAreaId.prop('disable', true);
+                    $.ajax({
+                        url: '/CustomerFollowup/GetSubAreaByAreaId',
+                        type: "GET",
+                        data: { id: $(this).val() },
+                        dataType: 'json',
+                        success: function (response) {
+                            areaId.prop('disable', false),
+                                $.each(response, function (index, item) {
+                                    subAreaId.append($("<option>", {
+                                        value: item.id,
+                                        text: item.name
+                                    }));
+                                });
+                        }
+                    });
+                }
+            });
+
+            $('#SaveCustomerAndFollowup').click(function () {
+
+                var customers = [];
+                var buildings = [];
+
+                var tContact = $("table #tblPersonDetails");
+                tContact.find('tr').each(function () {
+                    tContactInfo = $(this).find('td').text();
+                    if (tContactInfo != '') {
+                        var $ctd = $(this).find('td'),
+                            tcPerson = $ctd.eq(0).text(),
+                            tcDesignationId = $ctd.eq(1).text(),
+                            tcDesignation = $ctd.eq(2).text(),
+                            tcMobile = $ctd.eq(3).text();
+                        var Customer = {
+                            Name: tcPerson,
+                            DesignationId: tcDesignationId,
+                            MobileNo: tcMobile,
+                        };
+                        customers.push(Customer);
+                    }
+                });
+
+                var tblBuilding = $("table #tblBuldingDetails");
+                tblBuilding.find('tr').each(function () {
+                    tBuldingInfo = $(this).find('td').text();
+                    if (tBuldingInfo != '') {
+                        var $btd = $(this).find('td'),
+                            tbId = $btd.eq(0).text(),
+                            tbName = $btd.eq(1).text(),
+                            tbQuantity = $btd.eq(2).text(),
+                            tbCapacity = $btd.eq(3).text();
+                        var Building = {
+                            BrandId: tbId,
+                            Quantity: tbQuantity,
+                            Capacity: tbCapacity,
+                        };
+                        buildings.push(Building);
+                    }
+                });
+
+                if (buildings.length == 0) {
+                    alert("Add Building Details Please..");
+                    return false;
+                }
+                if (customers.length == 0) {
+                    alert("Add Contract Details Please..");
+                    return false;
+                }
+
+                var followup = {
+                    CallingDate: $('#CallingDate').val(),
+                    ServiceTypeId: $('#ServiceTypeId option:selected').val(),
+                    Name: $('#Name').val(),
+                    OfferAmount: $('#OfferAmount').val(),
+                    AgreeAmount: $('#AgreeAmount').val(),
+                    CustomerDoTheWorkingMonth: $('#CustomerDoTheWorkingMonth option:selected').val(),
+                    Address: $('#Address').val(),
+                    SubAreaId: $('#SubAreaId option:selected').val(),
+                    Remarks: $('#Remarks').val(),
+                    ContactId: $('#ContactId option:selected').val(),
+                    PositiveOrNegative: $('#PositiveOrNegative option:selected').val(),
+                    NoOfFloor: $('#NoOfFloor').val(),
+                    NoOfFlat: $('#NoOfFlat').val(),
+                    DiscussionDetailsNote: $('#DiscussionDetailsNote').val(),
+                    MarketingNextPlan: $('#MarketingNextPlan').val(),
+                    FollowupCallDate: $('#FollowupCallDate').val(),
+                    EmployeeId: $('#EmployeeId option:selected').val(),
+                    Status: $('#Status option:selected').val(),
+                    CategoryId: $('#CategoryId option:selected').val(),
+                    ReferenceBy: $('#ReferenceBy option:selected').val(),
+                    ModifiedBy: $('#ModifiedBy').val(),
+                }
+
+                var model = {
+                    "CustomerFollowup": followup,
+                    "ContractDetails": customers,
+                    "BuildingDetails": buildings,
+                }
+
+                $.ajax({
+                    type: "post",
+                    url: "/CustomerFollowup/Save",
+                    data: model,
+                    datatype: "json",
+                    //cache: false,
+                    success: function (data) {
+                        window.location.href = data.redirecturl;
+                    },
+                    error: function (response) {
+                        if (response.status == 400) {
+                            var errors = response.responseJSON;
+                            for (var fieldName in errors) {
+                                var errorMessage = errors[fieldName].join('<br>');
+                                fieldName = fieldName.substr(fieldName.indexOf(".") + 1, 100);
+                                $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
+                            }
+                            //var errorMessage="";
+                            //for (var fieldName in errors) {
+                            //    if (errorMessage == "") {
+                            //        errorMessage  = errors[fieldName]+'<br>';
+                            //    }
+                            //    else{
+                            //       errorMessage  += errors[fieldName]+'<br>';
+                            //    }
+                            //}
+                            //console.log(errorMessage);
+                            //$('#validationSummary').html(errorMessage);
+                        }
+                        else {
+                            alert('No Valid Data');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

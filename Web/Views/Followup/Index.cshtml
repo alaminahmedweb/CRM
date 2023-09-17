@@ -1,0 +1,458 @@
+﻿@model IEnumerable<Web.ViewModels.DailyFollowupListVM>
+
+@{
+    ViewData["Title"] = "Daily Customer Followup List";
+}
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Daily Customer Followup List</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-5 text-end">
+                    @*<label id="TotalCount" class="text-danger font-weight-bold">Total Count : </label>*@
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="FollowupDateFrom" class="form-label">Date From</label>
+                    <input type="date" id="FollowupDateFrom" name="FollowupDateFrom" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="email" class="form-label">Date To</label>
+                    <input type="date" id="FollowupDateTo" name="FollowupDateTo" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="mpoId" class="form-label">MPO Name</label>
+                    <select id="mpoId" class="form-control" title="searchableDropdown">
+                        <option value="-1">Show All</option>
+                        @foreach (var data in @ViewBag.employeeService)
+                        {
+                            <option value="@data.Id">@data.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="followupType" class="form-label">Followup Type</label>
+                    <select id="followupType" class="form-control">
+                        <option value="-1">Show All</option>
+                        <option value="BookedCustomer">Booking Customer</option>
+                        <option value="NonBookedCustomer">Non-Booking Customer</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 col-sm-12 col-12">
+                <div class="form-group d-grid gap-2 d-md-block">
+                    <br />
+                    <button type="button" id="btnShowFollowup" class="btn btn-success">Show</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%" id="followupTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Fol. Date
+                        </th>
+@*                        <th>
+                            Mobile
+                        </th>
+*@                        <th>
+                            Cust Name
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Contact
+                        </th>
+                        <th>
+                            Category
+                        </th>
+                        <th>
+                            Reference
+                        </th>
+                        <th>
+                            MPO
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@*<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Customer Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+
+            </table>
+
+        </div>
+    </div>
+</div>
+*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+
+        function MakePdf() {
+            var printMe = document.getElementById('followupTable');
+            var wme = window.open("", "", "width:700,height:900");
+            wme.document.write(printMe.outerHTML);
+            wme.document.close();
+            wme.focus();
+            wme.print();
+            wme.close();
+        }
+        var oTable;
+
+        $(document).ready(function () {
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#FollowupDateFrom').val(currentDate);
+            $('#FollowupDateTo').val(currentDate);
+            var datefrom = currentDate;
+            var dateto = currentDate;
+            //$('#mpoId').select2();
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#FollowupDateFrom').val(currentDate);
+            $('#FollowupDateTo').val(currentDate);
+            var datefrom = currentDate;
+            var dateto = currentDate;
+            var mpoId = $('#mpoId').val();
+            var followupType = $('#followupType').val();
+
+            $('#followupTable').DataTable(
+                {
+                    "bDestroy": true,
+                    "processing": true,
+                    "responsive": true,
+                    scrollX: true,
+                    lengthMenu: [
+                        [10, 25, 50, -1],
+                        [10, 25, 50, 'All']
+                    ],
+                    "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                    "ajax": {
+                        url: '@Url.Action("GetDailyFollowupListByMpoIdAndFollowupType", "Followup")',
+                        "type": "get",
+                        datatype: "json",
+                        "data": function (d) {
+                            d.dateFrom = $('#FollowupDateFrom').val();
+                            d.dateto = $('#FollowupDateTo').val();
+                            d.mpoId = $('#mpoId').val();
+                            d.followupType = $('#followupType').val();
+                        }
+                    },
+
+                    aoColumns: [
+                        {
+                            "sName": "followupDate",
+                            "mData": "followupDate",
+                            "searchable": false
+
+                        },
+                        //{
+                        //    "sName": "mobileNo",
+                        //    "mData": null,
+                        //    "mRender": function (data, type, full) {
+                        //        return '<span class="crmText">' + data.mobileNo + '</span>';
+                        //    }
+
+                        //},
+                        {
+                            "sName": "customerName",
+                            "mData": "customerName"
+
+
+                        },
+                        {
+                            "sName": "address",
+                            "mData": "address",
+                            "searchable": false
+
+                        },
+
+                        {
+                            "sName": "contactName",
+                            "mData": "contactName",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "categoryName",
+                            "mData": "categoryName",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "referenceBy",
+                            "mData": "referenceBy",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "employeeName",
+                            "mData": "employeeName",
+                            "searchable": false
+
+                        },
+                        {
+                            "mData": null,
+                            "bSortable": false,
+                            "searchable": false,
+                            "mRender": function (data, type, full) {
+                                return '<a class="view" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a> / <a class="export_shoot_id" href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+                            }
+                        }
+
+                    ]
+                });
+
+            $('#btnShowFollowup').on('click', function (e) {
+                $('#followupTable').DataTable(
+                    {
+                        "bDestroy": true,
+                        "processing": true,
+                        "responsive": true,
+                        //scrollY: 300,
+                        //scrollCollapse: true,
+                        scrollX: true,
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, 'All']
+                        ],
+                        "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                        "ajax": {
+                            url: '@Url.Action("GetDailyFollowupListByMpoIdAndFollowupType", "Followup")',
+                            "type": "get",
+                            datatype: "json",
+                            "data": function (d) {
+                                d.dateFrom = $('#FollowupDateFrom').val();
+                                d.dateto = $('#FollowupDateTo').val();
+                                d.mpoId = $('#mpoId').val();
+                                d.followupType = $('#followupType').val();
+                            }
+                        },
+
+                        aoColumns: [
+                            {
+                                "sName": "followupDate",
+                                "mData": "followupDate",
+                                "searchable": false
+
+                            },
+                            //{
+                            //    "sName": "mobileNo",
+                            //    "mData": null,
+                            //    "mRender": function (data, type, full) {
+                            //        return '<span class="crmText">' + data.mobileNo + '</span>';
+                            //    }
+
+                            //},
+                            {
+                                "sName": "customerName",
+                                "mData": "customerName"
+
+
+                            },
+                            {
+                                "sName": "address",
+                                "mData": "address",
+                                "searchable": false
+
+                            },
+
+                            {
+                                "sName": "contactName",
+                                "mData": "contactName",
+                                "searchable": false
+
+                            },
+                            {
+                                "sName": "categoryName",
+                                "mData": "categoryName",
+                                "searchable": false
+
+                            },
+                            {
+                                "sName": "referenceBy",
+                                "mData": "referenceBy",
+                                "searchable": false
+
+                            },
+                            {
+                                "sName": "employeeName",
+                                "mData": "employeeName",
+                                "searchable": false
+
+                            },
+                            {
+                                "mData": null,
+                                "bSortable": false,
+                                "searchable": false,
+                                "mRender": function (data, type, full) {
+                                    return '<a class="view" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a> / <a class="export_shoot_id" href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+                                }
+                            }
+
+                        ]
+                    });
+            });
+            //$.ajax({
+            //    type: "GET",
+            //    url: "Followup/GetDailyFollowupListByMpoIdAndFollowupType",
+            //    data: { dateFrom: datefrom, dateTo: dateto, mpoId: mpoId, followupType: followupType },
+            //    contentType: "application/json; charset=utf-8",
+            //    dataType: "json",
+            //    success: function (result) {
+            //        var followupTable = $('#followupTable tbody');
+            //        followupTable.empty();
+            //        $(result).each(function (index, data) {
+            //            var linkcustomerDetails = '<a href="Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a>';
+            //            var linkAddNewFollowup = '<a href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+            //            followupTable.append('<tr><td>' + data.followupDate + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>' + data.address + '</td><td>' +
+            //                data.contactName + '</td><td>' + data.categoryName + '</td><td>' + data.referenceBy + '</td><td>' +
+            //                data.employeeName + '</td><td>' + linkcustomerDetails + ' | ' + linkAddNewFollowup + '</td></tr>');
+            //        });
+            //        followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+            //        $('#TotalCount').html('Total Count : ' + result.length);
+            //    },
+            //    error: function (xhr, ajaxOptions, thrownError) {
+            //        // handle error
+            //    }
+            //});
+
+            //$('#btnShowFollowup').click(function () {
+            //    var datefrom = $('#FollowupDateFrom').val();
+            //    var dateto = $('#FollowupDateTo').val();
+            //    var mpoId = $('#mpoId').val();
+            //    var followupType = $('#followupType').val();
+            //    $.ajax({
+            //        type: "GET",
+            //        url: "Followup/GetDailyFollowupListByMpoIdAndFollowupType",
+            //        data: { dateFrom: datefrom, dateTo: dateto, mpoId: mpoId, followupType: followupType },
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "json",
+            //        success: function (result) {
+            //            var followupTable = $('#followupTable tbody');
+            //            followupTable.empty();
+            //            $(result).each(function (index, data) {
+            //                var linkcustomerDetails = '<a href="Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a>';
+            //                var linkAddNewFollowup = '<a href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+            //                followupTable.append('<tr><td>' + data.followupDate + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>' + data.address + '</td><td>' +
+            //                    data.contactName + '</td><td>' + data.categoryName + '</td><td>' + data.referenceBy + '</td><td>' +
+            //                    data.employeeName + '</td><td>' + linkcustomerDetails + '|' + linkAddNewFollowup + '</td></tr>');
+            //            });
+            //            followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+            //            $('#TotalCount').html('Total Count : ' + result.length);
+            //        },
+            //        error: function (xhr, ajaxOptions, thrownError) {
+            //            // handle error
+            //        }
+            //    });
+            //});
+
+
+            //$('#mpoId').change(function () {
+            //    var datefrom = $('#FollowupDateFrom').val();
+            //    var dateto = $('#FollowupDateTo').val();
+            //    var mpoId = $(this).val();
+            //    var followupType = $('#followupType').val();
+            //    var url = "Followup/GetDailyFollowupListByMpoIdAndFollowupType";
+
+            //    $.ajax({
+            //        type: "GET",
+            //        url: url,
+            //        data: { dateFrom: datefrom, dateTo: dateto, mpoId: mpoId, followupType: followupType },
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "json",
+            //        success: function (result) {
+            //            var followupTable = $('#followupTable tbody');
+            //            followupTable.empty();
+            //            $(result).each(function (index, data) {
+            //                var linkcustomerDetails = '<a href="Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a>';
+            //                var linkAddNewFollowup = '<a href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+            //                followupTable.append('<tr><td>' + data.followupDate + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>' + data.address + '</td><td>' +
+            //                    data.contactName + '</td><td>' + data.categoryName + '</td><td>' + data.referenceBy + '</td><td>' +
+            //                    data.employeeName + '</td><td>' + linkcustomerDetails + '|' + linkAddNewFollowup + '</td></tr>');
+            //            });
+            //            followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+            //            $('#TotalCount').html('Total Count : ' + result.length);
+            //        },
+            //        error: function (xhr, ajaxOptions, thrownError) {
+            //            // handle error
+            //        }
+            //    });
+            //});
+
+            //$('#followupType').change(function () {
+            //    var datefrom = $('#FollowupDateFrom').val();
+            //    var dateto = $('#FollowupDateTo').val();
+            //    var mpoId = $('#mpoId').val();
+            //    var followupType = $(this).val();
+
+            //    $.ajax({
+            //        type: "GET",
+            //        url: "Followup/GetDailyFollowupListByMpoIdAndFollowupType",
+            //        data: { dateFrom: datefrom, dateTo: dateto, mpoId: mpoId, followupType: followupType },
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "json",
+            //        success: function (result) {
+            //            var followupTable = $('#followupTable tbody');
+            //            followupTable.empty();
+            //            $(result).each(function (index, data) {
+            //                var linkcustomerDetails = '<a href="Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a>';
+            //                var linkAddNewFollowup = '<a href="/Followup/AddNewFollowup?followupId=' + data.followupId + '">Add New Followup</a>';
+            //                followupTable.append('<tr><td>' + data.followupDate + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>' + data.address + '</td><td>' +
+            //                    data.contactName + '</td><td>' + data.categoryName + '</td><td>' + data.referenceBy + '</td><td>' +
+            //                    data.employeeName + '</td><td>' + linkcustomerDetails + '|' + linkAddNewFollowup + '</td></tr>');
+            //            });
+            //            followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+            //            $('#TotalCount').html('Total Count : ' + result.length);
+            //        },
+            //        error: function (xhr, ajaxOptions, thrownError) {
+            //            // handle error
+            //        }
+            //    });
+            //});
+
+            $('body').on('click', '.crmText', function () {
+                $(this).removeClass('crmText');
+            });
+            $('#btnprint').click(function () {
+                print();
+            });
+
+
+        });
+    </script>
+}

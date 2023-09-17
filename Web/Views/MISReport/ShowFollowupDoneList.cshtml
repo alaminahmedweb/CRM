@@ -1,0 +1,57 @@
+﻿@using ApplicationCore.DtoModels;
+@model IEnumerable<CustomerDto>
+@{
+    Layout = "_Report";
+    var total = 0;
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Followup Date</th>
+                    <th>Mobile No</th>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Category</th>
+                    <th>Reference</th>
+                    <th>Marketing Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    {
+                        total = total + 1;
+                    }
+
+                    <tr>
+                        <td>@data.FollowupDate</td>
+                        <td>@data.MobileNo</td>
+                        <td>@data.CustomerName</td>
+                        <td>@data.Address</td>
+                        <td>@data.ContactName </td>
+                        <td>@data.CategoryName </td>
+                        <td>@data.ReferenceBy </td>
+                        <td>@data.EmployeeName </td>
+                        <td>@data.Status</td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>@total</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿@model City
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Create City";
+    var userid="";
+    if (User.Identity.IsAuthenticated)
+    {
+       userid  = userManager.GetUserId(User);
+    }
+}
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-3 col-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Add New City</h4>
+                <hr />
+                <form asp-action="Create" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Name" placeholder="City Name" />
+                            <label for="Name">City Name</label>
+                        </div>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            <a class="btn btn-primary btn-lg" asp-action="Index">List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 col-offset-3">
+        <div class="box">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add New City</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="Create" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
+                    <div class="form-group row">
+                        <label asp-for="Name" class="col-4 control-label">City Name</label>
+                        <div class="col-8">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                        <a type="button" class="btn btn-info" asp-action="Index"><li class="fa fa-list-ul"></li> List </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

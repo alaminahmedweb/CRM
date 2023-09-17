@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/report.css" rel="stylesheet" />
+    <style>
+
+        body {
+            margin: 0;
+        }
+
+        .content {
+            width: 210mm;
+            height: 297mm;
+            background-color: white;
+            margin: 0 auto;
+            padding: 20mm;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div class="page" size="@ViewBag.PageSize">
+            <div class="top-section">
+                <h2 class="company-name">Clean Source Ltd.</h2>
+                <p class="company-address">Mohammadpur,Dhaka</p>
+                <p class="daterange">Reporting Date From <span>@ViewBag.DateRange.DateFrom</span>: To <span>@ViewBag.DateRange.DateTo</span></p>
+                <p class="title">@ViewBag.ReportTitle</p>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+
+<script>
+    $('#btnprint').click(function(){
+        document.body.innerHTML = document.all.item("content").innerHTML;
+        window.print();
+        window.location.reload();
+    });
+</script>

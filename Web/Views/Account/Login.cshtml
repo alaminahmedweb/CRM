@@ -1,0 +1,122 @@
+﻿@model Web.ViewModels.Account.LoginVM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <style>
+        img {
+            vertical-align: middle;
+            border-style: none;
+            width: 260px;
+            height: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5 col-md-12 col-sm-12 col-12 d-flex flex-column align-items-center justify-content-center">
+
+                            <!-- End Logo -->
+@*                            <div class="d-flex justify-content-center py-4">
+                                <a class="logo d-flex align-items-center w-auto">
+                                    <span class="d-none d-lg-block">LOG IN</span>
+                                </a>
+                            </div>
+*@                            <!-- End Logo -->
+
+                            <div class="card mb-3" style="width:80%">
+                                <div class="card-body">
+                                    <div class="py-4 text-center">
+                                        <img src="~/lib/Images/logo.png" alt="" asp-append-version=true>
+                                    </div>
+                                    <div class="d-flex justify-content-left mb-3">
+                                        <a class="logo d-flex align-items-left w-auto">
+                                            <span class="d-none d-lg-block">Login To Your Account</span>
+                                        </a>
+                                    </div>
+
+                                    <form method="post" autocomplete="off">
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input asp-for="UserName" class="form-control" placeholder="Enter User Name" required />
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fa fa-user"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input asp-for="Password" class="form-control" placeholder="Enter Password" required />
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fa fa-lock"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                                            </label>
+                                        </div>
+                                        <div class="form-group text-center" >
+                                            <input type="submit" value="Login" class="btn btn-primary btn-login" style="width: 100%"/>
+                                        </div>
+                                        <p class="text-center" style="font-size: 11px;">Powered by Dhaka Softaware Solution Ltd</p>
+                                    </form>
+
+                                </div>
+@*                                <div class="d-flex justify-content-center">
+                                    <a class="logo d-flex align-items-center w-auto">
+                                        <span class="d-none d-lg-block">Clean Water First</span>
+                                    </a>
+                                </div>
+*@
+@*                                <div class="card-footer">
+                                    <div class="d-flex justify-content-center">
+                                        <a class="logo d-flex align-items-center w-auto">
+                                            <span class="d-none d-lg-block">Clean Water First</span>
+                                        </a>
+                                    </div>
+                                </div>
+*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>

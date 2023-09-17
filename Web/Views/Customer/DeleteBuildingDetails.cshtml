@@ -1,0 +1,47 @@
+﻿@model BuildingDetails
+
+@{
+    ViewData["Title"] = "Delete Building Details";
+}
+
+<h3 class="text-danger">Are you sure you want to delete this?</h3>
+<hr />
+<div>
+    <form asp-action="DeleteBuildingDetails">
+        <div asp-validation-summary="ModelOnly" class="text-danger" id="validationSummary"></div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <label asp-for="BrandId" class="col-1 control-label text-bold">Brand</label>
+                    <div class="col-2">
+                        <select asp-for="BrandId" class="form-control" disabled>
+                            <option value="-1">Select Category</option>
+                            @foreach (var data in @ViewBag.BrandList)
+                            {
+                                <option value="@data.Id">@data.Name</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Quantity" class="col-1 control-label text-bold">Quantity</label>
+                    <div class="col-2">
+                        @Html.DisplayFor(model => model.Quantity)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="BrandId" class="col-1 control-label text-bold">Capacity</label>
+                    <div class="col-2">
+                        @Html.DisplayFor(model => model.Capacity)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" asp-for="CustomerId" />
+
+        <div class="form-group mt-1">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

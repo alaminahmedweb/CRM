@@ -1,0 +1,385 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web
+build_property.RootNamespace = Web
+build_property.ProjectDir = D:\CRM_By_Zahid_21_06_2023\Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\CRM_By_Zahid_21_06_2023\Web
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Account/ResestPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNlc3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Administration/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpb25cQ3JlYXRlUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Administration/EditRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpb25cRWRpdFJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Administration/EditUsersInRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpb25cRWRpdFVzZXJzSW5Sb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Administration/ListRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpb25cTGlzdFJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Area/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Area/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Area/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Area/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/CancelBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDYW5jZWxCb29raW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/SaveBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTYXZlQm9va2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShiftBooking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaGlmdEJvb2tpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowBookingInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93Qm9va2luZ0luZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/UpdateBookingAmount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xVcGRhdGVCb29raW5nQW1vdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Brand/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Brand/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Brand/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJhbmRcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Category/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/City/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/City/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/City/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/City/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2l0eVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ContactBy/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEJ5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ContactBy/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEJ5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ContactBy/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEJ5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ContactBy/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdEJ5XFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/CustomerFollowup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJGb2xsb3d1cFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/AddNewBuildingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkTmV3QnVpbGRpbmdEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/AddNewContractDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkTmV3Q29udHJhY3REZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/DeleteBuildingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlQnVpbGRpbmdEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/DeleteContractDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlQ29udHJhY3REZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/UpdateBuildingDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVXBkYXRlQnVpbGRpbmdEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/UpdateContractDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVXBkYXRlQ29udHJhY3REZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Customer/UpdateCustomerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVXBkYXRlQ3VzdG9tZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Designation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Designation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Designation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Designation/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/DraftCustomer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJhZnRDdXN0b21lclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/DraftCustomer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJhZnRDdXN0b21lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/DraftCustomer/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRHJhZnRDdXN0b21lclxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Employee/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Employee/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Employee/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Employee/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Followup/AddNewFollowup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93dXBcQWRkTmV3Rm9sbG93dXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Followup/GetFollowupsByCustId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93dXBcR2V0Rm9sbG93dXBzQnlDdXN0SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Followup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9sbG93dXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ContactWiseNewCustomerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XENvbnRhY3RXaXNlTmV3Q3VzdG9tZXJMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowBookingCancelList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dCb29raW5nQ2FuY2VsTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowBookingShiftingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dCb29raW5nU2hpZnRpbmdMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowEntryDateWiseBookingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dFbnRyeURhdGVXaXNlQm9va2luZ0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowFollowupDoneList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dGb2xsb3d1cERvbmVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowNewCustomerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dOZXdDdXN0b21lckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/StatusWiseFollowupDoneList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFN0YXR1c1dpc2VGb2xsb3d1cERvbmVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/StatusWiseNewCustomerList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFN0YXR1c1dpc2VOZXdDdXN0b21lckxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceFeedback/AddComplain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZENvbXBsYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceFeedback/AddComplainFeedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZENvbXBsYWluRmVlZGJhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceFeedback/AddFeedback.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEFkZEZlZWRiYWNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceFeedback/DailyComplainList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXERhaWx5Q29tcGxhaW5MaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceFeedback/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZUZlZWRiYWNrXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceType/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVR5cGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceType/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVR5cGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceType/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVR5cGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/ServiceType/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVR5cGVcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Shared/_Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9SZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/SubArea/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQXJlYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/SubArea/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQXJlYVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/SubArea/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQXJlYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/SubArea/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViQXJlYVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Team/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Team/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Team/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Team/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-lzldzk1rll

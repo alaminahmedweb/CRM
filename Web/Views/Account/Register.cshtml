@@ -1,0 +1,62 @@
+﻿@model Web.ViewModels.Account.RegisterVM
+
+@{
+    ViewData["Title"] = "Create User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h4>Create User</h4>
+
+<hr />
+*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 offset-3">
+            <div class="card">
+                <div class="card-body">
+                    <form asp-action="Register" autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <h4 class="text-center">Create User</h4>
+                        <hr />
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input class="form-control" asp-for="UserName" placeholder="User Name" />
+                                <label for="UserName">User Name</label>
+                            </div>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="Password" class="form-control" placeholder="Password"/>
+                                <label for="Password">Password</label>
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password" />
+                                <label for="ConfirmPassword">Confirm Password</label>
+                            </div>
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <input type="submit" value="Create" class="btn btn-primary ml-1" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="row">
+    <div class="col-md-4">
+    </div>
+</div>
+*@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

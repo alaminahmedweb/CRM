@@ -1,0 +1,12 @@
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\bin\Release\net6.0\ApplicationCore.deps.json
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\bin\Release\net6.0\ApplicationCore.dll
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\bin\Release\net6.0\ApplicationCore.pdb
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.AssemblyInfo.cs
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.dll
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\refint\ApplicationCore.dll
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.pdb
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ref\ApplicationCore.dll

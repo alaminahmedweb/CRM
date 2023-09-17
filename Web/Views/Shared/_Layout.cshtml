@@ -1,0 +1,624 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM-@ViewData["Title"]</title>
+
+
+    @*    <link href="~/css/buttons.datatables.min.css" rel="stylesheet" />
+    *@
+    <link href="~/frontend/css/simplebar.min.css" rel="stylesheet" />
+    <link href="~/frontend/css/line.css" rel="stylesheet" />
+    <link href="~/frontend/css/theme-rtl.min.css" rel="stylesheet" />
+    <link href="~/frontend/css/theme.min.css" rel="stylesheet" />
+
+    <link href="~/css/jquery-ui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    @*<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">*@
+    @*    <script>
+    var phoenixIsRTL = window.config.config.phoenixIsRTL;
+    if (phoenixIsRTL) {
+    var linkDefault = document.getElementById('style-default');
+    var userLinkDefault = document.getElementById('user-style-default');
+    linkDefault.setAttribute('disabled', true);
+    userLinkDefault.setAttribute('disabled', true);
+    document.querySelector('html').setAttribute('dir', 'rtl');
+    } else {
+    var linkRTL = document.getElementById('style-rtl');
+    var userLinkRTL = document.getElementById('user-style-rtl');
+    linkRTL.setAttribute('disabled', true);
+    userLinkRTL.setAttribute('disabled', true);
+    }
+    </script>*@
+
+    <link href="~/css/site.css" rel="stylesheet" />
+    <style>
+        .footer[b-lzldzk1rll] {
+            line-height: 10px !important;
+        }
+
+        p {
+            margin-bottom: 0px !important;
+        }
+
+        .row {
+            --bs-gutter-x: 0.5rem !important;
+        }
+
+        .btn {
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        .dataTables_filter {
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+
+    <main class="main" id="top">
+        <nav class="navbar navbar-vertical navbar-expand-lg">
+            @*<script>
+            var navbarStyle = window.config.phoenixNavbarStyle;
+            if (navbarStyle && navbarStyle !== 'transparent') {
+            document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
+            }
+            </script>*@
+            <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
+                <!-- scrollbar removed-->
+                <div class="navbar-vertical-content">
+                    <ul class="navbar-nav flex-column" id="navbarVerticalNav">
+                        <li class="nav-item">
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link label-1" asp-controller="Home" asp-action="Index" role="button" data-bs-toggle="" aria-expanded="false">
+                                    <div class="d-flex align-items-center">
+                                        <span class="nav-link-icon">
+                                            <span data-feather="pie-chart"></span>
+                                        </span>
+                                        <span class="nav-link-text-wrapper">
+                                            <span class="nav-link-text">Dashboard</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div><!-- parent pages-->
+                        </li>
+
+                        <li class="nav-item">
+                            <!-- label-->
+                            <p class="navbar-vertical-label">Apps</p>
+
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link dropdown-indicator label-1" href="#setting" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="Settings">
+                                    <div class="d-flex align-items-center">
+                                        <div class="dropdown-indicator-icon">
+                                            <span class="fas fa-caret-right"></span>
+                                        </div>
+                                        <span class="nav-link-icon">
+                                            <span data-feather="settings"></span>
+                                        </span>
+                                        <span class="nav-link-text">Settings</span>
+                                    </div>
+                                </a>
+                                <div class="parent-wrapper label-1">
+                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="setting">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="ServiceType" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Service List</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Employee" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Employee</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="City" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">City</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Team" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Team</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Area" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Area</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="SubArea" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text"> Sub Area</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="ContactBy" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Contact</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Brand" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Brand List</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Designation" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Designation</span></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Category" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Category</span></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- parent pages-->
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link dropdown-indicator label-1" href="#customer" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="customer">
+                                    <div class="d-flex align-items-center">
+                                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Customer</span>
+                                    </div>
+                                </a>
+                                <div class="parent-wrapper label-1">
+                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="customer">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="CustomerFollowup" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">New Customer Entry</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Followup" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Daily Followup</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowBookingInfo" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Booking Info</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="ServiceFeedback" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Service Feedback</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="ServiceFeedback" asp-action="DailyComplainList" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Complain Feedback</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- parent pages-->
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link label-1" asp-controller="DraftCustomer" asp-action="Index" role="button">
+                                    <div class="d-flex align-items-center">
+                                        <span class="nav-link-icon">
+                                            <i class='far fa-address-card' style="margin-left:-5px"></i>
+                                        </span>
+                                        <span class="nav-link-text-wrapper">
+                                            <span class="nav-link-text" style="margin-left:-2px">Draft Entry</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link label-1" asp-controller="MISReport" asp-action="Index" role="button">
+                                    <div class="d-flex align-items-center">
+                                        <span class="nav-link-icon">
+                                            <i class='fas fa-database' style="margin-left:-5px"></i>
+                                        </span>
+                                        <span class="nav-link-text-wrapper">
+                                            <span class="nav-link-text" style="margin-left:-5px">Reports</span>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-vertical-footer">
+                <button class="btn navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center">
+                    <span class="uil uil-left-arrow-to-left fs-0"></span>
+                    <span class="uil uil-arrow-from-right fs-0"></span>
+                    <span class="navbar-vertical-footer-text ms-2">Collapsed View</span>
+                </button>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-top fixed-top navbar-expand" id="navbarDefault">
+            <div class="collapse navbar-collapse justify-content-between">
+                <div class="navbar-logo">
+                    <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+                    <a class="navbar-brand me-1 me-sm-3" asp-controller="Home" asp-action="Index">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                                <img src="~/lib/Images/Background.png" alt="phoenix" width="200" height="60">
+                                @*<p class="logo-text ms-2 d-none d-sm-block">CRM</p>*@
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="search-box navbar-top-search-box d-none d-lg-block" style="width:25rem;">
+                    <form class="position-relative show" data-bs-toggle="search" data-bs-display="static" aria-expanded="true">
+                        @*<input class="form-control search-input fuzzy-search rounded-pill form-control-sm" type="search" placeholder="Search..." aria-label="Search" style="border-radius:5px">*@
+                        <input class="form-control fuzzy-search rounded-pill search-input-text form-control-sm" type="search" id="MobileNo" placeholder="Search..." aria-label="Search" />
+                        <span class="fas fa-search search-box-icon"></span>
+                    </form>
+                </div>
+            </div>
+
+            <ul class="navbar-nav navbar-nav-icons flex-row">
+                @*                <li class="nav-item">
+                <div class="theme-control-toggle fa-icon-wait px-2"><input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox" data-theme-control="phoenixTheme" value="dark" id="themeControlToggle" /><label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="moon"></span></label><label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch theme"><span class="icon" data-feather="sun"></span></label></div>
+                </li>
+                *@
+                <li class="nav-item dropdown">
+                    <a class="nav-link lh-1 pe-0 ml-1" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                        <img src="/Image/User.png" asp-append-version="true" class="px-2" style="height:30px" />
+                        <span class="ml-2" style="font-size:13px;font-weight:400;display:inline-block;line-height:20px;">@User.Identity.Name</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300" aria-labelledby="navbarDropdownUser">
+                        <div class="card position-relative border-0">
+                            <div class="card-body p-0">
+                                <div class="text-center pt-4 pb-3">
+                                    @if (signInManager.IsSignedIn(User))
+                                    {
+                                        <h6 class="mt-2 text-black">@User.Identity.Name</h6>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="card-footer p-0 border-top">
+                                <ul class="nav d-flex flex-column my-3">
+                                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link px-3" asp-controller="Account" asp-action="Register">
+                                                <span class="me-2 text-900" data-feather="user-plus"></span>
+                                                Add another account
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link px-3" asp-controller="Administration" asp-action="ListRoles">
+                                                <span class="me-2 fab fa-stack-exchange" data-feather="user-plus"></span>
+                                                Assign Role
+                                            </a>
+                                        </li>
+                                    }
+                                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Super Admin"))
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link px-3" asp-controller="Account" asp-action="Register">
+                                                <span class="me-2 text-900" data-feather="user-plus"></span>
+                                                Add another account
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link px-3" asp-controller="Administration" asp-action="CreateRole">
+                                                <span class="me-2 far fa-calendar-plus" data-feather="user-plus"></span>
+                                                Create Role
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link px-3" asp-controller="Administration" asp-action="ListRoles">
+                                                <span class="me-2 fab fa-stack-exchange" data-feather="user-plus"></span>
+                                                Assign Role
+                                            </a>
+                                        </li>
+                                    }
+                                    <li class="nav-item">
+                                        <a class="nav-link px-3" asp-controller="Account" asp-action="ResestPassword">
+                                            <span class="me-2 fas fa-exchange-alt" data-feather="user-plus"></span>
+                                            Change Password
+                                        </a>
+                                    </li>
+                                </ul>
+                                <hr />
+                                <div class="px-3 mb-4">
+                                    <form method="post" asp-controller="Account" asp-action="Logout">
+                                        <button class="btn btn-phoenix-secondary d-flex flex-center w-100">
+                                            <span class="me-2" data-feather="log-out"> </span>
+                                            Log out
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            //var navbarTopShape = window.config.config.phoenixNavbarTopShape;
+            //var navbarPosition = window.config.config.phoenixNavbarPosition;
+            var body = document.querySelector('body');
+            var navbarDefault = document.querySelector('#navbarDefault');
+            var navbarTop = document.querySelector('#navbarTop');
+            var topNavSlim = document.querySelector('#topNavSlim');
+            var navbarTopSlim = document.querySelector('#navbarTopSlim');
+            var navbarCombo = document.querySelector('#navbarCombo');
+            var navbarComboSlim = document.querySelector('#navbarComboSlim');
+            var dualNav = document.querySelector('#dualNav');
+
+            var documentElement = document.documentElement;
+            var navbarVertical = document.querySelector('.navbar-vertical');
+
+            //var navbarTopStyle = window.config.config.phoenixNavbarTopStyle;
+            var navbarTop = document.querySelector('.navbar-top');
+            if (navbarTopStyle === 'darker') {
+                navbarTop.classList.add('navbar-darker');
+            }
+
+            //var navbarVerticalStyle = window.config.config.phoenixNavbarVerticalStyle;
+            var navbarVertical = document.querySelector('.navbar-vertical');
+            if (navbarVerticalStyle === 'darker') {
+                navbarVertical.classList.add('navbar-darker');
+            }
+        </script>
+
+        <div class="content">
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @if (TempData.ContainsKey("SuccessMessage"))
+                    {
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            @TempData["SuccessMessage"]
+                            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    }
+                    @if (TempData.ContainsKey("ErrorMessage"))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @TempData["ErrorMessage"]
+                            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    }
+                </main>
+            </div>
+            @RenderBody()
+            <footer class="footer position-absolute">
+                <div class="row g-0 justify-content-between align-items-center h-100">
+                    <div class="col-12 col-sm-auto text-center">
+                        <p class="mb-0 mt-2 mt-sm-0 text-900">All Rights Reserved to | 2023 &copy Soft</p>
+                    </div>
+                    <div class="col-12 col-sm-auto text-end">
+                        <p class="mb-0 text-600">v23.07.01</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main><!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+    @*    <div class="wrapper">
+    <nav id="sidebar">
+    <div class="sidebar-header">
+    <h3>CRM MIS <span><img src="~/lib/Images/Background.png" alt="Header Image" width="80px" height="50px"></span></h3>
+    </div>
+    <ul class="list-unstyled components">
+    <li>
+    <a href="/home/index">Home</a>
+    </li>
+    <li>
+    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Settings</a>
+    <ul class="collapse list-unstyled" id="homeSubmenu">
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="ServiceType" asp-action="Index">Service List</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Employee" asp-action="Index">Employee</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Team" asp-action="Index">Team</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="City" asp-action="Index">City</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Area" asp-action="Index">Area</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="SubArea" asp-action="Index">Sub Area</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="ContactBy" asp-action="Index">Contact</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Brand" asp-action="Index">Brand List</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Designation" asp-action="Index">Designation</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Category" asp-action="Index">Category</a>
+    </li>
+    </ul>
+    </li>
+    <li>
+    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Customer</a>
+    <ul class="collapse list-unstyled" id="pageSubmenu">
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="CustomerFollowup" asp-action="Index">New Customer Entry</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Followup" asp-action="Index">Daily Followup</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" target="_blank" asp-controller="Booking" asp-action="ShowBookingInfo">Booking Info</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="ServiceFeedback" asp-action="Index">Service Feedback</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="ServiceFeedback" asp-action="DailyComplainList">Complain Feedback</a>
+    </li>
+    </ul>
+    </li>
+    <li>
+    <a href="/MISReport/index">MIS Report</a>
+    </li>
+    <li>
+    <a href="/DraftCustomer/Index">Draft Entry</a>
+    </li>
+    <li>
+    <a href="#pageUser" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">User</a>
+    <ul class="collapse list-unstyled" id="pageUser">
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="ListRoles">Roles List</a>
+    </li>
+    }
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Super Admin"))
+    {
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Create User</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="CreateRole">Create Role</a>
+    </li>
+    <li>
+    <a class="nav-link" asp-area="" asp-controller="Administration" asp-action="ListRoles">Roles List</a>
+    </li>
+    }
+    </ul>
+    </li>
+    <li>
+    <a href="/Account/ResestPassword">Change Password</a>
+    </li>
+
+    @if (signInManager.IsSignedIn(User))
+    {
+    <li class="nav-link">
+    <form method="post" asp-controller="Account" asp-action="Logout">
+    <button type="submit" class="nav-link btn btn-link py-0" style="width:auto">
+    Logout @User.Identity.Name
+    </button>
+    </form>
+    </li>
+    }
+
+    </ul>
+    </nav>
+    *@
+
+    @*    </div>
+    *@
+
+    @*    <footer class="border-top footer text-muted">
+    <div class="container">
+    &copy; 2023 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+    </footer>
+    *@
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script>
+
+    <script src="~/frontend/js/popper/popper.min.js"></script>
+    <script src="~/frontend/js/bootstrap/bootstrap.min.js"></script>
+
+    @*    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    *@
+    <script src="~/frontend/js/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="~/frontend/js/simplebar/simplebar.min.js"></script>
+    <script src="~/frontend/js/config/config.js"></script>
+
+    <script src="~/frontend/js/anchor/anchor.min.js"></script>
+    <script src="~/frontend/js/is/is.min.js"></script>
+    <script src="~/frontend/js/fontawesome/fontawesome.min.js"></script>
+    <script src="~/frontend/js/lodash/lodash.min.js"></script>
+    @*<script src="~/frontend/js/list/list.min.js"></script>*@
+    <script src="~/frontend/js/feather-icons/feather.min.js"></script>
+    <script src="~/frontend/js/dayjs/dayjs.min.js"></script>
+    <script src="~/frontend/js/phoenix/phoenix.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    @*    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
+    *@
+
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("Styles", required: false)
+    <script>
+        $(document).ready(function () {
+            $("#sidebarCollapse").on('click', function () {
+                $("#sidebar").toggleClass('active');
+            });
+            $(".alert-dismissible").on("click", function () {
+                $(".alert-dismissible").addClass("none").removeClass("row");
+            });
+
+            $('#MobileNo').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
+                        method: 'get',
+                        data: { term: request.term },
+                        dataType: 'json',
+                        success: function (data) {
+                            response(data);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    })
+                },
+                classes: {
+                    "ui-autocomplete": "highlight"
+                },
+                minLength: 7,
+                focus: UpdateTextBox,
+                select: function (event, ui) {
+                    $(this).val(ui.item.mobileNo);
+                    //window.location.href = "/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId;
+                    window.open("/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId);
+                    return false;
+                },
+            }).data("ui-autocomplete")._renderItem = function (ul, item) {
+                if (ul.children().length === 0) {
+                    $("<thead><tr><th>Mobile No</th><th>Customer Name</th><th>Designation</th></tr></thead>").appendTo(ul);
+                }
+                var html = "<td>" + item.mobileNo + "</td>";
+                html += "<td>" + item.customerName + "</td>";
+                html += "<td>" + item.designationName + "</td>";
+                return $("<tr></tr>").append(html).appendTo(ul);
+
+                //return $("<li>")
+                //    .append("<a>" + item.mobileNo + "<br>" + item.customerName + "<br>" + item.designationName + "</a>")
+                //    .appendTo(ul).css("position", "static");;
+
+            };
+            function UpdateTextBox(event, ui) {
+                $(this).val(ui.item.mobileNo);
+                return false;
+            };
+        });
+    </script>
+</body>
+</html>

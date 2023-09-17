@@ -1,0 +1,34 @@
+﻿@using ApplicationCore.DtoModels;
+@model IEnumerable<CustomerCountDto>
+@{
+    Layout = "_Report";
+    var total=0;
+}
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Contact Name</th>
+                <th>Total Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model)
+            {
+                { 
+                    total = total + data.TotalCount; 
+                }
+
+                <tr>
+                    <td>@data.GroupName</td>
+                    <td>@data.TotalCount</td>
+                </tr>
+            }
+            <tr>
+                <td>Total</td>
+                <td>@total</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

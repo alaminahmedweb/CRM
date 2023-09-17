@@ -1,0 +1,332 @@
+﻿@model IEnumerable<DraftCustomer>
+
+@{
+    ViewData["Title"] = "Daily Draft Customer Followup List";
+}
+
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Daily Draft Customer Followup List</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-5 text-end">
+                    <a class="btn btn-primary btn-lg" style="margin-right:35px;" asp-action="Create"><i class="fa fa-plus-square"></i>&nbsp; Add New</a>
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Daily Draft Customer Followup List</h3>
+                </div>
+                <div class="col-5 text-end">
+                    <a asp-action="Create" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i> Add New</a>
+                </div>
+                <div class="offset-1">
+                </div>
+            </div>
+        </div>*@
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="FollowupDateFrom" class="form-label">Date From</label>
+                    <input type="date" id="FollowupDateFrom" name="FollowupDateFrom" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="FollowupDateTo" class="form-label">Date To</label>
+                    <input type="date" id="FollowupDateTo" name="FollowupDateTo" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 col-sm-12 col-12">
+                <div class="form-group d-grid gap-2 d-md-block">
+                    <br />
+                    <button type="button" id="btnShowFollowup" class="btn btn-success">Show</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="followupTable" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Followup Date
+                        </th>
+                        <th>
+                            Mobile No
+                        </th>
+                        <th>
+                            Customer Name
+                        </th>
+                        <th>
+                            Remarks
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-6">
+                        <h5><i class="fa fa-list-ul"></i> Daily Draft Customer Followup List</h5>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a asp-action="Create" class="btn btn-outline-primary"><i class="fa fa-plus-square"></i>Add New</a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label class="col-1 control-label">Date From</label>
+                <div class="col-2">
+                    <input type="date" id="FollowupDateFrom" name="FollowupDateFrom" class="form-control" />
+                </div>To
+                <div class="col-2">
+                    <input type="date" id="FollowupDateTo" name="FollowupDateTo" class="form-control" />
+                </div>
+                <button type="submit" id="btnShowFollowup" class="btn btn-success">Show</button>
+                <label id="TotalCount" class="col-3 mr-3 text-danger font-weight-bold">Total Count : </label>
+            </div>
+            <table class="table mt-1" id="followupTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Followup Date
+                        </th>
+                        <th>
+                            Mobile No
+                        </th>
+                        <th>
+                            Customer Name
+                        </th>
+                        <th>
+                            Remarks
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+
+
+        $(document).ready(function() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#FollowupDateFrom').val(currentDate);
+            $('#FollowupDateTo').val(currentDate);
+            var datefrom = currentDate;
+            var dateto = currentDate;
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#FollowupDateFrom').val(currentDate);
+            $('#FollowupDateTo').val(currentDate);
+            var datefrom = currentDate;
+            var dateto = currentDate;
+
+            $('#followupTable').DataTable(
+                {
+                    "bDestroy": true,
+                    "processing": true,
+                    "responsive": true,
+                    scrollX: true,
+                    lengthMenu: [
+                        [10, 25, 50, -1],
+                        [10, 25, 50, 'All']
+                    ],
+                    "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                    "ajax": {
+                        url: '@Url.Action("GetDailyDraftCustomerFollowupListByDate", "DraftCustomer")',
+                        "type": "get",
+                        datatype: "json",
+                        "data": function (d) {
+                            d.dateFrom = $('#FollowupDateFrom').val();
+                            d.dateto = $('#FollowupDateTo').val();
+                        }
+                    },
+
+                    aoColumns: [
+                        {
+                            "sName": "nextFollowupDate",
+                            "mData": "nextFollowupDate",
+                            "searchable": false, 
+                            "render": function (data, type, row, meta) {
+                                return type === 'display' && data.length > 11 ?
+                                    '<span title="' + data + '">' + data.substr(0, 10) + '</span>' :
+                                    data;
+                            }
+
+                        },
+                        {
+                            "sName": "mobileNo",
+                            "mData": "mobileNo"
+
+                        },
+                        {
+                            "sName": "clientName",
+                            "mData": "clientName"
+
+
+                        },
+                        {
+                            "sName": "remarks",
+                            "mData": "remarks",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "id",
+                            "mData": "id",
+                            "searchable": false,
+                            "mRender": function (data, type, full) {
+                                return '<a class="view" href="/DraftCustomer/Update?followupId=' + data + '">Remove</a>';
+                            }
+                        }
+
+                    ]
+                });
+            $('#btnShowFollowup').click(function () {
+                $('#followupTable').DataTable(
+                    {
+                        "bDestroy": true,
+                        "processing": true,
+                        "responsive": true,
+                        scrollX: true,
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, 'All']
+                        ],
+                        "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                        "ajax": {
+                            url: '@Url.Action("GetDailyDraftCustomerFollowupListByDate", "DraftCustomer")',
+                            "type": "get",
+                            datatype: "json",
+                            "data": function (d) {
+                                d.dateFrom = $('#FollowupDateFrom').val();
+                                d.dateto = $('#FollowupDateTo').val();
+                            }
+                        },
+
+                        aoColumns: [
+                            {
+                                "sName": "nextFollowupDate",
+                                "mData": "nextFollowupDate",
+                                "searchable": false
+
+                            },
+                            {
+                                "sName": "mobileNo",
+                                "mData": "mobileNo"
+
+                            },
+                            {
+                                "sName": "clientName",
+                                "mData": "clientName"
+
+
+                            },
+                            {
+                                "sName": "remarks",
+                                "mData": "remarks",
+                                "searchable": false
+
+                            },
+                            {
+                                "sName": "id",
+                                "mData": "id",
+                                "searchable": false,
+                                "mRender": function (data, type, full) {
+                                    return '<a class="view" href="/DraftCustomer/Update?followupId=' + data + '">Remove</a>';
+                                }
+                            }
+
+                        ]
+                    });
+            });
+            //$.ajax({
+            //    type: "GET",
+            //    url: "/DraftCustomer/GetDailyDraftCustomerFollowupListByDate",
+            //    data: { dateFrom: datefrom, dateTo: dateto },
+            //    contentType: "application/json; charset=utf-8",
+            //    dataType: "json",
+            //    success: function(result) {
+            //        var followupTable = $('#followupTable tbody');
+            //        followupTable.empty();
+            //        $(result).each(function(index, data) {
+            //            var linkAddNewFollowup = '<a href="/DraftCustomer/Update?followupId=' + data.id + '">Remove</a>';
+            //            followupTable.append('<tr><td>' + data.nextFollowupDate.substring(0, 10) + '</td><td>' + data.mobileNo +
+            //                '</td><td>' + data.clientName +
+            //                '</td><td>' + data.remarks + '</td><td>' + linkAddNewFollowup + '</td></tr>');
+            //        });
+            //        followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td></tr>');
+            //        $('#TotalCount').html('Total Count : ' + result.length);
+            //    },
+            //    error: function(xhr, ajaxOptions, thrownError) {
+            //        // handle error
+            //    }
+            //});
+
+            //$('#btnShowFollowup').click(function() {
+            //    var datefrom = $('#FollowupDateFrom').val();
+            //    var dateto = $('#FollowupDateTo').val();
+            //    var mpoId = $('#mpoId').val();
+            //    var followupType = $('#followupType').val();
+            //    $.ajax({
+            //        type: "GET",
+            //        url: "/DraftCustomer/GetDailyDraftCustomerFollowupListByDate",
+            //        data: { dateFrom: datefrom, dateTo: dateto },
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "json",
+            //        success: function(result) {
+            //            var followupTable = $('#followupTable tbody');
+            //            followupTable.empty();
+            //            $(result).each(function(index, data) {
+            //                var linkAddNewFollowup = '<a href="/DraftCustomer/Update?followupId=' + data.id + '">Remove</a>';
+            //                followupTable.append('<tr><td>' + data.nextFollowupDate.substring(0, 10) + '</td><td>' + data.mobileNo + '</td><td>' + data.clientName +
+            //                    '</td><td>' + data.remarks + '</td><td>' + linkAddNewFollowup + '</td></tr>');
+            //            });
+            //            followupTable.append('<tr><td>Total Count </td><td>' + result.length + '</td><td></td><td></td><td></td></tr>');
+            //            $('#TotalCount').html('Total Count : ' + result.length);
+            //        },
+            //        error: function(xhr, ajaxOptions, thrownError) {
+            //            // handle error
+            //        }
+            //    });
+            //});
+
+
+
+
+        });
+    </script>
+}

@@ -1,0 +1,222 @@
+﻿@using ApplicationCore.DtoModels;
+@model DashboardDto
+@{
+    ViewData["Title"] = "Home Page";
+    var totalCount = 0;
+}
+
+
+<h1 class="page-title">Dashboard</h1>
+
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-yellow-gold">
+                        <span data-counter="counterup" data-value="@Model.TodayTotalFollowupQty">@Model.TodayTotalFollowupQty</span>
+                    </h3>
+                    <small>TODAY FOLLOWUP</small>
+                </div>
+                <div class="icon">
+                    <i class="far fa-envelope-open"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-yellow-gold">
+                        <span data-counter="counterup" data-value="@Model.TodayFollowupDoneQty">@Model.TodayFollowupDoneQty</span>
+                    </h3>
+                    <small>FOLLOWUP DONE</small>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-jungle">
+                        <span data-counter="counterup" data-value="@Model.TodayRemainingFollowupQty">@Model.TodayRemainingFollowupQty</span>
+                    </h3>
+                    <small>FOLLOWUP PENDING</small>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2 ">
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-jungle">
+                        <span data-counter="counterup" data-value="3,507">10</span>
+                    </h3>
+                    <small>FEEDBACK PENDING</small>
+               </div>
+                <div class="icon">
+                    <i class="far fa-envelope-open"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-9 col-sm-6">
+        <div class="portlet light ">
+            <div class="portlet-title">
+                <div class="caption">
+                    @*<span class="caption-subject bold uppercase font-dark">Progress</span>*@
+                    @*<span class="caption-helper">Last 6 Months</span>*@
+                </div>
+            </div>
+            <div class="portlet-body">
+                @*<div id="chart" class="chart" style="height: 333px;"> </div>*@
+                <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p class="panel-title uppercase bold">BOOKING (THIS MONTH)</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Total QTY: @Model.ThisMonthBookingQty
+                </li>
+                <li class="list-group-item">
+                    Total AMT: BDT @Model.ThisMonthBookingAmount
+                </li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p class="panel-title uppercase bold">COMPLAIN PENDING (THIS MONTH)</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">QTY : @Model.ThisMonthComplainPendingQty</li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p class="panel-title uppercase bold">DIGITAL RESPONSE(THIS MONTH)</p>
+            </div>
+            <ul class="list-group">
+            @foreach (var item in Model.ThisMonthContactWiseCustomerList)
+            {
+                <li class="list-group-item"> @item.GroupName : @item.TotalCount </li>
+                {
+                        totalCount = totalCount +item.TotalCount;
+                }
+            }
+            <li class="list-group-item bold"> Total : @totalCount </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script>
+        var xValues = ["January", "February", "March", "April", "May"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Monthly Customer List"
+                }
+            }
+        });
+    </script>
+    }
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+*@
+@*<div class="row">
+    <div class="col-12 mt-2">
+        <div class="form-group row">
+            <label class="control-label ml-3">Customer Profile : </label>
+            <div class="col-2">
+                <input id="MobileNo" name="MobileNo" placeholder="Enter Mobile No" class="form-control" />
+            </div>
+            <div class="offset-9">
+            </div>
+        </div>
+    </div>
+</div>
+<img src="~/lib/Images/Background.png" alt="Header Image" width="100%" height="100%">
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#MobileNo').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
+                        method: 'get',
+                        data: { term: request.term },
+                        dataType: 'json',
+                        success: function (data) {
+                            response(data);
+                        },
+                        error: function (err) {
+                            console.log(err);
+                        }
+                    })
+                },
+                minLength: 7,
+                focus: UpdateTextBox,
+                select: function(event, ui) {
+                    $(this).val(ui.item.mobileNo);
+                    //window.location.href = "/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId;
+                    window.open("/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId);
+                    return false;
+                },
+            }).data("ui-autocomplete")._renderItem = function (ul, item) {
+                if (ul.children().length === 0) {
+                    $("<thead><tr><th>Mobile No</th><th>Customer Name</th><th>Designation</th></tr></thead>").appendTo(ul);
+                }
+                var html = "<td>" + item.mobileNo + "</td>";
+                html += "<td>" + item.customerName + "</td>";
+                html += "<td>" + item.designationName + "</td>";
+                return $("<tr></tr>").append(html).appendTo(ul);
+            };
+            function UpdateTextBox(event, ui) {
+                $(this).val(ui.item.mobileNo);
+                return false;
+            };
+        });
+    </script>
+}
+*@

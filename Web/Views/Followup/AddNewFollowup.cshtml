@@ -1,0 +1,571 @@
+﻿@model Web.ViewModels.AddFollowupVM
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Add New Followup";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+
+<div class="row">
+    <h6 style="font-family:Verdana;font-weight:700;margin-left:-10px;margin-top:-10px !important;text-decoration-line:underline;" class="text-end">Add new followup</h6>
+    <hr />
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Customer Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td class="text-primary">
+                            @Model.Name
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Category
+                        </td>
+                        <td class="text-primary">
+                            @Model.CategoryName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Reference
+                        </td>
+                        <td class="text-primary">
+                            @Model.ReferenceBy
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Contact
+                        </td>
+                        <td class="text-primary">
+                            @Model.ContactName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Marketing
+                        </td>
+                        <td class="text-primary">
+                            @Model.EmployeeName
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white pl-5 pr-5">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Contact Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr style="font-weight:bold;font-size:12px;">
+                        <td>Contract Person</td>
+                        <td>Designation</td>
+                        <td>Mobile No</td>
+                    </tr>
+                    @if (Model.ContractDetails != null)
+                    {
+                        @foreach (var item in Model.ContractDetails)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Designation</td>
+                                <td>@item.MobileNo</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Address</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Location
+                        </td>
+                        <td class="text-primary">
+                            @Model.Address
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            City
+                        </td>
+                        <td class="text-primary">
+                            @Model.CityName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.AreaName
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Sub Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.SubAreaName
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Building Details</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Floor No
+                        </td>
+                        <td class="text-primary">
+                            @Model.NoOfFloor
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Flat No
+                        </td>
+                        <td class="text-primary">
+                            @Model.NoOfFlat
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody id="tblBuldingDetails">
+                    <tr style="font-weight:bold;font-size:12px;">
+                        <td class="col-7">Brand Name</td>
+                        <td class="col-2">Quantity</td>
+                        <td class="col-2">Capacity</td>
+                    </tr>
+
+                    @if (Model.BuildingDetails != null)
+                    {
+                        @foreach (var item in Model.BuildingDetails)
+                        {
+                            <tr>
+                                <td>@item.BrandName</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.Capacity</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row bg-white mt-2">
+    <form asp-action="AddNewFollowup" autocomplete="off">
+        <div asp-validation-summary="ModelOnly" class="text-danger" id="validationSummary"></div>
+        <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+        <input asp-for="CustomerId" hidden />
+        <input asp-for="FollowupId" hidden />
+
+
+        <h4 style="font-family:Verdana;margin-left:-10px;font-size: 18px;" class="mt-5">Add New Followup Information</h4>
+        <div class="form-group row mt-2 ml-1 mr-1">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="CallingDate" placeholder="Calling Date" />
+                    <label for="CallingDate">Calling Date</label>
+                </div>
+                <span asp-validation-for="CallingDate" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="ServiceTypeId" class="form-control">
+                        <option value="-1">Select Service Type</option>
+                        @if (Model.ServiceList != null)
+                        {
+                            @foreach (var item in @Model.ServiceList)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        }
+                    </select>
+                    <label for="ServiceTypeId">Service Name</label>
+                </div>
+                <span asp-validation-for="ServiceTypeId" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input asp-for="OfferAmount" class="form-control" />
+                    <label asp-for="OfferAmount">Marketing Offer Amount</label>
+                </div>
+                <span asp-validation-for="OfferAmount" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input asp-for="AgreeAmount" class="form-control" />
+                    <label asp-for="AgreeAmount">Agree/Booking Amount</label>
+                </div>
+                <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="PositiveOrNegative" class="form-control">
+                        <option value="Positive">Positive</option>
+                        <option value="Negative">Negative</option>
+                    </select>
+                    <label asp-for="PositiveOrNegative">Positive/Negative</label>
+                </div>
+                <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="CustomerDoTheWorkingMonth" class="form-control" title="searchableDropdown">
+                        <option value="-1">Select Working Month</option>
+                        @if (Model.MonthList != null)
+                        {
+                            @foreach (var item in @Model.MonthList)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        }
+                    </select>
+                    <label asp-for="CustomerDoTheWorkingMonth">Working Month</label>
+                </div>
+                <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input type="date" id="FollowupCallDate" name="FollowupCallDate" class="form-control" />
+                    <label asp-for="FollowupCallDate">Follow-up Call Date</label>
+                </div>
+                <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="Status" class="form-control">
+                        <option value="Inactive">Inactive</option>
+                        <option value="Pending" selected>Pending</option>
+                        <option value="Confirmed">Confirmed</option>
+                    </select>
+                    <label asp-for="Status"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <textarea asp-for="DiscussionDetailsNote" class="form-control" rows="2"></textarea>
+                    <label asp-for="DiscussionDetailsNote">Discussion Note</label>
+                </div>
+                <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input asp-for="MarketingNextPlan" class="form-control" />
+                    <label asp-for="MarketingNextPlan">Marketing Next Plan</label>
+                </div>
+                <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-6">
+                <div class="form-floating">
+                    <select asp-for="FollowupById" class="form-control">
+                        <option value="-1">Select Mpo</option>
+                        @if (@Model.EmployeeList != null)
+                        {
+                            @foreach (var data in @Model.EmployeeList)
+                            {
+                                <option value="@data.Id">@data.Name</option>
+                            }
+                        }
+                    </select>
+                    <label asp-for="FollowupById">Followup By</label>
+                </div>
+                <span asp-validation-for="FollowupById" class="text-danger"></span>
+            </div>
+            <div class="col-6">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="Remarks" placeholder="Remarks Debo" />
+                    <label asp-for="Remarks">Remarks</label>
+                </div>
+                <span asp-validation-for="Remarks" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" value="Save" asp-action="AddNewFollowup" asp-controller="Followup" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+@*
+<hr />
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add New Followup</p>
+            </div>
+
+            <div class="box-body">
+                <form asp-action="Index">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="CustomerId" hidden />
+                    <input asp-for="FollowupId" hidden />
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+                    <div class="form-group row ml-2">
+                        <label class="control-label">Category</label>
+                        <div class="col-2">
+                            <input asp-for="CategoryName" class="form-control" />
+                        </div>
+                        <label asp-for="ReferenceBy" class="control-label ml-1">Reference By</label>
+                        <div class="col-2">
+                            <input asp-for="ReferenceBy" class="form-control" />
+                        </div>
+                        <label asp-for="ContactName" class="control-label ml-1">Contact</label>
+                        <div class="col-2">
+                            <input asp-for="ContactName" class="form-control" />
+                        </div>
+                        <label asp-for="EmployeeName" class="control-label ml-1">Marketing</label>
+                        <div class="col-3">
+                            <input asp-for="EmployeeName" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-2 control-label">Client Name/Organization</label>
+                        <div class="col-4">
+                            <input asp-for="Name" class="form-control" />
+                        </div>
+                        <label asp-for="NoOfFloor" class="control-label col-3">Building Details a) No Of Floor</label>
+                        <div class="col-1">
+                            <input asp-for="NoOfFloor" class="form-control" />
+                        </div>
+                        <label asp-for="NoOfFlat" class="control-label col-1">No Of Flat</label>
+                        <div class="col-1">
+                            <input asp-for="NoOfFlat" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Contract Person</th>
+                                        <th>Designation</th>
+                                        <th>Mobile No</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.ContractDetails != null)
+                                    {
+                                        @foreach (var item in Model.ContractDetails)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>@item.Designation</td>
+                                                <td>@item.MobileNo</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="col-7">Brand Name</th>
+                                        <th class="col-2">Quantity</th>
+                                        <th class="col-2">Capacity</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tblBuldingDetails">
+                                    @if (Model.BuildingDetails != null)
+                                    {
+                                        @foreach (var item in Model.BuildingDetails)
+                                        {
+                                            <tr>
+                                                <td>@item.BrandName</td>
+                                                <td>@item.Quantity</td>
+                                                <td>@item.Capacity</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Address" class="control-label ml-3">Location/Address</label>
+                        <div class="col-4">
+                            <input asp-for="Address" class="form-control" />
+                        </div>
+                        <label asp-for="CityName" class="control-label ml-1">City</label>
+                        <div class="col-1">
+                            <input asp-for="CityName" class="form-control" />
+                        </div>
+                        <label asp-for="AreaName" class="control-label ml-1">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="form-control" />
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label ml-1">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="form-control" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group row">
+                        <label asp-for="CallingDate" class="col-sm-2 control-label">Calling Date</label>
+                        <div class="col-2">
+                            <input asp-for="CallingDate" class="form-control" />
+                            <span asp-validation-for="CallingDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ServiceTypeId" class="col-sm-2 control-label">Service Name</label>
+                        <div class="col-2">
+                            <select asp-for="ServiceTypeId" class="form-control">
+                                <option value="-1">Select Service Type</option>
+                                @if (@Model.ServiceList != null)
+                                {
+                                    @foreach (var item in @Model.ServiceList)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="ServiceTypeId" class="text-danger"></span>
+                        </div>
+                        <label asp-for="FollowupById" class="control-label col-sm-2">Followup By</label>
+                        <div class="col-2">
+                            <select asp-for="FollowupById" class="form-control" title="searchableDropdown">
+                                <option value="-1">Select Mpo</option>
+                                @if (@Model.EmployeeList != null)
+                                {
+                                    @foreach (var data in @Model.EmployeeList)
+                                    {
+                                        <option value="@data.Id">@data.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="FollowupById" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row mt-1">
+                        <label asp-for="OfferAmount" class="control-label col-2">Marketing Offer Amount</label>
+                        <div class="col-2">
+                            <input asp-for="OfferAmount" class="form-control" />
+                            <span asp-validation-for="OfferAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="AgreeAmount" class="control-label col-2">Agree/Booking Amount</label>
+                        <div class="col-2">
+                            <input asp-for="AgreeAmount" class="form-control" />
+                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
+                        </div>
+                        <label asp-for="CustomerDoTheWorkingMonth" class="control-label col-sm-2">Working Month</label>
+                        <div class="col-2">
+                            <select asp-for="CustomerDoTheWorkingMonth" class="form-control" title="searchableDropdown">
+                                <option value="-1">Select Working Month</option>
+                                @if (@Model.MonthList != null)
+                                {
+                                    @foreach (var item in @Model.MonthList)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="CustomerDoTheWorkingMonth" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="Remarks" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <input asp-for="Remarks" class="form-control" />
+                            <span asp-validation-for="Remarks" class="text-danger"></span>
+                        </div>
+                        <label asp-for="PositiveOrNegative" class="control-label col-2"></label>
+                        <div class="col-2">
+                            <select asp-for="PositiveOrNegative" class="form-control">
+                                <option value="Positive">Positive</option>
+                                <option value="Negative">Negative</option>
+                            </select>
+                            <span asp-validation-for="PositiveOrNegative" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="DiscussionDetailsNote" class="control-label col-2">Customer Discussion Details Note</label>
+                        <div class="col-4">
+                            <textarea asp-for="DiscussionDetailsNote" class="form-control"></textarea>
+                            <span asp-validation-for="DiscussionDetailsNote" class="text-danger"></span>
+                        </div>
+                        <label asp-for="MarketingNextPlan" class="control-label col-2">Marketing Next Plan</label>
+                        <div class="col-4">
+                            <input asp-for="MarketingNextPlan" class="form-control" />
+                            <span asp-validation-for="MarketingNextPlan" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-1">
+                        <label asp-for="FollowupCallDate" class="control-label col-2">Follow-up Call Date</label>
+                        <div class="col-4">
+                            <input asp-for="FollowupCallDate" class="form-control" />
+                            <span asp-validation-for="FollowupCallDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Status" class="control-label col-2"></label>
+                        <div class="col-4">
+                            <select asp-for="Status" class="form-control">
+                                <option value="Inactive">Inactive</option>
+                                <option value="Pending" selected>Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" asp-action="AddNewFollowup" asp-controller="Followup" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[title="searchableDropdown"]').select2();
+        });
+    </script>
+}

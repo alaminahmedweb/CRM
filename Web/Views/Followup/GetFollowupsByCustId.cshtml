@@ -1,0 +1,677 @@
+﻿@using ApplicationCore.DtoModels
+@model FollowupDetailsByIdDto
+
+@{
+    ViewData["Title"] = "Customer Profile";
+}
+
+<div class="row" style="margin-top: -39px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 5px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class="text-info" style="font-weight:600">Customer Profile</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-5 text-end">
+                    <a asp-action="UpdateCustomerDetails" asp-controller="Customer" asp-route-customerId=@Model.CustomerId asp-route-followupId=@Model.FollowupId class="btn btn-outline-primary"><i class="fa fa-plus-square"></i> Update Customer Info</a>
+                    <a asp-action="AddNewFollowup" asp-controller="Followup" asp-route-followupId=@Model.FollowupId class="btn btn-outline-primary" style="margin-right: 16px"><i class="fa fa-plus-square"></i> Add New Followup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Customer Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td class="text-primary">
+                            @Model.CustomerName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Category
+                        </td>
+                        <td class="text-primary">
+                            @Model.CategoryName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Reference
+                        </td>
+                        <td class="text-primary">
+                            @Model.ReferenceBy
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Contact
+                        </td>
+                        <td class="text-primary">
+                            @Model.ContactName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Marketing
+                        </td>
+                        <td class="text-primary">
+                            @Model.EmployeeName
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white pl-5 pr-5">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Contact Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr style="font-weight:bold;font-size:12px;">
+                        <td>Contract Person</td>
+                        <td>Designation</td>
+                        <td>Mobile No</td>
+                    </tr>
+                    @if (Model.ContractDetails != null)
+                    {
+                        @foreach (var item in Model.ContractDetails)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Designation</td>
+                                <td>@item.MobileNo</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Address</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Location
+                        </td>
+                        <td class="text-primary">
+                            @Model.Address
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            City
+                        </td>
+                        <td class="text-primary">
+                            @Model.CityName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.AreaName
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Sub Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.SubAreaName
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Building Details</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Floor No
+                        </td>
+                        <td class="text-primary">
+                            @Model.NoOfFloor
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Flat No
+                        </td>
+                        <td class="text-primary">
+                            @Model.NoOfFlat
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody id="tblBuldingDetails">
+                    <tr style="font-weight:bold;font-size:12px;">
+                        <td class="col-7">Brand Name</td>
+                        <td class="col-2">Quantity</td>
+                        <td class="col-2">Capacity</td>
+                    </tr>
+
+                    @if (Model.BuildingDetails != null)
+                    {
+                        @foreach (var item in Model.BuildingDetails)
+                        {
+                            <tr>
+                                <td>@item.BrandName</td>
+                                <td>@item.Quantity</td>
+                                <td>@item.Capacity</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <h5 class="text-center text-bg-secondary pb-2 pt-1">Followup Information</h5>
+        <div class="table-responsive">
+            <table id="followupDetailsTable" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%;width: 1042px;margin-left: 0px;margin-right: 0px;">
+                <thead>
+                    <tr>
+                        <td>
+                            Call Dt
+                        </td>
+                        <td>
+                            Service
+                        </td>
+                        <td>
+                            Offer
+                        </td>
+                        <td>
+                            Agree
+                        </td>
+                        <td>
+                            Work Mnth
+                        </td>
+                        <td>
+                            Remarks
+                        </td>
+                        <td>
+                            Feedback
+                        </td>
+                        <td>
+                            Discussion
+                        </td>
+                        <td>
+                            Next Plan
+                        </td>
+                        <td>
+                            Followup Dt
+                        </td>
+                        <td>
+                            Followup By
+                        </td>
+                        <td>
+                            Status
+                        </td>
+                        <td>
+                            Action
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Followups)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CallingDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServiceName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OfferAmount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AgreeAmount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerDoTheWorkingMonthName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Remarks)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PositiveOrNegative)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiscussionDetailsNote)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MarketingNextPlan)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FollowupCallDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FollowupBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @if (item.Status == "Confirmed")
+                                {
+                                    @*<a asp-action="Index" asp-controller="Booking" asp-route-followupId="@item.FollowupId">Add Booking</a>*@
+                                    @Html.DisplayFor(modelItem => item.FollowupId)
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@if (Model.BookingSummary.Count > 0)
+{
+    <div class="row mt-2">
+        <div class="col-12 bg-white">
+            <div class="table-responsive">
+                <h5 class="text-center text-bg-secondary pb-2 pt-1">Booking Summary</h5>
+                <table id="bookingSummaryInfo" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>Working Date</td>
+                            <td>Service Name</td>
+                            <td>Booking Amt/Slot</td>
+                            <td>No Of Slot</td>
+                            <td>Total Booking Amt</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.BookingSummary)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ServiceName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingAmtPerSlot)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NoOfSlot)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TotalBookingAmt)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FollowupId)
+                                    @*<a asp-action="UpdateBookingAmount" asp-controller="Booking" asp-route-followupId="@item.FollowupId">Update Booking Amount</a>*@
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (Model.Bookings.Count > 0)
+{
+    <div class="row mt-2">
+        <div class="col-12 bg-white">
+            <div class="table-responsive">
+                <h5 class="text-center text-bg-secondary pb-2 pt-1">Booking Details</h5>
+                <table id="bookinginfo" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>Working Dt</td>
+                            <td>Service</td>
+                            <td>Team</td>
+                            <td>Shift</td>
+                            <td>Status</td>
+                            <td>Amount</td>
+                            <td>Note</td>
+                            <td>Booking By</td>
+                            <td>Customer Feedback</td>
+                            <td>Company Feedback</td>
+                            <td>Feedback Dt</td>
+                            <td class="none">Booking Id</td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Bookings)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ServiceName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TeamName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShiftName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.AgreeAmount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingNote)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CustomerFeedback)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CompanyFeedback)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FeedbackEntryDate)
+                                </td>
+                                <td class="none">
+                                    @Html.DisplayFor(modelItem => item.BookingId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingId)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+@if (Model.Complains.Count > 0)
+{
+    <div class="row mt-2">
+        <div class="col-12 bg-white">
+            <div class="table-responsive">
+                <h4 class="text-center text-bg-secondary pb-2 pt-1">Complain Information</h4>
+                <table id="complainInfoTable" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>
+                                Booking Date
+                            </td>
+                            <td>
+                                Team Leader
+                            </td>
+                            <td>
+                                Team
+                            </td>
+                            <td>
+                                Shift
+                            </td>
+                            <td>
+                                Complain Date
+                            </td>
+                            <td>
+                                Complain Details
+                            </td>
+                            <td>
+                                Feedback Date
+                            </td>
+                            <td>
+                                Feedback Details
+                            </td>
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Complains)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TeamLeaderName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TeamName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ShiftName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ComplainDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ComplainDetails)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ActionTakenDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ActionTakenAgainstComplain)
+                                </td>
+                                <td>
+                                    @if (item.ActionTakenAgainstComplain == "")
+                                    {
+                                        @Html.DisplayFor(modelItem => item.ComplainId)
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#followupTable').DataTable({
+                paging: false,
+                ordering: false,
+                info: false,
+                "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                scrollY: 200,
+                scrollCollapse: true,
+                scrollX: true,
+                "searching": false,
+                "columns": [
+                    { "data": "CallingDate" },
+                    { "data": "ServiceName" },
+                    { "data": "OfferAmount" },
+                    { "data": "AgreeAmount" },
+                    { "data": "CustomerDoTheWorkingMonthName" },
+                    { "data": "Remarks" },
+                    { "data": "PositiveOrNegative" },
+                    { "data": "DiscussionDetailsNote" },
+                    { "data": "MarketingNextPlan" },
+                    { "data": "FollowupCallDate" },
+                    { "data": "FollowupBy" },
+                    { "data": "Status" },
+                    {
+                        data: 'ComplainId',
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                let returnData = '';
+                                let updatelink = '/Booking/Index?followupId=' + data;
+                                if (data.length > 0) {
+                                    returnData = '<a href="' + updatelink + '">Add Booking</a>';
+                                }
+                                else {
+                                    return '';
+                                }
+
+                                return returnData;
+                            }
+                            return data;
+                        }
+                    }
+                ]
+            });
+
+            $('#bookingSummaryInfo').DataTable({
+                paging: false,
+                ordering: false,
+                info: false,
+                "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                scrollY: 200,
+                scrollCollapse: true,
+                scrollX: true,
+                "searching": false,
+                "columns": [
+                    { "data": "BookingDate" },
+                    { "data": "ServiceName" },
+                    { "data": "BookingAmtPerSlot" },
+                    { "data": "NoOfSlot" },
+                    { "data": "TotalBookingAmt" },
+                    {
+                        data: 'FollowupId',
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                let updatelink = '/Booking/UpdateBookingAmount?followupId=' + data;
+                                let returnData = '<a href="' + updatelink + '">Update Booking Amt</a>';
+                                return returnData;
+                            }
+                            return data;
+                        }
+                    }
+                ]
+            });
+
+            $('#bookinginfo').DataTable({
+                paging: false,
+                ordering: false,
+                info: false,
+                "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                scrollY: 200,
+                scrollCollapse: true,
+                scrollX: true,
+                "searching": false,
+                "columns": [
+                    { "data": "BookingDate" },
+                    { "data": "ServiceName" },
+                    { "data": "TeamName" },
+                    { "data": "ShiftName" },
+                    { "data": "Status" },
+                    { "data": "AgreeAmount" },
+                    { "data": "BookingNote" },
+                    { "data": "EmployeeName" },
+                    { "data": "CustomerFeedback" },
+                    { "data": "CompanyFeedback" },
+                    { "data": "FeedbackEntryDate" },
+                    { "data": "BookingId" },
+                    {
+                        "mData": null,
+                        "bSortable": false,
+                        "searchable": false,
+                        "mRender": function (data, type, full) {
+                            let currentDate = new Date().toJSON().slice(0, 10).split('-').reverse().join('/');
+                            let returnLink = '';
+                            returnLink = '<a class="view" href="/ServiceFeedback/AddComplain?bookingId=' + data.BookingId + '">Add Complain</a>';
+                            if (data.CustomerFeedback === '') {
+                                returnLink += ' / <a class="view" href="/ServiceFeedback/AddFeedback?bookingId=' + data.BookingId + '">Add Feedback</a>';
+                            }
+                            if (data.BookingDate > currentDate) {
+                                if (returnLink != '') {
+                                    returnLink += ' /';
+                                }
+                                returnLink += '<a class="view" href="/Booking/ShiftBooking?bookingId=' + data.BookingId + '"> Shift </a><a class="view" href="/Booking/CancelBooking?bookingId=' + data.BookingId + '"> / Cancel </a>';
+                            }
+                            return returnLink;
+                        }
+                    }
+                ]
+            });
+
+            $('#complainInfoTable').DataTable({
+                paging: false,
+                ordering: false,
+                info: false,
+                "dom": "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                scrollY: 200,
+                scrollCollapse: true,
+                scrollX: true,
+                "searching": false,
+                "columns": [
+                    { "data": "BookingDate" },
+                    { "data": "TeamLeaderName" },
+                    { "data": "TeamName" },
+                    { "data": "ShiftName" },
+                    { "data": "ComplainDate" },
+                    { "data": "ComplainDetails" },
+                    { "data": "ActionTakenDate" },
+                    { "data": "ActionTakenAgainstComplain" },
+                    {
+                        data: 'ComplainId',
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                let returnData = '';
+                                let updatelink = '/ServiceFeedback/AddComplainFeedback?complainId=' + data;
+                                if (data.length > 0) {
+                                    returnData = '<a href="' + updatelink + '">Add Feedback</a>';
+                                }
+                                else {
+                                    return '';
+                                }
+
+                                return returnData;
+                            }
+                            return data;
+                        }
+                    }
+                ]
+            });
+
+        });
+    </script>
+    }

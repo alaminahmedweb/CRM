@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ServiceType>
+
+@{
+    ViewData["Title"] = "List Of Service";
+}
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Service List</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-5 text-end">
+                    <a class="btn btn-primary btn-lg" style="margin-right:35px;" asp-controller="ServiceType" asp-action="Create"><i class="fa fa-plus-square"></i>&nbsp; Add New</a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="table-responsive">
+            <table id="servicetable" class="table table-bordered nowrap cell-border hover stripe dataTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Status </th>
+                        <th> Action </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script>
+        var dtable;
+        $(document).ready(function () {
+            dtable = $('#servicetable').DataTable({
+                "processing": true,
+                "responsive": true,
+                "ajax": {
+                    url: '@Url.Action("GetList", "ServiceType")',
+                    type: "GET",
+                    datatype: "json",
+                    data: { 'param': "" }
+                },
+                columns: [
+                    { "data": 'name' },
+                    { "data": "status" },
+                    {
+                        data: 'id',
+                        render: function (data, type) {
+                            if (type === 'display') {
+                                let updatelink = '/ServiceType/Update/' + data;
+                                let deletelink = '/ServiceType/Delete/' + data;
+
+                                return '<a class="btn btn-sm btn-outline-success" href="' + updatelink + '"><i class="far fa-edit"></i></a>'
+                                    + ' ' + '<a class="btn btn-outline-danger" href="' + deletelink + '"><i class="far fa-trash-alt"></i></a>';
+                            }
+
+                            return data;
+                        }
+                    }
+                ]
+            });
+        });
+        function Delete(id) { }
+    </script>
+    }

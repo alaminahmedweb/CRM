@@ -1,0 +1,79 @@
+﻿@using ApplicationCore.Entities
+@model Web.ViewModels.SearchCustomerVM
+
+@{
+    ViewData["Title"] = "Search Customer";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Search Customer</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="Index">
+                    <div class="form-group row">
+                        <label class="col-1 control-label">Client Name</label>
+                        <div class="col-3">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Address" class="control-label col-1">Address</label>
+                        <div class="col-3">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <label class="col-1 control-label">Mobile No</label>
+                        <div class="col-2">
+                            <input asp-for="MobileNo" class="form-control" />
+                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                        </div>
+                        <input type="button" value="Search" id="SearchCustomer" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#MobileNo').autocomplete({
+                minLength: 7,
+                focus: UpdateTextBox,
+                select: function(event, ui) {
+                    window.location.href = "/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId;
+                },
+                source: function(request, response) {
+                    $.ajax({
+                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
+                        method: 'get',
+                        data: { term: request.term },
+                        dataType: 'json',
+                        success: function(data) {
+                            response(data);
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    })
+                }
+            }).autocomplete('instance')._renderItem = function(ul, item) {
+                return $('<li>')
+                    .append('<a>' + item.mobileNo + '-'+ '</a>')
+                    .append('<a>' + item.customerName + '-' + '</a>')
+                    .append('<a>' + item.designationName  + '</a>')
+                    .appendTo(ul);
+            }
+            function UpdateTextBox(event, ui) {
+                $(this).val(ui.item.mobileNo);
+                return false;
+            };
+        });
+    </script>
+}

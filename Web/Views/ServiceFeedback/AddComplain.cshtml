@@ -1,0 +1,246 @@
+﻿@model ApplicationCore.DtoModels.ServiceFeedbackDto
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Add Complain";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+
+}
+
+
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Customer Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td class="text-primary">
+                            @Model.CustomerName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Location
+                        </td>
+                        <td class="text-primary">
+                            @Model.Address
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            City
+                        </td>
+                        <td class="text-primary">
+                            @Model.CityName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.AreaName
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Sub Area
+                        </td>
+                        <td class="text-primary">
+                            @Model.SubAreaName
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 bg-white">
+        <h5 class="text-center  text-bg-secondary pb-2 pt-1">Booking Information</h5>
+        <div class="table-responsive">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>
+                            Booking Date
+                        </td>
+                        <td class="text-primary">
+                            @Model.BookingDate
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Team Leader
+                        </td>
+                        <td class="text-primary">
+                            @Model.TeamLeaderName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Team Name
+                        </td>
+                        <td class="text-primary">
+                            @Model.TeamName
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Shift Name
+                        </td>
+                        <td class="text-primary">
+                            @Model.ShiftName
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Amount
+                        </td>
+                        <td class="text-primary">
+                            @Model.Amount
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row bg-white">
+    <form asp-action="AddComplain" autocomplete="off">
+        <div asp-validation-summary="ModelOnly" class="text-danger" id="validationSummary"></div>
+        <input asp-for="BookingId" hidden />
+        <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+
+        <h4 style="font-family:Verdana;margin-left:-10px;font-size: 18px;" class="mt-5">Add Complain</h4>
+        <div class="form-group row mt-2 ml-1 mr-1">
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="ComplainDate" placeholder="Complain Date" />
+                    <label for="ComplainDate">Complain Date</label>
+                </div>
+                <span asp-validation-for="ComplainDate" class="text-danger"></span>
+            </div>
+            <div class="col-lg-10 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="ComplainDetails" placeholder="Complain Details" />
+                    <label for="ComplainDetails">Complain Details</label>
+                </div>
+                <span asp-validation-for="ComplainDetails" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+@*
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header" style="border-bottom:1px solid black">
+                <p>Add Complain</p>
+            </div>
+            <div class="box-body">
+                <form asp-action="AddComplain">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="BookingId" hidden />
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+                    <div class="form-group row">
+                        <label asp-for="CustomerName" class="col-sm-2 control-label">Customer Name</label>
+                        <div class="col-2">
+                            <input asp-for="CustomerName" class="form-control" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Address" class="col-sm-2 control-label">Address</label>
+                        <div class="col-2">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <label asp-for="CityName" class="control-label col-sm-1">City</label>
+                        <div class="col-2">
+                            <input asp-for="CityName" class="form-control" />
+                            <span asp-validation-for="CityName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="AreaName" class="control-label col-2">Area</label>
+                        <div class="col-2">
+                            <input asp-for="AreaName" class="form-control" />
+                            <span asp-validation-for="AreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="SubAreaName" class="control-label col-2">Sub Area</label>
+                        <div class="col-2">
+                            <input asp-for="SubAreaName" class="form-control" />
+                            <span asp-validation-for="SubAreaName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="BookingDate" class="control-label col-2">Booking Date</label>
+                        <div class="col-2">
+                            <input asp-for="BookingDate" class="form-control" />
+                            <span asp-validation-for="BookingDate" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="TeamLeaderName" class="control-label col-2">Team Leader Name</label>
+                        <div class="col-2">
+                            <input asp-for="TeamLeaderName" class="form-control" />
+                            <span asp-validation-for="TeamLeaderName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="TeamName" class="control-label col-2">Team Name</label>
+                        <div class="col-2">
+                            <input asp-for="TeamName" class="form-control" />
+                            <span asp-validation-for="TeamName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ShiftName" class="control-label col-1">Shift</label>
+                        <div class="col-1">
+                            <input asp-for="ShiftName" class="form-control" />
+                            <span asp-validation-for="ShiftName" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Amount" class="control-label col-1">Amount</label>
+                        <div class="col-1">
+                            <input asp-for="Amount" class="form-control" />
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label asp-for="ComplainDate" class="control-label col-2">Complain Entry Date</label>
+                        <div class="col-2">
+                            <input asp-for="ComplainDate" class="form-control" />
+                            <span asp-validation-for="ComplainDate" class="text-danger"></span>
+                        </div>
+                        <label asp-for="ComplainDetails" class="control-label col-2">Complain Details</label>
+                        <div class="col-2">
+                            <textarea asp-for="ComplainDetails" class="form-control"></textarea>
+                            <span asp-validation-for="ComplainDetails" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Save" id="SaveComplain" class="btn btn-primary" />
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+*@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

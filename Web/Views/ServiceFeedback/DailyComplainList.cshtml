@@ -1,0 +1,491 @@
+﻿@model IEnumerable<ApplicationCore.DtoModels.ComplainFeedbackDto>
+
+@{
+    ViewData["Title"] = "Pending Complain List";
+}
+
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Pending Complain List</h3>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="ComplainDateFrom" class="form-label">Date From</label>
+                    <input type="date" id="ComplainDateFrom" name="ComplainDateFrom" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="ComplainDateTo" class="form-label">Date To</label>
+                    <input type="date" id="ComplainDateTo" name="ComplainDateTo" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 col-sm-12 col-12">
+                <div class="form-group d-grid gap-2 d-md-block">
+                    <br />
+                    <button type="button" id="btnShowList" class="btn btn-success">Show</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="complainTable" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Working Date
+                        </th>
+                        <th>
+                            Team
+                        </th>
+                        <th>
+                            Shift
+                        </th>
+                        <th>
+                            Service Name
+                        </th>
+                        <th>
+                            Mobile No
+                        </th>
+                        <th>
+                            Customer Name
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                        <th>
+                            Complain Date
+                        </th>
+                        <th>
+                            Complain Details
+                        </th>
+                        <th class="none">
+                            Action Taken Date
+                        </th>
+                        <th class="none">
+                            Complain Id
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#ComplainDateFrom').val(currentDate);
+            $('#ComplainDateTo').val(currentDate);
+
+            $('#complainTable').DataTable(
+                {
+                    "bDestroy": true,
+                    "processing": true,
+                    "responsive": true,
+                    scrollX: true,
+                    lengthMenu: [
+                        [10, 25, 50, -1],
+                        [10, 25, 50, 'All']
+                    ],
+                    "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                    "ajax": {
+                        url: '@Url.Action("DailyComplainListByDate", "ServiceFeedback")',
+                        "type": "get",
+                        datatype: "json",
+                        "data": function (d) {
+                            d.dateFrom = $('#ComplainDateFrom').val();
+                            d.dateto = $('#ComplainDateTo').val();
+                        }
+                    },
+
+                    aoColumns: [
+                        {
+                            "sName": "bookingDate",
+                            "mData": "bookingDate",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "teamName",
+                            "mData": "teamName",
+
+                        },
+                        {
+                            "sName": "shiftName",
+                            "mData": "shiftName"
+
+
+                        },
+                        {
+                            "sName": "serviceName",
+                            "mData": "serviceName",
+                            "searchable": false
+
+                        },
+
+                        {
+                            "sName": "mobileNo",
+                            "mData": "mobileNo",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "customerName",
+                            "mData": "customerName",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "address",
+                            "mData": "address",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "amount",
+                            "mData": "amount",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "complainDate",
+                            "mData": "complainDate",
+                            "searchable": false
+
+                        },
+                        {
+                            "sName": "complainDetails",
+                            "mData": "complainDetails",
+                            "searchable": false
+
+                        },
+                        {
+                            "className": "none",
+                            "sName": "actionTakenDate",
+                            "mData": "actionTakenDate",
+                            "searchable": false
+
+                        },
+                        {
+                            "className": "none",
+                            "sName": "complainId",
+                            "mData": "complainId",
+                            //"sName": "complainId",
+                            //"mData": "complainId",
+                            //"searchable": false
+
+                        },
+                        {
+                            "mData": null,
+                            "bSortable": false,
+                            "searchable": false,
+                            "mRender": function (data, type, full) {
+                                if (data.actionTakenDate===null)
+                                {
+                                    return '<a class="view" href="/ServiceFeedback/AddComplainFeedback?complainId=' + data.complainId + '">Add feedback</a>';
+                                }
+                            }
+                        }
+
+                    ]
+                });
+            $('#btnShowList').click(function () {
+                $('#complainTable').DataTable(
+                    {
+                        "bDestroy": true,
+                        "processing": true,
+                        "responsive": true,
+                        scrollX: true,
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, 'All']
+                        ],
+                        "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                        "ajax": {
+                            url: '@Url.Action("DailyComplainListByDate", "ServiceFeedback")',
+                            "type": "get",
+                            datatype: "json",
+                            "data": function (d) {
+                                d.dateFrom = $('#ComplainDateFrom').val();
+                                d.dateto = $('#ComplainDateTo').val();
+                            }
+                        },
+
+                        aoColumns: [
+                            {
+                                "sName": "bookingDate",
+                                "mData": "bookingDate",
+                                "searchable": false,
+                                "render": function (data, type, row, meta) {
+                                    return type === 'display' && data.length > 11 ?
+                                        '<span title="' + data + '">' + data.substr(0, 10) + '</span>' :
+                                        data;
+                                }
+                            },
+                            {
+                                "sName": "teamName",
+                                "mData": "teamName",
+
+                            },
+                            {
+                                "sName": "shiftName",
+                                "mData": "shiftName"
+                            },
+                            {
+                                "sName": "serviceName",
+                                "mData": "serviceName",
+                            },
+                            {
+                                "sName": "mobileNo",
+                                "mData": "mobileNo"
+                            },
+                            {
+                                "sName": "customerName",
+                                "mData": "customerName"
+                            },
+                            {
+                                "sName": "address",
+                                "mData": "address"
+                            },
+                            {
+                                "sName": "amount",
+                                "mData": "amount",
+                                "searchable": false
+                            },
+                            {
+                                "sName": "complainDate",
+                                "mData": "complainDate",
+                                "searchable": false,
+                                "render": function (data, type, row, meta) {
+                                    return type === 'display' && data.length > 11 ?
+                                        '<span title="' + data + '">' + data.substr(0, 10) + '</span>' :
+                                        data;
+                                }
+                            },
+                            {
+                                "sName": "complainDetails",
+                                "mData": "complainDetails",
+                                "searchable": false
+                            },
+                            {
+                                "className": "none",
+                                "sName": "actionTakenDate",
+                                "mData": "actionTakenDate",
+                                "searchable": false
+                            },
+                            {
+                                "className": "none",
+                                "sName": "complainId",
+                                "mData": "complainId"
+
+                            },
+                            {
+                                "mData": null,
+                                "bSortable": false,
+                                "searchable": false,
+                                "mRender": function (data, type, full) {
+                                    if (data.actionTakenDate === null) {
+                                        return '<a class="view" href="/ServiceFeedback/AddComplainFeedback?complainId=' + data.complainId + '">Add feedback</a>';
+                                    }
+                                }
+                            }
+
+                        ]
+                    });
+            });
+        });
+    </script>
+}
+
+@*
+<div class="row">
+    <div class="col-12">
+        <div class="box box-success">
+            <div class="box-header">
+                <div class="row">
+                    <div class="col-6">
+                        <h5><i class="fa fa-list-ul"></i> Pending Complain List</h5>
+                    </div>
+                    <div class="col-6 text-end">
+                        <label id="TotalCount" class="col-3 mr-3 text-danger font-weight-bold">Total Count : @Model.Count()</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group row mt-1">
+                <label class="col-1 control-label">Date From</label>
+                <div class="col-2">
+                    <input type="date" id="ComplainDateFrom" name="ServiceDateFrom" class="form-control" />
+                </div>To
+                <div class="col-2">
+                    <input type="date" id="ComplainDateTo" name="ServiceDateTo" class="form-control" />
+                </div>
+                <div class="col-2">
+                    <button type="submit" id="btnShowList" class="btn btn-success">Show</button>
+                </div>
+                <div class="col-2">
+                    <div id="TotalCount" class="text-danger font-weight-bold">Total Count : @Model.Count()</div>
+                </div>
+            </div>
+            <table class="table mt-1" id="complainTable">
+                <thead>
+                    <tr>
+                        <th>
+                            Working Date
+                        </th>
+                        <th>
+                            Team
+                        </th>
+                        <th>
+                            Shift
+                        </th>
+                        <th>
+                            Service Name
+                        </th>
+                        <th>
+                            Mobile No
+                        </th>
+                        <th>
+                            Customer Name
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Amount
+                        </th>
+                        <th>
+                            Complain Date
+                        </th>
+                        <th>
+                            Complain Details
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BookingDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ShiftName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServiceName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MobileNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CustomerName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplainDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ComplainDetails)
+                            </td>
+                            <td>
+                                @if (item.ActionTakenDate == null)
+                                {
+                                    @Html.ActionLink("Add feedback", "AddComplainFeedback", new { complainId=item.ComplainId })
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+*@
+
+@*@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+
+            var currentDate = today.getFullYear() + "-" + mm + "-" + dd;
+            $('#ComplainDateFrom').val(currentDate);
+            $('#ComplainDateTo').val(currentDate);
+
+            $('#btnShowList').click(function() {
+                var datefrom = $('#ComplainDateFrom').val();
+                var dateto = $('#ComplainDateTo').val();
+                $.ajax({
+                    type: "GET",
+                    url: "/ServiceFeedback/DailyComplainListByDate",
+                    data: { dateFrom: datefrom, dateTo: dateto },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(result) {
+                        var complainTable = $('#complainTable tbody');
+                        complainTable.empty();
+                        $(result).each(function(index, data) {
+                            var linkcomplainDetails = "";
+                            if (data.actionTakenDate == null) {
+                                linkcomplainDetails = '<a href="/ServiceFeedback/AddComplainFeedback?complainId=' + data.complainId + '">Add feedback</a>';
+                            }
+                            else {
+                                ationTakenDate = data.actionTakenDate.substring(0, 10);
+                                linkcomplainDetails = "";
+                            }
+
+                            complainTable.append('<tr><td>' + data.bookingDate.substring(0, 10) + '</td><td>' +
+                                data.teamName + '</td><td>' + data.shiftName + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>'
+                                + data.address + '</td><td>' + data.amount + '</td><td>'
+                                + data.complainDate.substring(0, 10) + '</td><td>' + data.complainDetails + '</td><td>'
+                                + linkcomplainDetails + '</td></tr>');
+                        });
+                        $('#TotalCount').html('Total Count : ' + result.length);
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
+
+        });
+    </script>
+}
+*@

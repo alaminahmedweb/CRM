@@ -1,0 +1,61 @@
+﻿@using ApplicationCore.DtoModels;
+@model List<BookingItemDto>
+@{
+    Layout = "_Report";
+    var total = 0;
+}
+
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Cancel Date</th>
+                    <th>Working Date</th>
+                    <th>Team</th>
+                    <th>Shift</th>
+                    <th>Status</th>
+                    <th>Mobile No</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Amount</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    {
+                        total = total + Convert.ToInt32(data.AgreeAmount);
+                    }
+
+                    <tr>
+                        <td>@data.BookingEntryDate</td>
+                        <td>@data.BookingWorkingDate</td>
+                        <td>@data.TeamName</td>
+                        <td>@data.ShiftName</td>
+                        <td>@data.Status </td>
+                        <td>@data.MobileNo </td>
+                        <td>@data.Name </td>
+                        <td>@data.Address </td>
+                        <td>@data.AgreeAmount</td>
+                        <td>@data.BookingNote</td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total</td>
+                    <td>@total</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
