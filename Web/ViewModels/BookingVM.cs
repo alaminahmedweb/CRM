@@ -38,7 +38,7 @@ namespace Web.ViewModels
 
         //Followup Portion
         [DataType(DataType.Date)]
-        public DateTime? CallingDate { get; set; } = DateTime.Now;
+        public DateTime? CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public double OfferAmount { get; set; } = 0;
 
@@ -58,12 +58,12 @@ namespace Web.ViewModels
         public string ServiceName { get; set; } = "";
 
         [DataType(DataType.Date)]
-        public DateTime FollowupCallDate { get; set; } = DateTime.Now;
+        public DateTime FollowupCallDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public int CustomerId { get; set; } = 0;//FK
 
         [DataType(DataType.Date)]
-        public DateTime EntryDate { get; set; } = DateTime.Now;
+        public DateTime EntryDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [DataType(DataType.Date)]
         public DateTime BookingDate { get; set; }=DateTime.Now;

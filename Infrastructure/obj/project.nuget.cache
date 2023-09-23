@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kc+vGBmBvzlIqB0hGjK+wfLb2sH4X5DflSlg7Zpqm7VXeRiblDKDQCxkHLj9RKWBPmv46YobTL9JCifHcF5Xfg==",
+  "dgSpecHash": "Pr/RwnTE6Io5tWp2mdm/VGdfxkst4tx1E2CQxaxUvlSs4qf8L8BFpKP2nHTD8FLBbDJbQbY6T8KfmLci3mu0kA==",
   "success": true,
   "projectFilePath": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -193,7 +193,8 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\timezoneconverter\\6.1.0\\timezoneconverter.6.1.0.nupkg.sha512"
   ],
   "logs": []
 }

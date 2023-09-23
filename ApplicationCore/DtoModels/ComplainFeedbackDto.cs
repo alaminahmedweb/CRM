@@ -29,13 +29,13 @@ namespace ApplicationCore.DtoModels
         public int ComplainId { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; } = DateTime.Now;
+        public DateTime ComplainDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public string ComplainDetails { get; set; }
 
         [DataType(DataType.Date)]
         [Display(Name = "Action Date")]
-        public DateTime? ActionTakenDate { get; set; } = DateTime.Now;
+        public DateTime? ActionTakenDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [Required]
         [Display(Name = "Action Details")]

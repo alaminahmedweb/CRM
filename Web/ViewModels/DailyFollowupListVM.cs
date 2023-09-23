@@ -20,10 +20,10 @@ namespace Web.ViewModels
         public DateTime FollowupDate { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateFrom { get; set; } = DateTime.Now;
+        public DateTime DateFrom { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [DataType(DataType.Date)]
-        public DateTime DateTo { get; set; } = DateTime.Now;
+        public DateTime DateTo { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
     }
 }

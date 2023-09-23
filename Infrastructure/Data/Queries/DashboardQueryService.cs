@@ -20,20 +20,21 @@ namespace Infrastructure.Data.Queries
         {
 
             DashboardDto dashboardDto = new DashboardDto();
+            DateTime currentDateFrom = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time"));
 
             dashboardDto.TodayTotalFollowupQty = (from fol in _dbContext.Followups
-                                .Where(a => a.FollowupCallDate.Date == DateTime.Now.Date && a.Status != "Inactive")
+                                .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.Status != "Inactive")
                                                   select fol).Count().ToString();
 
             dashboardDto.TodayFollowupDoneQty = (from fol in _dbContext.Followups
-                                .Where(a => a.FollowupCallDate.Date == DateTime.Now.Date && a.IsFollowupDone == true && a.Status != "Inactive")
+                                .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == true && a.Status != "Inactive")
                                                  select fol).Count().ToString();
 
             dashboardDto.TodayRemainingFollowupQty = (from fol in _dbContext.Followups
-                    .Where(a => a.FollowupCallDate.Date == DateTime.Now.Date && a.IsFollowupDone == false && a.Status != "Inactive")
+                    .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == false && a.Status != "Inactive")
                                                       select fol).Count().ToString();
 
-            DateTime now = DateTime.Now;
+            DateTime now = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
             var startDate = new DateTime(now.Year, now.Month, 1);
             var endDate = startDate.AddMonths(1).AddDays(-1);
 

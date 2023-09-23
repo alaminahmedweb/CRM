@@ -37,7 +37,7 @@ namespace Web.ViewModels
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime CallingDate { get; set; } = DateTime.Now;
+        public DateTime CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [Required]
         public double OfferAmount { get; set; } = 0;
@@ -58,7 +58,7 @@ namespace Web.ViewModels
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime FollowupCallDate { get; set; } = DateTime.Now;
+        public DateTime FollowupCallDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [Required]
         public string? Status { get; set; } = String.Empty;//Pending Or Confirm

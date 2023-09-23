@@ -13,7 +13,7 @@ namespace ApplicationCore.Entities
         public string MobileNo { get; set; } = String.Empty;
         public string Remarks { get; set; } = String.Empty;
         [DataType(DataType.Date)]
-        public DateTime NextFollowupDate { get; set; } = DateTime.Now;
+        public DateTime NextFollowupDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public bool IsFollowupDone { get; set; } = false;
 
     }

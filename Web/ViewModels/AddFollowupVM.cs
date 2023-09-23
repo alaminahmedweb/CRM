@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using System.ComponentModel.DataAnnotations;
+using TimeZoneConverter;
 
 namespace Web.ViewModels
 {
@@ -23,7 +24,7 @@ namespace Web.ViewModels
         //Followup Portion
         [Required]
         [DataType(DataType.Date)]
-        public DateTime? CallingDate { get; set; } = DateTime.Now;
+        public DateTime? CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         [Required]
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
@@ -39,7 +40,7 @@ namespace Web.ViewModels
         public string? MarketingNextPlan { get; set; } = String.Empty;
         [Required]
         [DataType(DataType.Date)]
-        public DateTime FollowupCallDate { get; set; } = DateTime.Now;
+        public DateTime FollowupCallDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         [Required]
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
 

@@ -36,7 +36,7 @@ namespace ApplicationCore.DtoModels
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string ReferenceBy { get; set; }
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string ServiceName { get; set; }
         public string Status { get; set; }
     }

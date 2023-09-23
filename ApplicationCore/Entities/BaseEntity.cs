@@ -13,7 +13,7 @@ namespace ApplicationCore.Entities
         public int Id { get; set; } = 0;
 
         [DataType(DataType.DateTime)]
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public string ModifiedBy { get; set; } ="" ; 
     }

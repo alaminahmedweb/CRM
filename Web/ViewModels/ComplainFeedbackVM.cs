@@ -19,11 +19,11 @@ namespace Web.ViewModels
         public double Amount { get; set; }
         public int ComplainId { get; set; }
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; } = DateTime.Now;
+        public DateTime ComplainDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         [Required]
         public string ComplainDetails { get; set; }
         [Required]
-        public DateTime ActionTakenDate { get; set; }= DateTime.Now;
+        public DateTime ActionTakenDate { get; set; }= TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         [Required]
         public string ActionTakenAgainstComplain { get; set; }
 

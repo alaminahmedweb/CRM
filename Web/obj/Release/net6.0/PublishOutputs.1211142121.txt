@@ -102,6 +102,7 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Security.Per
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Text.Encodings.Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Text.Json.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Windows.Extensions.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\TimeZoneConverter.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\es\Microsoft.CodeAnalysis.resources.dll

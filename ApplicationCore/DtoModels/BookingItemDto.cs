@@ -10,10 +10,10 @@ namespace ApplicationCore.DtoModels
     public class BookingItemDto
     {
         [DataType(DataType.Date)]
-        public DateTime? EntryDate { get; set; } = DateTime.Now;
+        public DateTime? EntryDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [DataType(DataType.Date)]
-        public DateTime? BookingDate { get; set; } = DateTime.Now;
+        public DateTime? BookingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public int? ShiftId { get; set; }
         public string ShiftName { get; set; }
@@ -39,10 +39,10 @@ namespace ApplicationCore.DtoModels
         public string? Status { get; set; } = "";
 
         [DataType(DataType.Date)]
-        public DateTime? FollowupCallDate { get; set; } = DateTime.Now;
+        public DateTime? FollowupCallDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [DataType(DataType.Date)]
-        public DateTime? TrDate { get; set; } = DateTime.Now;
+        public DateTime? TrDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [Required]
         public string? CustomerFeedback { get; set; }
@@ -50,13 +50,13 @@ namespace ApplicationCore.DtoModels
         public string? CompanyFeedback { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime? FeedbackEntryDate { get; set; } = DateTime.Now;
+        public DateTime? FeedbackEntryDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; } = DateTime.Now;
+        public DateTime ComplainDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string ComplainDetails { get; set; }
         public string? BookingNote { get; set; } = "";
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public string BookingEntryDate { get; set; } 
         public string BookingWorkingDate { get; set; } 

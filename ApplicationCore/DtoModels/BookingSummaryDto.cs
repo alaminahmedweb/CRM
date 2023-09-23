@@ -11,7 +11,7 @@ namespace ApplicationCore.DtoModels
     {
         public int? FollowupId { get; set; }
         [DataType(DataType.Date)]
-        public DateTime? BookingDate { get; set; } = DateTime.Now;
+        public DateTime? BookingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public double BookingAmtPerSlot { get; set; } = 0;
         public int NoOfSlot { get; set; } = 0;
         public double TotalBookingAmt { get; set; } = 0;

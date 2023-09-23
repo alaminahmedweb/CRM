@@ -6,3 +6,4 @@ D:\Publish\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Publish\Microsoft.Extensions.Options.dll
 D:\Publish\Microsoft.Extensions.Primitives.dll
+D:\Publish\TimeZoneConverter.dll

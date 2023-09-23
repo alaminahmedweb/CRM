@@ -31,7 +31,7 @@ namespace ApplicationCore.Entities
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime BookingDate { get; set; } = DateTime.Now;
+        public DateTime BookingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public string Status { get; set; } = "Booked";//Booked/Cancelled
 

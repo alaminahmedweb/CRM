@@ -33,7 +33,7 @@ namespace Web.ViewModels
         [Range(0, int.MaxValue, ErrorMessage = "Please Select Marketing Officer")]
         public int EmployeeId { get; set; }//FK
         public string? ModifiedBy { get; set; } = "";
-        public DateTime ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime ModifiedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public int CityId { get; set; }
         public int AreaId { get; set; }
 

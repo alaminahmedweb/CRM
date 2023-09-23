@@ -13,7 +13,7 @@ namespace ApplicationCore.Entities
 
         [Required]
         [DataType(DataType.Date)]
-        public DateTime CallingDate { get; set; } = DateTime.Now;
+        public DateTime CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         [ForeignKey("ServiceType")]
         public int ServiceTypeId { get; set; }

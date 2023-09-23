@@ -93,6 +93,7 @@ D:\Publish\System.Security.Permissions.dll
 D:\Publish\System.Text.Encodings.Web.dll
 D:\Publish\System.Text.Json.dll
 D:\Publish\System.Windows.Extensions.dll
+D:\Publish\TimeZoneConverter.dll
 D:\Publish\cs\Microsoft.CodeAnalysis.resources.dll
 D:\Publish\de\Microsoft.CodeAnalysis.resources.dll
 D:\Publish\es\Microsoft.CodeAnalysis.resources.dll

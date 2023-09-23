@@ -33,7 +33,7 @@ namespace ApplicationCore.DtoModels
         [DataType(DataType.Date)]
         public DateTime? EntryDateTime { get; set; }=DateTime.Now;
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; } = DateTime.Now;
+        public DateTime ComplainDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string ComplainDetails { get; set; }
         public string ModifiedBy { get; set; } = "";
 

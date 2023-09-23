@@ -9,7 +9,7 @@ namespace ApplicationCore.DtoModels
     public class AddFollowupDto
     {
         //Followup Portion
-        public DateTime? CallingDate { get; set; } = DateTime.Now;
+        public DateTime? CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
         public int CustomerDoTheWorkingMonth { get; set; } = 0;
@@ -17,7 +17,7 @@ namespace ApplicationCore.DtoModels
         public string? PositiveOrNegative { get; set; } = String.Empty;
         public string? DiscussionDetailsNote { get; set; } = String.Empty;
         public string? MarketingNextPlan { get; set; } = String.Empty;
-        public DateTime FollowupCallDate { get; set; } = DateTime.Now;
+        public DateTime FollowupCallDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
         public int ServiceTypeId { get; set; } = 0;
         public string ModifiedBy { get; set; } = "";

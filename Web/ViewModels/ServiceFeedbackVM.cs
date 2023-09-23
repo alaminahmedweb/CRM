@@ -7,7 +7,7 @@ namespace Web.ViewModels
         public int Id { get; set; }//Feedback Id
         public int BookingId { get; set; } = 0;
         [DataType(DataType.Date)]
-        public DateTime? BookingDate { get; set; } = DateTime.Now;
+        public DateTime? BookingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string TeamName { get; set; }
         public string TeamLeaderName { get; set; }
         public string ShiftName { get; set; }
@@ -20,8 +20,8 @@ namespace Web.ViewModels
         public string CustomerFeedback { get; set; }
         public string CompanyFeedback { get; set; }
         [DataType(DataType.Date)]
-        public DateTime? EntryDateTime { get; set; } = DateTime.Now;
+        public DateTime? EntryDateTime { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         [DataType(DataType.Date)]
-        public DateTime ComplainDate { get; set; } = DateTime.Now;
+        public DateTime ComplainDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
     }
 }

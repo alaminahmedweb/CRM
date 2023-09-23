@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lDl3I3/TP8cQ1NMK2ok4bpyA6zV8Bz9eFpAc5kf/jQzIwVw63CCDviV+8RayYVlHxJqBNetrz4Tsu2ouiArMMA==",
+  "dgSpecHash": "Lbpv1A+qNoNNn1UdPAXt0TtjH9Q7XEFQkb1+/bmcMMkZSrJ93mo32LOQoFc2NkV9OVB63+/eIS3kIPkKrEuZSg==",
   "success": true,
   "projectFilePath": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\ApplicationCore.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,8 @@
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\timezoneconverter\\6.1.0\\timezoneconverter.6.1.0.nupkg.sha512"
   ],
   "logs": []
 }

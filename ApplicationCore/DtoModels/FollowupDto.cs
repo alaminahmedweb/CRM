@@ -13,7 +13,7 @@ namespace ApplicationCore.DtoModels
         public int FollowupId { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime CallingDate { get; set; } = DateTime.Now;
+        public DateTime CallingDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string OpinionAndPlan { get; set; } = String.Empty;
         public double OfferAmount { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
