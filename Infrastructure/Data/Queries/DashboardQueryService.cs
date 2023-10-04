@@ -18,9 +18,14 @@ namespace Infrastructure.Data.Queries
         }
         public DashboardDto GetDashboardData()
         {
+            
 
             DashboardDto dashboardDto = new DashboardDto();
             DateTime currentDateFrom = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time"));
+
+            dashboardDto.TotalCustomer = _dbContext.Customers.Count().ToString();
+
+            dashboardDto.TodayNewCustomer = _dbContext.Customers.Where(a=>a.ModifiedDate.Date==currentDateFrom.Date).Count().ToString();
 
             dashboardDto.TodayTotalFollowupQty = (from fol in _dbContext.Followups
                                 .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.Status != "Inactive")
@@ -33,6 +38,37 @@ namespace Infrastructure.Data.Queries
             dashboardDto.TodayRemainingFollowupQty = (from fol in _dbContext.Followups
                     .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == false && a.Status != "Inactive")
                                                       select fol).Count().ToString();
+
+            dashboardDto.TodayBookingQty = (from bk in _dbContext.Bookings
+                    .Where(a => a.EntryDate.Date == currentDateFrom.Date).Where(a => a.Status != "Cancel")
+                                                select bk).Count().ToString();
+
+            dashboardDto.TodayBookingAmount =
+                        (from bk in _dbContext.Bookings
+                         join fol in _dbContext.Followups
+                         on bk.FollowupId equals fol.Id
+                         where bk.EntryDate.Date == currentDateFrom.Date
+                         && bk.Status != "Cancel"
+                         select fol.AgreeAmount).Sum().ToString();
+
+            var customerCount = from cus in _dbContext.Customers
+                                join con in _dbContext.Contacts
+                                on cus.ContactId equals con.Id
+                                where cus.ModifiedDate.Date == currentDateFrom.Date 
+                                group cus by con.Name into g
+                                select new
+                                {
+                                    ContactName = g.Key,
+                                    TotalCount = g.Count()
+                                };
+            foreach (var item in customerCount)
+            {
+                CustomerCountDto customerCountDto = new CustomerCountDto();
+                customerCountDto.TotalCount = item.TotalCount;
+                customerCountDto.GroupName = item.ContactName;
+                dashboardDto.TodayContactWiseCustomerList.Add(customerCountDto);
+            }
+
 
             DateTime now = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
             var startDate = new DateTime(now.Year, now.Month, 1);
@@ -54,23 +90,6 @@ namespace Infrastructure.Data.Queries
                     .Where(a => a.ComplainDate.Date >= startDate.Date && a.ComplainDate <= endDate.Date).Where(a=>a.IsGivenFeedback==false)
                                                 select compl).Count().ToString();
 
-            var customerCount = from cus in _dbContext.Customers
-                                join con in _dbContext.Contacts
-                                on cus.ContactId equals con.Id
-                                where cus.ModifiedDate.Date >= startDate.Date && cus.ModifiedDate <= endDate.Date
-                                group cus by con.Name into g
-                                select new
-                                {
-                                    ContactName = g.Key,
-                                    TotalCount = g.Count()
-                                };
-            foreach(var item in customerCount)
-            {
-                CustomerCountDto customerCountDto = new CustomerCountDto();
-                customerCountDto.TotalCount = item.TotalCount;
-                customerCountDto.GroupName = item.ContactName;
-                dashboardDto.ThisMonthContactWiseCustomerList.Add(customerCountDto);
-            }
             return dashboardDto;
         }
     }

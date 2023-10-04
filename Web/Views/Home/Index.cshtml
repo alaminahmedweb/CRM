@@ -61,9 +61,9 @@
             <div class="display">
                 <div class="number">
                     <h3 class="font-green-jungle">
-                        <span data-counter="counterup" data-value="3,507">10</span>
+                        <span data-counter="counterup" data-value="3,507">@Model.TodayNewCustomer</span>
                     </h3>
-                    <small>FEEDBACK PENDING</small>
+                    <small>TODAY NEW CUSTOMER </small>
                </div>
                 <div class="icon">
                     <i class="far fa-envelope-open"></i>
@@ -93,6 +93,19 @@
     <div class="col-md-3 col-sm-6">
         <div class="panel panel-default">
             <div class="panel-heading">
+                <p class="panel-title uppercase bold">BOOKING ENTRY(TODAY)</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Total QTY: @Model.TodayBookingQty
+                </li>
+                <li class="list-group-item">
+                    Total AMT: BDT @Model.TodayBookingAmount
+                </li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
                 <p class="panel-title uppercase bold">BOOKING (THIS MONTH)</p>
             </div>
             <ul class="list-group">
@@ -106,6 +119,14 @@
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
+                <p class="panel-title uppercase bold">TOTAL CUSTOMER</p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">QTY : @Model.TotalCustomer</li>
+            </ul>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
                 <p class="panel-title uppercase bold">COMPLAIN PENDING (THIS MONTH)</p>
             </div>
             <ul class="list-group">
@@ -114,17 +135,17 @@
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
-                <p class="panel-title uppercase bold">DIGITAL RESPONSE(THIS MONTH)</p>
+                <p class="panel-title uppercase bold">DIGITAL RESPONSE (TODAY)</p>
             </div>
             <ul class="list-group">
-            @foreach (var item in Model.ThisMonthContactWiseCustomerList)
-            {
-                <li class="list-group-item"> @item.GroupName : @item.TotalCount </li>
+                @foreach (var item in Model.TodayContactWiseCustomerList)
                 {
-                        totalCount = totalCount +item.TotalCount;
+                    <li class="list-group-item"> @item.GroupName : @item.TotalCount </li>
+                    {
+                        totalCount = totalCount + item.TotalCount;
+                    }
                 }
-            }
-            <li class="list-group-item bold"> Total : @totalCount </li>
+                <li class="list-group-item bold"> Total : @totalCount </li>
             </ul>
         </div>
     </div>
