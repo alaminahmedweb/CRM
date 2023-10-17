@@ -142,6 +142,9 @@ namespace Infrastructure.Data.Queries
 
                 bookingDtos.Add(bookingItemDto);
             }
+
+
+
             return bookingDtos;
         }
 
