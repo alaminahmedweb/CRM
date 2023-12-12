@@ -8,6 +8,10 @@ namespace ApplicationCore.DtoModels
 {
     public class DashboardDto
     {
+        public DashboardDto()
+        {
+            TodayContactWiseCustomerList = new List<CustomerCountDto>();
+        }
         public string TotalCustomer { get; set; } = "";
         public string TodayNewCustomer { get; set; } = "";
         public string TodayTotalFollowupQty { get; set; } = "";
@@ -19,6 +23,6 @@ namespace ApplicationCore.DtoModels
         public string TodayBookingAmount { get; set; } = "";
         public string ThisMonthBookingAmount { get; set; } = "";
         public string ThisMonthComplainPendingQty { get; set; } = "";
-        public List<CustomerCountDto> TodayContactWiseCustomerList { get;set; }=new List<CustomerCountDto>();
+        public List<CustomerCountDto> TodayContactWiseCustomerList { get;set; }
     }
 }

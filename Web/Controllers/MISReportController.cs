@@ -11,21 +11,26 @@ namespace Web.Controllers
     {
         private readonly IMISReportQueryService _misReportQueryService;
         private readonly IEmployeeService _employeeService;
+        private readonly IContactByService _contactByService;
 
-        public MISReportController(IMISReportQueryService misReportQueryService,IEmployeeService employeeService)
+        public MISReportController(IMISReportQueryService misReportQueryService,
+            IEmployeeService employeeService,
+            IContactByService contactByService)
         {
             this._misReportQueryService = misReportQueryService;
             this._employeeService = employeeService;
+            this._contactByService = contactByService;
         }
         public  IActionResult Index()
         {
             ViewBag.EmployeeList=_employeeService.Find(a=>a.Status=="Active");
+            ViewBag.ContactList = _contactByService.Find(a => a.Name != "");
             return View();
         }
 
-        public JsonResult GetAllCustomersByDate(DateTime dateFrom,DateTime dateTo,int EmployeeId)
+        public JsonResult GetAllCustomersByDate(DateTime dateFrom,DateTime dateTo,int employeeId,int contactId)
         {
-            return Json(_misReportQueryService.GetAllCustomersByDate(dateFrom, dateTo, EmployeeId));
+            return Json(_misReportQueryService.GetAllCustomersByDate(dateFrom, dateTo, employeeId,contactId));
         }
         public JsonResult GetAllFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo)
         {
@@ -124,7 +129,7 @@ namespace Web.Controllers
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "New Customer List";
             ViewBag.PageSize = "Legal";
-            var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId);
+            var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId,model.ContactId);
             return View(data);
         }
 

@@ -13,6 +13,6 @@ namespace Web.ViewModels
         public DateTime DateTo { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public int EmployeeId { get; set; }
-
+        public int ContactId { get; set; }
     }
 }

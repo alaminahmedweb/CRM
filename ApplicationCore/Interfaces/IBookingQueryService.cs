@@ -9,6 +9,7 @@ namespace ApplicationCore.Interfaces
 {
     public interface IBookingQueryService
     {
+
         List<BookingItemDto> GetBookingDetailsByDate(DateTime dateFrom, DateTime dateTo);
         BookingDto GetCustomerAndBookingDetailsByBookingId(int bookingid);
         bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate); 

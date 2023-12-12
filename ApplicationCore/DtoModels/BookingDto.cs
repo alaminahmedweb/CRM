@@ -12,6 +12,8 @@ namespace ApplicationCore.DtoModels
         public BookingDto()
         {
             BookingItems = new List<BookingItemDto>();
+            BuildingDetails = new List<BuildingDetailsDto>();
+            ContractDetails = new List<ContractDetailsDto>();
         }
         public int Id { get; set; }
         public int BookingId { get; set; }
@@ -26,8 +28,8 @@ namespace ApplicationCore.DtoModels
         public string ContactName { get; set; }
         public string CategoryName { get; set; }
         public string ReferenceBy { get; set; }
-        public List<BuildingDetailsDto> BuildingDetails { get; set; } = new List<BuildingDetailsDto>();
-        public List<ContractDetailsDto> ContractDetails { get; set; } = new List<ContractDetailsDto>();
+        public List<BuildingDetailsDto> BuildingDetails { get; set; }
+        public List<ContractDetailsDto> ContractDetails { get; set; } 
 
 
         //Followup Portion
