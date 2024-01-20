@@ -137,6 +137,35 @@
             var resultbody = $('#resultTable tbody');
             var resultHead = $('#resultTable thead');
 
+
+            // $('#DateFrom').datepicker({
+            //     todayBtn: 1,
+            //     startDate: '-12m',
+            //     autoclose: true,
+            // }).on('changeDate', function (selected) {
+
+            //     alert('clicked');
+            //     var minDate = new Date(selected.date.valueOf());
+            //     var maxDate = new Date(minDate);
+
+            //     maxDate.setDate(maxDate.getDate() + 3);
+
+            //     $('#DateTo').datepicker('setStartDate', minDate);
+            //     $('#DateTo').datepicker('setEndDate', maxDate);
+            //     $('#DateTo').val('');
+
+            // });
+
+            // $('#DateTo').datepicker({
+            //     autoclose: true
+
+            // }).on('changeDate', function (selected) {
+            //     var minDate = new Date(selected.date.valueOf());
+            //     alert('clicked');
+            //     //$('#startDate').datepicker('setEndDate', minDate);
+
+            // });
+
             $('#btnNewCustomerList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();

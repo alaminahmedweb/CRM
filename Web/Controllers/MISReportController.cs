@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels;
 
@@ -67,6 +68,11 @@ namespace Web.Controllers
         }
         public IActionResult StatusWiseNewCustomerList(DateRangeVM model)
         {
+            if(!CheckUserDateSelectAuthority(model.DateFrom,model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Status Wise Customer List";
             ViewBag.PageSize = "A4";
@@ -76,6 +82,11 @@ namespace Web.Controllers
         }
         public IActionResult ContactWiseNewCustomerList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Contact Wise Customer List";
             ViewBag.PageSize = "A4";
@@ -85,6 +96,11 @@ namespace Web.Controllers
         }
         public IActionResult StatusWiseFollowupDoneList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Status Wise Followup Done List";
             ViewBag.PageSize = "A4";
@@ -94,6 +110,11 @@ namespace Web.Controllers
         }
         public IActionResult ShowFollowupDoneList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Followup Done List";
             ViewBag.PageSize = "Legal";
@@ -102,6 +123,11 @@ namespace Web.Controllers
         }
         public IActionResult ShowEntryDateWiseBookingList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Entry Date Wise Booking List";
             ViewBag.PageSize = "Legal";
@@ -110,6 +136,11 @@ namespace Web.Controllers
         }
         public IActionResult ShowBookingShiftingList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Booking Shifting List";
             ViewBag.PageSize = "Legal";
@@ -118,6 +149,11 @@ namespace Web.Controllers
         }
         public IActionResult ShowBookingCancelList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Booking Cancel List";
             ViewBag.PageSize = "Legal";
@@ -126,12 +162,33 @@ namespace Web.Controllers
         }
         public IActionResult ShowNewCustomerList(DateRangeVM model)
         {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "New Customer List";
             ViewBag.PageSize = "Legal";
             var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId,model.ContactId);
             return View(data);
         }
-
+        public bool CheckUserDateSelectAuthority(DateTime DateFrom, DateTime DateTo)
+        {
+            if(User.IsInRole("Super Admin") || User.IsInRole("Admin"))
+            {
+                return true;
+            }
+            else
+            {
+                int dateDiff = (DateTo.Date - DateFrom.Date).Days;
+                if (dateDiff > 3)
+                {
+                    return false;
+                }
+                return true;
+            }
+            
+        }
     }
 }

@@ -13,6 +13,9 @@ namespace Web.Controllers
             var statusCodeResult = HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
             switch(statusCode)
             {
+                case 401:
+                    ViewBag.ErrorMessage = "Access Denied..!!";
+                    break;
                 case 404:
                     ViewBag.ErrorMessage = "Sorry,The Resource you requested could not be found";
                     break;

@@ -53,6 +53,7 @@ namespace Web.Controllers
             }
             return View(model);
         }
+
         [AllowAnonymous]
         public IActionResult Login()
         {

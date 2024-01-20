@@ -10,3 +10,4 @@ D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.dl
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\refint\ApplicationCore.dll
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.pdb
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ref\ApplicationCore.dll
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Release\net6.0\ApplicationCore.sourcelink.json

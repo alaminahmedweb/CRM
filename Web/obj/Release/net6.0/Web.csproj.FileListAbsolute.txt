@@ -307,3 +307,4 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.pdb
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.genruntimeconfig.cache
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\ref\Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\TimeZoneConverter.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.sourcelink.json
