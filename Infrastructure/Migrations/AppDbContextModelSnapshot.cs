@@ -444,6 +444,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ContactId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsFollowupDone")
                         .HasColumnType("bit");
 
@@ -466,6 +469,8 @@ namespace Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ContactId");
 
                     b.ToTable("DraftCustomer");
                 });
@@ -1144,6 +1149,17 @@ namespace Infrastructure.Migrations
                     b.Navigation("Employee");
 
                     b.Navigation("SubArea");
+                });
+
+            modelBuilder.Entity("ApplicationCore.Entities.DraftCustomer", b =>
+                {
+                    b.HasOne("ApplicationCore.Entities.ContactBy", "ContactBy")
+                        .WithMany()
+                        .HasForeignKey("ContactId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ContactBy");
                 });
 
             modelBuilder.Entity("ApplicationCore.Entities.Followup", b =>

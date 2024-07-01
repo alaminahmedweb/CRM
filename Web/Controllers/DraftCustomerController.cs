@@ -3,6 +3,7 @@ using ApplicationCore.Interfaces;
 using ApplicationCore.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -10,10 +11,14 @@ namespace Web.Controllers
     public class DraftCustomerController : Controller
     {
         private readonly IDraftCustomerService _draftCustomerService;
+        private readonly IContactByService _contactByService;
 
-        public DraftCustomerController(IDraftCustomerService draftCustomerService)
+        public DraftCustomerController(IDraftCustomerService draftCustomerService,
+            IContactByService contactByService)
         {
             this._draftCustomerService = draftCustomerService;
+            this._contactByService = contactByService;
+
         }
 
         [HttpGet]
@@ -25,15 +30,27 @@ namespace Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            DraftCustomerVM draftCustomerVM = new DraftCustomerVM();
+            draftCustomerVM.ContactList = _contactByService.Find(a => a.Status == "Active");
+            return View(draftCustomerVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(DraftCustomer model)
+        public async Task<IActionResult> Create(DraftCustomerVM model)
         {
             if (ModelState.IsValid)
             {
-                int id = await _draftCustomerService.AddEntity(model);
+                DraftCustomer draftCustomer = new DraftCustomer{
+                    ClientName=model.ClientName,
+                    ModifiedDate=model.ModifiedDate,
+                    ModifiedBy=model.ModifiedBy,
+                    MobileNo=model.MobileNo,
+                    Remarks = model.Remarks,
+                    NextFollowupDate = model.NextFollowupDate,
+                    IsFollowupDone= model.IsFollowupDone,
+                    ContactId= model.ContactId
+                };
+                int id = await _draftCustomerService.AddEntity(draftCustomer);
                 if (id != 0)
                 {
                     TempData["SuccessMessage"] = "Created Successfully..";

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,10 @@ namespace ApplicationCore.Entities
         [DataType(DataType.Date)]
         public DateTime NextFollowupDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public bool IsFollowupDone { get; set; } = false;
+
+        [ForeignKey("ContactBy")]
+        public int ContactId { get; set; }//FK
+        public ContactBy ContactBy { get; set; }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model DraftCustomer
+﻿@model DraftCustomerVM
 @inject UserManager<ApplicationUser> userManager;
 
 @{
@@ -49,6 +49,22 @@
                             <label for="NextFollowupDate">Next Followup Date</label>
                         </div>
                         <span asp-validation-for="NextFollowupDate" class="text-danger"></span>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <select asp-for="ContactId" class="form-control">
+                                <option value="-1">Select Contact</option>
+                                @if (Model.ContactList != null)
+                                {
+                                    @foreach (var data in @Model.ContactList)
+                                    {
+                                        <option value="@data.Id">@data.Name</option>
+                                    }
+                                }
+                            </select>
+                            <label asp-for="ContactId">Contact</label>
+                        </div>
+                        <span asp-validation-for="ContactId" class="text-danger"></span>
                     </div>
 
                     <div class="text-center mt-3">
