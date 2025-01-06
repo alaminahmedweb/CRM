@@ -43,6 +43,7 @@
     <form asp-action="Update">
         <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
         <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="ContactId" />
         <input type="submit" value="Remove" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

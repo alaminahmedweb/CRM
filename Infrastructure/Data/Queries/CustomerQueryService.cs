@@ -1,5 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
+using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Queries
 {
+    public class CustomerContractDetails
+    {
+        public int CustomerId { get; set;}
+        public string MobileNo { get; set;}
+    }
     public class CustomerQueryService : ICustomerQueryService
     {
         private readonly AppDbContext _dbContext;
@@ -116,8 +123,8 @@ namespace Infrastructure.Data.Queries
                              ReferenceBy = cus.ReferenceBy,
                              ContactId = cus.ContactId,
                              ModifiedDate = cus.ModifiedDate,
-                             NoOfFloor=cus.NoOfFloor,
-                             NoOfFlat=cus.NoOfFlat
+                             NoOfFloor = cus.NoOfFloor,
+                             NoOfFlat = cus.NoOfFlat
 
                          };
 
@@ -192,6 +199,126 @@ namespace Infrastructure.Data.Queries
                 customer.ContractDetails.Add(contractDetailsDto);
             }
             return customer;
+        }
+
+        public IEnumerable<AllCustomerListDto> GetAllCustomersBySearchString(string customerName,
+            string address, string mobileNo)
+        {
+
+            List<Customer> customerList = new List<Customer>();
+            List<CustomerContractDetails> customerContractDetails=new List<CustomerContractDetails>();
+
+            if (customerName != null && address != null)
+            {
+                customerList = _dbContext.Customers.Where(a => a.Address.Contains(address) && a.ClientName.Contains(customerName)).ToList();
+            }
+
+
+            if (address != null && customerName == null)
+            {
+                customerList = _dbContext.Customers.Where(a => a.Address.Contains(address)).ToList();
+            }
+
+            if (customerName != null && address == null)
+            {
+                customerList = _dbContext.Customers.Where(a => a.ClientName.Contains(customerName)).ToList();
+            }
+
+            if (customerName == null && address == null)
+            {
+                customerList = _dbContext.Customers.ToList();
+            }
+
+
+            //var mobileNoWithCustomer = (from e in _dbContext.ContractDetails
+            //                         where e.MobileNo != ""
+            //                         && (from e2 in _dbContext.Customers
+            //                             where e2.ClientName != ""
+            //                             select e2.Id).ToList().Contains(e.CustomerId)
+            //                         select e);
+
+            var contractDetails = (from mob in _dbContext.ContractDetails
+                                  select mob).ToList();
+
+            if (mobileNo == null)
+            {
+                var mobileNoWithCustomer = (from mob in contractDetails
+                                            join cus in customerList
+                                           on mob.CustomerId equals cus.Id
+                                           select mob).ToList();
+
+                var mobileNoWithIds = mobileNoWithCustomer
+                           .GroupBy(a => a.CustomerId)
+                           .Select(r => new
+                           {
+                               CustomerId = r.Key,
+                               MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                           }).ToList();
+                foreach (var data in mobileNoWithIds)
+                {
+                    CustomerContractDetails customer = new CustomerContractDetails();
+                    customer.CustomerId = data.CustomerId;
+                    customer.MobileNo = data.MobileNo;
+                    customerContractDetails.Add(customer);
+                }
+
+
+            }
+            else
+            {
+                var mobileNoWithIds = _dbContext.ContractDetails.Where(a => a.MobileNo.Contains(mobileNo))
+                    .GroupBy(a => a.CustomerId)
+                    .Select(r => new
+                    {
+                        CustomerId = r.Key,
+                        MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                    }).ToList();
+
+                foreach (var data in mobileNoWithIds)
+                {
+                    CustomerContractDetails customer = new CustomerContractDetails();
+                    customer.CustomerId = data.CustomerId;
+                    customer.MobileNo = data.MobileNo;
+                    customerContractDetails.Add(customer);
+                }
+            }
+
+            var result = from cus in customerList
+                         join mob in customerContractDetails on cus.Id equals mob.CustomerId
+                         join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                         join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                         join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                         join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                         select new
+                         {
+                             CustomerId = cus.Id,
+                             CustomerName = cus.ClientName,
+                             Address = cus.Address,
+                             CityName = cty.Name,
+                             AreaName = ar.Name,
+                             SubAreaName = sar.Name,
+                             EmployeeName = emp.Name,
+                             MobileNo = mob.MobileNo
+                         };
+
+            List<AllCustomerListDto> allCustomerList = new List<AllCustomerListDto>();
+
+            foreach (var data in result)
+            {
+                AllCustomerListDto customer = new AllCustomerListDto();
+                customer.CustomerId = data.CustomerId;
+                customer.CustomerName = data.CustomerName;
+                customer.Address = data.Address;
+                customer.AreaName = data.AreaName;
+                customer.EmployeeName = data.EmployeeName;
+                customer.CityName = data.CityName;
+                customer.SubAreaName = data.SubAreaName;
+                customer.MobileNo = data.MobileNo;
+                allCustomerList.Add(customer);
+
+            }
+
+            return allCustomerList;
         }
     }
 }

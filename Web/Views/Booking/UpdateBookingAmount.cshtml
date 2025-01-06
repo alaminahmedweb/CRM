@@ -35,6 +35,13 @@
                         <span asp-validation-for="AgreeAmount" class="text-danger"></span>
                     </div>
 
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Remarks" placeholder="Remarks" />
+                            <label for="Remarks">Remarks</label>
+                        </div>
+                        <span asp-validation-for="Remarks" class="text-danger"></span>
+                    </div>
 
                     <div class="text-center mt-3">
                         <div class="d-grid gap-2 d-md-block">
@@ -46,35 +53,6 @@
         </div>
     </div>
 </div>
-@*
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 col-offset-3">
-        <div class="box box-success">
-            <div class="box-header" style="border-bottom:1px solid black">
-                <p>Update Booking Amount</p>
-            </div>
-            <div class="box-body">
-                <form asp-action="UpdateBookingAmount">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="ModifiedBy" value="@userid"/>
-                    <input asp-for="FollowupId" hidden />
-                    <div class="form-group row">
-                        <label asp-for="AgreeAmount" class="control-label col-4">Booking Amt/Slot</label>
-                        <div class="col-8">
-                            <input asp-for="AgreeAmount" class="form-control" />
-                            <span asp-validation-for="AgreeAmount" class="text-danger"></span>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="form-group text-center">
-                        <input type="submit" value="Update" asp-action="UpdateBookingAmount" asp-controller="Booking" class="btn btn-primary" />
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>*@
 
 @section Scripts {
     @{

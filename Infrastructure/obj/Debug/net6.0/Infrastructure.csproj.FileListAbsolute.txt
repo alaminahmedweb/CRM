@@ -9,10 +9,10 @@ D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.Genera
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfoInputs.cache
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.AssemblyInfo.cs
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CoreCompileInputs.cache
-D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.csproj.CopyComplete
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.dll
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
 D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastructure.sourcelink.json
+D:\CRM_By_Zahid_21_06_2023\Infrastructure\obj\Debug\net6.0\Infrastr.15EFFBFE.Up2Date

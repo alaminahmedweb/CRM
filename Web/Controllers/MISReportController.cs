@@ -13,19 +13,24 @@ namespace Web.Controllers
         private readonly IMISReportQueryService _misReportQueryService;
         private readonly IEmployeeService _employeeService;
         private readonly IContactByService _contactByService;
+        private readonly ICategoryService _categoryService;
+
 
         public MISReportController(IMISReportQueryService misReportQueryService,
             IEmployeeService employeeService,
-            IContactByService contactByService)
+            IContactByService contactByService,
+            ICategoryService categoryService)
         {
             this._misReportQueryService = misReportQueryService;
             this._employeeService = employeeService;
             this._contactByService = contactByService;
+            this._categoryService = categoryService;
         }
         public  IActionResult Index()
         {
             ViewBag.EmployeeList=_employeeService.Find(a=>a.Status=="Active");
             ViewBag.ContactList = _contactByService.Find(a => a.Name != "");
+            ViewBag.CategoryList = _categoryService.Find(a => a.Name != "");
             return View();
         }
 

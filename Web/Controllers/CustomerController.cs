@@ -2,6 +2,7 @@
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using AutoMapper;
+using Infrastructure.Data.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.ViewModels;
@@ -70,6 +71,7 @@ namespace Web.Controllers
         public async Task<IActionResult> Index()
         {
             SearchCustomerVM customerFollowupVM = new SearchCustomerVM();
+
             customerFollowupVM.ServiceList = _serviceTypeService.Find(a => a.Status == "Active");
             customerFollowupVM.DesignationList = await _designationService.GetAllAsync();
             customerFollowupVM.CityList = await _cityService.GetAllAsync();
@@ -299,6 +301,16 @@ namespace Web.Controllers
         public bool IsMobileNoAlreadyExists(string mobileNo, int customerId)
         {
             return _customerQueryService.IsMobileNoAlreadyExists(mobileNo, customerId);
+        }
+
+        
+        [HttpGet]
+        public JsonResult GetAllCustomersBySearchString(string customerName="",
+            string address="", string mobileNo = "")
+        {
+            var data = _customerQueryService.GetAllCustomersBySearchString(customerName, address, mobileNo);
+            var jsonResult = Json(new { data });
+            return jsonResult;
         }
 
     }

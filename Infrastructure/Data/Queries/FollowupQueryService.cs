@@ -466,14 +466,6 @@ namespace Infrastructure.Data.Queries
                 customerList = customerList.Where(a => a.EmployeeId == mpoId).ToList();
             }
 
-            //var mobileNoWithIds = _dbContext.ContractDetails
-            //        .GroupBy(a => a.CustomerId)
-            //        .Select(r => new
-            //        {
-            //            CustomerId = r.Key,
-            //            MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-            //        });
-
             var result = from cus in customerList
                          join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
                          join ar in _dbContext.Areas on sar.AreaId equals ar.Id

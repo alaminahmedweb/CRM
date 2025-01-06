@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.CodeAnalysis.Operations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,11 +39,12 @@ namespace Infrastructure.Data.Queries
                                     MobileNo = string.Join(",", r.Select(a => a.MobileNo))
                                 }).ToList();
 
-            var customerList=new List<Customer>();
-            if (employeeId!=-1)
+            var customerList = new List<Customer>();
+            if (employeeId != -1)
             {
-                customerList = _dbContext.Customers.Where(a => a.ModifiedDate.Date >= dateFrom && a.ModifiedDate.Date <= dateTo).Where(a=>a.EmployeeId== employeeId).ToList();
-            }else
+                customerList = _dbContext.Customers.Where(a => a.ModifiedDate.Date >= dateFrom && a.ModifiedDate.Date <= dateTo).Where(a => a.EmployeeId == employeeId).ToList();
+            }
+            else
             {
                 customerList = _dbContext.Customers.Where(a => a.ModifiedDate.Date >= dateFrom && a.ModifiedDate.Date <= dateTo).ToList();
             }
@@ -141,7 +143,13 @@ namespace Infrastructure.Data.Queries
 
         public IEnumerable<CustomerDto> GetAllFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo)
         {
-            var mobileNoWithIds = _dbContext.ContractDetails
+
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups.Where(a => a.ModifiedDate.Date >= dateFrom.Date
+                                   && a.ModifiedDate.Date <= dateTo)
+                                   on con.CustomerId equals fol.CustomerId
+                                   select con
+                                   )
                     .GroupBy(a => a.CustomerId)
                     .Select(r => new
                     {
@@ -211,13 +219,19 @@ namespace Infrastructure.Data.Queries
         public List<BookingItemDto> GetEntryDateWiseBookingList(DateTime dateFrom, DateTime dateTo)
         {
 
-            var mobileNoWithIds = _dbContext.ContractDetails
-                    .GroupBy(a => a.CustomerId)
-                    .Select(r => new
-                    {
-                        CustomerId = r.Key,
-                        MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                    });
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings.Where(a => a.EntryDate >= dateFrom.Date
+                                        && a.EntryDate <= dateTo.Date).Where(a => a.Status != "Cancel") 
+                                        on fol.Id equals bk.FollowupId
+                                   select con
+                                           )
+                                .GroupBy(a => a.CustomerId)
+                                .Select(r => new
+                                {
+                                    CustomerId = r.Key,
+                                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                                });
 
 
             //retrive booking,followup,customer,area
@@ -303,14 +317,27 @@ namespace Infrastructure.Data.Queries
 
         public List<BookingItemDto> GetBookingCancelAndShiftList(DateTime dateFrom, DateTime dateTo, string status)
         {
-            var mobileNoWithIds = _dbContext.ContractDetails
-                    .GroupBy(a => a.CustomerId)
-                    .Select(r => new
-                    {
-                        CustomerId = r.Key,
-                        MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                    });
+            //var mobileNoWithIds = _dbContext.ContractDetails
+            //        .GroupBy(a => a.CustomerId)
+            //        .Select(r => new
+            //        {
+            //            CustomerId = r.Key,
+            //            MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+            //        });
 
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings.Where(a => a.ModifiedDate >= dateFrom.Date
+                                        && a.ModifiedDate <= dateTo.Date).Where(a => a.Status == status)
+                                        on fol.Id equals bk.FollowupId
+                                   select con
+                                           )
+                                .GroupBy(a => a.CustomerId)
+                                .Select(r => new
+                                {
+                                    CustomerId = r.Key,
+                                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                                });
 
             //retrive booking,followup,customer,area
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.ModifiedDate.Date >= dateFrom.Date
@@ -429,16 +456,16 @@ namespace Infrastructure.Data.Queries
         public IEnumerable<CustomerCountDto> GetStatusWiseFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo)
         {
             var statusResult = from cus in _dbContext.Customers
-                         join fol in _dbContext.Followups
-                                   .Where(a => a.ModifiedDate.Date >= dateFrom.Date
-                                   && a.ModifiedDate.Date <= dateTo)
-                         on cus.Id equals fol.CustomerId
-                         where fol.ModifiedDate.Date != cus.ModifiedDate.Date
-                         orderby fol.FollowupCallDate ascending
-                         select new
-                         {
-                             Status = fol.Status
-                         };
+                               join fol in _dbContext.Followups
+                                         .Where(a => a.ModifiedDate.Date >= dateFrom.Date
+                                         && a.ModifiedDate.Date <= dateTo)
+                               on cus.Id equals fol.CustomerId
+                               where fol.ModifiedDate.Date != cus.ModifiedDate.Date
+                               orderby fol.FollowupCallDate ascending
+                               select new
+                               {
+                                   Status = fol.Status
+                               };
 
             var statusWiseResult = from stat in statusResult
                                    group stat by new { stat.Status } into g

@@ -18,6 +18,8 @@ namespace Web.ViewModels
         [DataType(DataType.Date)]
         public DateTime NextFollowupDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public bool IsFollowupDone { get; set; } = false;
+        [Required]
+        [Range(1, int.MaxValue,ErrorMessage ="Please Select Contact")]
         public int ContactId { get; set; }//FK
         public IEnumerable<ContactBy>? ContactList { get; set; }
 

@@ -6,6 +6,7 @@ using Infrastructure.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NLog.Extensions.Logging;
+using NuGet.Protocol;
 
 namespace Web.Configuration
 {
@@ -54,6 +55,7 @@ namespace Web.Configuration
             services.AddScoped<IBuildingDetailsService, BuildingDetailsService>();
             services.AddScoped<IDraftCustomerService, DraftCustomerService>();
             services.AddScoped<IDashboardQueryService, DashboardQueryService>();
+            services.AddScoped<IDraftCustomerQueryService, DraftCustomerQueryService>();
 
             return services;
         }

@@ -1,11 +1,79 @@
 ﻿@using ApplicationCore.Entities
-@model Web.ViewModels.SearchCustomerVM
 
 @{
     ViewData["Title"] = "Search Customer";
 }
 
-<div class="row">
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-7">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Search Customer </h3>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="Mobile" class="form-label">Mobile</label>
+                    <input id="Mobile" name="Mobile" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="Name" class="form-label">Customer Name</label>
+                    <input id="Name" name="Name" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
+                <div>
+                    <label for="Address" class="form-label">Address</label>
+                    <input id="Address" name="Address" class="form-control" />
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 col-sm-12 col-12">
+                <div class="form-group d-grid gap-2 d-md-block">
+                    <br />
+                    <button type="button" id="SearchCustomer" class="btn btn-success">Search</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table id="customerTable" class="table table-bordered nowrap cell-border compact hover stripe dataTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>
+                            Customer Name
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Area Name
+                        </th>
+                        <th>
+                            Sub Area
+                        </th>
+                        <th>
+                            Employee Name
+                        </th>
+                        <th>
+                            Mobile No
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@* <div class="row">
     <div class="col-12">
         <div class="box box-success">
             <div class="box-header" style="border-bottom:1px solid black">
@@ -14,66 +82,107 @@
             <div class="box-body">
                 <form asp-action="Index">
                     <div class="form-group row">
-                        <label class="col-1 control-label">Client Name</label>
+                        <label class="col-2 control-label">Client Name</label>
                         <div class="col-3">
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input id="Name" name="Name" class="form-control" />
                         </div>
-                        <label asp-for="Address" class="control-label col-1">Address</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-2">Address</label>
                         <div class="col-3">
-                            <input asp-for="Address" class="form-control" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
+                            <input id="Address" name="Address" class="form-control" />
                         </div>
-                        <label class="col-1 control-label">Mobile No</label>
-                        <div class="col-2">
-                            <input asp-for="MobileNo" class="form-control" />
-                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group row">
+                        <label class="control-label col-2">Mobile</label>
+                        <div class="col-3">
+                            <input id="Mobile" name="Mobile" class="form-control" />
                         </div>
+                    </div>
+                    <div class="form-group row">
                         <input type="button" value="Search" id="SearchCustomer" class="btn btn-primary" />
+                    </div>
+                    <div class="form-group row">
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+ *@
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#MobileNo').autocomplete({
-                minLength: 7,
-                focus: UpdateTextBox,
-                select: function(event, ui) {
-                    window.location.href = "/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId;
-                },
-                source: function(request, response) {
-                    $.ajax({
-                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
-                        method: 'get',
-                        data: { term: request.term },
-                        dataType: 'json',
-                        success: function(data) {
-                            response(data);
+        $(document).ready(function () {
+            $('#SearchCustomer').click(function () {
+                $('#customerTable').DataTable(
+                    {
+                        "bDestroy": true,
+                        "processing": true,
+                        "responsive": true,
+                        scrollX: true,
+                        lengthMenu: [
+                            [10, 25, 50, -1],
+                            [10, 25, 50, 'All']
+                        ],
+                        "dom": '<"row view-filter"<"col-sm-12"<"pull-left"lr><"pull-right"f><"clearfix">>>t<"pull-left"p><"text-right"i>',
+                        "ajax": {
+                            url: '@Url.Action("GetAllCustomersBySearchString", "Customer")',
+                            "type": "get",
+                            datatype: "json",
+                            "data": function (d) {
+                                d.customerName = $('#Name').val();
+                                d.address = $('#Address').val();
+                                d.mobileNo = $('#Mobile').val();
+
+                            }
                         },
-                        error: function(err) {
-                            console.log(err);
-                        }
-                    })
-                }
-            }).autocomplete('instance')._renderItem = function(ul, item) {
-                return $('<li>')
-                    .append('<a>' + item.mobileNo + '-'+ '</a>')
-                    .append('<a>' + item.customerName + '-' + '</a>')
-                    .append('<a>' + item.designationName  + '</a>')
-                    .appendTo(ul);
-            }
-            function UpdateTextBox(event, ui) {
-                $(this).val(ui.item.mobileNo);
-                return false;
-            };
+
+                        aoColumns: [
+                            {
+                                "sName": "customerName",
+                                "mData": "customerName",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "address",
+                                "mData": "address",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "areaName",
+                                "mData": "areaName",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "subAreaName",
+                                "mData": "subAreaName",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "employeeName",
+                                "mData": "employeeName",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "mobileNo",
+                                "mData": "mobileNo",
+                                "searchable": true
+                            },
+                            {
+                                "sName": "customerId",
+                                "mData": "customerId",
+                                "searchable": false,
+                                "mRender": function (data, type, full) {
+                                    return '<a class="view" target="_blank" href="/Followup/GetFollowupsByCustId?customerId=' + data + '">Details</a>';
+                                }
+                            }
+                        ]
+                    });
+            });
         });
     </script>
 }

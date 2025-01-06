@@ -20,13 +20,27 @@ namespace Infrastructure.Data.Queries
 
         public List<ServiceFeedbackDto> GetBookingList(DateTime dateFrom, DateTime dateTo)
         {
-            var mobileNoWithIds = _dbContext.ContractDetails
-                            .GroupBy(a => a.CustomerId)
-                            .Select(r => new
-                            {
-                                CustomerId = r.Key,
-                                MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                            });
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
+                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
+                                        on fol.Id equals bk.FollowupId
+                                   select con
+                               )
+                    .GroupBy(a => a.CustomerId)
+                    .Select(r => new
+                    {
+                        CustomerId = r.Key,
+                        MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                    });
+
+            //var mobileNoWithIds = _dbContext.ContractDetails
+            //                .GroupBy(a => a.CustomerId)
+            //                .Select(r => new
+            //                {
+            //                    CustomerId = r.Key,
+            //                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+            //                });
 
             var bookingInfo = from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
                                     && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
@@ -221,13 +235,29 @@ namespace Infrastructure.Data.Queries
 
         public List<ComplainFeedbackDto> GetDailyComplainList(DateTime dateFrom, DateTime dateTo)
         {
-            var mobileNoWithIds = _dbContext.ContractDetails
-                            .GroupBy(a => a.CustomerId)
-                            .Select(r => new
-                            {
-                                CustomerId = r.Key,
-                                MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                            });
+            //var mobileNoWithIds = _dbContext.ContractDetails
+            //                .GroupBy(a => a.CustomerId)
+            //                .Select(r => new
+            //                {
+            //                    CustomerId = r.Key,
+            //                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+            //                });
+
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings on fol.Id equals bk.FollowupId
+                                   join comp in _dbContext.Complains.Where(a => a.ComplainDate >= dateFrom.Date
+                                        && a.ComplainDate <= dateTo.Date).Where(a => a.IsGivenFeedback == false)
+                                        on bk.Id equals comp.BookingId
+                                   select con
+                                )
+                                .GroupBy(a => a.CustomerId)
+                                .Select(r => new
+                                {
+                                    CustomerId = r.Key,
+                                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                                });
+
 
             var complainInfo = from comp in _dbContext.Complains.Where(a => a.ComplainDate >= dateFrom.Date
                                         && a.ComplainDate <= dateTo.Date).Where(a => a.IsGivenFeedback == false)

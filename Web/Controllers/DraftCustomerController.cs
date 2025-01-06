@@ -12,13 +12,15 @@ namespace Web.Controllers
     {
         private readonly IDraftCustomerService _draftCustomerService;
         private readonly IContactByService _contactByService;
+        private readonly IDraftCustomerQueryService _draftCustomerQueryService;
 
         public DraftCustomerController(IDraftCustomerService draftCustomerService,
-            IContactByService contactByService)
+            IContactByService contactByService,
+            IDraftCustomerQueryService draftCustomerQueryService)
         {
             this._draftCustomerService = draftCustomerService;
             this._contactByService = contactByService;
-
+            this._draftCustomerQueryService = draftCustomerQueryService;
         }
 
         [HttpGet]
@@ -107,9 +109,11 @@ namespace Web.Controllers
         [HttpGet]
         public JsonResult GetDailyDraftCustomerFollowupListByDate(DateTime dateFrom, DateTime dateTo)
         {
-            var data = _draftCustomerService.Find(a => a.NextFollowupDate.Date >= dateFrom.Date
-                                   && a.NextFollowupDate.Date <= dateTo
-                                   && a.IsFollowupDone == false);
+            //var data = _draftCustomerService.Find(a => a.NextFollowupDate.Date >= dateFrom.Date
+            //                       && a.NextFollowupDate.Date <= dateTo
+            //                       && a.IsFollowupDone == false);
+            
+            var data= _draftCustomerQueryService.GetDraftCustomer(dateFrom, dateTo);    
             var jsonResult = Json(new { data });
             //return Json(data);
 

@@ -18,8 +18,8 @@ namespace ApplicationCore.Entities
         public bool IsFollowupDone { get; set; } = false;
 
         [ForeignKey("ContactBy")]
-        public int ContactId { get; set; }//FK
-        public ContactBy ContactBy { get; set; }
+        public int ContactId { get; set; } = 0;//FK
+        public ContactBy? ContactBy { get; set; }
 
     }
 }

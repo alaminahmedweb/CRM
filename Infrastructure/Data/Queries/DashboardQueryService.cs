@@ -18,14 +18,14 @@ namespace Infrastructure.Data.Queries
         }
         public DashboardDto GetDashboardData()
         {
-            
+
 
             DashboardDto dashboardDto = new DashboardDto();
             DateTime currentDateFrom = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time"));
 
             dashboardDto.TotalCustomer = _dbContext.Customers.Count().ToString();
 
-            dashboardDto.TodayNewCustomer = _dbContext.Customers.Where(a=>a.ModifiedDate.Date==currentDateFrom.Date).Count().ToString();
+            dashboardDto.TodayNewCustomer = _dbContext.Customers.Where(a => a.ModifiedDate.Date == currentDateFrom.Date).Count().ToString();
 
             dashboardDto.TodayTotalFollowupQty = (from fol in _dbContext.Followups
                                 .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.Status != "Inactive")
@@ -41,7 +41,7 @@ namespace Infrastructure.Data.Queries
 
             dashboardDto.TodayBookingQty = (from bk in _dbContext.Bookings
                     .Where(a => a.EntryDate.Date == currentDateFrom.Date).Where(a => a.Status != "Cancel")
-                                                select bk).Count().ToString();
+                                            select bk).Count().ToString();
 
             dashboardDto.TodayBookingAmount =
                         (from bk in _dbContext.Bookings
@@ -54,7 +54,7 @@ namespace Infrastructure.Data.Queries
             var customerCount = from cus in _dbContext.Customers
                                 join con in _dbContext.Contacts
                                 on cus.ContactId equals con.Id
-                                where cus.ModifiedDate.Date == currentDateFrom.Date 
+                                where cus.ModifiedDate.Date == currentDateFrom.Date
                                 group cus by con.Name into g
                                 select new
                                 {
@@ -87,8 +87,37 @@ namespace Infrastructure.Data.Queries
                          select fol.AgreeAmount).Sum().ToString();
 
             dashboardDto.ThisMonthComplainPendingQty = (from compl in _dbContext.Complains
-                    .Where(a => a.ComplainDate.Date >= startDate.Date && a.ComplainDate <= endDate.Date).Where(a=>a.IsGivenFeedback==false)
-                                                select compl).Count().ToString();
+                    .Where(a => a.ComplainDate.Date >= startDate.Date && a.ComplainDate <= endDate.Date).Where(a => a.IsGivenFeedback == false)
+                                                        select compl).Count().ToString();
+
+
+            var query = _dbContext.Bookings
+                .Where(b => b.BookingDate.Year == DateTime.Now.Date.Year)
+                .GroupBy(b => new
+                {
+                    MonthNumber = b.BookingDate.Month
+                })
+                .OrderBy(g => g.Key.MonthNumber)
+                .Select(g => new
+                {
+                    BookingMonthNo = g.Key.MonthNumber,
+                    BookingMonthName = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(g.Key.MonthNumber),
+                    TotalBookings = g.Count()
+                })
+                .ToList();
+
+
+            dashboardDto.PieLabels = new List<string>();//new string[11];
+            dashboardDto.PieData = new List<string>();// new string[11];
+
+            int i = 0;
+
+            foreach (var item in query)
+            {
+                dashboardDto.PieLabels.Add(item.BookingMonthName);
+                dashboardDto.PieData.Add(item.TotalBookings.ToString());
+                i++;
+            }
 
             return dashboardDto;
         }

@@ -14,5 +14,6 @@ namespace Web.ViewModels
 
         public int EmployeeId { get; set; }
         public int ContactId { get; set; }
+        public int CategoryId { get; set; } 
     }
 }

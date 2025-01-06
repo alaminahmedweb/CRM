@@ -154,9 +154,9 @@
 @section scripts
     {
     <script>
-        var xValues = ["January", "February", "March", "April", "May"];
-        var yValues = [55, 49, 44, 24, 15];
-        var barColors = ["red", "green", "blue", "orange", "brown"];
+        var xValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.PieLabels)); //["January", "February", "March", "April", "May","June","July","August","September","October","November","December"];
+        var yValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.PieData));//[55, 49, 44, 24, 15, 55, 49, 44, 24, 15, 20, 30];
+        var barColors = ["red", "green", "blue", "orange", "brown","red", "green", "blue", "orange", "brown","red","green"];
 
         new Chart("myChart", {
             type: "bar",
@@ -171,7 +171,7 @@
                 legend: { display: false },
                 title: {
                     display: true,
-                    text: "Monthly Customer List"
+                    text: "Monthly Booking Count"
                 }
             }
         });

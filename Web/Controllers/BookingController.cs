@@ -145,6 +145,7 @@ namespace Web.Controllers
             Followup fol =await _followupService.GetByIdAsync(followupId);
             UpdateBookingAmountVM updateBookingAmountVM = new UpdateBookingAmountVM();
             updateBookingAmountVM.AgreeAmount = fol.AgreeAmount;
+            updateBookingAmountVM.Remarks = fol.Remarks;
             return View(updateBookingAmountVM);
         }
 
@@ -157,6 +158,8 @@ namespace Web.Controllers
                 var entityToUpdate = await _followupService.GetByIdAsync(model.FollowupId);
                 entityToUpdate.AgreeAmount = model.AgreeAmount;
                 entityToUpdate.ModifiedBy = model.ModifiedBy;
+                entityToUpdate.Remarks = model.Remarks;
+
                 bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
                 if (isSuccess)
                 {

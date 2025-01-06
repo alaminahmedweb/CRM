@@ -36,7 +36,7 @@ namespace Infrastructure.Data.Queries
                                 TeamName = tm.Name,
                                 ShiftId = sft.Id,
                                 ShiftName = sft.Name,
-                                TeamLeaderName = tm.TeamLeaderName,
+                                                                                                                                                                                                                                                                                                                                                                                                 TeamLeaderName = tm.TeamLeaderName,
                             }).ToList();
 
             var teamShiftAndDate = (from tm in teamShift
@@ -51,13 +51,27 @@ namespace Infrastructure.Data.Queries
                                        BookingDate = dt
                                    });
 
-            var mobileNoWithIds = _dbContext.ContractDetails
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
+                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
+                                        on fol.Id equals bk.FollowupId
+                                   select con
+                               )
                     .GroupBy(a => a.CustomerId)
                     .Select(r => new
                     {
                         CustomerId = r.Key,
                         MobileNo = string.Join(",", r.Select(a => a.MobileNo))
                     });
+
+            //var mobileNoWithIds = _dbContext.ContractDetails
+            //        .GroupBy(a => a.CustomerId)
+            //        .Select(r => new
+            //        {
+            //            CustomerId = r.Key,
+            //            MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+            //        });
 
 
             //retrive booking,followup,customer,area

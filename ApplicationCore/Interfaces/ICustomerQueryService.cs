@@ -13,5 +13,7 @@ namespace ApplicationCore.Interfaces
         IEnumerable<AllCustomerListDto> GetAllCustomers();
         IEnumerable<AllCustomerListDto> GetAllCustomersByMobileNo(string term);
         CustomerDto GetCustomerById(int customerId);
+        IEnumerable<AllCustomerListDto> GetAllCustomersBySearchString(string customerName,
+            string address, string mobileNo);
     }
 }

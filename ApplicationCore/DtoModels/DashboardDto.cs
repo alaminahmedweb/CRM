@@ -24,5 +24,9 @@ namespace ApplicationCore.DtoModels
         public string ThisMonthBookingAmount { get; set; } = "";
         public string ThisMonthComplainPendingQty { get; set; } = "";
         public List<CustomerCountDto> TodayContactWiseCustomerList { get;set; }
+
+        public List<string> PieLabels { get; set; }
+        public List<string> PieData { get; set; }   
+
     }
 }
