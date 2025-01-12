@@ -34,9 +34,9 @@ namespace Web.Controllers
             return View();
         }
 
-        public JsonResult GetAllCustomersByDate(DateTime dateFrom,DateTime dateTo,int employeeId,int contactId)
+        public JsonResult GetAllCustomersByDate(DateTime dateFrom,DateTime dateTo,int employeeId,int contactId, int categoryId)
         {
-            return Json(_misReportQueryService.GetAllCustomersByDate(dateFrom, dateTo, employeeId,contactId));
+            return Json(_misReportQueryService.GetAllCustomersByDate(dateFrom, dateTo, employeeId,contactId,categoryId));
         }
         public JsonResult GetAllFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo)
         {
@@ -175,7 +175,7 @@ namespace Web.Controllers
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "New Customer List";
             ViewBag.PageSize = "Legal";
-            var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId,model.ContactId);
+            var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId,model.ContactId,model.CategoryId);
             return View(data);
         }
         public bool CheckUserDateSelectAuthority(DateTime DateFrom, DateTime DateTo)

@@ -19,7 +19,7 @@ namespace Infrastructure.Data.Queries
             this._dbContext = appDbContext;
         }
 
-        public IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo, int employeeId, int contactId)
+        public IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo, int employeeId, int contactId,int categoryId)
         {
             var statusResult = _dbContext.Followups.Where(a => a.ModifiedDate.Date >= dateFrom && a.ModifiedDate.Date <= dateTo)
                             .Select(d => new
@@ -52,6 +52,11 @@ namespace Infrastructure.Data.Queries
             if (contactId != -1)
             {
                 customerList = _dbContext.Customers.Where(a => a.ContactId == contactId).ToList();
+            }
+
+            if (categoryId!= -1)
+            {
+                customerList = _dbContext.Customers.Where(a => a.CategoryId== categoryId).ToList();
             }
 
             var result = (from cus in customerList

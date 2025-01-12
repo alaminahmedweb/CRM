@@ -186,13 +186,14 @@
                 var dateTo = $('#DateTo').val();
                 var mpoId = $('#EmployeeId').val();
                 var contactid = $('#ContactId').val();
+                var categoryId = $('#CategoryId').val();
                 $.ajax({
                     type: "GET",
                     url: "@Url.Action("GetSuccessData","MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
-                        window.location.href = "/MISReport/ShowNewCustomerList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "&employeeId=" + mpoId + "&contactid="+ contactid +"";
+                        window.location.href = "/MISReport/ShowNewCustomerList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "&employeeId=" + mpoId + "&contactid="+ contactid +"&categoryId="+ categoryId + "";
                     },
                     error: function (xhr, ajaxOptions, thrownError) {
                         // handle error

@@ -9,7 +9,7 @@ namespace ApplicationCore.Interfaces
 {
     public interface IMISReportQueryService
     {
-        IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo,int employeeId,int contactId);
+        IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo,int employeeId,int contactId,int categoryId);
         IEnumerable<CustomerDto> GetAllFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetEntryDateWiseBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetBookingCancelAndShiftList(DateTime dateFrom, DateTime dateTo,string status);

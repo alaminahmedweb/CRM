@@ -3,6 +3,118 @@
   "WorkspaceRootPath": "D:\\CRM_By_Zahid_21_06_2023\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\misreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\misreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\misreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\misreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\controllers\\misreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\controllers\\misreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|d:\\crm_by_zahid_21_06_2023\\applicationcore\\interfaces\\imisreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\interfaces\\imisreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\misreport\\shownewcustomerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\misreport\\shownewcustomerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\feedbackqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\feedbackqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\adminlte.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\main.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\main.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\cancelbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\cancelbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\shiftbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\shiftbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customer\\updatecustomerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customer\\updatecustomerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\addnewfollowup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\addnewfollowup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customerfollowup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customerfollowup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\servicefeedback\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\servicefeedback\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\getfollowupsbycustid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\getfollowupsbycustid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\servicefeedback\\dailycomplainlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\servicefeedback\\dailycomplainlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\showbookinginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\showbookinginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\area\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\area\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\dashboardqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\dashboardqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,32 +135,8 @@
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\misreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\misreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\misreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\misreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\controllers\\misreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\controllers\\misreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\controllers\\customerfollowupcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -71,10 +159,6 @@
       "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\bookingqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\feedbackqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\feedbackqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|d:\\crm_by_zahid_21_06_2023\\infrastructure\\data\\queries\\followupqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D61E4A13-774C-4E54-867C-B5B69231B32F}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\queries\\followupqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -91,10 +175,6 @@
       "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -103,20 +183,12 @@
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\controllers\\draftcustomercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customerfollowup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customerfollowup\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\viewmodels\\updatebookingamountvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\viewmodels\\updatebookingamountvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\updatebookingamount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\updatebookingamount.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\viewmodels\\searchcustomervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -157,10 +229,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\draftcustomer\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\draftcustomer\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|d:\\crm_by_zahid_21_06_2023\\applicationcore\\interfaces\\imisreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\interfaces\\imisreportqueryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|d:\\crm_by_zahid_21_06_2023\\applicationcore\\dtomodels\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -426,10 +494,6 @@
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\report.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\employee\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\employee\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -444,10 +508,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\contactby\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\contactby\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\addnewfollowup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\addnewfollowup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\misreport\\showbookingcancellist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -474,28 +534,12 @@
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\misreport\\statuswisenewcustomerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\misreport\\shownewcustomerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\misreport\\shownewcustomerlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|d:\\crm_by_zahid_21_06_2023\\applicationcore\\interfaces\\ifeedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\interfaces\\ifeedbackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\servicefeedback\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\servicefeedback\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\servicefeedback\\dailycomplainlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\servicefeedback\\dailycomplainlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|d:\\crm_by_zahid_21_06_2023\\applicationcore\\services\\followupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\services\\followupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customer\\updatecustomerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\customer\\updatecustomerdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\customer\\updatecontractdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -530,36 +574,8 @@
       "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\services\\contractdetailsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\followup\\getfollowupsbycustid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\followup\\getfollowupsbycustid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\shiftbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\shiftbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\showbookinginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\showbookinginfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\brand\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\area\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\area\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\booking\\cancelbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\views\\booking\\cancelbooking.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\servicefeedback\\addcomplain.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -618,24 +634,8 @@
       "RelativeMoniker": "D:0:0:{7B0C5E33-3FF7-4CDF-885E-E20DE1C646B8}|ApplicationCore\\ApplicationCore.csproj|solutionrelative:applicationcore\\services\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\frontend\\css\\theme-rtl.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\frontend\\css\\theme-rtl.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\wwwroot\\css\\main.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|solutionrelative:web\\wwwroot\\css\\main.min.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51D39369-6B64-4949-B00A-FAF597F72044}|Web\\Web.csproj|d:\\crm_by_zahid_21_06_2023\\web\\views\\account\\resestpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -714,121 +714,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAAAJwAAABbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-02T14:06:48.576Z",
+              "Title": "IMISReportQueryService.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
+              "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
+              "RelativeToolTip": "ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAjwA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-09-06T16:17:24.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DashboardDto.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\DashboardDto.cs",
-              "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\DashboardDto.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\DashboardDto.cs",
-              "RelativeToolTip": "ApplicationCore\\DtoModels\\DashboardDto.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAgAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-09T18:50:30.608Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\MISReport\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\MISReport\\Index.cshtml",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAswMMAAADNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-08-21T16:42:13.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashboardQueryService.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
-              "ViewState": "AQIAAFoAAAAAAAAAAAAQwGEAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T18:07:39.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABgCAAAAAAAAAAAAAAAAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-19T16:13:47.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Web\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Web\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAIAwwBMAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-06-24T17:50:33.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddFollowupVM.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\AddFollowupVM.cs",
-              "RelativeDocumentMoniker": "Web\\ViewModels\\AddFollowupVM.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\AddFollowupVM.cs",
-              "RelativeToolTip": "Web\\ViewModels\\AddFollowupVM.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAcwCoAAACOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-06T15:19:59.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "MISReportQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\MISReportQueryService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\MISReportQueryService.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\MISReportQueryService.cs",
               "RelativeToolTip": "Infrastructure\\Data\\Queries\\MISReportQueryService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAIAwwBcAAAAMAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAwwDkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-21T17:46:27.292Z"
+              "WhenOpened": "2023-08-21T17:46:27.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DateRangeVM.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DateRangeVM.cs",
-              "RelativeDocumentMoniker": "Web\\ViewModels\\DateRangeVM.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DateRangeVM.cs",
-              "RelativeToolTip": "Web\\ViewModels\\DateRangeVM.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-06T16:02:40.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "MISReportController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\MISReportController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\MISReportController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\MISReportController.cs",
               "RelativeToolTip": "Web\\Controllers\\MISReportController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAowCAAAAAgAAAA",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAAALIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-11T05:37:08.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\appsettings.json",
               "RelativeDocumentMoniker": "Web\\appsettings.json",
@@ -841,19 +778,384 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShowNewCustomerList.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
+              "RelativeToolTip": "Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-31T17:34:58.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FeedbackQueryService.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAIAwwFgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-07-13T14:11:15.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "main.min.css",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\main.min.css",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\css\\main.min.css",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\main.min.css",
+              "RelativeToolTip": "Web\\wwwroot\\css\\main.min.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADBrgEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2023-06-21T17:45:57.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "bootstrap.min.css.map",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+              "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADExAEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2023-06-21T17:44:24.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "bootstrap.css.map",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+              "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAADM1wEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2023-06-21T17:44:23.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CancelBooking.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\CancelBooking.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Booking\\CancelBooking.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\CancelBooking.cshtml",
+              "RelativeToolTip": "Web\\Views\\Booking\\CancelBooking.cshtml",
+              "ViewState": "AQIAAHwBAAAAAAAAAAAAAJEBAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-13T13:55:36.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "adminlte.min.css",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\adminlte.min.css",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\css\\adminlte.min.css",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\adminlte.min.css",
+              "RelativeToolTip": "Web\\wwwroot\\css\\adminlte.min.css",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAYAAAAtwwAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-12T17:02:37.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ShiftBooking.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShiftBooking.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Booking\\ShiftBooking.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShiftBooking.cshtml",
+              "RelativeToolTip": "Web\\Views\\Booking\\ShiftBooking.cshtml",
+              "ViewState": "AQIAACcCAAAAAAAAAIAwwDUCAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-07T09:44:01.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UpdateCustomerDetails.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
+              "RelativeToolTip": "Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
+              "ViewState": "AQIAAI8AAAAAAAAAAIAwwJ0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-13T22:34:13.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Booking\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Booking\\Index.cshtml",
+              "ViewState": "AQIAALYBAAAAAAAAAAAAALYBAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-06T17:53:25.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\Index.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Followup\\Index.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\Index.cshtml",
               "RelativeToolTip": "Web\\Views\\Followup\\Index.cshtml",
-              "ViewState": "AQIAACEBAAAAAAAAAAAswDwBAAAeAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAAAD4AAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-10-17T16:20:51.41Z"
+              "WhenOpened": "2023-10-17T16:20:51.41Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
+              "Title": "AddNewFollowup.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\AddNewFollowup.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Followup\\AddNewFollowup.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\AddNewFollowup.cshtml",
+              "RelativeToolTip": "Web\\Views\\Followup\\AddNewFollowup.cshtml",
+              "ViewState": "AQIAAIYBAAAAAAAAAIAwwJQBAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-03T17:41:53.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\CustomerFollowup\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\CustomerFollowup\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\CustomerFollowup\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\CustomerFollowup\\Index.cshtml",
+              "ViewState": "AQIAAIkAAAAAAAAAAIAwwJcAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-04T16:52:07.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\ServiceFeedback\\Index.cshtml",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAACcAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-08-01T17:24:30.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GetFollowupsByCustId.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
+              "RelativeToolTip": "Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
+              "ViewState": "AQIAAJ8BAAAAAAAAAAAvwK0BAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-23T17:20:54.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Customer\\Index.cshtml",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAACsAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-06T16:32:37.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Web\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Web\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAACoBAAAAAAAAAAAWwDkBAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2023-07-19T17:21:32.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DailyComplainList.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
+              "RelativeToolTip": "Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAACYAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-07T11:40:28.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ShowBookingInfo.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShowBookingInfo.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Booking\\ShowBookingInfo.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShowBookingInfo.cshtml",
+              "RelativeToolTip": "Web\\Views\\Booking\\ShowBookingInfo.cshtml",
+              "ViewState": "AQIAACAAAAAAAAAAAAAvwC4AAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-10T17:54:34.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Category\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Category\\Index.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAvwBUAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-11T18:30:51.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Brand\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Brand\\Index.cshtml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAvwBUAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-11T18:13:06.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Area\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Area\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Area\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Area\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-07-03T15:44:01.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAAAPEAAABoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-12-19T16:13:47.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "DashboardQueryService.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\Queries\\DashboardQueryService.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAQwGEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T18:07:39.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AddFollowupVM.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\AddFollowupVM.cs",
+              "RelativeDocumentMoniker": "Web\\ViewModels\\AddFollowupVM.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\AddFollowupVM.cs",
+              "RelativeToolTip": "Web\\ViewModels\\AddFollowupVM.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAcwCoAAACOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-07-06T15:19:59.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Web\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAIAwwBMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-06-24T17:50:33.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "DashboardDto.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\DashboardDto.cs",
+              "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\DashboardDto.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\DashboardDto.cs",
+              "RelativeToolTip": "ApplicationCore\\DtoModels\\DashboardDto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAIBJwAgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-07-09T18:50:30.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAJUAAAAAAAAAAIBJwJwAAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-08-02T14:06:48.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "DateRangeVM.cs",
+              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DateRangeVM.cs",
+              "RelativeDocumentMoniker": "Web\\ViewModels\\DateRangeVM.cs",
+              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DateRangeVM.cs",
+              "RelativeToolTip": "Web\\ViewModels\\DateRangeVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwBAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-09-06T16:02:40.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Home\\Privacy.cshtml",
@@ -861,35 +1163,25 @@
               "RelativeToolTip": "Web\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-03T05:35:02.609Z"
+              "WhenOpened": "2025-01-03T05:35:02.609Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 34,
               "Title": "CustomerFollowupController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\CustomerFollowupController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\CustomerFollowupController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\CustomerFollowupController.cs",
               "RelativeToolTip": "Web\\Controllers\\CustomerFollowupController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAowEkAAAAeAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAA5wEkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-04T16:51:09.228Z"
+              "WhenOpened": "2023-09-04T16:51:09.228Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\MISReport\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\MISReport\\Index.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAEIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T16:42:13.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 37,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\CustomerController.cs",
@@ -897,35 +1189,25 @@
               "RelativeToolTip": "Web\\Controllers\\CustomerController.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAAowFgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T05:47:25.56Z"
+              "WhenOpened": "2024-07-11T05:47:25.56Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 36,
               "Title": "CustomerQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\CustomerQueryService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\CustomerQueryService.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\CustomerQueryService.cs",
               "RelativeToolTip": "Infrastructure\\Data\\Queries\\CustomerQueryService.cs",
-              "ViewState": "AQIAAAIBAAAAAAAAAAAAAAYBAAARAAAA",
+              "ViewState": "AQIAAP8AAAAAAAAAAIBJwAYBAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T05:37:08.238Z"
+              "WhenOpened": "2024-07-11T05:37:08.238Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FeedbackQueryService.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
-              "RelativeToolTip": "Infrastructure\\Data\\Queries\\FeedbackQueryService.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAAAewPUAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-13T14:11:15.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 39,
               "Title": "FollowupQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\FollowupQueryService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\FollowupQueryService.cs",
@@ -933,11 +1215,12 @@
               "RelativeToolTip": "Infrastructure\\Data\\Queries\\FollowupQueryService.cs",
               "ViewState": "AQIAANABAAAAAAAAAAAwwN4BAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-10-04T14:59:56.46Z"
+              "WhenOpened": "2023-10-04T14:59:56.46Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 38,
               "Title": "BookingQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\BookingQueryService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\BookingQueryService.cs",
@@ -945,11 +1228,12 @@
               "RelativeToolTip": "Infrastructure\\Data\\Queries\\BookingQueryService.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAwwDUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T19:35:23.115Z"
+              "WhenOpened": "2024-07-22T19:35:23.115Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 40,
               "Title": "FollowupController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\FollowupController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\FollowupController.cs",
@@ -957,11 +1241,12 @@
               "RelativeToolTip": "Web\\Controllers\\FollowupController.cs",
               "ViewState": "AQIAAGkAAAAAAAAAAAAWwHgAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-22T17:32:15.378Z"
+              "WhenOpened": "2023-08-22T17:32:15.378Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 41,
               "Title": "DraftCustomerQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\Queries\\DraftCustomerQueryService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\Queries\\DraftCustomerQueryService.cs",
@@ -969,11 +1254,12 @@
               "RelativeToolTip": "Infrastructure\\Data\\Queries\\DraftCustomerQueryService.cs",
               "ViewState": "AQIAABgAAAAAAAAAAAAwwCYAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T16:33:55.148Z"
+              "WhenOpened": "2024-07-04T16:33:55.148Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 42,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\Customer.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\Customer.cs",
@@ -981,48 +1267,25 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\Customer.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAQwB0AAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:34:29.96Z"
+              "WhenOpened": "2024-07-01T17:34:29.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 44,
               "Title": "DraftCustomerController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\DraftCustomerController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\DraftCustomerController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\DraftCustomerController.cs",
               "RelativeToolTip": "Web\\Controllers\\DraftCustomerController.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAIBJwHMAAAAMAAAA",
+              "ViewState": "AQIAAGYAAAAAAAAAAIBZwHMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T16:03:01.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\CustomerFollowup\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\CustomerFollowup\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\CustomerFollowup\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\CustomerFollowup\\Index.cshtml",
-              "ViewState": "AQIAAEMBAAAAAAAAAAAowFwBAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-04T16:52:07.239Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Customer\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Customer\\Index.cshtml",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAAAJQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T16:32:37.196Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 43,
               "Title": "BookingController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\BookingController.cs",
@@ -1035,19 +1298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Booking\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Booking\\Index.cshtml",
-              "ViewState": "AQIAAFUBAAAAAAAAAIBJwGQBAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:53:25.7Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 45,
               "Title": "UpdateBookingAmountVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\UpdateBookingAmountVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\UpdateBookingAmountVM.cs",
@@ -1055,23 +1306,25 @@
               "RelativeToolTip": "Web\\ViewModels\\UpdateBookingAmountVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:03:43.624Z"
+              "WhenOpened": "2023-12-19T16:03:43.624Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 46,
               "Title": "UpdateBookingAmount.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\UpdateBookingAmount.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Booking\\UpdateBookingAmount.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\UpdateBookingAmount.cshtml",
               "RelativeToolTip": "Web\\Views\\Booking\\UpdateBookingAmount.cshtml",
-              "ViewState": "AQIAABgAAAAAAAAAAIBJwCgAAAA4AAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAIBZwCgAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-14T18:48:22.901Z"
+              "WhenOpened": "2023-07-14T18:48:22.901Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 47,
               "Title": "SearchCustomerVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\SearchCustomerVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\SearchCustomerVM.cs",
@@ -1079,11 +1332,12 @@
               "RelativeToolTip": "Web\\ViewModels\\SearchCustomerVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:03:40.203Z"
+              "WhenOpened": "2023-12-19T16:03:40.203Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 48,
               "Title": "DraftCustomerVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DraftCustomerVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\DraftCustomerVM.cs",
@@ -1091,11 +1345,12 @@
               "RelativeToolTip": "Web\\ViewModels\\DraftCustomerVM.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAxwBUAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:54:25.906Z"
+              "WhenOpened": "2024-07-01T17:54:25.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 51,
               "Title": "ComplainRegisterVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\ComplainRegisterVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\ComplainRegisterVM.cs",
@@ -1103,11 +1358,12 @@
               "RelativeToolTip": "Web\\ViewModels\\ComplainRegisterVM.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAxwBsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:01:17.866Z"
+              "WhenOpened": "2023-12-19T16:01:17.866Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 53,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\DraftCustomer\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\DraftCustomer\\Create.cshtml",
@@ -1115,11 +1371,12 @@
               "RelativeToolTip": "Web\\Views\\DraftCustomer\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-07T12:20:06.855Z"
+              "WhenOpened": "2023-07-07T12:20:06.855Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 50,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\SubArea\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\SubArea\\Create.cshtml",
@@ -1127,11 +1384,12 @@
               "RelativeToolTip": "Web\\Views\\SubArea\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-04T16:57:09.79Z"
+              "WhenOpened": "2024-07-04T16:57:09.79Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 49,
               "Title": "SubArea.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\SubArea.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\SubArea.cs",
@@ -1139,11 +1397,12 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\SubArea.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBJwAsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T16:57:55.934Z"
+              "WhenOpened": "2024-07-04T16:57:55.934Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 55,
               "Title": "DraftCustomer.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\DraftCustomer.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\DraftCustomer.cs",
@@ -1151,23 +1410,12 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\DraftCustomer.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwBAAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T17:11:24.587Z"
+              "WhenOpened": "2024-07-02T17:11:24.587Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IMISReportQueryService.cs",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
-              "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
-              "RelativeToolTip": "ApplicationCore\\Interfaces\\IMISReportQueryService.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAjwAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-06T16:17:24.465Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 54,
               "Title": "CustomerFollowupVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\CustomerFollowupVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\CustomerFollowupVM.cs",
@@ -1175,11 +1423,12 @@
               "RelativeToolTip": "Web\\ViewModels\\CustomerFollowupVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAEBVwAUAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-04T16:48:24.349Z"
+              "WhenOpened": "2024-07-04T16:48:24.349Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 52,
               "Title": "Infrastructure.csproj",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Infrastructure.csproj",
               "RelativeDocumentMoniker": "Infrastructure\\Infrastructure.csproj",
@@ -1187,7 +1436,8 @@
               "RelativeToolTip": "Infrastructure\\Infrastructure.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2023-08-22T17:40:29.549Z"
+              "WhenOpened": "2023-08-22T17:40:29.549Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1199,11 +1449,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\DraftCustomerDto.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAQwBQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T05:36:54.357Z"
+              "WhenOpened": "2024-07-11T05:36:54.357Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 56,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\DraftCustomer\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\DraftCustomer\\Update.cshtml",
@@ -1211,11 +1462,12 @@
               "RelativeToolTip": "Web\\Views\\DraftCustomer\\Update.cshtml",
               "ViewState": "AQIAABkAAAAAAAAAAAAwwCwAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-02T17:38:24.118Z"
+              "WhenOpened": "2024-07-02T17:38:24.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 61,
               "Title": "ServiceFeedback.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ServiceFeedback.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\ServiceFeedback.cs",
@@ -1223,11 +1475,12 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\ServiceFeedback.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:35:11.583Z"
+              "WhenOpened": "2024-07-01T17:35:11.583Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 57,
               "Title": "CustomerDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\CustomerDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\CustomerDto.cs",
@@ -1235,11 +1488,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\CustomerDto.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAqwCsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-10T17:33:58.734Z"
+              "WhenOpened": "2023-07-10T17:33:58.734Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 58,
               "Title": "ContactBy.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ContactBy.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\ContactBy.cs",
@@ -1247,23 +1501,25 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\ContactBy.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:34:53.662Z"
+              "WhenOpened": "2024-07-01T17:34:53.662Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 60,
               "Title": "ComplainRegister.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ComplainRegister.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\ComplainRegister.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ComplainRegister.cs",
               "RelativeToolTip": "ApplicationCore\\Entities\\ComplainRegister.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAIBZwAAAAAAAAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAACBjwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:37:46.766Z"
+              "WhenOpened": "2024-07-01T17:37:46.766Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 59,
               "Title": "ComplainFeedback.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ComplainFeedback.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\ComplainFeedback.cs",
@@ -1271,7 +1527,8 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\ComplainFeedback.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAQwBMAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:38:00.979Z"
+              "WhenOpened": "2024-07-01T17:38:00.979Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -1283,11 +1540,12 @@
               "RelativeToolTip": "Infrastructure\\Migrations\\20240701174427_int.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-02T17:02:57.153Z"
+              "WhenOpened": "2024-07-02T17:02:57.153Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 63,
               "Title": "ContractDetails.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\ContractDetails.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\ContractDetails.cs",
@@ -1295,23 +1553,25 @@
               "RelativeToolTip": "ApplicationCore\\Entities\\ContractDetails.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-01T17:33:48.212Z"
+              "WhenOpened": "2024-07-01T17:33:48.212Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 62,
               "Title": "Followup.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\Followup.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Entities\\Followup.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Entities\\Followup.cs",
               "RelativeToolTip": "ApplicationCore\\Entities\\Followup.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAIBZwAsAAAAFAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAACBjwAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:44.055Z"
+              "WhenOpened": "2023-09-23T16:48:44.055Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 66,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Account\\Login.cshtml",
@@ -1319,11 +1579,12 @@
               "RelativeToolTip": "Web\\Views\\Account\\Login.cshtml",
               "ViewState": "AQIAAGUAAAAAAAAAAAAswHoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-22T05:32:55.49Z"
+              "WhenOpened": "2023-12-22T05:32:55.49Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 64,
               "Title": "ErrorController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\ErrorController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\ErrorController.cs",
@@ -1331,11 +1592,12 @@
               "RelativeToolTip": "Web\\Controllers\\ErrorController.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAcwBcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-01-20T17:19:35.808Z"
+              "WhenOpened": "2024-01-20T17:19:35.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 65,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\AppDbContext.cs",
@@ -1343,47 +1605,51 @@
               "RelativeToolTip": "Infrastructure\\Data\\AppDbContext.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAwwBcAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:23:56.85Z"
+              "WhenOpened": "2023-12-12T08:23:56.85Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 67,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\AccountController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Web\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAIBZwFkAAAAYAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAACBjwFkAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T07:43:09.186Z"
+              "WhenOpened": "2023-12-19T07:43:09.186Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 68,
               "Title": "AdministrationController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AdministrationController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\AdministrationController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AdministrationController.cs",
               "RelativeToolTip": "Web\\Controllers\\AdministrationController.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAIBZwCoAAAAwAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAACBjwCoAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T07:43:33.454Z"
+              "WhenOpened": "2023-12-19T07:43:33.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 69,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Program.cs",
               "RelativeDocumentMoniker": "Web\\Program.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Program.cs",
               "RelativeToolTip": "Web\\Program.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAIBZwBsAAAAaAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAACBjwBsAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-09T17:27:54.088Z"
+              "WhenOpened": "2023-08-09T17:27:54.088Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 70,
               "Title": "Web.csproj",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Web.csproj",
               "RelativeDocumentMoniker": "Web\\Web.csproj",
@@ -1391,11 +1657,12 @@
               "RelativeToolTip": "Web\\Web.csproj",
               "ViewState": "AQIAAA4AAAAAAAAAAAAswBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2023-07-05T11:42:16.587Z"
+              "WhenOpened": "2023-07-05T11:42:16.587Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 76,
               "Title": "IUnitOfWok.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IUnitOfWok.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IUnitOfWok.cs",
@@ -1403,23 +1670,25 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IUnitOfWok.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T10:31:28.108Z"
+              "WhenOpened": "2023-12-27T10:31:28.108Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 72,
               "Title": "AreaController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AreaController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\AreaController.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\AreaController.cs",
               "RelativeToolTip": "Web\\Controllers\\AreaController.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAIBZwEQAAAARAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAMBkwEQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:16:36.992Z"
+              "WhenOpened": "2023-12-19T16:16:36.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 73,
               "Title": "AddComplainFeebackService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\AddComplainFeebackService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\AddComplainFeebackService.cs",
@@ -1427,11 +1696,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\AddComplainFeebackService.cs",
               "ViewState": "AQIAADcAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T12:15:57.481Z"
+              "WhenOpened": "2023-12-27T12:15:57.481Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 71,
               "Title": "AreaService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\AreaService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\AreaService.cs",
@@ -1439,11 +1709,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\AreaService.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAwwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T12:17:00.78Z"
+              "WhenOpened": "2023-12-27T12:17:00.78Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 77,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IRepository.cs",
@@ -1451,11 +1722,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBZwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-27T10:26:36.551Z"
+              "WhenOpened": "2023-12-27T10:26:36.551Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 78,
               "Title": "AppIdentityDbContextSeed.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Identity\\AppIdentityDbContextSeed.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Identity\\AppIdentityDbContextSeed.cs",
@@ -1463,11 +1735,12 @@
               "RelativeToolTip": "Infrastructure\\Identity\\AppIdentityDbContextSeed.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAmwDIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-25T17:39:04.121Z"
+              "WhenOpened": "2023-12-25T17:39:04.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 75,
               "Title": "EFRepository.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\EFRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\EFRepository.cs",
@@ -1475,11 +1748,12 @@
               "RelativeToolTip": "Infrastructure\\Data\\EFRepository.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAmwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:23:59.494Z"
+              "WhenOpened": "2023-12-12T08:23:59.494Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 74,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Data\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\UnitOfWork.cs",
@@ -1487,11 +1761,12 @@
               "RelativeToolTip": "Infrastructure\\Data\\UnitOfWork.cs",
               "ViewState": "AQIAABQAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:24:42.234Z"
+              "WhenOpened": "2023-12-12T08:24:42.234Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 79,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Identity\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Identity\\ApplicationUser.cs",
@@ -1499,11 +1774,12 @@
               "RelativeToolTip": "Infrastructure\\Identity\\ApplicationUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:25:48.629Z"
+              "WhenOpened": "2023-12-12T08:25:48.629Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 80,
               "Title": "JwtSettings.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Identity\\JwtSettings.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Identity\\JwtSettings.cs",
@@ -1511,11 +1787,12 @@
               "RelativeToolTip": "Infrastructure\\Identity\\JwtSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:25:55.98Z"
+              "WhenOpened": "2023-12-12T08:25:55.98Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 81,
               "Title": "TokenClaimService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Infrastructure\\Identity\\TokenClaimService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Identity\\TokenClaimService.cs",
@@ -1523,11 +1800,12 @@
               "RelativeToolTip": "Infrastructure\\Identity\\TokenClaimService.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAqwBkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:25:59.302Z"
+              "WhenOpened": "2023-12-12T08:25:59.302Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 84,
               "Title": "ITokenClaimService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\ITokenClaimService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\ITokenClaimService.cs",
@@ -1535,23 +1813,25 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\ITokenClaimService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-25T18:27:49.884Z"
+              "WhenOpened": "2023-12-25T18:27:49.884Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 82,
               "Title": "EditUsersInRole.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Administration\\EditUsersInRole.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditUsersInRole.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Administration\\EditUsersInRole.cshtml",
               "RelativeToolTip": "Web\\Views\\Administration\\EditUsersInRole.cshtml",
-              "ViewState": "AQIAAAQAAAAAAAAAAIBZwAAAAAAAAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAACBjwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-25T19:38:10.854Z"
+              "WhenOpened": "2023-12-25T19:38:10.854Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 83,
               "Title": "AuthorizationConstants.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Constants\\AuthorizationConstants.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Constants\\AuthorizationConstants.cs",
@@ -1559,21 +1839,23 @@
               "RelativeToolTip": "ApplicationCore\\Constants\\AuthorizationConstants.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAuwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:29:09.839Z"
+              "WhenOpened": "2023-12-12T08:29:09.839Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 85,
               "Title": "MISReportController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Downloads\\Inventory_MIS-master\\Inventory_MIS-master\\WebBasedDiagnosticMIS_MVC\\Controllers\\MISReportController.cs",
               "ToolTip": "C:\\Users\\HP\\Downloads\\Inventory_MIS-master\\Inventory_MIS-master\\WebBasedDiagnosticMIS_MVC\\Controllers\\MISReportController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAIBZwAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T17:50:45.76Z"
+              "WhenOpened": "2023-12-19T17:50:45.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 87,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\_ViewImports.cshtml",
@@ -1581,11 +1863,12 @@
               "RelativeToolTip": "Web\\Views\\_ViewImports.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-19T16:50:30.266Z"
+              "WhenOpened": "2023-12-19T16:50:30.266Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 86,
               "Title": "nlog.config",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\nlog.config",
               "RelativeDocumentMoniker": "Web\\nlog.config",
@@ -1593,11 +1876,12 @@
               "RelativeToolTip": "Web\\nlog.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2023-12-19T16:56:47.053Z"
+              "WhenOpened": "2023-12-19T16:56:47.053Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 88,
               "Title": "BrandController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\BrandController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\BrandController.cs",
@@ -1605,11 +1889,12 @@
               "RelativeToolTip": "Web\\Controllers\\BrandController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:17:35.954Z"
+              "WhenOpened": "2023-12-19T16:17:35.954Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 89,
               "Title": "AutomapperHandler.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Handler\\AutomapperHandler.cs",
               "RelativeDocumentMoniker": "Web\\Handler\\AutomapperHandler.cs",
@@ -1617,23 +1902,25 @@
               "RelativeToolTip": "Web\\Handler\\AutomapperHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-01T17:44:28.981Z"
+              "WhenOpened": "2023-08-01T17:44:28.981Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 90,
               "Title": "_Report.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Report.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Shared\\_Report.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_Report.cshtml",
               "RelativeToolTip": "Web\\Views\\Shared\\_Report.cshtml",
-              "ViewState": "AQIAABkAAAAAAAAAAIBZwC0AAAAhAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAACBjwC0AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-16T17:40:23.019Z"
+              "WhenOpened": "2023-07-16T17:40:23.019Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 91,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -1641,11 +1928,12 @@
               "RelativeToolTip": "Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-06-21T18:21:21.858Z"
+              "WhenOpened": "2023-06-21T18:21:21.858Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 92,
               "Title": "NotFound.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\NotFound.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Shared\\NotFound.cshtml",
@@ -1653,11 +1941,12 @@
               "RelativeToolTip": "Web\\Views\\Shared\\NotFound.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-19T16:14:04.864Z"
+              "WhenOpened": "2023-12-19T16:14:04.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 93,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Shared\\Error.cshtml",
@@ -1665,11 +1954,12 @@
               "RelativeToolTip": "Web\\Views\\Shared\\Error.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-19T16:13:59.978Z"
+              "WhenOpened": "2023-12-19T16:13:59.978Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 94,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\_ViewStart.cshtml",
@@ -1677,11 +1967,12 @@
               "RelativeToolTip": "Web\\Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-12-19T16:13:40.411Z"
+              "WhenOpened": "2023-12-19T16:13:40.411Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 95,
               "Title": "DesignationController.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Controllers\\DesignationController.cs",
               "RelativeDocumentMoniker": "Web\\Controllers\\DesignationController.cs",
@@ -1689,11 +1980,12 @@
               "RelativeToolTip": "Web\\Controllers\\DesignationController.cs",
               "ViewState": "AQIAAFwAAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:05:46.146Z"
+              "WhenOpened": "2023-12-19T16:05:46.146Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 97,
               "Title": "DailyFollowupListVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\DailyFollowupListVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\DailyFollowupListVM.cs",
@@ -1701,11 +1993,12 @@
               "RelativeToolTip": "Web\\ViewModels\\DailyFollowupListVM.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAuwBkAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:40.182Z"
+              "WhenOpened": "2023-09-23T16:48:40.182Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 98,
               "Title": "CustomerVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\CustomerVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\CustomerVM.cs",
@@ -1713,23 +2006,25 @@
               "RelativeToolTip": "Web\\ViewModels\\CustomerVM.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAIwCMAAACJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:38.631Z"
+              "WhenOpened": "2023-09-23T16:48:38.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 96,
               "Title": "ServiceFeedbackVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\ServiceFeedbackVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\ServiceFeedbackVM.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\ServiceFeedbackVM.cs",
               "RelativeToolTip": "Web\\ViewModels\\ServiceFeedbackVM.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAA5wBgAAACKAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAA1wBgAAACKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:48.75Z"
+              "WhenOpened": "2023-09-23T16:48:48.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 99,
               "Title": "CustomerFollowupMasterVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\CustomerFollowupMasterVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\CustomerFollowupMasterVM.cs",
@@ -1737,11 +2032,12 @@
               "RelativeToolTip": "Web\\ViewModels\\CustomerFollowupMasterVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:02:53.119Z"
+              "WhenOpened": "2023-12-19T16:02:53.119Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 102,
               "Title": "BuildingDetailsVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\BuildingDetailsVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\BuildingDetailsVM.cs",
@@ -1749,11 +2045,12 @@
               "RelativeToolTip": "Web\\ViewModels\\BuildingDetailsVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T16:01:00.666Z"
+              "WhenOpened": "2023-12-19T16:01:00.666Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 104,
               "Title": "BookingItemVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\BookingItemVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\BookingItemVM.cs",
@@ -1761,11 +2058,12 @@
               "RelativeToolTip": "Web\\ViewModels\\BookingItemVM.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:45:21.794Z"
+              "WhenOpened": "2023-09-23T16:45:21.794Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 100,
               "Title": "ContractDetailsVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\ContractDetailsVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\ContractDetailsVM.cs",
@@ -1773,11 +2071,12 @@
               "RelativeToolTip": "Web\\ViewModels\\ContractDetailsVM.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAowCAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:28.463Z"
+              "WhenOpened": "2023-09-23T16:48:28.463Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 101,
               "Title": "ComplainFeedbackVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\ComplainFeedbackVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\ComplainFeedbackVM.cs",
@@ -1785,11 +2084,12 @@
               "RelativeToolTip": "Web\\ViewModels\\ComplainFeedbackVM.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAwBkAAACLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:25.992Z"
+              "WhenOpened": "2023-09-23T16:48:25.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 103,
               "Title": "BookingVM.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\ViewModels\\BookingVM.cs",
               "RelativeDocumentMoniker": "Web\\ViewModels\\BookingVM.cs",
@@ -1797,11 +2097,12 @@
               "RelativeToolTip": "Web\\ViewModels\\BookingVM.cs",
               "ViewState": "AQIAAE4AAAAAAAAAAAAUwDwAAACNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-13T13:51:09.372Z"
+              "WhenOpened": "2023-07-13T13:51:09.372Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 105,
               "Title": "IIdentityService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IIdentityService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IIdentityService.cs",
@@ -1809,11 +2110,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IIdentityService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-19T07:42:20.773Z"
+              "WhenOpened": "2023-12-19T07:42:20.773Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 106,
               "Title": "BookingDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\BookingDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\BookingDto.cs",
@@ -1821,11 +2123,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\BookingDto.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAUwC8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:17.777Z"
+              "WhenOpened": "2023-09-23T16:48:17.777Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 107,
               "Title": "BookingSummaryDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\BookingSummaryDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\BookingSummaryDto.cs",
@@ -1833,11 +2136,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\BookingSummaryDto.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAuwA0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:21.523Z"
+              "WhenOpened": "2023-09-23T16:48:21.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 108,
               "Title": "BookingItemDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\BookingItemDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\BookingItemDto.cs",
@@ -1845,11 +2149,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\BookingItemDto.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAqwCkAAACOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-18T18:07:46.736Z"
+              "WhenOpened": "2023-07-18T18:07:46.736Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 110,
               "Title": "IDashboardQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IDashboardQueryService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IDashboardQueryService.cs",
@@ -1857,11 +2162,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IDashboardQueryService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:49:09.78Z"
+              "WhenOpened": "2023-12-12T08:49:09.78Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 111,
               "Title": "IBookingService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IBookingService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IBookingService.cs",
@@ -1869,11 +2175,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IBookingService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:49:03.954Z"
+              "WhenOpened": "2023-12-12T08:49:03.954Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 109,
               "Title": "AddFollowupDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\AddFollowupDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\AddFollowupDto.cs",
@@ -1881,11 +2188,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\AddFollowupDto.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAqwBMAAACOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:08.759Z"
+              "WhenOpened": "2023-09-23T16:48:08.759Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 112,
               "Title": "IBookingQueryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IBookingQueryService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IBookingQueryService.cs",
@@ -1893,11 +2201,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IBookingQueryService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:31:43.449Z"
+              "WhenOpened": "2023-12-12T08:31:43.449Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 113,
               "Title": "IAreaService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IAreaService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IAreaService.cs",
@@ -1905,11 +2214,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IAreaService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:31:41.226Z"
+              "WhenOpened": "2023-12-12T08:31:41.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 114,
               "Title": "IAddNewFollowupService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IAddNewFollowupService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IAddNewFollowupService.cs",
@@ -1917,11 +2227,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IAddNewFollowupService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:31:39.122Z"
+              "WhenOpened": "2023-12-12T08:31:39.122Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 115,
               "Title": "IAddComplainFeebackService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IAddComplainFeebackService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IAddComplainFeebackService.cs",
@@ -1929,11 +2240,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IAddComplainFeebackService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:31:35.403Z"
+              "WhenOpened": "2023-12-12T08:31:35.403Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 116,
               "Title": "ComplainFeedbackService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\ComplainFeedbackService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\ComplainFeedbackService.cs",
@@ -1941,11 +2253,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\ComplainFeedbackService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAABRwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-12T08:29:46.641Z"
+              "WhenOpened": "2023-12-12T08:29:46.641Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 118,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\ICategoryService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\ICategoryService.cs",
@@ -1953,11 +2266,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\ICategoryService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-11-07T19:35:03.806Z"
+              "WhenOpened": "2023-11-07T19:35:03.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 117,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Web\\appsettings.Development.json",
@@ -1965,23 +2279,25 @@
               "RelativeToolTip": "Web\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2023-11-23T13:04:44.479Z"
+              "WhenOpened": "2023-11-23T13:04:44.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 119,
               "Title": "CustomerFollowupDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\CustomerFollowupDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\CustomerFollowupDto.cs",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\CustomerFollowupDto.cs",
               "RelativeToolTip": "ApplicationCore\\DtoModels\\CustomerFollowupDto.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAA5wCgAAACNAAAA",
+              "ViewState": "AQIAACUAAAAAAAAAAAA1wCgAAACNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:30.991Z"
+              "WhenOpened": "2023-09-23T16:48:30.991Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 120,
               "Title": "FollowupDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\FollowupDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\FollowupDto.cs",
@@ -1989,11 +2305,12 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\FollowupDto.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAuwA8AAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:45.37Z"
+              "WhenOpened": "2023-09-23T16:48:45.37Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 121,
               "Title": "ComplainFeedbackDto.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\DtoModels\\ComplainFeedbackDto.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\DtoModels\\ComplainFeedbackDto.cs",
@@ -2001,47 +2318,38 @@
               "RelativeToolTip": "ApplicationCore\\DtoModels\\ComplainFeedbackDto.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAuwCUAAACNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-09-23T16:48:23.151Z"
+              "WhenOpened": "2023-09-23T16:48:23.151Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 124,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Team\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Team\\Update.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Team\\Update.cshtml",
               "RelativeToolTip": "Web\\Views\\Team\\Update.cshtml",
-              "ViewState": "AQIAABMAAAAAAAAAAIBpwCoAAABBAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAOBvwCoAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:58:07.683Z"
+              "WhenOpened": "2023-07-11T17:58:07.683Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 122,
               "Title": "report.css",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\report.css",
               "RelativeDocumentMoniker": "Web\\wwwroot\\css\\report.css",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\report.css",
               "RelativeToolTip": "Web\\wwwroot\\css\\report.css",
-              "ViewState": "AQIAAAsAAAAAAAAAAIBpwCMAAAAQAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAOBvwCMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-07-16T14:13:56.554Z"
+              "WhenOpened": "2023-07-16T14:13:56.554Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Web\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Web\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAABkBAAAAAAAAAAAuwC0BAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-07-19T17:21:32.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 123,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Employee\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Employee\\Update.cshtml",
@@ -2049,47 +2357,38 @@
               "RelativeToolTip": "Web\\Views\\Employee\\Update.cshtml",
               "ViewState": "AQIAAFEAAAAAAAAAAAAwwF0AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:55:02.545Z"
+              "WhenOpened": "2023-07-11T17:55:02.545Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 125,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceType\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ServiceType\\Create.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceType\\Create.cshtml",
               "RelativeToolTip": "Web\\Views\\ServiceType\\Create.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAIBpwCMAAABBAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAOBvwCMAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-13T05:48:36.535Z"
+              "WhenOpened": "2023-07-13T05:48:36.535Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 126,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ContactBy\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ContactBy\\Create.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ContactBy\\Create.cshtml",
               "RelativeToolTip": "Web\\Views\\ContactBy\\Create.cshtml",
-              "ViewState": "AQIAADYAAAAAAAAAAIBpwE0AAABBAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAOBvwE0AAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:52:17.138Z"
+              "WhenOpened": "2023-07-11T17:52:17.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
-              "Title": "AddNewFollowup.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\AddNewFollowup.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Followup\\AddNewFollowup.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\AddNewFollowup.cshtml",
-              "RelativeToolTip": "Web\\Views\\Followup\\AddNewFollowup.cshtml",
-              "ViewState": "AQIAABcCAAAAAAAAAAAwwCICAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-03T17:41:53.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 127,
               "Title": "ShowBookingCancelList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowBookingCancelList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ShowBookingCancelList.cshtml",
@@ -2097,11 +2396,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\ShowBookingCancelList.cshtml",
               "ViewState": "AQIAAA4AAAAAAAAAAAAuwCMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T17:53:47.759Z"
+              "WhenOpened": "2023-08-21T17:53:47.759Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 128,
               "Title": "ShowBookingShiftingList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowBookingShiftingList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ShowBookingShiftingList.cshtml",
@@ -2109,11 +2409,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\ShowBookingShiftingList.cshtml",
               "ViewState": "AQIAAA0AAAAAAAAAAAAuwCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T17:53:35.154Z"
+              "WhenOpened": "2023-08-21T17:53:35.154Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 129,
               "Title": "ContactWiseNewCustomerList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ContactWiseNewCustomerList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ContactWiseNewCustomerList.cshtml",
@@ -2121,11 +2422,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\ContactWiseNewCustomerList.cshtml",
               "ViewState": "AQIAAAYAAAAAAAAAAAAmwCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T16:42:18.329Z"
+              "WhenOpened": "2023-08-21T16:42:18.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 130,
               "Title": "ShowFollowupDoneList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowFollowupDoneList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ShowFollowupDoneList.cshtml",
@@ -2133,11 +2435,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\ShowFollowupDoneList.cshtml",
               "ViewState": "AQIAABAAAAAAAAAAAAAmwCIAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-18T18:52:37.713Z"
+              "WhenOpened": "2023-07-18T18:52:37.713Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 131,
               "Title": "StatusWiseFollowupDoneList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\StatusWiseFollowupDoneList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\StatusWiseFollowupDoneList.cshtml",
@@ -2145,11 +2448,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\StatusWiseFollowupDoneList.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T16:41:16.611Z"
+              "WhenOpened": "2023-08-21T16:41:16.611Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 132,
               "Title": "StatusWiseNewCustomerList.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\StatusWiseNewCustomerList.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\MISReport\\StatusWiseNewCustomerList.cshtml",
@@ -2157,23 +2461,12 @@
               "RelativeToolTip": "Web\\Views\\MISReport\\StatusWiseNewCustomerList.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-21T16:41:13.137Z"
+              "WhenOpened": "2023-08-21T16:41:13.137Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
-              "Title": "ShowNewCustomerList.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
-              "RelativeToolTip": "Web\\Views\\MISReport\\ShowNewCustomerList.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAkwCIAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-31T17:34:58.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 133,
               "Title": "IFeedbackService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Interfaces\\IFeedbackService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Interfaces\\IFeedbackService.cs",
@@ -2181,47 +2474,12 @@
               "RelativeToolTip": "ApplicationCore\\Interfaces\\IFeedbackService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-09T17:03:35.264Z"
+              "WhenOpened": "2023-08-09T17:03:35.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
-              "Title": "DailyComplainList.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
-              "RelativeToolTip": "Web\\Views\\ServiceFeedback\\DailyComplainList.cshtml",
-              "ViewState": "AQIAAAEBAAAAAAAAACBzwBwBAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-07T11:40:28.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 120,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\ServiceFeedback\\Index.cshtml",
-              "ViewState": "AQIAAFwAAAAAAAAAACBzwG4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-08-01T17:24:30.115Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 123,
-              "Title": "UpdateCustomerDetails.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
-              "RelativeToolTip": "Web\\Views\\Customer\\UpdateCustomerDetails.cshtml",
-              "ViewState": "AQIAAOMAAAAAAAAAAAAYwPEAAACQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-13T22:34:13.234Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 134,
               "Title": "FollowupService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\FollowupService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\FollowupService.cs",
@@ -2229,11 +2487,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\FollowupService.cs",
               "ViewState": "AQIAABcAAAAAAAAAAAAIwC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-01T16:54:18.012Z"
+              "WhenOpened": "2023-08-01T16:54:18.012Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 135,
               "Title": "UpdateContractDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateContractDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\UpdateContractDetails.cshtml",
@@ -2241,11 +2500,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\UpdateContractDetails.cshtml",
               "ViewState": "AQIAAC0AAAAAAAAAAAAYwDsAAACtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:41:35.215Z"
+              "WhenOpened": "2023-07-06T17:41:35.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 136,
               "Title": "UpdateBuildingDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\UpdateBuildingDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\UpdateBuildingDetails.cshtml",
@@ -2253,11 +2513,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\UpdateBuildingDetails.cshtml",
               "ViewState": "AQIAAC8AAAAAAAAAAAAowDkAAACtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:46:42.584Z"
+              "WhenOpened": "2023-07-06T17:46:42.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 137,
               "Title": "DeleteContractDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\DeleteContractDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\DeleteContractDetails.cshtml",
@@ -2265,11 +2526,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\DeleteContractDetails.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:49:14.444Z"
+              "WhenOpened": "2023-07-06T17:49:14.444Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 138,
               "Title": "DeleteBuildingDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\DeleteBuildingDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\DeleteBuildingDetails.cshtml",
@@ -2277,11 +2539,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\DeleteBuildingDetails.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:49:15.506Z"
+              "WhenOpened": "2023-07-06T17:49:15.506Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 139,
               "Title": "AddNewContractDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\AddNewContractDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\AddNewContractDetails.cshtml",
@@ -2289,11 +2552,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\AddNewContractDetails.cshtml",
               "ViewState": "AQIAACMAAAAAAAAAAAAkwDcAAACtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:30:21.484Z"
+              "WhenOpened": "2023-07-06T17:30:21.484Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 140,
               "Title": "AddNewBuildingDetails.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Customer\\AddNewBuildingDetails.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Customer\\AddNewBuildingDetails.cshtml",
@@ -2301,11 +2565,12 @@
               "RelativeToolTip": "Web\\Views\\Customer\\AddNewBuildingDetails.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-06T17:36:02.301Z"
+              "WhenOpened": "2023-07-06T17:36:02.301Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 141,
               "Title": "CustomerFollowupService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\CustomerFollowupService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\CustomerFollowupService.cs",
@@ -2313,11 +2578,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\CustomerFollowupService.cs",
               "ViewState": "AQIAAEgAAAAAAAAAAAAuwGMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-01T16:53:15.025Z"
+              "WhenOpened": "2023-08-01T16:53:15.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 142,
               "Title": "ContractDetailsService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\ContractDetailsService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\ContractDetailsService.cs",
@@ -2325,83 +2591,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\ContractDetailsService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-08-01T16:53:18.627Z"
+              "WhenOpened": "2023-08-01T16:53:18.627Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
-              "Title": "GetFollowupsByCustId.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
-              "RelativeToolTip": "Web\\Views\\Followup\\GetFollowupsByCustId.cshtml",
-              "ViewState": "AQIAAKEAAAAAAAAAACBzwMUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-23T17:20:54.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 133,
-              "Title": "ShiftBooking.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShiftBooking.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Booking\\ShiftBooking.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShiftBooking.cshtml",
-              "RelativeToolTip": "Web\\Views\\Booking\\ShiftBooking.cshtml",
-              "ViewState": "AQIAAAsBAAAAAAAAAAAYwBkBAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-07T09:44:01.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 134,
-              "Title": "ShowBookingInfo.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShowBookingInfo.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Booking\\ShowBookingInfo.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\ShowBookingInfo.cshtml",
-              "RelativeToolTip": "Web\\Views\\Booking\\ShowBookingInfo.cshtml",
-              "ViewState": "AQIAABAAAAAAAAAAAIB5wC4AAACNAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-10T17:54:34.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 137,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Area\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Area\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Area\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Area\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAABRwBQAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-03T15:44:01.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 136,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Brand\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Brand\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAFB2wBUAAABTAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T18:13:06.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 135,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Index.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Category\\Index.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Index.cshtml",
-              "RelativeToolTip": "Web\\Views\\Category\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T18:30:51.047Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 143,
               "Title": "EditRole.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Administration\\EditRole.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Administration\\EditRole.cshtml",
@@ -2409,23 +2604,12 @@
               "RelativeToolTip": "Web\\Views\\Administration\\EditRole.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAYwB0AAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-01T10:10:04.138Z"
+              "WhenOpened": "2023-07-01T10:10:04.138Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
-              "Title": "CancelBooking.cshtml",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\CancelBooking.cshtml",
-              "RelativeDocumentMoniker": "Web\\Views\\Booking\\CancelBooking.cshtml",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Booking\\CancelBooking.cshtml",
-              "RelativeToolTip": "Web\\Views\\Booking\\CancelBooking.cshtml",
-              "ViewState": "AQIAAEkBAAAAAAAAAAAYwFcBAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-13T13:55:36.247Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 144,
               "Title": "AddComplain.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\AddComplain.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\AddComplain.cshtml",
@@ -2433,11 +2617,12 @@
               "RelativeToolTip": "Web\\Views\\ServiceFeedback\\AddComplain.cshtml",
               "ViewState": "AQIAAGkAAAAAAAAAAAAYwHcAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-03T14:47:34.07Z"
+              "WhenOpened": "2023-07-03T14:47:34.07Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 145,
               "Title": "AddComplainFeedback.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\AddComplainFeedback.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\AddComplainFeedback.cshtml",
@@ -2445,11 +2630,12 @@
               "RelativeToolTip": "Web\\Views\\ServiceFeedback\\AddComplainFeedback.cshtml",
               "ViewState": "AQIAAIwAAAAAAAAAAAAYwJoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-07T11:57:30.783Z"
+              "WhenOpened": "2023-07-07T11:57:30.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 146,
               "Title": "AddFeedback.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceFeedback\\AddFeedback.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ServiceFeedback\\AddFeedback.cshtml",
@@ -2457,11 +2643,12 @@
               "RelativeToolTip": "Web\\Views\\ServiceFeedback\\AddFeedback.cshtml",
               "ViewState": "AQIAAGkAAAAAAAAAAAAYwHcAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-07T11:40:31.265Z"
+              "WhenOpened": "2023-07-07T11:40:31.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 147,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Category\\Create.cshtml",
@@ -2469,11 +2656,12 @@
               "RelativeToolTip": "Web\\Views\\Category\\Create.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAIBZwCoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:49:45.2Z"
+              "WhenOpened": "2023-07-11T17:49:45.2Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 148,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\SubArea\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\SubArea\\Update.cshtml",
@@ -2481,11 +2669,12 @@
               "RelativeToolTip": "Web\\Views\\SubArea\\Update.cshtml",
               "ViewState": "AQIAACAAAAAAAAAAAAAYwC4AAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:56:32.769Z"
+              "WhenOpened": "2023-07-11T17:56:32.769Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 151,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ContactBy\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ContactBy\\Update.cshtml",
@@ -2493,11 +2682,12 @@
               "RelativeToolTip": "Web\\Views\\ContactBy\\Update.cshtml",
               "ViewState": "AQIAABsAAAAAAAAAAAAowCsAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:52:22.827Z"
+              "WhenOpened": "2023-07-11T17:52:22.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 150,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Designation\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Designation\\Update.cshtml",
@@ -2505,23 +2695,25 @@
               "RelativeToolTip": "Web\\Views\\Designation\\Update.cshtml",
               "ViewState": "AQIAABQAAAAAAAAAAAAowCIAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:53:42.836Z"
+              "WhenOpened": "2023-07-11T17:53:42.836Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 149,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Employee\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Employee\\Create.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Employee\\Create.cshtml",
               "RelativeToolTip": "Web\\Views\\Employee\\Create.cshtml",
-              "ViewState": "AQIAAA0AAAAAAAAAAKB7wDoAAAAGAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAANB+wDoAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:54:56.822Z"
+              "WhenOpened": "2023-07-11T17:54:56.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 152,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\City\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\City\\Update.cshtml",
@@ -2529,11 +2721,12 @@
               "RelativeToolTip": "Web\\Views\\City\\Update.cshtml",
               "ViewState": "AQIAAB0AAAAAAAAAAAAYwCMAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:51:05.418Z"
+              "WhenOpened": "2023-07-11T17:51:05.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 153,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Category\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Category\\Update.cshtml",
@@ -2541,11 +2734,12 @@
               "RelativeToolTip": "Web\\Views\\Category\\Update.cshtml",
               "ViewState": "AQIAABUAAAAAAAAAAAAYwCMAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:49:49.873Z"
+              "WhenOpened": "2023-07-11T17:49:49.873Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 154,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Brand\\Update.cshtml",
@@ -2553,35 +2747,38 @@
               "RelativeToolTip": "Web\\Views\\Brand\\Update.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAIBpwCAAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:48:36.551Z"
+              "WhenOpened": "2023-07-11T17:48:36.551Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 155,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Create.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\Brand\\Create.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\Brand\\Create.cshtml",
               "RelativeToolTip": "Web\\Views\\Brand\\Create.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAALB8wCgAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAOB/wCgAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-11T17:48:32.369Z"
+              "WhenOpened": "2023-07-11T17:48:32.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 156,
               "Title": "Update.cshtml",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceType\\Update.cshtml",
               "RelativeDocumentMoniker": "Web\\Views\\ServiceType\\Update.cshtml",
               "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\Views\\ServiceType\\Update.cshtml",
               "RelativeToolTip": "Web\\Views\\ServiceType\\Update.cshtml",
-              "ViewState": "AQIAAAEAAAAAAAAAALB8wBEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAMB9wBEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-06-22T21:04:30.056Z"
+              "WhenOpened": "2023-06-22T21:04:30.056Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 157,
               "Title": "BookingService.cs",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\Services\\BookingService.cs",
               "RelativeDocumentMoniker": "ApplicationCore\\Services\\BookingService.cs",
@@ -2589,23 +2786,12 @@
               "RelativeToolTip": "ApplicationCore\\Services\\BookingService.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-07-07T11:18:14.775Z"
+              "WhenOpened": "2023-07-07T11:18:14.775Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
-              "Title": "theme-rtl.min.css",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\frontend\\css\\theme-rtl.min.css",
-              "RelativeDocumentMoniker": "Web\\wwwroot\\frontend\\css\\theme-rtl.min.css",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\frontend\\css\\theme-rtl.min.css",
-              "RelativeToolTip": "Web\\wwwroot\\frontend\\css\\theme-rtl.min.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-07-03T07:37:58.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 158,
               "Title": "style.css",
               "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "Web\\wwwroot\\css\\style.css",
@@ -2613,31 +2799,8 @@
               "RelativeToolTip": "Web\\wwwroot\\css\\style.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-06-27T18:50:36.625Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 156,
-              "Title": "bootstrap.css.map",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "RelativeDocumentMoniker": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAACL/QIA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-06-21T17:44:23.819Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 157,
-              "Title": "bootstrap.min.css.map",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-              "RelativeDocumentMoniker": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-              "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAA28AIA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-06-21T17:44:24.742Z"
+              "WhenOpened": "2023-06-27T18:50:36.625Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2649,19 +2812,8 @@
               "RelativeToolTip": "Web\\Views\\Account\\Register.cshtml",
               "ViewState": "AQIAAB8AAAAAAAAAAAAkwDMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-01T09:28:53.778Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 158,
-              "Title": "main.min.css",
-              "DocumentMoniker": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\main.min.css",
-              "RelativeDocumentMoniker": "Web\\wwwroot\\css\\main.min.css",
-              "ToolTip": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\css\\main.min.css",
-              "RelativeToolTip": "Web\\wwwroot\\css\\main.min.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAUPwAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-06-21T17:45:57.515Z"
+              "WhenOpened": "2023-07-01T09:28:53.778Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2673,7 +2825,8 @@
               "RelativeToolTip": "Web\\Views\\Account\\ResestPassword.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAACBwDIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-01T09:28:51.608Z"
+              "WhenOpened": "2023-07-01T09:28:51.608Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2685,7 +2838,8 @@
               "RelativeToolTip": "Web\\Views\\Administration\\ListRoles.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-01T10:05:24.542Z"
+              "WhenOpened": "2023-07-01T10:05:24.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2697,7 +2851,8 @@
               "RelativeToolTip": "Web\\Views\\Administration\\CreateRole.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2023-07-01T10:05:38.928Z"
+              "WhenOpened": "2023-07-01T10:05:38.928Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2709,7 +2864,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:45:55.566Z"
+              "WhenOpened": "2023-06-21T17:45:55.566Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2721,7 +2877,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAABMAwAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-06-21T17:45:52.863Z"
+              "WhenOpened": "2023-06-21T17:45:52.863Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2733,7 +2890,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
               "ViewState": "AQIAAAAAAAAAAAAAAAAxwAEAAADdSAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:45:47.297Z"
+              "WhenOpened": "2023-06-21T17:45:47.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2745,7 +2903,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
               "ViewState": "AQIAAGIqAAAAAAAAAAAlwGwqAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:45:25.791Z"
+              "WhenOpened": "2023-06-21T17:45:25.791Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2757,7 +2916,8 @@
               "RelativeToolTip": "Web\\wwwroot\\frontend\\js\\is\\is.min.js",
               "ViewState": "AQIAAAAAAAAAAAAAAABRwAQAAAARCwAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:44:30.817Z"
+              "WhenOpened": "2023-06-21T17:44:30.817Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2769,7 +2929,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAkdwMA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-06-21T17:44:19.834Z"
+              "WhenOpened": "2023-06-21T17:44:19.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2781,7 +2942,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAB0+gEA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-06-21T17:44:14.561Z"
+              "WhenOpened": "2023-06-21T17:44:14.561Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2793,7 +2955,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
               "ViewState": "AQIAALgNAAAAAAAAAAAewMENAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:44:07.706Z"
+              "WhenOpened": "2023-06-21T17:44:07.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -2805,7 +2968,8 @@
               "RelativeToolTip": "Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
               "ViewState": "AQIAAOcAAAAAAAAAAAAQwOgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2023-06-21T17:44:01.778Z"
+              "WhenOpened": "2023-06-21T17:44:01.778Z",
+              "EditorCaption": ""
             }
           ]
         }
