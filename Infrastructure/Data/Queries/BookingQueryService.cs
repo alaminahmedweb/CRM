@@ -28,7 +28,7 @@ namespace Infrastructure.Data.Queries
             dateList = dateList.ToList();
 
             //cross join Team And Shift
-            var teamShift = (from tm in _dbContext.Teams.Where(a => a.Status == "Active")
+            var teamShift = (from tm in _dbContext.Teams//.Where(a => a.Status == "Active")
                             from sft in _dbContext.ShiftInfos
                             select new
                             {
@@ -36,7 +36,8 @@ namespace Infrastructure.Data.Queries
                                 TeamName = tm.Name,
                                 ShiftId = sft.Id,
                                 ShiftName = sft.Name,
-                                                                                                                                                                                                                                                                                                                                                                                                 TeamLeaderName = tm.TeamLeaderName,
+                                TeamStatus=tm.Status,                              
+                                TeamLeaderName = tm.TeamLeaderName,
                             }).ToList();
 
             var teamShiftAndDate = (from tm in teamShift
@@ -48,6 +49,7 @@ namespace Infrastructure.Data.Queries
                                        ShiftId = tm.ShiftId,
                                        ShiftName = tm.ShiftName,
                                        TeamLeaderName = tm.TeamLeaderName,
+                                       TeamStatus=tm.TeamStatus,
                                        BookingDate = dt
                                    });
 
@@ -75,6 +77,7 @@ namespace Infrastructure.Data.Queries
 
 
             //retrive booking,followup,customer,area
+            
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
                                         && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
@@ -153,11 +156,16 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.FollowupCallDate = item.result == null ? null : item.result.FollowupCallDate;
                 bookingItemDto.Remarks = item.result == null ? null : item.result.Remarks;
                 bookingItemDto.BookingId = item.result == null ? null : item.result.BookingId;
+                if(item.tmSft.TeamStatus=="Active")
+                {
+                    bookingDtos.Add(bookingItemDto);
+                }
+                if (item.tmSft.TeamStatus == "Inactive" && bookingItemDto.BookingId != null)
+                {
+                    bookingDtos.Add(bookingItemDto);
+                }
 
-                bookingDtos.Add(bookingItemDto);
             }
-
-
 
             return bookingDtos;
         }

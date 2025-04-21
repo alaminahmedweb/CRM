@@ -42,6 +42,16 @@
                         </div>
                         <span asp-validation-for="Remarks" class="text-danger"></span>
                     </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <select asp-for="PaymentStatus" class="form-control" title="searchableDropdown">
+                                <option value="Paid">Paid</option>
+                                <option value="Due">Due</option>
+                            </select>
+                            <label for="PaymentStatus">Payment Status</label>
+                        </div>
+                        <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+                    </div>
 
                     <div class="text-center mt-3">
                         <div class="d-grid gap-2 d-md-block">

@@ -39,5 +39,7 @@ namespace ApplicationCore.Entities
         public int BookingById { get; set; }
         public Employee? Employee { get; set; }
         public string? BookingNote { get; set; } = "";
+        public DateTime PaymentDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+        public string PaymentStatus { get; set; } = "Paid";//Paid/Due
     }
 }

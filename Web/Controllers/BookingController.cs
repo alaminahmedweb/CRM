@@ -146,6 +146,10 @@ namespace Web.Controllers
             UpdateBookingAmountVM updateBookingAmountVM = new UpdateBookingAmountVM();
             updateBookingAmountVM.AgreeAmount = fol.AgreeAmount;
             updateBookingAmountVM.Remarks = fol.Remarks;
+
+            Booking booking = await _bookingService.GetByIdAsync(followupId);
+            updateBookingAmountVM.PaymentStatus = booking.PaymentStatus;
+
             return View(updateBookingAmountVM);
         }
 
@@ -160,8 +164,15 @@ namespace Web.Controllers
                 entityToUpdate.ModifiedBy = model.ModifiedBy;
                 entityToUpdate.Remarks = model.Remarks;
 
+
                 bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
-                if (isSuccess)
+
+                var bookingEntityToUpdate = await _bookingService.GetByIdAsync(model.FollowupId);
+                bookingEntityToUpdate.PaymentStatus = model.PaymentStatus;
+
+                bool isBookingUpdateSuccess = await _bookingService.UpdateEntity(bookingEntityToUpdate);
+
+                if (isSuccess && isBookingUpdateSuccess)
                 {
                     TempData["SuccessMessage"] = "Updated Successfully..";
                     return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });

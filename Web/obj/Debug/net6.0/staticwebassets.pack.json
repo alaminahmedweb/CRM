@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\CRM_By_Zahid_21_06_2023\\Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Web.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Web.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Web.h0gjocklhh.bundle.scp.css"
     },
     {
       "Id": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\Image\\User.png",
@@ -455,6 +455,10 @@
     {
       "Id": "D:\\CRM_By_Zahid_21_06_2023\\Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props",

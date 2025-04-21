@@ -6,8 +6,8 @@ D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.Gene
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.sourcelink.json
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
 D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
-D:\CRM_By_Zahid_21_06_2023\ApplicationCore\obj\Debug\net6.0\ApplicationCore.sourcelink.json
