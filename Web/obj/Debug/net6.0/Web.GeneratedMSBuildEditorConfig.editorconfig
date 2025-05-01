@@ -88,6 +88,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93Qm9va2luZ0luZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowDueBookingInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93RHVlQm9va2luZ0luZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/UpdateBookingAmount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xVcGRhdGVCb29raW5nQW1vdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -270,6 +274,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowBookingShiftingList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dCb29raW5nU2hpZnRpbmdMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowCollectionReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dDb2xsZWN0aW9uUmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowDueBookingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTUlTUmVwb3J0XFNob3dEdWVCb29raW5nTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/MISReport/ShowEntryDateWiseBookingList.cshtml]

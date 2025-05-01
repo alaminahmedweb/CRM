@@ -114,6 +114,21 @@
                                 <button type="submit" id="btnEntryDateWiseBookingList" class="btn btn-primary ml-2">Show Booking List (Entry Date Wise)</button>
                                 <button type="submit" id="btnShiftedBookingList" class="btn btn-primary ml-2">Show Booking Shifting List</button>
                                 <button type="submit" id="btnCancelBookingList" class="btn btn-primary ml-2">Show Booking Cancel List</button>
+                                <button type="submit" id="btnDueBookingList" class="btn btn-primary ml-2">Show Due Booking List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="report">
+                    <div class="report-header">
+                        <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseFour">
+                            Collection Releated Reports
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="collapse" data-bs-parent="#accordion">
+                        <div class="report-body">
+                            <div class="d-grid gap-1">
+                                <button type="submit" id="btnCollectionReport" class="btn btn-primary ml-2">Show Collection Report</button>
                             </div>
                         </div>
                     </div>
@@ -130,7 +145,6 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-
 
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
@@ -152,35 +166,6 @@
             var resultbody = $('#resultTable tbody');
             var resultHead = $('#resultTable thead');
 
-
-            // $('#DateFrom').datepicker({
-            //     todayBtn: 1,
-            //     startDate: '-12m',
-            //     autoclose: true,
-            // }).on('changeDate', function (selected) {
-
-            //     alert('clicked');
-            //     var minDate = new Date(selected.date.valueOf());
-            //     var maxDate = new Date(minDate);
-
-            //     maxDate.setDate(maxDate.getDate() + 3);
-
-            //     $('#DateTo').datepicker('setStartDate', minDate);
-            //     $('#DateTo').datepicker('setEndDate', maxDate);
-            //     $('#DateTo').val('');
-
-            // });
-
-            // $('#DateTo').datepicker({
-            //     autoclose: true
-
-            // }).on('changeDate', function (selected) {
-            //     var minDate = new Date(selected.date.valueOf());
-            //     alert('clicked');
-            //     //$('#startDate').datepicker('setEndDate', minDate);
-
-            // });
-
             $('#btnNewCustomerList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
@@ -189,7 +174,7 @@
                 var categoryId = $('#CategoryId').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -207,7 +192,7 @@
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -219,13 +204,12 @@
                 });
             });
 
-
             $('#btnStatusWiseNewCustomerList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -242,7 +226,7 @@
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -259,7 +243,7 @@
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -269,35 +253,6 @@
                         // handle error
                     }
                 });
-
-                //var datefrom = $('#ReportDateFrom').val();
-                //var dateto = $('#ReportDateTo').val();
-                //resultdatatableDiv.hide();
-                //resultDiv.show();
-                //$.ajax({
-                //    type: "GET",
-                //    url: "/MISReport/GetAllFollowupDoneListByDate",
-                //    data: { dateFrom: datefrom, dateTo: dateto },
-                //    contentType: "application/json; charset=utf-8",
-                //    dataType: "json",
-                //    success: function (result) {
-                //        resultbody.empty();
-                //        resultHead.empty();
-                //        resultHead.append('<tr><th>Followup Date</th><th>Mobile No</th><th>Customer Name</th><th>Address</th><th>Contact</th><th>Category</th><th>Reference</th><th>Marketing Name</th><th>Status</th><th>Action</th></tr>');
-                //        $(result).each(function (index, data) {
-                //            var linkcustomerDetails = '<a href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '">Details</a>';
-                //            resultbody.append('<tr><td>' + data.followupDate + '</td><td>' + data.mobileNo + '</td><td>' + data.customerName + '</td><td>' + data.address + '</td><td>' +
-                //                data.contactName + '</td><td>' + data.categoryName + '</td><td>' + data.referenceBy + '</td><td>' +
-                //                data.employeeName + '</td><td>' + data.status + '</td><td>' + linkcustomerDetails + '</td></tr>');
-                //        });
-                //        resultbody.append('<tr><td>Total Count </td><td>' + $(result).length + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
-                //        sumtotal.html('Total Followups : - ' + result.length);
-                //        //let table = new DataTable('#resultTable');
-                //    },
-                //    error: function (xhr, ajaxOptions, thrownError) {
-                //        // handle error
-                //    }
-                //});
             });
 
             $('#btnEntryDateWiseBookingList').click(function () {
@@ -305,7 +260,7 @@
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -315,69 +270,14 @@
                         // handle error
                     }
                 });
-                //var dateFrom = $('#ReportDateFrom').val();
-                //var dateTo = $('#ReportDateTo').val();
-                //resultdatatableDiv.hide();
-                //resultDiv.show();
-                //var totalbooked = 0;
-                //$.ajax({
-                //    type: "GET",
-                //    url: "/MISReport/GetEntryDateWiseBookingList",
-                //    data: { dateFrom: dateFrom, dateTo: dateTo },
-                //    contentType: "application/json; charset=utf-8",
-                //    dataType: "json",
-                //    success: function (result) {
-                //        var bookingAmt = 0;
-                //        resultbody.empty();
-                //        resultHead.empty();
-                //        resultHead.append('<tr><th>Entry Date</th><th>Working Date</th><th>Team</th><th>Shift</th><th>Status</th><th>Mobile No</th><th>Name</th><th>Address</th><th>Amount</th><th>Note</th></tr>');
-                //        $(result).each(function (index, data) {
-                //            var linkShiftOrCancelBooking = "";
-                //            var trDate = "";
-                //            var bookingNote = "";
-                //            if (data.bookingNote == null) {
-                //                bookingNote = "";
-                //            } else {
-                //                bookingNote = data.bookingNote;
-                //            }
-
-                //            if (data.trDate == null) {
-                //                trDate = ""
-                //            } else {
-                //                trDate = data.trDate.substring(0, 10);
-                //            }
-                //            //EntryDate
-                //            if (data.name != "") {
-                //                totalbooked += 1;
-                //                bookingAmt += parseInt(data.agreeAmount);
-                //                linkShiftOrCancelBooking = '<a href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
-                //                linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
-                //                linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
-                //            }
-                //            resultbody.append('<tr><td>' + data.entryDate.substring(0, 10) + '</td><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
-                //                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.mobileNo + '</td><td>' +
-                //                data.name + '</td><td>' + data.address + '</td><td>'
-                //                + data.agreeAmount + '</td><td>' + bookingNote + '</td></tr>');
-                //        });
-                //        resultbody.append('<tr><td>Total Count</td><td>' + $(result).length + '</td><td></td><td></td><td></td><td></td><td></td><td>Total Amount </td><td>'
-                //            + Math.round(bookingAmt) + '</td><td></td></tr>');
-                //        sumtotal.html('Total Count : ' + $(result).length + ' Total Booking Amount : - ' + Math.round(bookingAmt));
-
-                //        //let table = new DataTable('#resultTable');
-                //    },
-                //    error: function (xhr, ajaxOptions, thrownError) {
-                //        // handle error
-                //    }
-                //});
             });
-
 
             $('#btnCancelBookingList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -387,76 +287,14 @@
                         // handle error
                     }
                 });
-
-                //var dateFrom = $('#ReportDateFrom').val();
-                //var dateTo = $('#ReportDateTo').val();
-                //resultdatatableDiv.hide();
-                //resultDiv.show();
-                //var totalbooked = 0;
-                //var bookingAmt = 0;
-                //$.ajax({
-                //    type: "GET",
-                //    url: "/MISReport/GetBookingCancelList",
-                //    data: { dateFrom: dateFrom, dateTo: dateTo },
-                //    contentType: "application/json; charset=utf-8",
-                //    dataType: "json",
-                //    success: function (result) {
-                //        console.log(result);
-                //        var bookingAmt = 0;
-                //        resultbody.empty();
-                //        resultHead.empty();
-                //        resultHead.append('<tr><th>Cancel Date</th><th>Working Date</th><th>Team</th><th>Shift</th><th>Status</th><th>Mobile No</th><th>Name</th><th>Address</th><th>Amount</th><th>Note</th></tr>');
-                //        $(result).each(function (index, data) {
-                //            var linkShiftOrCancelBooking = "";
-                //            var trDate = "";
-                //            var bookingNote = "";
-                //            var modifiedDate = "";
-
-                //            if (data.bookingNote == null) {
-                //                bookingNote = "";
-                //            } else {
-                //                bookingNote = data.bookingNote;
-                //            }
-
-                //            if (data.trDate == null) {
-                //                trDate = ""
-                //            } else {
-                //                trDate = data.trDate.substring(0, 10);
-                //            }
-
-                //            if (data.modifiedDate == null) {
-                //                modifiedDate = ""
-                //            } else {
-                //                modifiedDate = data.modifiedDate.substring(0, 10);
-                //            }
-
-                //            if (data.name != "") {
-                //                totalbooked += 1;
-                //                bookingAmt += parseInt(data.agreeAmount);
-                //            }
-                //            resultbody.append('<tr><td>' + modifiedDate + '</td><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
-                //                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.mobileNo + '</td><td>' +
-                //                data.name + '</td><td>' + data.address + '</td><td>'
-                //                + data.agreeAmount + '</td><td>' + bookingNote + '</td></tr>');
-                //        });
-                //        resultbody.append('<tr><td>Total Count</td><td>' + $(result).length + '</td><td></td><td></td><td></td><td></td><td></td><td>Total Cancel Amount </td><td>'
-                //            + Math.round(bookingAmt) + '</td><td></td></tr>');
-                //        sumtotal.html('Total Count : ' + $(result).length + ' Total Cancel Amount : - ' + Math.round(bookingAmt));
-                //        //let table = new DataTable('#resultTable');
-                //    },
-                //    error: function (xhr, ajaxOptions, thrownError) {
-                //        // handle error
-                //    }
-                //});
             });
-
 
             $('#btnShiftedBookingList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
                 $.ajax({
                     type: "GET",
-                    url: "@Url.Action("GetSuccessData","MISReport")",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (result) {
@@ -466,67 +304,41 @@
                         // handle error
                     }
                 });
-
-                //var dateFrom = $('#ReportDateFrom').val();
-                //var dateTo = $('#ReportDateTo').val();
-                //resultdatatableDiv.hide();
-                //resultDiv.show();
-                //var totalbooked = 0;
-                //var bookingAmt = 0;
-                //$.ajax({
-                //    type: "GET",
-                //    url: "/MISReport/GetBookingShiftingList",
-                //    data: { dateFrom: dateFrom, dateTo: dateTo },
-                //    contentType: "application/json; charset=utf-8",
-                //    dataType: "json",
-                //    success: function (result) {
-                //        resultbody.empty();
-                //        resultHead.empty();
-                //        resultHead.append('<tr><th>Shift Date</th><th>Working Date</th><th>Team</th><th>Shift</th><th>Status</th><th>Mobile No</th><th>Name</th><th>Address</th><th>Amount</th><th>Note</th></tr>');
-                //        $(result).each(function (index, data) {
-                //            var linkShiftOrCancelBooking = "";
-                //            var trDate = "";
-                //            var modifiedDate = "";
-                //            var bookingNote = "";
-                //            if (data.bookingNote == null) {
-                //                bookingNote = "";
-                //            } else {
-                //                bookingNote = data.bookingNote;
-                //            }
-
-                //            if (data.trDate == null) {
-                //                trDate = ""
-                //            } else {
-                //                trDate = data.trDate.substring(0, 10);
-                //            }
-
-                //            if (data.modifiedDate == null) {
-                //                modifiedDate = ""
-                //            } else {
-                //                modifiedDate = data.modifiedDate.substring(0, 10);
-                //            }
-
-                //            if (data.name != "") {
-                //                totalbooked += 1;
-                //                bookingAmt += parseInt(data.agreeAmount);
-                //            }
-                //            resultbody.append('<tr><td>' + modifiedDate + '</td><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
-                //                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.mobileNo + '</td><td>' +
-                //                data.name + '</td><td>' + data.address + '</td><td>'
-                //                + data.agreeAmount + '</td><td>' + bookingNote + '</td></tr>');
-                //        });
-                //        resultbody.append('<tr><td>Total Count</td><td>' + $(result).length + '</td><td></td><td></td><td></td><td></td><td></td><td>Total Amount </td><td>'
-                //            + Math.round(bookingAmt) + '</td><td></td></tr>');
-                //        sumtotal.html('Total Count : ' + $(result).length + ' Total Shifted Amount : - ' + Math.round(bookingAmt));
-                //        //let table = new DataTable('#resultTable');
-                //    },
-                //    error: function (xhr, ajaxOptions, thrownError) {
-                //        // handle error
-                //    }
-                //});
             });
 
+            $('#btnDueBookingList').click(function () {
+                var dateFrom = $('#DateFrom').val();
+                var dateTo = $('#DateTo').val();
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        window.location.href = "/MISReport/ShowDueBookingList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
 
+            $('#btnCollectionReport').click(function () {
+                var dateFrom = $('#DateFrom').val();
+                var dateTo = $('#DateTo').val();
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("GetSuccessData", "MISReport")",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        window.location.href = "/MISReport/ShowCollectionReport?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        // handle error
+                    }
+                });
+            });
         });
     </script>
 }

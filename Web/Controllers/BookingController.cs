@@ -139,6 +139,19 @@ namespace Web.Controllers
         }
 
         [HttpGet]
+        public IActionResult ShowDueBookingInfo()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult ShowDueBookingData(DateTime dateFrom, DateTime dateTo)
+        {
+            var bookingItems = _bookingQueryService.GetDueBookingDetailsByDate(dateFrom.Date, dateTo.Date);
+            return Json(bookingItems);
+        }
+
+
+        [HttpGet]
         [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> UpdateBookingAmount(int followupId)
         {
@@ -168,6 +181,12 @@ namespace Web.Controllers
                 bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
 
                 var bookingEntityToUpdate = await _bookingService.GetByIdAsync(model.FollowupId);
+
+                if (bookingEntityToUpdate.PaymentStatus=="Due" && model.PaymentStatus == "Paid")
+                {
+                    bookingEntityToUpdate.PaymentDate= TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+                }
+
                 bookingEntityToUpdate.PaymentStatus = model.PaymentStatus;
 
                 bool isBookingUpdateSuccess = await _bookingService.UpdateEntity(bookingEntityToUpdate);

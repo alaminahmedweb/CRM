@@ -291,6 +291,89 @@ namespace Infrastructure.Data.Queries
             return bookingDto;
         }
 
+        public List<BookingItemDto> GetDueBookingDetailsByDate(DateTime dateFrom, DateTime dateTo)
+        {
+
+            //retrive booking,followup,customer,area
+
+            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
+                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel").Where(a => a.PaymentStatus == "Due")
+                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                               join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                               join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
+                               join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                               join mnth in _dbContext.MonthList on fol.CustomerDoTheWorkingMonth equals mnth.Id
+                               join tm in _dbContext.Teams on bk.TeamId equals tm.Id
+                               join sft in _dbContext.ShiftInfos on bk.ShiftId equals sft.Id
+                               select new
+                               {
+                                   BookingId = bk.Id,
+                                   TeamId = bk.TeamId,
+                                   ShiftId = bk.ShiftId,
+                                   EntryDate = bk.EntryDate.Date,
+                                   BookingDate = bk.BookingDate.Date,
+                                   FollowupId = bk.FollowupId,
+                                   Status = bk.Status,
+                                   AgreeAmount = fol.AgreeAmount,
+                                   CustomerId = cus.Id,
+                                   OrganizationName = cus.ClientName,
+                                   Address = cus.Address,
+                                   MobileNo = "",//numb.MobileNo"",
+                                   CityName = cty.Name,
+                                   AreaName = ar.Name,
+                                   SubAreaName = sar.Name,
+                                   ServiceName = srv.Name,
+                                   EmployeeName = emp.Name,
+                                   WorkingMonth = mnth.Name,
+                                   FollowupCallDate = fol.FollowupCallDate.Date,
+                                   Remarks = fol.Remarks,
+                                   BookingNote = bk.BookingNote,
+                                   TeamName=tm.Name,
+                                   TeamLeaderName=tm.TeamLeaderName,
+                                   ShiftName=sft.Name,
+                               });
+
+
+            List<BookingItemDto> bookingDtos = new List<BookingItemDto>();
+            foreach (var item in bookingInfo)
+            {
+                BookingItemDto bookingItemDto = new BookingItemDto();
+                bookingItemDto.TeamId = item.TeamId;
+                bookingItemDto.TeamName = item.TeamName;
+                bookingItemDto.TeamLeaderName = item.TeamLeaderName;
+                bookingItemDto.ShiftId = item.ShiftId;
+                bookingItemDto.ShiftName = item.ShiftName;
+                bookingItemDto.TrDate = item.BookingDate.Date;
+                bookingItemDto.EntryDate = item.EntryDate;
+                bookingItemDto.BookingDate = item.BookingDate.Date;
+                bookingItemDto.BookingNote = item.BookingNote;
+                bookingItemDto.FollowupId = item.FollowupId;
+                bookingItemDto.Status = "Booked";
+                bookingItemDto.AgreeAmount = item.AgreeAmount;
+                bookingItemDto.CustomerId = item.CustomerId;
+                bookingItemDto.Name = item.OrganizationName;
+                bookingItemDto.Address = item.Address;
+                bookingItemDto.MobileNo = item.MobileNo;
+                bookingItemDto.CityName = item.CityName;
+                bookingItemDto.AreaName = item.AreaName;
+                bookingItemDto.SubAreaName = item.SubAreaName;
+
+                bookingItemDto.ServiceName = item.ServiceName;
+                bookingItemDto.EmployeeName = item.EmployeeName;
+                bookingItemDto.WorkingMonth = item.WorkingMonth;
+                bookingItemDto.FollowupCallDate = item.FollowupCallDate;
+                bookingItemDto.Remarks = item.Remarks;
+                bookingItemDto.BookingId = item.BookingId;
+                bookingDtos.Add(bookingItemDto);
+
+            }
+
+            return bookingDtos;
+        }
+
         public bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate)
         {
             return _dbContext.Bookings.Any(a => a.TeamId == teamId && a.ShiftId == shiftId && a.BookingDate == bookingDate && a.Status == "Booked");

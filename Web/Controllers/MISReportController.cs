@@ -165,6 +165,32 @@ namespace Web.Controllers
             var data = _misReportQueryService.GetBookingCancelAndShiftList(model.DateFrom, model.DateTo, "Cancel");
             return View(data);
         }
+        public IActionResult ShowDueBookingList(DateRangeVM model)
+        {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
+            ViewBag.DateRange = model;
+            ViewBag.ReportTitle = "Due Booking List";
+            ViewBag.PageSize = "Legal";
+            var data = _misReportQueryService.GetDueBookingList(model.DateFrom, model.DateTo);
+            return View(data);
+        }
+        public IActionResult ShowCollectionReport(DateRangeVM model)
+        {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
+            ViewBag.DateRange = model;
+            ViewBag.ReportTitle = "Collection Report";
+            ViewBag.PageSize = "Legal";
+            var data = _misReportQueryService.GetCollectionReport(model.DateFrom, model.DateTo);
+            return View(data);
+        }
         public IActionResult ShowNewCustomerList(DateRangeVM model)
         {
             if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
