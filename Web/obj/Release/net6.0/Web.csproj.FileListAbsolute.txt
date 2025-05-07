@@ -308,3 +308,7 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\ref\Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\TimeZoneConverter.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.sourcelink.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.csproj.Up2Date
+D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\Web.staticwebassets.endpoints.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.build.endpoints.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.upToDateCheck.txt

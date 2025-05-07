@@ -102,7 +102,7 @@ namespace Infrastructure.Data.Queries
                                   CustomerId = cus.Id,
                                   OrganizationName = cus.ClientName,
                                   Address = cus.Address,
-                                  MobileNo=numb.MobileNo,
+                                  MobileNo=numb.MobileNo.Substring(0, 11),
                                   CityName = cty.Name,
                                   AreaName = ar.Name,
                                   SubAreaName = sar.Name,
@@ -297,7 +297,8 @@ namespace Infrastructure.Data.Queries
             //retrive booking,followup,customer,area
 
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
-                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel").Where(a => a.PaymentStatus == "Due")
+                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
+                                        .Where(a => a.PaymentStatus == "Due")
                                join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
                                join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id

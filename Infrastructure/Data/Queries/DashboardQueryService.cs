@@ -23,6 +23,17 @@ namespace Infrastructure.Data.Queries
             DashboardDto dashboardDto = new DashboardDto();
             DateTime currentDateFrom = (TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time"));
 
+            //dashboardDto.TodayTotalFollowupQty = 1.ToString();
+            //dashboardDto.TotalCustomer = 1.ToString();
+            //dashboardDto.TodayNewCustomer = 1.ToString();
+            //dashboardDto.TodayFollowupDoneQty = 1.ToString();
+            //dashboardDto.TodayRemainingFollowupQty = 1.ToString();
+            //dashboardDto.TodayBookingQty = 1.ToString();
+            //dashboardDto.TodayBookingAmount = 1.ToString();
+            //dashboardDto.ThisMonthBookingQty =1.ToString();
+            //dashboardDto.ThisMonthComplainPendingQty = 1.ToString();
+            //dashboardDto.ThisMonthBookingAmount = 1.ToString();
+
             dashboardDto.TotalCustomer = _dbContext.Customers.Count().ToString();
 
             dashboardDto.TodayNewCustomer = _dbContext.Customers.Where(a => a.ModifiedDate.Date == currentDateFrom.Date).Count().ToString();

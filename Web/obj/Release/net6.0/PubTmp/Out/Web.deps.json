@@ -2563,7 +2563,10 @@
           "TimeZoneConverter": "6.1.0"
         },
         "runtime": {
-          "ApplicationCore.dll": {}
+          "ApplicationCore.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Infrastructure/1.0.0": {
@@ -2577,7 +2580,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13"
         },
         "runtime": {
-          "Infrastructure.dll": {}
+          "Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

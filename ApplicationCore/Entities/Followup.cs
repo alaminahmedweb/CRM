@@ -36,7 +36,7 @@ namespace ApplicationCore.Entities
         public string DiscussionDetailsNote { get; set; } = String.Empty;
 
         public string MarketingNextPlan { get; set; } = String.Empty;
-
+        
 
         [Required]
         [DataType(DataType.Date)]

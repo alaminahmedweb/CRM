@@ -42,7 +42,8 @@ namespace ApplicationCore.Services
 
         public IEnumerable<Booking> Find(Expression<Func<Booking, bool>> expression)
         {
-            throw new NotImplementedException();
+            var entity = _repository.Find(expression);
+            return entity;
         }
 
         public Task<IEnumerable<Booking>> GetAllAsync()

@@ -18,12 +18,14 @@ namespace Web.Controllers
         private readonly IEmployeeService _employeeService;
         private readonly IFollowupQueryService _followupQueryService;
         private readonly IFollowupService _followupService;
+        private readonly IUnitOfWok _unitOfWok;
 
         public BookingController(IBookingQueryService bookingQueryService,
             IBookingService bookingService,
             IMapper mapper,
             ITeamService teamService,
             IEmployeeService employeeService,
+            IUnitOfWok unitOfWok,
             IFollowupQueryService followupQueryService,
             IFollowupService followupService)
         {
@@ -34,6 +36,8 @@ namespace Web.Controllers
             this._employeeService = employeeService;
             this._followupQueryService = followupQueryService;
             this._followupService = followupService;
+            this._unitOfWok = unitOfWok;
+
         }
 
         [HttpGet]
@@ -42,7 +46,7 @@ namespace Web.Controllers
             CustomerFollowupDto bookingDetails = _followupQueryService.GetCustomerDetailsByFollowupId(followupId);
             BookingVM bookingInfo = _mapper.Map<CustomerFollowupDto, BookingVM>(bookingDetails);
             ViewBag.TeamInfo = _teamService.Find(a => a.Status == "Active");
-            ViewBag.EmployeeList =  _employeeService.Find(a => a.Status == "Active");
+            ViewBag.EmployeeList = _employeeService.Find(a => a.Status == "Active");
             return View(bookingInfo);
         }
 
@@ -56,6 +60,7 @@ namespace Web.Controllers
             }
             if (ModelState.IsValid)
             {
+                model.PaymentDate=model.BookingDate;
                 int id = await _bookingService.AddEntity(model);
                 if (id != 0)
                 {
@@ -97,10 +102,10 @@ namespace Web.Controllers
         public async Task<IActionResult> ShiftBooking(int bookingId)
         {
 
-            BookingDto booking =  _bookingQueryService.GetCustomerAndBookingDetailsByBookingId(bookingId);
+            BookingDto booking = _bookingQueryService.GetCustomerAndBookingDetailsByBookingId(bookingId);
             BookingVM bookingInfo = _mapper.Map<BookingDto, BookingVM>(booking);
             ViewBag.TeamInfo = _teamService.Find(a => a.Status == "Active");
-            ViewBag.EmployeeList =  _employeeService.Find(a => a.Status == "Active");
+            ViewBag.EmployeeList = _employeeService.Find(a => a.Status == "Active");
             return View(bookingInfo);
         }
 
@@ -155,13 +160,16 @@ namespace Web.Controllers
         [Authorize(Roles = "Super Admin,Admin")]
         public async Task<IActionResult> UpdateBookingAmount(int followupId)
         {
-            Followup fol =await _followupService.GetByIdAsync(followupId);
+            Followup fol = await _followupService.GetByIdAsync(followupId);
             UpdateBookingAmountVM updateBookingAmountVM = new UpdateBookingAmountVM();
             updateBookingAmountVM.AgreeAmount = fol.AgreeAmount;
             updateBookingAmountVM.Remarks = fol.Remarks;
 
-            Booking booking = await _bookingService.GetByIdAsync(followupId);
-            updateBookingAmountVM.PaymentStatus = booking.PaymentStatus;
+            IEnumerable<Booking> booking = _bookingService.Find(a=>a.FollowupId== followupId);
+            foreach (Booking bookingItem in booking)
+            {
+                updateBookingAmountVM.PaymentStatus = bookingItem.PaymentStatus;
+            }
 
             return View(updateBookingAmountVM);
         }
@@ -172,29 +180,48 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var entityToUpdate = await _followupService.GetByIdAsync(model.FollowupId);
-                entityToUpdate.AgreeAmount = model.AgreeAmount;
-                entityToUpdate.ModifiedBy = model.ModifiedBy;
-                entityToUpdate.Remarks = model.Remarks;
-
-
-                bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
-
-                var bookingEntityToUpdate = await _bookingService.GetByIdAsync(model.FollowupId);
-
-                if (bookingEntityToUpdate.PaymentStatus=="Due" && model.PaymentStatus == "Paid")
+                _unitOfWok.BeginTransaction();
+                try
                 {
-                    bookingEntityToUpdate.PaymentDate= TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+                    var entityToUpdate = await _followupService.GetByIdAsync(model.FollowupId);
+                    entityToUpdate.AgreeAmount = model.AgreeAmount;
+                    entityToUpdate.ModifiedBy = model.ModifiedBy;
+                    entityToUpdate.Remarks = model.Remarks;
+
+                    bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
+                    bool isBookingUpdateSuccess = true;
+
+                    IEnumerable<Booking> bookingItems
+                        = _bookingService.Find(a => a.FollowupId == model.FollowupId);
+
+                    List<int> bookingList = new List<int>();
+                    int bookingId = 1;
+                    foreach (Booking data in bookingItems)
+                    {
+                        bookingId = data.Id;
+                        bookingList.Add(bookingId);
+                    }
+                    foreach(var item in bookingList)
+                    {
+                        Booking booking = await _bookingService.GetByIdAsync(item);
+                        if (booking.PaymentStatus == "Due" && model.PaymentStatus == "Paid")
+                        {
+                            booking.PaymentDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+                        }
+                        booking.PaymentStatus = model.PaymentStatus;
+                        isBookingUpdateSuccess = await _bookingService.UpdateEntity(booking);
+                    }
+
+                    _unitOfWok.CommitTransaction();
+                    if (isSuccess && isBookingUpdateSuccess)
+                    {
+                        TempData["SuccessMessage"] = "Updated Successfully..";
+                        return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });
+                    }
                 }
-
-                bookingEntityToUpdate.PaymentStatus = model.PaymentStatus;
-
-                bool isBookingUpdateSuccess = await _bookingService.UpdateEntity(bookingEntityToUpdate);
-
-                if (isSuccess && isBookingUpdateSuccess)
+                catch (Exception ex)
                 {
-                    TempData["SuccessMessage"] = "Updated Successfully..";
-                    return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });
+                    _unitOfWok.RollbackTransaction();
                 }
             }
             return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });

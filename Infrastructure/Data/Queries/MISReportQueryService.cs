@@ -95,7 +95,7 @@ namespace Infrastructure.Data.Queries
                                    ContactName = res.ContactName,
                                    CategoryName = res.CategoryName,
                                    ReferenceBy = res.ReferenceBy,
-                                   MobileNo = mob.MobileNo,
+                                   MobileNo = mob.MobileNo.Substring(0, 11),
                                    Status = stat.Status
                                });
 
@@ -191,7 +191,7 @@ namespace Infrastructure.Data.Queries
                              CategoryName = cat.Name,
                              ContactName = cont.Name,
                              ReferenceBy = cus.ReferenceBy,
-                             MobileNo = numb.MobileNo,
+                             MobileNo = numb.MobileNo.Substring(0, 11),
                              ServiceName = srv.Name,
                              Status = fol.Status
                          };
@@ -266,7 +266,7 @@ namespace Infrastructure.Data.Queries
                                    CustomerId = cus.Id,
                                    OrganizationName = cus.ClientName,
                                    Address = cus.Address,
-                                   MobileNo = numb.MobileNo,
+                                   MobileNo = numb.MobileNo.Substring(0, 11),
                                    CityName = cty.Name,
                                    AreaName = ar.Name,
                                    SubAreaName = sar.Name,
@@ -371,7 +371,7 @@ namespace Infrastructure.Data.Queries
                                    CustomerId = cus.Id,
                                    OrganizationName = cus.ClientName,
                                    Address = cus.Address,
-                                   MobileNo = numb.MobileNo,
+                                   MobileNo = numb.MobileNo.Substring(0, 11),
                                    CityName = cty.Name,
                                    AreaName = ar.Name,
                                    SubAreaName = sar.Name,
@@ -513,8 +513,8 @@ namespace Infrastructure.Data.Queries
 
 
             //retrive booking,followup,customer,area
-            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.EntryDate >= dateFrom.Date
-                                        && a.EntryDate <= dateTo.Date).Where(a => a.Status != "Cancel")
+            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
+                                        && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
                                join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
                                join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
@@ -539,7 +539,7 @@ namespace Infrastructure.Data.Queries
                                    CustomerId = cus.Id,
                                    OrganizationName = cus.ClientName,
                                    Address = cus.Address,
-                                   MobileNo = numb.MobileNo,
+                                   MobileNo = numb.MobileNo.Substring(0, 11),
                                    CityName = cty.Name,
                                    AreaName = ar.Name,
                                    SubAreaName = sar.Name,
@@ -597,8 +597,8 @@ namespace Infrastructure.Data.Queries
         {
             var mobileNoWithIds = (from con in _dbContext.ContractDetails
                                    join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
-                                   join bk in _dbContext.Bookings.Where(a => a.PaymentDate >= dateFrom.Date
-                                        && a.PaymentDate <= dateTo.Date)
+                                   join bk in _dbContext.Bookings.Where(a => a.PaymentDate.Date >= dateFrom.Date
+                                        && a.PaymentDate.Date <= dateTo.Date)
                                         .Where(a => a.Status != "Cancel")
                                         .Where(a => a.PaymentStatus == "Paid")
                                         on fol.Id equals bk.FollowupId
@@ -611,10 +611,12 @@ namespace Infrastructure.Data.Queries
                                     MobileNo = string.Join(",", r.Select(a => a.MobileNo))
                                 });
 
-
             //retrive booking,followup,customer,area
-            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.EntryDate >= dateFrom.Date
-                                        && a.EntryDate <= dateTo.Date).Where(a => a.Status != "Cancel")
+            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => 
+                                        a.PaymentDate.Date >= dateFrom.Date
+                                        && a.PaymentDate.Date <= dateTo.Date)
+                                        .Where(a => a.Status != "Cancel")
+                                        .Where(a => a.PaymentStatus == "Paid")
                                join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
                                join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
@@ -639,7 +641,7 @@ namespace Infrastructure.Data.Queries
                                    CustomerId = cus.Id,
                                    OrganizationName = cus.ClientName,
                                    Address = cus.Address,
-                                   MobileNo = numb.MobileNo,
+                                   MobileNo = numb.MobileNo.Substring(0,11),
                                    CityName = cty.Name,
                                    AreaName = ar.Name,
                                    SubAreaName = sar.Name,
@@ -674,7 +676,7 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.CustomerId = item.CustomerId;
                 bookingItemDto.Name = item.OrganizationName;
                 bookingItemDto.Address = item.Address;
-                bookingItemDto.MobileNo = item.MobileNo;
+                bookingItemDto.MobileNo =  item.MobileNo;
                 bookingItemDto.CityName = item.CityName;
                 bookingItemDto.AreaName = item.AreaName;
                 bookingItemDto.SubAreaName = item.SubAreaName;
