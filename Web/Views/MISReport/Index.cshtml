@@ -112,6 +112,7 @@
                         <div class="report-body">
                             <div class="d-grid gap-1">
                                 <button type="submit" id="btnEntryDateWiseBookingList" class="btn btn-primary ml-2">Show Booking List (Entry Date Wise)</button>
+                                <button type="submit" id="btnBookingDateWiseBookingList" class="btn btn-primary ml-2">Show Booking List (Booking Date Wise)</button>
                                 <button type="submit" id="btnShiftedBookingList" class="btn btn-primary ml-2">Show Booking Shifting List</button>
                                 <button type="submit" id="btnCancelBookingList" class="btn btn-primary ml-2">Show Booking Cancel List</button>
                                 <button type="submit" id="btnDueBookingList" class="btn btn-primary ml-2">Show Due Booking List</button>
@@ -258,18 +259,53 @@
             $('#btnEntryDateWiseBookingList').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
-                $.ajax({
-                    type: "GET",
-                    url: "@Url.Action("GetSuccessData", "MISReport")",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        window.location.href = "/MISReport/ShowEntryDateWiseBookingList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        // handle error
-                    }
-                });
+                var url = '@Url.Action("ShowEntryDateWiseBookingList", "MISReport")' +
+                          '?dateFrom=' + encodeURIComponent(dateFrom) +
+                          '&dateTo=' + encodeURIComponent(dateTo);
+                window.open(url, '_blank');
+            });
+
+            // $('#btnEntryDateWiseBookingList').click(function () {
+            //     var dateFrom = $('#DateFrom').val();
+            //     var dateTo = $('#DateTo').val();
+            //     $.ajax({
+            //         type: "GET",
+            //         url: "@Url.Action("GetSuccessData", "MISReport")",
+            //         contentType: "application/json; charset=utf-8",
+            //         dataType: "json",
+            //         success: function (result) {
+            //             window.location.href = "/MISReport/ShowEntryDateWiseBookingList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+            //         },
+            //         error: function (xhr, ajaxOptions, thrownError) {
+            //             // handle error
+            //         }
+            //     });
+            // });
+
+            // $('#btnBookingDateWiseBookingList').click(function () {
+            //     var dateFrom = $('#DateFrom').val();
+            //     var dateTo = $('#DateTo').val();
+            //     $.ajax({
+            //         type: "GET",
+            //         url: "@Url.Action("GetSuccessData", "MISReport")",
+            //         contentType: "application/json; charset=utf-8",
+            //         dataType: "json",
+            //         success: function (result) {
+            //             window.location.href = "/MISReport/ShowBookingDateWiseBookingList?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+            //         },
+            //         error: function (xhr, ajaxOptions, thrownError) {
+            //             // handle error
+            //         }
+            //     });
+            // });
+
+            $('#btnBookingDateWiseBookingList').click(function () {
+                var dateFrom = $('#DateFrom').val();
+                var dateTo = $('#DateTo').val();
+                var url = '@Url.Action("ShowBookingDateWiseBookingList", "MISReport")' +
+                          '?dateFrom=' + encodeURIComponent(dateFrom) +
+                          '&dateTo=' + encodeURIComponent(dateTo);
+                window.open(url, '_blank');
             });
 
             $('#btnCancelBookingList').click(function () {
@@ -326,19 +362,28 @@
             $('#btnCollectionReport').click(function () {
                 var dateFrom = $('#DateFrom').val();
                 var dateTo = $('#DateTo').val();
-                $.ajax({
-                    type: "GET",
-                    url: "@Url.Action("GetSuccessData", "MISReport")",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        window.location.href = "/MISReport/ShowCollectionReport?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
-                    },
-                    error: function (xhr, ajaxOptions, thrownError) {
-                        // handle error
-                    }
-                });
+                var url = '@Url.Action("ShowCollectionReport", "MISReport")' +
+                          '?dateFrom=' + encodeURIComponent(dateFrom) +
+                          '&dateTo=' + encodeURIComponent(dateTo);
+                window.open(url, '_blank');
             });
+
+            // $('#btnCollectionReport').click(function () {
+            //     var dateFrom = $('#DateFrom').val();
+            //     var dateTo = $('#DateTo').val();
+            //     $.ajax({
+            //         type: "GET",
+            //         url: "@Url.Action("GetSuccessData", "MISReport")",
+            //         contentType: "application/json; charset=utf-8",
+            //         dataType: "json",
+            //         success: function (result) {
+            //             window.location.href = "/MISReport/ShowCollectionReport?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+            //         },
+            //         error: function (xhr, ajaxOptions, thrownError) {
+            //             // handle error
+            //         }
+            //     });
+            // });
         });
     </script>
 }

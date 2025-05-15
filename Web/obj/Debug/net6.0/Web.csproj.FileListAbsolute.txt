@@ -312,3 +312,5 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\refint\Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.pdb
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\ref\Web.dll
+D:\CRM_By_Zahid_21_06_2023\Web\bin\Debug\net6.0\EPPlusFree.dll
+D:\CRM_By_Zahid_21_06_2023\Web\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll

@@ -111,7 +111,7 @@ namespace Infrastructure.Data.Queries
                                   WorkingMonth = mnth.Name,
                                   FollowupCallDate = fol.FollowupCallDate.Date,
                                   Remarks = fol.Remarks,
-                                  BookingNote=bk.BookingNote
+                                  BookingNote=bk.BookingNote+bk.PaymentStatus
                               });
 
             var resultFinal = (from tmSft in teamShiftAndDate

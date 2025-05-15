@@ -12,6 +12,7 @@ namespace ApplicationCore.Interfaces
         IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo,int employeeId,int contactId,int categoryId);
         IEnumerable<CustomerDto> GetAllFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetEntryDateWiseBookingList(DateTime dateFrom, DateTime dateTo);
+        List<BookingItemDto> GetBookingDateWiseBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetBookingCancelAndShiftList(DateTime dateFrom, DateTime dateTo,string status);
         List<BookingItemDto> GetDueBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetCollectionReport(DateTime dateFrom, DateTime dateTo);

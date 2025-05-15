@@ -9,6 +9,7 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\AutoMapper.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\Azure.Core.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\Azure.Identity.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\EPPlusFree.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\MessagePack.Annotations.dll
@@ -102,6 +103,7 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Security.Per
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Text.Encodings.Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Text.Json.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Windows.Extensions.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\System.Xml.XPath.XmlDocument.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\TimeZoneConverter.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\cs\Microsoft.CodeAnalysis.resources.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\PubTmp\Out\de\Microsoft.CodeAnalysis.resources.dll

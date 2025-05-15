@@ -102,7 +102,7 @@ namespace Infrastructure.Data.Queries
                                                         select compl).Count().ToString();
 
 
-            var query = _dbContext.Bookings
+            var query = _dbContext.Bookings.Where(a=>a.Status!="Cancel")
                 .Where(b => b.BookingDate.Year == DateTime.Now.Date.Year)
                 .GroupBy(b => new
                 {

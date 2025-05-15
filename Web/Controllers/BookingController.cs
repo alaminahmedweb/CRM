@@ -120,6 +120,7 @@ namespace Web.Controllers
             }
             if (ModelState.IsValid)
             {
+                model.PaymentDate = model.BookingDate;
                 bool isSuccess = await _bookingService.UpdateEntity(model);
                 if (isSuccess)
                 {
