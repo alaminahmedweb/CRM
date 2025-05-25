@@ -87,7 +87,7 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                model.Status = "Cancel";
+                model.Status = "Cancel-Pending";
                 bool isSuccess = await _bookingService.UpdateEntity(model);
                 if (isSuccess)
                 {
@@ -110,7 +110,6 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        //[Bind("Id,TeamId,ShiftId,FollowupId,BookingDate,ModifiedBy")] 
         public async Task<IActionResult> ShiftBooking(Booking model)
         {
             if (_bookingQueryService.IsBookedAlready(model.TeamId, model.ShiftId, model.BookingDate))

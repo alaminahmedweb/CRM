@@ -53,5 +53,6 @@ namespace ApplicationCore.Entities
         public int FollowupById { get; set; } = 0;
         public Employee? Employee { get; set; }
         public bool IsFollowupDone { get; set; } = false;
+        public double PendingAgreeAmount { get; set; } = 0;
     }
 }

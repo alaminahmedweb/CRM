@@ -41,5 +41,12 @@ namespace ApplicationCore.Entities
         public string? BookingNote { get; set; } = "";
         public DateTime PaymentDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string PaymentStatus { get; set; } = "Paid";//Paid/Due
+
+        public DateTime PendingShiftDate { get; set; }
+        public DateTime PendingEntryDate { get; set; }
+        public int PendingTeamId { get; set; }
+        public int PendingShiftId { get; set; }
+        public int PendingBookingById { get; set; }
+        public string? PendingBookingNote { get; set; } = "";
     }
 }
