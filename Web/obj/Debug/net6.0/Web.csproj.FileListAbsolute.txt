@@ -301,12 +301,6 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\scopedcss\projectbundle\Web.bund
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.build.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.development.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.build.endpoints.json
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.pack.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.csproj.Up2Date
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.dll
@@ -314,3 +308,4 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\refint\Web.dll
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.pdb
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\ref\Web.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Debug\net6.0\staticwebassets.build.json.cache

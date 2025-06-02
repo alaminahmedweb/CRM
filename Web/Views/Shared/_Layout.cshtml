@@ -1,4 +1,5 @@
 ﻿@inject SignInManager<ApplicationUser> signInManager;
+@* ﻿@inject SignInManager<ApplicationUser> signInManager; *@
 
 <!DOCTYPE html>
 <html lang="en">
@@ -239,6 +240,33 @@
                                     </div>
                                 </a>
                             </div>
+
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link dropdown-indicator label-1" href="#requestApprove" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="requestApprove">
+                                    <div class="d-flex align-items-center">
+                                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Request Approve</span>
+                                    </div>
+                                </a>
+                                <div class="parent-wrapper label-1">
+                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="requestApprove">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingCancelData" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Booking Cancel Request</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingShiftData" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Booking Shift Request</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingAmtUpdateData" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Amount Change Request</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- parent pages-->
                         </li>
                     </ul>
                 </div>

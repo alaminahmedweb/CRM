@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Show Pending Booking Amount Update List";
+}
+
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Pending Booking Amount Change List</h3>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-1">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="table-responsive">
+                    <table id="bookinginfo" class="table table-bordered cell-border compact hover stripe dataTable" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Working Date</th>
+                                <th>Team</th>
+                                <th>Shift</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Prev. Amount</th>
+                                <th>New Amount</th>
+                                <th>Note</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Booking/GetAllPendingBookingAmtUpdateData",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var bookingTable = $('#bookinginfo tbody');
+                    bookingTable.empty();
+
+                    var bookingDate = "";
+
+                    $(data).each(function (index, data) {
+                        if (data.bookingDate == null) {
+                            bookingDate = ""
+                        } else {
+                            bookingDate = data.bookingDate.substring(0, 10);
+                        }
+
+                        var linkShiftOrCancelBooking = "";
+
+                        if (data.name != "") {
+                            linkShiftOrCancelBooking = '<a href="#" onclick="GetApproveBookingAmtUpdate(\'' + data.followupId + '\')">Approve</a>';
+                        }
+                        bookingTable.append('<tr><td>' + bookingDate + '</td><td>' + 
+                            data.teamName + '</td><td>' +
+                            data.shiftName + '</td><td>' +
+                            data.name + '</td><td>' + data.address + '</td><td>' +
+                            data.agreeAmount + '</td><td>' + data.pendingAgreeAmount + '</td><td>' + data.remarks + '</td><td>' +
+                            linkShiftOrCancelBooking + '</td></tr>');
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+
+        });
+        function GetApproveBookingAmtUpdate(followupId) {
+        // if (confirm('Are You Sure?')) {
+            if (confirm('Are You Sure?')) {
+                $.ajax({
+                    url: '/Booking/ApproveBookingAmountChange',
+                    data: { 'followupId': followupId },
+                    type: 'POST',
+                    datatype: JSON,
+                    success: function (data) {
+                        alert(data);
+                        location.reload(true);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+            };
+        }
+
+    </script>
+}

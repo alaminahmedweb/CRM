@@ -322,14 +322,7 @@ namespace Infrastructure.Data.Queries
 
         public List<BookingItemDto> GetBookingCancelAndShiftList(DateTime dateFrom, DateTime dateTo, string status)
         {
-            //var mobileNoWithIds = _dbContext.ContractDetails
-            //        .GroupBy(a => a.CustomerId)
-            //        .Select(r => new
-            //        {
-            //            CustomerId = r.Key,
-            //            MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-            //        });
-
+;
             var mobileNoWithIds = (from con in _dbContext.ContractDetails
                                    join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
                                    join bk in _dbContext.Bookings.Where(a => a.ModifiedDate >= dateFrom.Date
@@ -789,6 +782,103 @@ namespace Infrastructure.Data.Queries
 
                 bookingItemDto.BookingEntryDate = item.EntryDate.ToString("dd/MM/yyyy");
                 bookingItemDto.BookingWorkingDate = item.BookingDate.ToString("dd/MM/yyyy");
+                bookingDtos.Add(bookingItemDto);
+            }
+            return bookingDtos;
+        }
+
+        public List<BookingItemDto> GetPendingBookingShiftList(DateTime dateFrom, DateTime dateTo, string status)
+        {
+            var mobileNoWithIds = (from con in _dbContext.ContractDetails
+                                   join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
+                                   join bk in _dbContext.Bookings.Where(a => a.ModifiedDate >= dateFrom.Date
+                                        && a.ModifiedDate <= dateTo.Date).Where(a => a.Status == status)
+                                        on fol.Id equals bk.FollowupId
+                                   select con
+                                           )
+                                .GroupBy(a => a.CustomerId)
+                                .Select(r => new
+                                {
+                                    CustomerId = r.Key,
+                                    MobileNo = string.Join(",", r.Select(a => a.MobileNo))
+                                });
+
+            //retrive booking,followup,customer,area
+            var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.ModifiedDate.Date >= dateFrom.Date
+                                        && a.ModifiedDate.Date <= dateTo.Date).Where(a => a.Status == status)
+                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                               join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                               join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
+                               join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                               join mnth in _dbContext.MonthList on fol.CustomerDoTheWorkingMonth equals mnth.Id
+                               join tm in _dbContext.Teams on bk.PendingTeamId equals tm.Id
+                               join sft in _dbContext.ShiftInfos on bk.PendingShiftId equals sft.Id
+                               join numb in mobileNoWithIds on cus.Id equals numb.CustomerId
+                               select new
+                               {
+                                   BookingId = bk.Id,
+                                   TeamId = bk.PendingTeamId,
+                                   ShiftId = bk.PendingShiftId,
+                                   EntryDate = bk.PendingEntryDate.Date,
+                                   BookingDate = bk.PendingShiftDate.Date,
+                                   FollowupId = bk.FollowupId,
+                                   Status = bk.Status,
+                                   AgreeAmount = fol.AgreeAmount,
+                                   CustomerId = cus.Id,
+                                   OrganizationName = cus.ClientName,
+                                   Address = cus.Address,
+                                   MobileNo = numb.MobileNo.Substring(0, 11),
+                                   CityName = cty.Name,
+                                   AreaName = ar.Name,
+                                   SubAreaName = sar.Name,
+                                   ServiceName = srv.Name,
+                                   EmployeeName = emp.Name,
+                                   WorkingMonth = mnth.Name,
+                                   FollowupCallDate = fol.FollowupCallDate.Date,
+                                   Remarks = fol.Remarks,
+                                   BookingNote = bk.PendingBookingNote,
+                                   TeamName = tm.Name,
+                                   TeamLeaderName = tm.TeamLeaderName,
+                                   ShiftName = sft.Name,
+                                   ModifiedDate = bk.ModifiedDate
+                               });
+
+
+            List<BookingItemDto> bookingDtos = new List<BookingItemDto>();
+            foreach (var item in bookingInfo)
+            {
+                BookingItemDto bookingItemDto = new BookingItemDto();
+                bookingItemDto.TeamId = item.TeamId;
+                bookingItemDto.TeamName = item.TeamName;
+                bookingItemDto.TeamLeaderName = item.TeamLeaderName;
+                bookingItemDto.ShiftId = item.ShiftId;
+                bookingItemDto.ShiftName = item.ShiftName;
+                bookingItemDto.TrDate = item.BookingDate.Date;
+                bookingItemDto.EntryDate = item.EntryDate.Date;
+                bookingItemDto.BookingDate = item.BookingDate.Date;
+                bookingItemDto.BookingNote = item.BookingNote;
+                bookingItemDto.FollowupId = item.FollowupId;
+                bookingItemDto.Status = item.Status;
+                bookingItemDto.AgreeAmount = item.AgreeAmount;
+                bookingItemDto.CustomerId = item.CustomerId;
+                bookingItemDto.Name = item.OrganizationName;
+                bookingItemDto.Address = item.Address;
+                bookingItemDto.MobileNo = item.MobileNo;
+                bookingItemDto.CityName = item.CityName;
+                bookingItemDto.AreaName = item.AreaName;
+                bookingItemDto.SubAreaName = item.SubAreaName;
+                bookingItemDto.ModifiedDate = item.ModifiedDate;
+
+                bookingItemDto.ServiceName = item.ServiceName;
+                bookingItemDto.EmployeeName = item.EmployeeName;
+                bookingItemDto.WorkingMonth = item.WorkingMonth;
+                bookingItemDto.FollowupCallDate = item.FollowupCallDate;
+                bookingItemDto.Remarks = item.Remarks;
+                bookingItemDto.BookingId = item.BookingId;
+
                 bookingDtos.Add(bookingItemDto);
             }
             return bookingDtos;

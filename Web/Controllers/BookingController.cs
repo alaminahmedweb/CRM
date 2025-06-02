@@ -2,8 +2,10 @@
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using AutoMapper;
+using Infrastructure.Data.Queries;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 using Web.ViewModels;
 
 namespace Web.Controllers
@@ -19,6 +21,7 @@ namespace Web.Controllers
         private readonly IFollowupQueryService _followupQueryService;
         private readonly IFollowupService _followupService;
         private readonly IUnitOfWok _unitOfWok;
+        private readonly IMISReportQueryService _misReportQueryService;
 
         public BookingController(IBookingQueryService bookingQueryService,
             IBookingService bookingService,
@@ -27,7 +30,8 @@ namespace Web.Controllers
             IEmployeeService employeeService,
             IUnitOfWok unitOfWok,
             IFollowupQueryService followupQueryService,
-            IFollowupService followupService)
+            IFollowupService followupService,
+            IMISReportQueryService misReportQueryService)
         {
             this._bookingQueryService = bookingQueryService;
             this._bookingService = bookingService;
@@ -37,7 +41,7 @@ namespace Web.Controllers
             this._followupQueryService = followupQueryService;
             this._followupService = followupService;
             this._unitOfWok = unitOfWok;
-
+            this._misReportQueryService = misReportQueryService;
         }
 
         [HttpGet]
@@ -58,6 +62,12 @@ namespace Web.Controllers
                 ModelState.AddModelError("", "Already Booked for this date,team and shift");
                 TempData["ErrorMessage"] = "Already Booked..";
             }
+            if (_bookingQueryService.IsPendingBookedAlready(model.TeamId, model.ShiftId, model.BookingDate))
+            {
+                ModelState.AddModelError("", "Already Pending Booked for this date,team and shift");
+                TempData["ErrorMessage"] = "Booking Shift Pending In This Slot..Please Approve First";
+            }
+
             if (ModelState.IsValid)
             {
                 model.PaymentDate=model.BookingDate;
@@ -91,7 +101,7 @@ namespace Web.Controllers
                 bool isSuccess = await _bookingService.UpdateEntity(model);
                 if (isSuccess)
                 {
-                    TempData["SuccessMessage"] = "Canceled Successfully..";
+                    TempData["SuccessMessage"] = "Cancel Request Sent Successfully..";
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -117,13 +127,28 @@ namespace Web.Controllers
                 ModelState.AddModelError("", "Already Booked for this date,team and shift");
                 TempData["ErrorMessage"] = "Already Booked..";
             }
+            if (_bookingQueryService.IsPendingBookedAlready(model.TeamId, model.ShiftId, model.BookingDate))
+            {
+                ModelState.AddModelError("", "Already Pending Booked for this date,team and shift");
+                TempData["ErrorMessage"] = "Already Booked..";
+            }
+
             if (ModelState.IsValid)
             {
-                model.PaymentDate = model.BookingDate;
-                bool isSuccess = await _bookingService.UpdateEntity(model);
+                var modelToUpdate =await _bookingService.GetByIdAsync(model.Id);
+                modelToUpdate.PendingShiftDate = model.BookingDate;
+                modelToUpdate.PendingEntryDate = model.EntryDate;
+                modelToUpdate.PendingTeamId = model.TeamId;
+                modelToUpdate.PendingShiftId = model.ShiftId;
+                modelToUpdate.PendingBookingById = model.BookingById;
+                modelToUpdate.PendingBookingNote = model.BookingNote;
+                modelToUpdate.Status = model.Status;
+
+                //model.PaymentDate = model.BookingDate;
+                bool isSuccess = await _bookingService.UpdateEntity(modelToUpdate);
                 if (isSuccess)
                 {
-                    TempData["SuccessMessage"] = "Shifted Successfully..";
+                    TempData["SuccessMessage"] = "Shift Request Sent Successfully..";
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -165,11 +190,11 @@ namespace Web.Controllers
             updateBookingAmountVM.AgreeAmount = fol.AgreeAmount;
             updateBookingAmountVM.Remarks = fol.Remarks;
 
-            IEnumerable<Booking> booking = _bookingService.Find(a=>a.FollowupId== followupId);
-            foreach (Booking bookingItem in booking)
-            {
-                updateBookingAmountVM.PaymentStatus = bookingItem.PaymentStatus;
-            }
+            //IEnumerable<Booking> booking = _bookingService.Find(a=>a.FollowupId== followupId);
+            //foreach (Booking bookingItem in booking)
+            //{
+            //    updateBookingAmountVM.PaymentStatus = bookingItem.PaymentStatus;
+            //}
 
             return View(updateBookingAmountVM);
         }
@@ -184,36 +209,15 @@ namespace Web.Controllers
                 try
                 {
                     var entityToUpdate = await _followupService.GetByIdAsync(model.FollowupId);
-                    entityToUpdate.AgreeAmount = model.AgreeAmount;
+                    entityToUpdate.PendingAgreeAmount = model.AgreeAmount;
                     entityToUpdate.ModifiedBy = model.ModifiedBy;
                     entityToUpdate.Remarks = model.Remarks;
 
                     bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
-                    bool isBookingUpdateSuccess = true;
-
-                    IEnumerable<Booking> bookingItems
-                        = _bookingService.Find(a => a.FollowupId == model.FollowupId);
-
-                    List<int> bookingList = new List<int>();
-                    int bookingId = 1;
-                    foreach (Booking data in bookingItems)
-                    {
-                        bookingId = data.Id;
-                        bookingList.Add(bookingId);
-                    }
-                    foreach(var item in bookingList)
-                    {
-                        Booking booking = await _bookingService.GetByIdAsync(item);
-                        if (booking.PaymentStatus == "Due" && model.PaymentStatus == "Paid")
-                        {
-                            booking.PaymentDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
-                        }
-                        booking.PaymentStatus = model.PaymentStatus;
-                        isBookingUpdateSuccess = await _bookingService.UpdateEntity(booking);
-                    }
 
                     _unitOfWok.CommitTransaction();
-                    if (isSuccess && isBookingUpdateSuccess)
+
+                    if (isSuccess)
                     {
                         TempData["SuccessMessage"] = "Updated Successfully..";
                         return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });
@@ -225,6 +229,131 @@ namespace Web.Controllers
                 }
             }
             return RedirectToAction("UpdateBookingAmount", new { followupId = model.FollowupId });
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> ShowAllPendingBookingAmtUpdateData()
+        {
+            return View();
+        }
+
+        public JsonResult GetAllPendingBookingAmtUpdateData()
+        {
+            DateTime dateFrom = DateTime.ParseExact("2001-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DateTime dateTo = DateTime.ParseExact("2050-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var data = _bookingQueryService.GetPendingBookingAmountChangeList(dateFrom, dateTo);
+            return Json(data);
+        }
+
+        public async Task<JsonResult> ApproveBookingAmountChange(int followupId)
+        {
+            var entityToUpdate = await _followupService.GetByIdAsync(followupId);
+            entityToUpdate.AgreeAmount = entityToUpdate.PendingAgreeAmount;
+            entityToUpdate.PendingAgreeAmount = 0;
+            bool isSuccess = await _followupService.UpdateEntity(entityToUpdate);
+            return Json("Approved");
+        }
+
+        public async Task<JsonResult> MakeDueForBooking(int followupId)
+        {
+            bool isBookingUpdateSuccess = true;
+
+            IEnumerable<Booking> bookingItems
+                = _bookingService.Find(a => a.FollowupId == followupId);
+
+            List<int> bookingList = new List<int>();
+            int bookingId = 1;
+            foreach (Booking data in bookingItems)
+            {
+                bookingId = data.Id;
+                bookingList.Add(bookingId);
+            }
+            foreach (var item in bookingList)
+            {
+                Booking booking = await _bookingService.GetByIdAsync(item);
+                booking.PaymentStatus = "Due";
+                isBookingUpdateSuccess = await _bookingService.UpdateEntity(booking);
+            }
+            return Json("Successfully Changed Into Due..");
+        }
+
+        public async Task<JsonResult> MakePaidForBooking(int followupId)
+        {
+            bool isBookingUpdateSuccess = true;
+
+            IEnumerable<Booking> bookingItems
+                = _bookingService.Find(a => a.FollowupId == followupId);
+
+            List<int> bookingList = new List<int>();
+            int bookingId = 1;
+            foreach (Booking data in bookingItems)
+            {
+                bookingId = data.Id;
+                bookingList.Add(bookingId);
+            }
+            foreach (var item in bookingList)
+            {
+                Booking booking = await _bookingService.GetByIdAsync(item);
+                booking.PaymentDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+                booking.PaymentStatus = "Paid";
+                isBookingUpdateSuccess = await _bookingService.UpdateEntity(booking);
+            }
+            return Json("Successfully Changed Into Paid...");
+        }
+
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> ShowAllPendingBookingCancelData()
+        {
+            return View();
+        }
+
+        public JsonResult GetAllPendingBookingCancelData()
+        {
+            DateTime dateFrom = DateTime.ParseExact("2001-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DateTime dateTo = DateTime.ParseExact("2050-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var data = _misReportQueryService.GetBookingCancelAndShiftList(dateFrom, dateTo, "Cancel-Pending");
+            return Json(data);
+        }
+
+        public async Task<JsonResult> ApprovePendingBookingCancelData(int bookingId)
+        {
+            Booking model= await _bookingService.GetByIdAsync(bookingId);
+            model.Status = "Cancel";
+            bool isSuccess = await _bookingService.UpdateEntity(model);
+            return Json("Approved");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Super Admin,Admin")]
+        public async Task<IActionResult> ShowAllPendingBookingShiftData()
+        {
+            return View();
+        }
+
+        public JsonResult GetAllPendingBookingShiftData()
+        {
+            DateTime dateFrom = DateTime.ParseExact("2001-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DateTime dateTo = DateTime.ParseExact("2050-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var data = _misReportQueryService.GetPendingBookingShiftList(dateFrom, dateTo, "Shift-Pending");
+            return Json(data);
+        }
+
+        public async Task<JsonResult> ApprovePendingBookingShiftData(int bookingId)
+        {
+            Booking model = await _bookingService.GetByIdAsync(bookingId);
+            model.BookingDate =model.PendingShiftDate;
+            model.EntryDate= model.PendingEntryDate;
+            model.TeamId = model.PendingTeamId ;
+            model.ShiftId= model.PendingShiftId ;
+            model.BookingById= model.PendingBookingById ;
+            model.BookingNote= model.PendingBookingNote ;
+            model.Status = "Shifted";
+            model.PaymentDate = model.PendingShiftDate;
+            bool isSuccess = await _bookingService.UpdateEntity(model);
+            return Json("Approved");
         }
     }
 }

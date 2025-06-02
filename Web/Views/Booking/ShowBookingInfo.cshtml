@@ -69,57 +69,6 @@
     </div>
 </div>
 
-@*<div class="row">
-    <div class="col-12">
-        <div class="box box-success">
-            <div class="box-header">
-                <div class="row">
-                    <div class="col-5">
-                        <h5><i class="fa fa-list-ul"></i> Daily Booking List</h5>
-                    </div>
-                    <div class="col-7 text-end">
-                        <label id="totalSlot" class="text-maroon font-weight-bold">Total Slot : </label>
-                        <label id="totalbookings" class="text-danger font-weight-bold">   Total Booked : </label>
-                        <label id="bookingRatio" class="text-green font-weight-bold">  Booking Ratio:</label>
-                        <label id="totalbookingAmount" class="text-blue font-weight-bold mr-2"> Total Booking Amt:</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row mt-1">
-                <label class="col-1 control-label">Date From</label>
-                <div class="col-2">
-                    <input type="date" id="BookingDateFrom" class="form-control" />
-                </div>To
-                <div class="col-2">
-                    <input type="date" id="BookingDateTo" class="form-control" />
-                </div>
-                <button id="btnshowBookingList" class="btn btn-primary">Show</button>
-            </div>
-
-            <table id="bookinginfo" class="table table-bordered mt-1">
-                <thead>
-                    <tr>
-                        <th>Working Date</th>
-                        <th>Team Name</th>
-                        <th>Shift Name</th>
-                        <th>Status</th>
-                        <th>Service Name</th>
-                        <th>Mobile No</th>
-                        <th>Organization Name</th>
-                        <th>Address</th>
-                        <th>Amount</th>
-                        <th>Note</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-*@
-
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -167,10 +116,11 @@
                         if (data.name != "") {
                             totalbooked += 1;
                             bookingAmt += parseInt(data.agreeAmount);
-                            linkShiftOrCancelBooking = '<a href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                            linkShiftOrCancelBooking = '<a target="_blank" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
+                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
+                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
+                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                            linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
                         }
                         bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                             data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
@@ -223,10 +173,11 @@
                             if (data.name != "") {
                                 totalbooked += 1;
                                 bookingAmt += parseInt(data.agreeAmount);
-                                linkShiftOrCancelBooking = '<a href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                                linkShiftOrCancelBooking = '<a target="_blank" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
                             }
                             bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                                 data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
@@ -251,5 +202,25 @@
             });
 
         });
+
+        function MakeDueForBooking(followupId) {
+            if (confirm('Are You Sure Make Due?')) {
+                $.ajax({
+                    url: '/Booking/MakeDueForBooking',
+                    data: { 'followupId': followupId },
+                    type: 'POST',
+                    datatype: JSON,
+                    success: function (data) {
+                        alert(data);
+                        //location.reload(true);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+            };
+        }
+
     </script>
 }

@@ -13,6 +13,9 @@ namespace ApplicationCore.Interfaces
         List<BookingItemDto> GetBookingDetailsByDate(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetDueBookingDetailsByDate(DateTime dateFrom, DateTime dateTo);
         BookingDto GetCustomerAndBookingDetailsByBookingId(int bookingid);
-        bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate); 
+        bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate);
+        bool IsPendingBookedAlready(int teamId, int shiftId, DateTime bookingDate);
+        List<BookingItemDto> GetPendingBookingAmountChangeList(DateTime dateFrom, DateTime dateTo);
+
     }
 }

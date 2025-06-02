@@ -107,7 +107,7 @@
                         if (data.name != "") {
                             totalbooked += 1;
                             bookingAmt += parseInt(data.agreeAmount);
-                            linkShiftOrCancelBooking = '<a href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                            linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakePaidForBooking(\'' + data.followupId + '\')">Paid</a>';
                         }
                         bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                             data.shiftName + '</td><td>' + data.serviceName + '</td><td>' +
@@ -157,15 +157,13 @@
                             if (data.name != "") {
                                 totalbooked += 1;
                                 bookingAmt += parseInt(data.agreeAmount);
-                                linkShiftOrCancelBooking = '<a href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakePaidForBooking(\'' + data.followupId + '\')">Paid</a>';
                             }
                             bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                                 data.shiftName + '</td><td>' + data.serviceName + '</td><td>' +
                                 data.name + '</td><td>' + data.address + '</td><td>'
                                 + data.agreeAmount + '</td><td>' + bookingNote + '</td><td>' + linkShiftOrCancelBooking + '</td></tr>');
                         });
-                        //bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>' + 'Total Amount' + '</td><td>'
-                        //    + Math.round(bookingAmt) + '</td><td></td></tr>');
 
                         bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td>Total Amount</td><td>'
                             + Math.round(bookingAmt) + '</td><td></td><td></td></tr>');
@@ -179,5 +177,24 @@
             });
 
         });
+
+        function MakePaidForBooking(followupId) {
+            if (confirm('Are You Sure Make Paid?')) {
+                $.ajax({
+                    url: '/Booking/MakePaidForBooking',
+                    data: { 'followupId': followupId },
+                    type: 'POST',
+                    datatype: JSON,
+                    success: function (data) {
+                        alert(data);
+                        //location.reload(true);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+            };
+        }
     </script>
 }

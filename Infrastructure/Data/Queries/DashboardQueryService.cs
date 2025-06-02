@@ -38,29 +38,29 @@ namespace Infrastructure.Data.Queries
 
             dashboardDto.TodayNewCustomer = _dbContext.Customers.Where(a => a.ModifiedDate.Date == currentDateFrom.Date).Count().ToString();
 
-            dashboardDto.TodayTotalFollowupQty = (from fol in _dbContext.Followups
-                                .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.Status != "Inactive")
-                                                  select fol).Count().ToString();
+            //dashboardDto.TodayTotalFollowupQty = (from fol in _dbContext.Followups
+            //                    .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.Status != "Inactive")
+            //                                      select fol).Count().ToString();
 
-            dashboardDto.TodayFollowupDoneQty = (from fol in _dbContext.Followups
-                                .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == true && a.Status != "Inactive")
-                                                 select fol).Count().ToString();
+            //dashboardDto.TodayFollowupDoneQty = (from fol in _dbContext.Followups
+            //                    .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == true && a.Status != "Inactive")
+            //                                     select fol).Count().ToString();
 
-            dashboardDto.TodayRemainingFollowupQty = (from fol in _dbContext.Followups
-                    .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == false && a.Status != "Inactive")
-                                                      select fol).Count().ToString();
+            //dashboardDto.TodayRemainingFollowupQty = (from fol in _dbContext.Followups
+            //        .Where(a => a.FollowupCallDate.Date == currentDateFrom.Date && a.IsFollowupDone == false && a.Status != "Inactive")
+            //                                          select fol).Count().ToString();
 
             dashboardDto.TodayBookingQty = (from bk in _dbContext.Bookings
                     .Where(a => a.EntryDate.Date == currentDateFrom.Date).Where(a => a.Status != "Cancel")
                                             select bk).Count().ToString();
 
-            dashboardDto.TodayBookingAmount =
-                        (from bk in _dbContext.Bookings
-                         join fol in _dbContext.Followups
-                         on bk.FollowupId equals fol.Id
-                         where bk.EntryDate.Date == currentDateFrom.Date
-                         && bk.Status != "Cancel"
-                         select fol.AgreeAmount).Sum().ToString();
+            //dashboardDto.TodayBookingAmount =
+            //            (from bk in _dbContext.Bookings
+            //             join fol in _dbContext.Followups
+            //             on bk.FollowupId equals fol.Id
+            //             where bk.EntryDate.Date == currentDateFrom.Date
+            //             && bk.Status != "Cancel"
+            //             select fol.AgreeAmount).Sum().ToString();
 
             var customerCount = from cus in _dbContext.Customers
                                 join con in _dbContext.Contacts
@@ -89,13 +89,13 @@ namespace Infrastructure.Data.Queries
                     .Where(a => a.BookingDate.Date >= startDate.Date && a.BookingDate <= endDate.Date).Where(a => a.Status != "Cancel")
                                                 select bk).Count().ToString();
 
-            dashboardDto.ThisMonthBookingAmount =
-                        (from bk in _dbContext.Bookings
-                         join fol in _dbContext.Followups
-                         on bk.FollowupId equals fol.Id
-                         where bk.BookingDate.Date >= startDate.Date && bk.BookingDate <= endDate.Date
-                         && bk.Status != "Cancel"
-                         select fol.AgreeAmount).Sum().ToString();
+            //dashboardDto.ThisMonthBookingAmount =
+            //            (from bk in _dbContext.Bookings
+            //             join fol in _dbContext.Followups
+            //             on bk.FollowupId equals fol.Id
+            //             where bk.BookingDate.Date >= startDate.Date && bk.BookingDate <= endDate.Date
+            //             && bk.Status != "Cancel"
+            //             select fol.AgreeAmount).Sum().ToString();
 
             dashboardDto.ThisMonthComplainPendingQty = (from compl in _dbContext.Complains
                     .Where(a => a.ComplainDate.Date >= startDate.Date && a.ComplainDate <= endDate.Date).Where(a => a.IsGivenFeedback == false)

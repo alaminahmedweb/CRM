@@ -14,10 +14,12 @@ namespace ApplicationCore.Interfaces
         List<BookingItemDto> GetEntryDateWiseBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetBookingDateWiseBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetBookingCancelAndShiftList(DateTime dateFrom, DateTime dateTo,string status);
+        List<BookingItemDto> GetPendingBookingShiftList(DateTime dateFrom, DateTime dateTo, string status);
         List<BookingItemDto> GetDueBookingList(DateTime dateFrom, DateTime dateTo);
         List<BookingItemDto> GetCollectionReport(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetContactWiseCustomersListByDate(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetStatusWiseCustomersListByDate(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetStatusWiseFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo);
+
     }
 }

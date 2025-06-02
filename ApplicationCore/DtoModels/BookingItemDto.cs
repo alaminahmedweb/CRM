@@ -59,7 +59,8 @@ namespace ApplicationCore.DtoModels
         public DateTime ModifiedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
 
         public string BookingEntryDate { get; set; } 
-        public string BookingWorkingDate { get; set; } 
+        public string BookingWorkingDate { get; set; }
+        public double PendingAgreeAmount { get; set; } = 0;
 
 
     }
