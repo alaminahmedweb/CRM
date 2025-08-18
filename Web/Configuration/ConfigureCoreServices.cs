@@ -56,6 +56,7 @@ namespace Web.Configuration
             services.AddScoped<IDraftCustomerService, DraftCustomerService>();
             services.AddScoped<IDashboardQueryService, DashboardQueryService>();
             services.AddScoped<IDraftCustomerQueryService, DraftCustomerQueryService>();
+            services.AddScoped<IChartOfAccountService, ChartOfAccountService>();
 
             return services;
         }

@@ -96,5 +96,6 @@ namespace Infrastructure.Data
         public DbSet<ComplainFeedback> ComplainFeedback { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<DraftCustomer> DraftCustomer { get; set; }
+        public DbSet<ChartOfAccount> ChartOfAccount { get; set; }
     }
 }

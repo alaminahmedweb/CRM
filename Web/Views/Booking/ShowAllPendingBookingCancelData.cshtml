@@ -85,7 +85,7 @@
         });
         function GetApproveCancel(bookingId) {
         // if (confirm('Are You Sure?')) {
-            if (confirm('Are You Sure?')) {
+            //if (confirm('Are You Sure?')) {
                 $.ajax({
                     url: '/Booking/ApprovePendingBookingCancelData',
                     data: { 'bookingId': bookingId },
@@ -100,7 +100,7 @@
                     }
                 });
                 return false;
-            };
+           // };
         }
 
     </script>

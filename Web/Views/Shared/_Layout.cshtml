@@ -267,6 +267,44 @@
                                     </ul>
                                 </div>
                             </div><!-- parent pages-->
+
+                            <div class="nav-item-wrapper">
+                                <a class="nav-link dropdown-indicator label-1" href="#accounts" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="accounts">
+                                    <div class="d-flex align-items-center">
+                                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Accounts</span>
+                                    </div>
+                                </a>
+                                <div class="parent-wrapper label-1">
+                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="accounts">
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="ChartOfAccount" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Chart Of Accounts</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="CollectionTransfer" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Collection Transfer</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="VoucherEntry" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Entry</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="VoucherApprove" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Approve</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="AccountsReport" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Accounts Report</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- parent pages-->
+
                         </li>
                     </ul>
                 </div>
@@ -597,6 +635,7 @@
     <script src="~/frontend/js/feather-icons/feather.min.js"></script>
     <script src="~/frontend/js/dayjs/dayjs.min.js"></script>
     <script src="~/frontend/js/phoenix/phoenix.js"></script>
+    <script src="~/js/modal.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 

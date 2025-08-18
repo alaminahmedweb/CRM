@@ -84,6 +84,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaGlmdEJvb2tpbmcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowAllPendingBookingAmtUpdateData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93QWxsUGVuZGluZ0Jvb2tpbmdBbXRVcGRhdGVEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowAllPendingBookingCancelData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93QWxsUGVuZGluZ0Jvb2tpbmdDYW5jZWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowAllPendingBookingShiftData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93QWxsUGVuZGluZ0Jvb2tpbmdTaGlmdERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/Booking/ShowBookingInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xTaG93Qm9va2luZ0luZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

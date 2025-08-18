@@ -290,11 +290,6 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.MvcApplicationPartsAssembl
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.MvcApplicationPartsAssemblyInfo.cache
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.RazorAssemblyInfo.cache
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.RazorAssemblyInfo.cs
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssets.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.build.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.Web.props
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.pack.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.build.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.development.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -310,7 +305,11 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.sourcelink.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\Web.csproj.Up2Date
 D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\Web.staticwebassets.endpoints.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.build.endpoints.json
-D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets\msbuild.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.upToDateCheck.txt
 D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\EPPlusFree.dll
 D:\CRM_By_Zahid_21_06_2023\Web\bin\Release\net6.0\System.Xml.XPath.XmlDocument.dll
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rpswa.dswa.cache.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjimswa.dswa.cache.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjsmrazor.dswa.cache.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjsmcshtml.dswa.cache.json
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.build.json.cache

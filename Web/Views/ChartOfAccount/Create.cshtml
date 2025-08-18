@@ -1,0 +1,67 @@
+﻿@model ChartOfAccount
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Create Chart Of Acccout Code";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-3 col-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Add New City</h4>
+                <hr />
+                <form asp-action="Create" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Code" placeholder="City Name" />
+                            <label for="Name">Code</label>
+                        </div>
+                        <span asp-validation-for="Code" class="text-danger"></span>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Description" placeholder="Description" />
+                            <label for="Name">Description</label>
+                        </div>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <select asp-for="AccountType" class="form-control">
+                                <option value="None">None</option>
+                                <option value="Balance Sheet">Balance Sheet</option>
+                                <option value="Profit And Loss A/C">Profit And Loss A/C</option>
+                                <option value="Manufacturing A/C">Manufacturing A/C</option>
+                            </select>
+                            <label for="CityId">AccountType</label>
+                        </div>
+                        <span asp-validation-for="AccountType" class="text-danger"></span>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            <a class="btn btn-primary btn-lg" asp-action="Index">List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

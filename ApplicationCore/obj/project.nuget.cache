@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9EAKsZrrKfg=",
+  "dgSpecHash": "gDarVK8rlRc=",
   "success": true,
   "projectFilePath": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\ApplicationCore.csproj",
   "expectedPackageFiles": [
@@ -13,15 +13,5 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\timezoneconverter\\6.1.0\\timezoneconverter.6.1.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\ApplicationCore.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\CRM_By_Zahid_21_06_2023\\ApplicationCore\\ApplicationCore.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }
