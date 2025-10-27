@@ -57,6 +57,10 @@ namespace Web.Configuration
             services.AddScoped<IDashboardQueryService, DashboardQueryService>();
             services.AddScoped<IDraftCustomerQueryService, DraftCustomerQueryService>();
             services.AddScoped<IChartOfAccountService, ChartOfAccountService>();
+            services.AddScoped<ITransactService, TransactService>();
+            services.AddScoped<ITransactQueryService, TransactQueryService>();
+            services.AddScoped<IAdvanceLedgerService, AdvanceLedgerService>();
+            services.AddScoped<IAdvanceLedgerQueryService, AdvanceLedgerQueryService>();
 
             return services;
         }

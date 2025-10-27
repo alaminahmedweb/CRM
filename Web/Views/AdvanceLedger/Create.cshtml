@@ -1,0 +1,78 @@
+﻿@model AdvanceLedger
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Advance Ledger";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-3 col-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-8">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Add New Contact</h4>
+                <hr />
+                <form asp-action="Create" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="NameOfReceipent" placeholder="Name Of Reciepent" />
+                            <label for="NameOfReceipent">Name Of Receipent</label>
+                        </div>
+                        <span asp-validation-for="NameOfReceipent" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12 mt-3">
+                        <div class="form-floating">
+                            <select asp-for="Designation" class="form-control">
+                                @foreach (var data in ViewBag.DesignationList)
+                                {
+                                    <option value="@data.Name">@data.Name</option>
+                                }
+                            </select>
+                            <label for="Designation">Designation</label>
+                        </div>
+                        <span asp-validation-for="Designation" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Purpose" placeholder="Purpose" />
+                            <label for="Purpose">Purpose</label>
+                        </div>
+                        <span asp-validation-for="Purpose" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="AdvanceAmt" placeholder="AdvanceAmt" />
+                            <label for="AdvanceAmt">Advance Amt</label>
+                        </div>
+                        <span asp-validation-for="AdvanceAmt" class="text-danger"></span>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                            <a class="btn btn-primary btn-lg" asp-action="Index">List</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

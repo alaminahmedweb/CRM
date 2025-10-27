@@ -297,6 +297,22 @@
                                             </a><!-- more inner pages-->
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="Create" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Entry</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetAllPendingAdvanceList" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Approve</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetApprovedDueAdvanceAmt" data-bs-toggle="" aria-expanded="false">
+                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Adjustment</span></div>
+                                            </a><!-- more inner pages-->
+                                        </li>
+                                        <li class="nav-item">
                                             <a class="nav-link" asp-controller="AccountsReport" asp-action="Index" data-bs-toggle="" aria-expanded="false">
                                                 <div class="d-flex align-items-center"><span class="nav-link-text">Accounts Report</span></div>
                                             </a><!-- more inner pages-->
@@ -638,7 +654,8 @@
     <script src="~/js/modal.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @*    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
     *@
 

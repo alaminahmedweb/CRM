@@ -56,6 +56,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRpb25cTGlzdFJvbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AdvanceApprove/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2YW5jZUFwcHJvdmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AdvanceLedger/AdjustAdvanceAmt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2YW5jZUxlZGdlclxBZGp1c3RBZHZhbmNlQW10LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AdvanceLedger/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2YW5jZUxlZGdlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AdvanceLedger/GetAllPendingAdvanceList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2YW5jZUxlZGdlclxHZXRBbGxQZW5kaW5nQWR2YW5jZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AdvanceLedger/GetApprovedDueAdvanceAmt.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWR2YW5jZUxlZGdlclxHZXRBcHByb3ZlZER1ZUFkdmFuY2VBbXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/Area/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJlYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

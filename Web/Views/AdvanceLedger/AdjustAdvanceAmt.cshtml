@@ -1,0 +1,98 @@
+﻿@model AdvanceLedger
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    ViewData["Title"] = "Adjust Advance Amt";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-3 col-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-8">
+        <div class="card">
+            @*            <div class="card-header">
+            Add New Service
+            </div>
+            *@
+            <div class="card-body">
+                <h4 class="mb-3 text-center">Update Booking Amount</h4>
+                <hr />
+                <form asp-action="AdjustAdvanceAmt" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+                    <input asp-for="TrNo" hidden />
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="AdvanceGivenDate" disabled placeholder="Advance Given Date" />
+                            <label for="AdvanceGivenDate">Advance Given Date</label>
+                        </div>
+                        <span asp-validation-for="AdvanceGivenDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="NameOfReceipent" disabled placeholder="Name Of Receipent" />
+                            <label for="NameOfReceipent">Name Of Receipent</label>
+                        </div>
+                        <span asp-validation-for="NameOfReceipent" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Designation" disabled placeholder="Name Of Receipent" />
+                            <label for="Designation">Designation</label>
+                        </div>
+                        <span asp-validation-for="Designation" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="Purpose" disabled placeholder="Purpose" />
+                            <label for="Purpose">Purpose</label>
+                        </div>
+                        <span asp-validation-for="Purpose" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="AdvanceAmt" disabled placeholder="Due Advance Amt" />
+                            <label for="AdvanceAmt">Due Advance Amt</label>
+                        </div>
+                        <span asp-validation-for="AdvanceAmt" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" asp-for="AdjustAmt" placeholder="Adjust Amt" />
+                            <label for="AdjustAmt">Adjust Amt</label>
+                        </div>
+                        <span asp-validation-for="AdjustAmt" class="text-danger"></span>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[title="searchableDropdown"]').select2();
+        });
+    </script>
+}

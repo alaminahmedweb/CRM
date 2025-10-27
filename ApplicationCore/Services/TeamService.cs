@@ -13,6 +13,7 @@ namespace ApplicationCore.Services
     {
         private readonly IRepository<Team> _repository;
         private readonly IUnitOfWok _unitOfWok;
+
         public TeamService(IRepository<Team> teamRepository, IUnitOfWok unitOfWok)
         {
             _repository = teamRepository;

@@ -1,5 +1,258 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using ApplicationCore.Entities
+@model Web.ViewModels.VoucherEntryMasterVM
+@inject UserManager<ApplicationUser> userManager;
+
 @{
+    ViewData["Title"] = "Voucher Entry";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+<div class="container-fluid" style="margin-top:-26px;">
+    <h6 style="font-family:Verdana;font-weight:700;margin-left:-10px;margin-top:-10px !important;text-decoration-line:underline;" class="text-end">Voucher Entry</h6>
+    <hr />
+    <form asp-action="Index" autocomplete="off">
+        <div asp-validation-summary="ModelOnly" class="text-danger" id="validationSummary"></div>
+        <input type="hidden" asp-for="ModifiedBy" value="@userid" />
+
+        <div class="form-group row mt-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <select asp-for="VoucherType" class="form-control selectbox" id="VoucherType">
+                        <option value="PV">PV</option>
+                        <option value="RV">RV</option>
+                        <option value="BRV">BRV</option>
+                        <option value="BPV">BPV</option>
+                        <option value="Journal">Journal</option>
+                    </select>
+                    <label for="VoucherType">Voucher Type</label>
+                </div>
+                <span asp-validation-for="VoucherType" class="text-danger"></span>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="VoucherNo" placeholder="Ref No" />
+                    <label for="VoucherNo">Ref No.</label>
+                </div>
+                <span asp-validation-for="VoucherNo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <table class="entry-form">
+                    <tr>
+                        <td class="col-sm-6">
+                            <select class="form-control selectNoAdd js-example-basic-single" id="acCode" required>
+                                <option value="-1">Select Item</option>
+                                @if (ViewBag.ChartOfAccountList != null)
+                                {
+                                    @foreach (var item in @ViewBag.ChartOfAccountList)
+                                    {
+                                        <option value="@item.Code">@item.Description</option>
+                                    }
+                                }
+                            </select>
+                        </td>
+
+                        <td class=col-sm-3>
+                            <input class="form-control" id="narration" placeholder="Narration" type="text">
+                        </td>
+
+                        <td class="col-sm-1">
+                            <input class="form-control" id="debit" placeholder="debit" type="text">
+                        </td>
+                        <td class="col-sm-1">
+                            <input class="form-control" id="credit" placeholder="credit" type="text">
+                        </td>
+                        <td class="col-sm-1">
+                            <button type="button" class="btn btn-sm btn-info" id="btnAdd">Add</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="form-group row mt-2">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="table-scrollable" style="overflow: auto">
+                    <table id="tbltransactDetails" class="table table-hover table-bordered table-striped"
+                           style="table-layout: fixed;">
+                        <thead class="thead-blue text-center">
+                            <tr>
+                                <th class="col-sm-5 none"> A/C Code </th>
+                                <th class="col-sm-5"> A/C Desc </th>
+                                <th class="col-sm-4"> Narration </th>
+                                <th class="col-sm-2"> debit </th>
+                                <th class="col-sm-2"> Credit </th>
+                                <th class="col-sm-2"> Action </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody" class="text-center"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-lg-5 col-md-6 col-sm-6 col-12">
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                <h5>Grand Total : </h5>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" id="dbtTotal" disabled name="dbtTotal" placeholder="Total Dr." />
+                    <label for="dbtTotal">Total Dr.</label>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+                <div class="form-floating">
+                    <input class="form-control" id="cdtTotal" disabled name="cdtTotal" placeholder="Total Cr." />
+                    <label for="cdtTotal">Total Cr.</label>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group row mt-2">
+            <div class="col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="Remarks" placeholder="Remarks" />
+                    <label for="Remarks">Remarks</label>
+                </div>
+                <span asp-validation-for="Remarks" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <input type="button" value="Save" id="SaveTransaction" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+
+            var acc = [];
+            var debitTotal=0;
+            var creditTotal=0;
+            $('#btnAdd').click(function () {
+                var acCode = $('#acCode').val();
+                var acName = $('#acCode option:selected').text();
+                var narrartion= $('#narration').val();
+                var debit = $('#debit').val();
+                var credit = $('#credit').val();
+
+                if (acCode == "-1") { $('#acCode').focus(); return false; }
+                if (debit == "" || debit == "") { $('#debit').focus(); return false; }
+                if (credit == "" || credit == "") { $('#credit').focus(); return false; }
+
+                let isExist = acc.includes(acCode);
+                if (isExist == true) {
+                    alert("Already Exist " + acName); return false;
+                }
+
+                debitTotal=debitTotal+parseInt(debit);;
+                creditTotal=creditTotal+parseInt(credit);
+
+                var transactionDetailsTable = $('#tbltransactDetails');
+                transactionDetailsTable.append('<tr><td class="none">' + acCode + '</td><td>' + acName + '</td><td>' + narrartion + '</td><td>'
+                    + debit + '</td><td>' + credit + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
+                $('#acCode').val("-1");
+                $('#debit').val("");
+                $('#credit').val("");
+                acc.push(acCode);
+                $("#dbtTotal").val(debitTotal);
+                $("#cdtTotal").val(creditTotal);
+            });
+
+            $('#SaveTransaction').click(function () {
+
+                var vouchers = [];
+                var voucherNo = $('#VoucherNo').val();
+
+                var tTransaction =  $('#tbltransactDetails');
+                tTransaction.find('tr').each(function () {
+                    tTransactionInfo = $(this).find('td').text();
+                    if (tTransactionInfo != '') {
+                        var $ctd = $(this).find('td'),
+                            tcAcCode = $ctd.eq(0).text(),
+                            tcAcDesc = $ctd.eq(1).text(),
+                            tcNarration = $ctd.eq(2).text(),
+                            tcDebit = $ctd.eq(3).text();
+                            tcCredit = $ctd.eq(4).text();
+
+                        var Voucher = {
+                            AcCode : tcAcCode ,
+                            AcDesc: tcAcDesc,
+                            Narration: tcNarration,
+                            Debit : tcDebit,
+                            Credit: tcCredit,
+
+                        };
+                        vouchers.push(Voucher);
+                    }
+                });
+
+                if (vouchers.length == 0) {
+                    alert("Add Transaction Details Please..");
+                    return false;
+                }
+
+                var voucher = {
+                    VoucherNo: $('#VoucherNo').val(),
+                    VoucherType: $('#VoucherType option:selected').val(),
+                    ModifiedBy: $('#ModifiedBy').val(),
+                    Remarks: $('#Remarks').val(),
+                }
+                
+
+                var model = {
+                    "VoucherEntryDetailsVM": vouchers,
+                    "VoucherEntryMasterVM" : voucher
+                }
+
+                $.ajax({
+                    type: "post",
+                    url: "/VoucherEntry/Save",
+                    data: model,
+                    datatype: "json",
+                    //cache: false,
+                    success: function (data) {
+                        window.location.href = data.redirecturl;
+                    },
+                    error: function (response) {
+                        if (response.status == 400) {
+                            var errors = response.responseJSON;
+                            for (var fieldName in errors) {
+                                var errorMessage = errors[fieldName].join('<br>');
+                                fieldName = fieldName.substr(fieldName.indexOf(".") + 1, 100);
+                                $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
+                            }
+                        }
+                        else {
+                            alert('No Valid Data');
+                        }
+                    }
+                });
+            });
+
+        });
+
+
+
+
+    </script>
 }

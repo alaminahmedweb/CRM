@@ -1,5 +1,136 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@inject UserManager<ApplicationUser> userManager;
+
 @{
+    ViewData["Title"] = "Show Pending Transaction List";
+    var userid = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        userid = userManager.GetUserId(User);
+    }
+}
+
+<div class="row mb-2">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
+        <div class="form-group">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12" style="display: flex;justify-content: space-between;margin-left: 18px;">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-6">
+                    <h3 class=" pl-1 text-info" style="font-weight:600"> Pending Transaction List</h3>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-1 col-1">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="table-responsive">
+                    <table id="transactInfo" class="table table-bordered cell-border compact hover stripe dataTable" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Tr Date</th>
+                                <th>Tr No</th>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Narration</th>
+                                <th>Voucher Type</th>
+                                <th>Debit</th>
+                                <th>Credit</th>
+                                <th>Remarks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: "/VoucherApprove/GetAllPendingPendingTransactData",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var transactTable = $('#transactInfo tbody');
+                    transactTable.empty();
+
+                    var trDate = "";
+                    var trno="";
+                    var prevTrNo="";
+
+                    $(data).each(function (index, data) {
+                        if (data.trDate == null) {
+                            trDate = ""
+                        } else {
+                            trDate = data.trDate.substring(0, 10);
+                        }
+
+                        var linkApproveOrCancelTransact = "";
+
+                        trno=data.trNo;
+                        
+                        if(trno!=prevTrNo)
+                        {
+                            prevTrNo=trno;
+                            linkApproveOrCancelTransact = '<a href="#" onclick="GetApproveTransact(\'' + data.trNo + '\')">Approve</a>';
+                            linkApproveOrCancelTransact+=' | '+'<a href="#" onclick="GetDeclineTransact(\'' + data.trNo + '\')">Decline</a>';
+                        }
+
+
+                        transactTable.append('<tr><td>' + trDate + '</td><td>' + data.trNo + '</td><td>' +
+                            data.code + '</td><td>' + data.description + '</td><td>' + data.narration + '</td><td>' +
+                            data.voucherType + '</td><td>' + data.debit + '</td><td>'
+                            + data.credit + '</td><td>' + data.remarks + '</td><td>' + linkApproveOrCancelTransact + '</td></tr>');
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+
+        });
+        function GetApproveTransact(trNo) {
+                $.ajax({
+                    url: '/VoucherApprove/ApproveTransaction',
+                    data: { 'trNo': trNo},
+                    type: 'POST',
+                    datatype: JSON,
+                    success: function (data) {
+                        alert(data);
+                        location.reload(true);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+        }
+
+        function GetDeclineTransact(trNo) {
+                $.ajax({
+                    url: '/VoucherApprove/DeclineTransaction',
+                    data: { 'trNo': trNo},
+                    type: 'POST',
+                    datatype: JSON,
+                    success: function (data) {
+                        alert(data);
+                        location.reload(true);
+                    },
+                    error: function (errormessage) {
+                        alert(errormessage.responseText);
+                    }
+                });
+                return false;
+        }
+    </script>
 }
