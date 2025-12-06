@@ -240,87 +240,92 @@
                                     </div>
                                 </a>
                             </div>
-
-                            <div class="nav-item-wrapper">
-                                <a class="nav-link dropdown-indicator label-1" href="#requestApprove" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="requestApprove">
-                                    <div class="d-flex align-items-center">
-                                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Request Approve</span>
+                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin") || User.IsInRole("Accounts"))
+                            {
+                                <div class="nav-item-wrapper">
+                                    <a class="nav-link dropdown-indicator label-1" href="#requestApprove" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="requestApprove">
+                                        <div class="d-flex align-items-center">
+                                            <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Request Approve</span>
+                                        </div>
+                                    </a>
+                                    <div class="parent-wrapper label-1">
+                                        <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="requestApprove">
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingCancelData" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Booking Cancel Request</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingShiftData" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Booking Shift Request</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingAmtUpdateData" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Amount Change Request</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div class="parent-wrapper label-1">
-                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="requestApprove">
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingCancelData" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Booking Cancel Request</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingShiftData" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Booking Shift Request</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="Booking" asp-action="ShowAllPendingBookingAmtUpdateData" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Amount Change Request</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                    </ul>
                                 </div>
-                            </div><!-- parent pages-->
+                            
+                                <!-- parent pages-->
 
-                            <div class="nav-item-wrapper">
-                                <a class="nav-link dropdown-indicator label-1" href="#accounts" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="accounts">
-                                    <div class="d-flex align-items-center">
-                                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Accounts</span>
+                                <div class="nav-item-wrapper">
+                                    <a class="nav-link dropdown-indicator label-1" href="#accounts" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="accounts">
+                                        <div class="d-flex align-items-center">
+                                            <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span class="nav-link-icon"><span data-feather="clipboard"></span></span><span class="nav-link-text">Accounts</span>
+                                        </div>
+                                    </a>
+                                    <div class="parent-wrapper label-1">
+                                        <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="accounts">
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="ChartOfAccount" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Chart Of Accounts</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="CollectionTransfer" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Collection Transfer</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="VoucherEntry" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Entry</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="VoucherApprove" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Approve</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="AdvanceLedger" asp-action="Create" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Advance Entry</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetAllPendingAdvanceList" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Advance Approve</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetApprovedDueAdvanceAmt" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Advance Adjustment</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" asp-controller="AccountsReport" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Accounts Report</span></div>
+                                                </a><!-- more inner pages-->
+                                            </li>
+                                        </ul>
                                     </div>
-                                </a>
-                                <div class="parent-wrapper label-1">
-                                    <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="accounts">
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="ChartOfAccount" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Chart Of Accounts</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="CollectionTransfer" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Collection Transfer</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="VoucherEntry" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Entry</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="VoucherApprove" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Approve</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="Create" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Entry</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetAllPendingAdvanceList" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Approve</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetApprovedDueAdvanceAmt" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Advance Adjustment</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-controller="AccountsReport" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                <div class="d-flex align-items-center"><span class="nav-link-text">Accounts Report</span></div>
-                                            </a><!-- more inner pages-->
-                                        </li>
-                                    </ul>
                                 </div>
-                            </div><!-- parent pages-->
-
+                            
+                                <!-- parent pages-->
+                            }
                         </li>
                     </ul>
                 </div>
@@ -676,7 +681,7 @@
             $('#MobileNo').autocomplete({
                 source: function (request, response) {
                     $.ajax({
-                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
+                        url: '@Url.Action("GetCustomerByMobileNo", "Customer")',
                         method: 'get',
                         data: { term: request.term },
                         dataType: 'json',

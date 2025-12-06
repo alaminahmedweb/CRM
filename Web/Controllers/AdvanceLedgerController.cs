@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
 using System.Threading.Tasks;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -109,17 +110,34 @@ namespace Web.Controllers
         [HttpPost]
         public async Task<IActionResult> AdjustAdvanceAmt(AdvanceLedger model)
         {
+
             var data = _advanceLedgerQueryService.GetUnjustedAdvanceEntryByTrNo(model.TrNo);
+            if(model.AdjustAmt>data.AdvanceAmt)
+            {
+                ModelState.AddModelError("", "Adjust Amt cant more than advance amt");
+                TempData["ErrorMessage"] = "Adjust Amt cant more than advance amt..";
+                return View(data);
+            }
+
+            if (model.AdjustAmt <=0)
+            {
+                ModelState.AddModelError("", "Adjust Amt Cant be Zero Or Negative");
+                TempData["ErrorMessage"] = "Adjust Amt Cant be Zero Or Negative";
+                return View(data);
+
+            }
+
             data.AdvanceAmt = 0;
             data.IsApproved = 1;
             data.AdjustAmt = model.AdjustAmt;
-            int id =await _advanceLedgerService.AddEntity(data);
+            int id = await _advanceLedgerService.AddEntity(data);
             if (id != 0)
             {
                 TempData["SuccessMessage"] = "Saved Successfully..";
                 return RedirectToAction("GetApprovedDueAdvanceAmt");
             }
             return View();
+            
         }
     }
 }

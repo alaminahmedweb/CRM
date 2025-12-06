@@ -20,7 +20,7 @@
             </div>
             *@
             <div class="card-body">
-                <h4 class="mb-3 text-center">Update Booking Amount</h4>
+                <h4 class="mb-3 text-center">Adjust Advance Amount</h4>
                 <hr />
                 <form asp-action="AdjustAdvanceAmt" autocomplete="off">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -40,7 +40,7 @@
                             <input class="form-control" asp-for="NameOfReceipent" disabled placeholder="Name Of Receipent" />
                             <label for="NameOfReceipent">Name Of Receipent</label>
                         </div>
-                        <span asp-validation-for="NameOfReceipent" class="text-danger"></span>
+                        @* <span asp-validation-for="NameOfReceipent" class="text-danger"></span> *@
                     </div>
 
                     <div class="col-12">
@@ -48,7 +48,7 @@
                             <input class="form-control" asp-for="Designation" disabled placeholder="Name Of Receipent" />
                             <label for="Designation">Designation</label>
                         </div>
-                        <span asp-validation-for="Designation" class="text-danger"></span>
+                        @* <span asp-validation-for="Designation" class="text-danger"></span> *@
                     </div>
 
                     <div class="col-12">
@@ -56,13 +56,13 @@
                             <input class="form-control" asp-for="Purpose" disabled placeholder="Purpose" />
                             <label for="Purpose">Purpose</label>
                         </div>
-                        <span asp-validation-for="Purpose" class="text-danger"></span>
+                        @* <span asp-validation-for="Purpose" class="text-danger"></span> *@
                     </div>
 
                     <div class="col-12">
                         <div class="form-floating">
                             <input class="form-control" asp-for="AdvanceAmt" disabled placeholder="Due Advance Amt" />
-                            <label for="AdvanceAmt">Due Advance Amt</label>
+                            <label for="AdvanceAmt">Due Advance Amount</label>
                         </div>
                         <span asp-validation-for="AdvanceAmt" class="text-danger"></span>
                     </div>

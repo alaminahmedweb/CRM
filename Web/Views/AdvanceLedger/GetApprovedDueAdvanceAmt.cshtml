@@ -55,6 +55,7 @@
                     advanceTable.empty();
 
                     var advanceGivenDate = "";
+                    var totalAdvanceAmt=0;
 
                     $(data).each(function (index, data) {
                         if (data.advanceGivenDate == null) {
@@ -62,7 +63,7 @@
                         } else {
                             advanceGivenDate = data.advanceGivenDate.substring(0, 10);
                         }
-
+                        totalAdvanceAmt+=data.advanceAmt;
                         var linkAdvance = "";
 
                         linkAdvance = '<a href="/AdvanceLedger/AdjustAdvanceAmt?trNo='+ data.trNo +'">Adjust</a>';
@@ -70,6 +71,8 @@
                         advanceTable.append('<tr><td>' + advanceGivenDate + '</td><td>' + data.nameOfReceipent + '</td><td>' +
                             data.designation + '</td><td>' + data.purpose + '</td><td>' + data.advanceAmt + '</td><td>' + linkAdvance + '</td></tr>');
                     });
+
+                    advanceTable.append('<tr><td></td><td></td><td></td><td>Grand Total</td><td>' + totalAdvanceAmt + '</td><td></td></tr>');
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     // handle error

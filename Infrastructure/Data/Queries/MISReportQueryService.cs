@@ -2,6 +2,7 @@
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using Microsoft.CodeAnalysis.Operations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,11 @@ namespace Infrastructure.Data.Queries
     public class MISReportQueryService : IMISReportQueryService
     {
         private readonly AppDbContext _dbContext;
-
-        public MISReportQueryService(AppDbContext appDbContext)
+        private readonly ItmpReceiveAndPayment _tmpReceiveAndPayment;
+        public MISReportQueryService(AppDbContext appDbContext, ItmpReceiveAndPayment tmpReceiveAndPayment  )
         {
             this._dbContext = appDbContext;
+            this._tmpReceiveAndPayment = tmpReceiveAndPayment;
         }
 
         public IEnumerable<AllCustomerListDto> GetAllCustomersByDate(DateTime dateFrom, DateTime dateTo, int employeeId, int contactId,int categoryId)
@@ -882,6 +884,38 @@ namespace Infrastructure.Data.Queries
                 bookingDtos.Add(bookingItemDto);
             }
             return bookingDtos;
+        }
+
+        public async Task<ResponseDto> GetReceiveAndPaymentReport(DateTime dateFrom, DateTime dateTo)
+        {
+
+            ResponseDto response = new ResponseDto();
+
+            var message =await _dbContext.Database.SqlQuery<string>(
+                             @$"exec sp_ReceiveAndPayment @DateFrom={dateFrom},@DateTo={dateTo}")
+                         .ToListAsync();
+            foreach (var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
+
+        }
+
+        public async Task<ResponseDto> GetDailySalesAndCollection(DateTime dateFrom, DateTime dateTo)
+        {
+
+            ResponseDto response = new ResponseDto();
+
+            var message = await _dbContext.Database.SqlQuery<string>(
+                             @$"exec sp_DailySalesAndCollection @DateFrom={dateFrom},@DateTo={dateTo}")
+                         .ToListAsync();
+            foreach (var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
+
         }
     }
 }

@@ -3,6 +3,7 @@ using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using ApplicationCore.Services;
 using Infrastructure.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,8 @@ namespace Web.Controllers
             this._transactionService = transactionService;
             this._userManager = userManager;
         }
+        
+        [Authorize(Roles = "Super Admin,Admin")]
         public IActionResult Index()
         {
             return View();

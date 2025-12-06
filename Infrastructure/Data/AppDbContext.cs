@@ -99,5 +99,7 @@ namespace Infrastructure.Data
         public DbSet<ChartOfAccount> ChartOfAccount { get; set; }
         public DbSet<Transact> Transact { get; set; }
         public DbSet<AdvanceLedger> AdvanceLedger { get; set; }
+        public DbSet<tmpReceiveAndPayment> tmpReceiveAndPayment { get; set; }
+        public DbSet<tmpDailySalesAndCollection> tmpDailySalesAndCollection { get; set; }
     }
 }

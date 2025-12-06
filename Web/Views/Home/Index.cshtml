@@ -4,7 +4,18 @@
     ViewData["Title"] = "Home Page";
     var totalCount = 0;
 }
+<style>
+    .hover-link {
+        color: inherit;
+        cursor: pointer;
+        transition: color 0.2s ease;
+    }
 
+        .hover-link:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+</style>
 
 <h1 class="page-title">Dashboard</h1>
 
@@ -76,6 +87,72 @@
 
 
 <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2" >
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-yellow-gold">
+                        <span data-counter="counterup" data-value="@Model.BookingCancelRequestQty">@Model.BookingCancelRequestQty</span>
+                    </h3>
+                    <small style="color:blue" class="hover-link" id="bookingCancelStat">CANCEL REQUEST</small>
+                </div>
+                <div class="icon">
+                    <i class="far fa-envelope-open"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2" >
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-yellow-gold">
+                        <span data-counter="counterup" data-value="@Model.BookingShiftRequestQty">@Model.BookingShiftRequestQty</span>
+                    </h3>
+                    <small style="color:blue" class="hover-link" id="bookingShiftStat">SHIFT REQUEST</small>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2" >
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-jungle">
+                        <span data-counter="counterup" data-value="@Model.AmountChangeRequestQty">@Model.AmountChangeRequestQty</span>
+                    </h3>
+                    <small style="color:blue" class="hover-link" id="amountChageStat">AMT CHANGE REQUEST</small>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-wallet"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <div class="dashboard-stat2" >
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-jungle">
+                        <span data-counter="counterup" data-value="3,507">@Model.VoucherApproveRequestQty</span>
+                    </h3>
+                    <small style="color:blue" class="hover-link" id="voucherApproveStat">VOU. APPROVE REQ </small>
+                </div>
+                <div class="icon">
+                    <i class="far fa-envelope-open"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-md-9 col-sm-6">
         <div class="portlet light ">
             <div class="portlet-title">
@@ -91,6 +168,20 @@
         </div>
     </div>
     <div class="col-md-3 col-sm-6">
+        <div class="dashboard-stat2" >
+            <div class="display">
+                <div class="number">
+                    <h3 class="font-green-jungle">
+                        <span data-counter="counterup" data-value="3,507">@Model.AdvanceApproveRequestQty</span>
+                    </h3>
+                    <small style="color:blue" class="hover-link" id="advanceApproveStat">ADV. APPROVE REQ </small>
+                </div>
+                <div class="icon">
+                    <i class="far fa-envelope-open"></i>
+                </div>
+            </div>
+        </div>
+
         <div class="panel panel-default">
             <div class="panel-heading">
                 <p class="panel-title uppercase bold">BOOKING ENTRY(TODAY)</p>
@@ -153,7 +244,27 @@
 
 @section scripts
     {
+
     <script>
+        $(document).ready(function() {
+            $('#advanceApproveStat').click(function() {
+                window.location.href = '@Url.Action("GetAllPendingAdvanceList", "AdvanceLedger")';
+            });
+            $('#bookingCancelStat').click(function() {
+                window.location.href = '@Url.Action("ShowAllPendingBookingCancelData", "Booking")';
+            });
+            $('#bookingShiftStat').click(function() {
+                window.location.href = '@Url.Action("ShowAllPendingBookingShiftData", "Booking")';
+            });
+            $('#amountChageStat').click(function() {
+                window.location.href = '@Url.Action("ShowAllPendingBookingAmtUpdateData", "Booking")';
+            });
+            $('#voucherApproveStat').click(function() {
+                window.location.href = '@Url.Action("Index", "VoucherApprove")';
+            });
+
+        });
+
         var xValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.PieLabels)); //["January", "February", "March", "April", "May","June","July","August","September","October","November","December"];
         var yValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.PieData));//[55, 49, 44, 24, 15, 55, 49, 44, 24, 15, 20, 30];
         var barColors = ["red", "green", "blue", "orange", "brown","red", "green", "blue", "orange", "brown","red","green"];
@@ -177,67 +288,3 @@
         });
     </script>
     }
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-*@
-@*<div class="row">
-    <div class="col-12 mt-2">
-        <div class="form-group row">
-            <label class="control-label ml-3">Customer Profile : </label>
-            <div class="col-2">
-                <input id="MobileNo" name="MobileNo" placeholder="Enter Mobile No" class="form-control" />
-            </div>
-            <div class="offset-9">
-            </div>
-        </div>
-    </div>
-</div>
-<img src="~/lib/Images/Background.png" alt="Header Image" width="100%" height="100%">
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#MobileNo').autocomplete({
-                source: function (request, response) {
-                    $.ajax({
-                        url: '@Url.Action("GetCustomerByMobileNo","Customer")',
-                        method: 'get',
-                        data: { term: request.term },
-                        dataType: 'json',
-                        success: function (data) {
-                            response(data);
-                        },
-                        error: function (err) {
-                            console.log(err);
-                        }
-                    })
-                },
-                minLength: 7,
-                focus: UpdateTextBox,
-                select: function(event, ui) {
-                    $(this).val(ui.item.mobileNo);
-                    //window.location.href = "/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId;
-                    window.open("/Followup/GetFollowupsByCustId?customerId=" + ui.item.customerId);
-                    return false;
-                },
-            }).data("ui-autocomplete")._renderItem = function (ul, item) {
-                if (ul.children().length === 0) {
-                    $("<thead><tr><th>Mobile No</th><th>Customer Name</th><th>Designation</th></tr></thead>").appendTo(ul);
-                }
-                var html = "<td>" + item.mobileNo + "</td>";
-                html += "<td>" + item.customerName + "</td>";
-                html += "<td>" + item.designationName + "</td>";
-                return $("<tr></tr>").append(html).appendTo(ul);
-            };
-            function UpdateTextBox(event, ui) {
-                $(this).val(ui.item.mobileNo);
-                return false;
-            };
-        });
-    </script>
-}
-*@

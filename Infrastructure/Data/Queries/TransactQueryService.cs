@@ -1,7 +1,9 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,28 @@ namespace Infrastructure.Data.Queries
         public TransactQueryService(AppDbContext appDbContext)
         {
             this._dbContext = appDbContext;
+        }
+        public CollectionDto GetCollectionAmtByDate(DateTime collectionDate)
+        {
+            var result = (from bk in _dbContext.Bookings
+                          join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                          where bk.PaymentDate.Date == collectionDate.Date &&
+                                bk.Status != "Cancel" &&
+                                bk.PaymentStatus == "Paid"
+                          group fol by bk.PaymentDate into g
+                          select new
+                          {
+                              PaymentDate = g.Key,
+                              CollectionAmt = g.Sum(fol => fol.AgreeAmount)
+                          }).ToList();
+
+            CollectionDto dto = new CollectionDto();
+            foreach (var item in result)
+            {
+                dto.CollectionAmt = item.CollectionAmt;
+                dto.TrDate = item.PaymentDate.Date;
+            }
+            return dto;
         }
 
         public int GetMaxTrNo()
@@ -73,5 +97,21 @@ namespace Infrastructure.Data.Queries
             }
             return list;
         }
+
+        public async Task<ResponseDto> TransferTransact(DateTime trDate,string userName)
+        {
+            ResponseDto response = new ResponseDto();
+
+            var message =
+                    await _dbContext.Database.SqlQuery<string>(
+                            @$"exec sp_TransferCollection @TrDate={trDate}, @ModifiedBy={userName}")
+                        .ToListAsync();
+            foreach(var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
+        }
+
     }
 }

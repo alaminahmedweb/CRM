@@ -1,4 +1,5 @@
-﻿using ApplicationCore.Interfaces;
+﻿using ApplicationCore.Entities;
+using ApplicationCore.Interfaces;
 using ApplicationCore.Services;
 using Infrastructure.Data;
 using Infrastructure.Data.Queries;
@@ -61,6 +62,8 @@ namespace Web.Configuration
             services.AddScoped<ITransactQueryService, TransactQueryService>();
             services.AddScoped<IAdvanceLedgerService, AdvanceLedgerService>();
             services.AddScoped<IAdvanceLedgerQueryService, AdvanceLedgerQueryService>();
+            services.AddScoped<ItmpReceiveAndPayment, tmpReceiveAndPaymentService>();
+            services.AddScoped<ItmpDailySalesAndCollection, tmpDailySalesAndCollectionService>();
 
             return services;
         }

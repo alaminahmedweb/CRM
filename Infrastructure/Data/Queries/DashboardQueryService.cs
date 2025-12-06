@@ -1,5 +1,6 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,7 +103,27 @@ namespace Infrastructure.Data.Queries
                                                         select compl).Count().ToString();
 
 
-            var query = _dbContext.Bookings.Where(a=>a.Status!="Cancel")
+            dashboardDto.AmountChangeRequestQty = (from f in _dbContext.Followups
+                                                   where f.PendingAgreeAmount > 0
+                                                   select f).Count().ToString();
+
+            dashboardDto.BookingCancelRequestQty = (from f in _dbContext.Bookings
+                                                   where f.Status == "Cancel-Pending"
+                                                    select f).Count().ToString();
+
+            dashboardDto.BookingShiftRequestQty = (from f in _dbContext.Bookings
+                                                    where f.Status == "Shift-Pending"
+                                                    select f).Count().ToString();
+
+            dashboardDto.AdvanceApproveRequestQty = (from f in _dbContext.AdvanceLedger
+                                                   where f.Valid==true && f.IsApproved==0 
+                                                   select f).Count().ToString();
+
+            dashboardDto.VoucherApproveRequestQty = (from t in _dbContext.Transact
+                                                     where t.Valid == 2
+                                                     select t.TrNo).Distinct().Count().ToString();
+
+            var query = _dbContext.Bookings.Where(a => a.Status != "Cancel")
                 .Where(b => b.BookingDate.Year == DateTime.Now.Date.Year)
                 .GroupBy(b => new
                 {

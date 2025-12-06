@@ -14,6 +14,7 @@ namespace ApplicationCore.Interfaces
         int GetMaxTrNo();
         List<Transact> GetPendingTransactionList();
         List<Transact> GetTransactionListByTrNo(int trNo);
-
+        CollectionDto GetCollectionAmtByDate(DateTime collectionDate);
+        Task<ResponseDto> TransferTransact(DateTime trDate, string userName);
     }
 }

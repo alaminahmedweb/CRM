@@ -16,7 +16,7 @@ namespace ApplicationCore.DtoModels
         public string Narration { get; set; }
         public double Debit { get; set; }
         public double Credit { get; set; }
-        public string Remarks { get; set; }
+        public string Remarks { get; set; } = "";
         public string ApprovedBy { get; set; } = "";
         public DateTime ApprovedDate { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
         public string ModifiedBy { get; set; } = "";

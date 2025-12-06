@@ -1,0 +1,37 @@
+﻿@model List<tmpReceiveAndPayment>
+@{
+    Layout = "_Report";
+    var total = 0;
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Opening Balance</th>
+                    <th>Receive</th>
+                    <th>Payment</th>
+                    <th>Closing Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>@data.SlNo</td>
+                        <td>@data.Code</td>
+                        <td>@data.Description</td>
+                        <td>@data.OpeningBalance</td>
+                        <td>@data.Receive </td>
+                        <td>@data.Payment </td>
+                        <td>@data.ClosingBalance </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

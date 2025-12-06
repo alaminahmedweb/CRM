@@ -48,5 +48,7 @@ namespace ApplicationCore.Entities
         public int PendingShiftId { get; set; }
         public int PendingBookingById { get; set; }
         public string? PendingBookingNote { get; set; } = "";
+        public int IsTransferred { get; set; } = 0;
+
     }
 }

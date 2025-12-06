@@ -29,6 +29,7 @@ namespace ApplicationCore.DtoModels
         public string Status { get; set; } =String.Empty;
         public int FollowupId { get; set; } = 0;
         public double AgreeAmount { get; set; } = 0;
+        public int IsTransferred { get; set; }
         public List<FollowupDto> Followups { get; set; }
         public List<BookingItemDto> Bookings { get; set; } = new List<BookingItemDto>();
         public List<BookingSummaryDto> BookingSummary { get; set; } = new List<BookingSummaryDto>();

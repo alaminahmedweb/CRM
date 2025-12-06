@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net6.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -22,6 +24,14 @@ build_property.EnableCodeStyleSeverity =
 
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowDailySalesAndCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd0RhaWx5U2FsZXNBbmRDb2xsZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowReceiveAndPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd1JlY2VpdmVBbmRQYXltZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/Account/AccessDenied.cshtml]

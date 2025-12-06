@@ -313,3 +313,4 @@ D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjimswa.dswa.cache.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjsmrazor.dswa.cache.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\rjsmcshtml.dswa.cache.json
 D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\staticwebassets.build.json.cache
+D:\CRM_By_Zahid_21_06_2023\Web\obj\Release\net6.0\swae.build.ex.cache

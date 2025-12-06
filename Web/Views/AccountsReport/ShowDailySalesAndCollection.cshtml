@@ -1,0 +1,64 @@
+﻿@using ApplicationCore.DtoModels;
+@model List<tmpDailySalesAndCollection>
+@{
+    Layout = "_Report";
+    var totalSales = 0;
+    var totalCollection = 0;
+    var totalDueCollection = 0;
+    var totalNetCollection = 0;
+    var totalDue = 0;
+    var totaldayDue = 0;
+    var dayDue = 0;
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>TrDate</th>
+                    <th>Sales</th>
+                    <th>Collection</th>
+                    <th>DueCollection</th>
+                    <th>NetCollection</th>
+                    <th>Day Due</th>
+                    <th>Current Due</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+                @foreach (var data in Model)
+                {
+                    {
+                        totalSales = totalSales + (int)data.Sales;
+                        totalCollection = totalCollection + (int)data.Collection;
+                        totalDueCollection = totalDueCollection + (int)data.DueCollection;
+                        totalNetCollection = totalNetCollection + (int)data.NetCollection;
+                        totalDue = totalDue + (int)data.Due;
+                        totaldayDue = totaldayDue + ((int)data.Sales - (int)data.Collection);
+                        dayDue = (int)data.Sales - (int)data.Collection;
+                    }
+                    <tr>
+                        <td>@data.TrDate</td>
+                        <td>@data.Sales</td>
+                        <td>@data.Collection</td>
+                        <td>@data.DueCollection</td>
+                        <td>@data.NetCollection </td>
+                        <td>@dayDue  </td>
+                        <td>@data.Due </td>
+                    </tr>
+
+                }
+                <tr>
+                    <td>Grand Total</td>
+                    <td>@totalSales</td>
+                    <td>@totalCollection</td>
+                    <td>@totalDueCollection</td>
+                    <td>@totalNetCollection</td>
+                    <td>@totaldayDue</td>
+                    <td>@totalDue</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

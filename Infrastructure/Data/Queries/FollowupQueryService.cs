@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -193,7 +194,8 @@ namespace Infrastructure.Data.Queries
                                 Status = fol.Status,
                                 ServiceName = srv.Name,
                                 FollowupBy = emp.Name,
-                                FollowupId = fol.Id
+                                FollowupId = fol.Id,
+                                IsTransferred=fol.IsTransferred
                             };
 
 
@@ -213,6 +215,7 @@ namespace Infrastructure.Data.Queries
                 followupDto.ServiceName = data.ServiceName;
                 followupDto.FollowupBy = data.FollowupBy;
                 followupDto.FollowupId = data.FollowupId;
+                followupDto.IsTransferred = data.IsTransferred;
 
                 followupDetailsByIdDto.Followups.Add(followupDto);
             }
@@ -284,6 +287,7 @@ namespace Infrastructure.Data.Queries
                                   FollowupCallDate = fol.FollowupCallDate.Date,
                                   Remarks = fol.Remarks,
                                   BookingNote=bk.BookingNote,
+                                  IsTransferred=bk.IsTransferred
                               };
 
             var bookingAndFeedbacks = from bk in bookingInfo
@@ -324,12 +328,14 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.CustomerFeedback = item.result == null ? "" : item.result.CompanyFeedback;
                 bookingItemDto.CompanyFeedback = item.result == null ? "" : item.result.CustomerFeedback;
                 bookingItemDto.FeedbackEntryDate = item.result == null ? null : item.result.EntryDateTime;
+                bookingItemDto.IsTransferred = item.result == null ? 0 : item.bk.IsTransferred;
 
                 followupDetailsByIdDto.Bookings.Add(bookingItemDto);
             }
 
             var bookingSummary = from bk in _dbContext.Bookings.Where(a=>a.Status!="Cancel")
-                                 join fol in _dbContext.Followups.Where(a => a.CustomerId == customerId) on bk.FollowupId equals fol.Id
+                                 join fol in _dbContext.Followups.Where(a => a.CustomerId == customerId) 
+                                 on bk.FollowupId equals fol.Id
                                  join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
                                  group fol by new { bk.FollowupId, bk.BookingDate,srv.Name } into g
                                  select new

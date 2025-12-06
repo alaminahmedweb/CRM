@@ -73,8 +73,8 @@ namespace Infrastructure.Data.Queries
                     Purpose = g.Key.Purpose,
                     DueAmt = g.Sum(a => a.AdvanceAmt - a.AdjustAmt)
                 })
-                .OrderBy(x => x.trno)
-                .ThenBy(x => x.NameOfReceipent)
+                .OrderBy(x => x.NameOfReceipent)
+                .ThenBy(x => x.AdvanceGivenDate)
                 .ToList();
 
             List<AdvanceLedger> advanceLedgerList = new List<AdvanceLedger>();

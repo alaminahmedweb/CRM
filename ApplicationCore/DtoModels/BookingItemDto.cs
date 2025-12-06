@@ -61,7 +61,7 @@ namespace ApplicationCore.DtoModels
         public string BookingEntryDate { get; set; } 
         public string BookingWorkingDate { get; set; }
         public double PendingAgreeAmount { get; set; } = 0;
-
+        public int IsTransferred { get; set; } = 0;
 
     }
 }

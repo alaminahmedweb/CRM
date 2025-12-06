@@ -111,7 +111,8 @@ namespace Infrastructure.Data.Queries
                                   WorkingMonth = mnth.Name,
                                   FollowupCallDate = fol.FollowupCallDate.Date,
                                   Remarks = fol.Remarks,
-                                  BookingNote=bk.BookingNote+bk.PaymentStatus
+                                  BookingNote=bk.BookingNote+bk.PaymentStatus,
+                                  IsTransferred=bk.IsTransferred
                               });
 
             var resultFinal = (from tmSft in teamShiftAndDate
@@ -156,7 +157,8 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.FollowupCallDate = item.result == null ? null : item.result.FollowupCallDate;
                 bookingItemDto.Remarks = item.result == null ? null : item.result.Remarks;
                 bookingItemDto.BookingId = item.result == null ? null : item.result.BookingId;
-                if(item.tmSft.TeamStatus=="Active")
+                bookingItemDto.IsTransferred = item.result == null ? 0 : item.result.IsTransferred;
+                if (item.tmSft.TeamStatus=="Active")
                 {
                     bookingDtos.Add(bookingItemDto);
                 }

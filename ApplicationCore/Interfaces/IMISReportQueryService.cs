@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.DtoModels;
+using ApplicationCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,6 @@ namespace ApplicationCore.Interfaces
         IEnumerable<CustomerCountDto> GetContactWiseCustomersListByDate(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetStatusWiseCustomersListByDate(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetStatusWiseFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo);
-
+        Task<ResponseDto> GetReceiveAndPaymentReport(DateTime dateFrom, DateTime dateTo);
     }
 }

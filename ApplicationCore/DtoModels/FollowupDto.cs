@@ -30,6 +30,7 @@ namespace ApplicationCore.DtoModels
         public string FollowupBy { get; set; }
         public string Status { get; set; } = String.Empty;//Pending Or Confirm
         public bool IsFollowupDone { get; set; } = false;
+        public int IsTransferred { get; set; }
 
     }
 }

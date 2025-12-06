@@ -297,9 +297,10 @@ namespace Web.Controllers
             var data = _misReportQueryService.GetAllCustomersByDate(model.DateFrom, model.DateTo,model.EmployeeId,model.ContactId,model.CategoryId);
             return View(data);
         }
+
         public bool CheckUserDateSelectAuthority(DateTime DateFrom, DateTime DateTo)
         {
-            if(User.IsInRole("Super Admin") || User.IsInRole("Admin"))
+            if(User.IsInRole("Super Admin") || User.IsInRole("Admin") || User.IsInRole("Accounts")) 
             {
                 return true;
             }

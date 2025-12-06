@@ -80,19 +80,19 @@
         <div class="form-group row mt-2">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="table-scrollable" style="overflow: auto">
-                    <table id="tbltransactDetails" class="table table-hover table-bordered table-striped"
+                    <table class="table table-hover table-bordered table-striped"
                            style="table-layout: fixed;">
                         <thead class="thead-blue text-center">
                             <tr>
                                 <th class="col-sm-5 none"> A/C Code </th>
                                 <th class="col-sm-5"> A/C Desc </th>
                                 <th class="col-sm-4"> Narration </th>
-                                <th class="col-sm-2"> debit </th>
-                                <th class="col-sm-2"> Credit </th>
+                                <th class="col-sm-2 debit-input" type="number"> debit </th>
+                                <th class="col-sm-2 credit-input" type="number"> Credit </th>
                                 <th class="col-sm-2"> Action </th>
                             </tr>
                         </thead>
-                        <tbody id="tbody" class="text-center"></tbody>
+                        <tbody id="tbltransactDetails" class="text-center"></tbody>
                     </table>
                 </div>
             </div>
@@ -145,68 +145,104 @@
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
 
-            var acc = [];
-            var debitTotal=0;
-            var creditTotal=0;
+            // Remove these global variables as they're causing issues
+            // var debitTotal=0;
+            // var creditTotal=0;
+
             $('#btnAdd').click(function () {
                 var acCode = $('#acCode').val();
                 var acName = $('#acCode option:selected').text();
-                var narrartion= $('#narration').val();
-                var debit = $('#debit').val();
-                var credit = $('#credit').val();
+                var narrartion = $('#narration').val();
+                var debit = parseFloat($('#debit').val()) || 0;
+                var credit = parseFloat($('#credit').val()) || 0;
 
-                if (acCode == "-1") { $('#acCode').focus(); return false; }
-                if (debit == "" || debit == "") { $('#debit').focus(); return false; }
-                if (credit == "" || credit == "") { $('#credit').focus(); return false; }
-
-                let isExist = acc.includes(acCode);
-                if (isExist == true) {
-                    alert("Already Exist " + acName); return false;
+                if (acCode == "-1") {
+                    $('#acCode').focus();
+                    alert("Please select an account code");
+                    return false;
                 }
-
-                debitTotal=debitTotal+parseInt(debit);;
-                creditTotal=creditTotal+parseInt(credit);
+                if (debit === 0 && credit === 0) {
+                    $('#debit').focus();
+                    alert("Please enter either debit or credit amount");
+                    return false;
+                }
 
                 var transactionDetailsTable = $('#tbltransactDetails');
                 transactionDetailsTable.append('<tr><td class="none">' + acCode + '</td><td>' + acName + '</td><td>' + narrartion + '</td><td>'
-                    + debit + '</td><td>' + credit + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span</a></td></tr>');
-                $('#acCode').val("-1");
+                    + debit.toFixed(2) + '</td><td>' + credit.toFixed(2) + '</td><td><a href="#" class="btn btn-outline-danger deleteRow"><span class="fa fa-trash"></span></a></td></tr>');
+
+                // Clear input fields
                 $('#debit').val("");
                 $('#credit').val("");
-                acc.push(acCode);
-                $("#dbtTotal").val(debitTotal);
-                $("#cdtTotal").val(creditTotal);
+                $('#narration').val("");
+
+                // Recalculate totals
+                calculateTotals();
             });
 
-            $('#SaveTransaction').click(function () {
+            $("#tbltransactDetails").on("click", "a.deleteRow", function (event) {
+                event.preventDefault();
+                $(this).closest('tr').remove();
+                calculateTotals();
+                return false;
+            });
 
+            function calculateTotals() {
+                var debitTotal = 0;
+                var creditTotal = 0;
+
+                $("#tbltransactDetails tr").each(function() {
+                    // Get the values from the 4th and 5th columns (debit and credit)
+                    var debitText = $(this).find('td:eq(3)').text().trim();
+                    var creditText = $(this).find('td:eq(4)').text().trim();
+
+                    var debitVal = parseFloat(debitText) || 0;
+                    var creditVal = parseFloat(creditText) || 0;
+
+                    debitTotal += debitVal;
+                    creditTotal += creditVal;
+                });
+
+                $("#dbtTotal").val(debitTotal.toFixed(2));
+                $("#cdtTotal").val(creditTotal.toFixed(2));
+            }
+
+            $('#SaveTransaction').click(function () {
                 var vouchers = [];
                 var voucherNo = $('#VoucherNo').val();
+                var debitTotal = parseFloat($("#dbtTotal").val()) || 0;
+                var creditTotal = parseFloat($("#cdtTotal").val()) || 0;
 
-                var tTransaction =  $('#tbltransactDetails');
+                if(debitTotal != creditTotal) {
+                    alert("Debit & Credit Is Not Same..Please Check..");
+                    return false;
+                }
+
+                var tTransaction = $('#tbltransactDetails');
+                var rowCount = 0;
+
                 tTransaction.find('tr').each(function () {
-                    tTransactionInfo = $(this).find('td').text();
-                    if (tTransactionInfo != '') {
-                        var $ctd = $(this).find('td'),
-                            tcAcCode = $ctd.eq(0).text(),
-                            tcAcDesc = $ctd.eq(1).text(),
-                            tcNarration = $ctd.eq(2).text(),
-                            tcDebit = $ctd.eq(3).text();
-                            tcCredit = $ctd.eq(4).text();
+                    var $ctd = $(this).find('td');
+                    if ($ctd.length > 0) {
+                        var tcAcCode = $ctd.eq(0).text().trim();
+                        var tcAcDesc = $ctd.eq(1).text().trim();
+                        var tcNarration = $ctd.eq(2).text().trim();
+                        var tcDebit = parseFloat($ctd.eq(3).text().trim()) || 0;
+                        var tcCredit = parseFloat($ctd.eq(4).text().trim()) || 0;
 
                         var Voucher = {
-                            AcCode : tcAcCode ,
+                            AcCode: tcAcCode,
                             AcDesc: tcAcDesc,
                             Narration: tcNarration,
-                            Debit : tcDebit,
+                            Debit: tcDebit,
                             Credit: tcCredit,
-
                         };
                         vouchers.push(Voucher);
+                        rowCount++;
                     }
                 });
 
-                if (vouchers.length == 0) {
+                if (rowCount == 0) {
                     alert("Add Transaction Details Please..");
                     return false;
                 }
@@ -217,21 +253,21 @@
                     ModifiedBy: $('#ModifiedBy').val(),
                     Remarks: $('#Remarks').val(),
                 }
-                
 
                 var model = {
                     "VoucherEntryDetailsVM": vouchers,
-                    "VoucherEntryMasterVM" : voucher
+                    "VoucherEntryMasterVM": voucher
                 }
 
                 $.ajax({
-                    type: "post",
+                    type: "POST",
                     url: "/VoucherEntry/Save",
                     data: model,
-                    datatype: "json",
-                    //cache: false,
+                    dataType: "json",
                     success: function (data) {
-                        window.location.href = data.redirecturl;
+                        if (data.redirecturl) {
+                            window.location.href = data.redirecturl;
+                        }
                     },
                     error: function (response) {
                         if (response.status == 400) {
@@ -241,18 +277,12 @@
                                 fieldName = fieldName.substr(fieldName.indexOf(".") + 1, 100);
                                 $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
                             }
-                        }
-                        else {
+                        } else {
                             alert('No Valid Data');
                         }
                     }
                 });
             });
-
         });
-
-
-
-
     </script>
 }

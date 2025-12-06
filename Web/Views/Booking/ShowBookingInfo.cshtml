@@ -99,6 +99,7 @@
                     var bookingTable = $('#bookinginfo tbody');
                     bookingTable.empty();
                     $(result).each(function (index, data) {
+                        console.log(data);
                         var linkShiftOrCancelBooking = "";
                         var trDate = "";
                         if (data.trDate == null) {
@@ -117,11 +118,15 @@
                             totalbooked += 1;
                             bookingAmt += parseInt(data.agreeAmount);
                             linkShiftOrCancelBooking = '<a target="_blank" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a target="_blank" target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
-                            linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
+                            if (data.isTransferred ==0){
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                                linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
+                            }
                         }
+
+                        
                         bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                             data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
                             data.name + '</td><td>' + data.address + '</td><td>'
@@ -155,6 +160,7 @@
                         var bookingTable = $('#bookinginfo tbody');
                         bookingTable.empty();
                         $(result).each(function (index, data) {
+                            console.log(data);
                             var linkShiftOrCancelBooking = "";
                             var trDate = "";
                             var bookingNote = "";
@@ -174,11 +180,15 @@
                                 totalbooked += 1;
                                 bookingAmt += parseInt(data.agreeAmount);
                                 linkShiftOrCancelBooking = '<a target="_blank" href="/Followup/GetFollowupsByCustId?customerId=' + data.customerId + '&followupId=' + data.followupId + '" target="_blank">Details</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
-                                linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
+                                if (data.isTransferred ==0){
+                                    linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/ShiftBooking?bookingId=' + data.bookingId + '">Shift</a>';
+                                    linkShiftOrCancelBooking += ' | ' + '<a target="_blank" href="/Booking/CancelBooking?bookingId=' + data.bookingId + '">Cancel</a>';
+                                    linkShiftOrCancelBooking += ' | ' + '<a target="_blank" target="_blank" href="/Booking/UpdateBookingAmount?followupId=' + data.followupId + '">Update</a>';
+                                    linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
+                                }
                             }
+                            
+    
                             bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
                                 data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
                                 data.name + '</td><td>' + data.address + '</td><td>'

@@ -12,6 +12,7 @@ namespace Web.ViewModels
 
         public string? VoucherType { get; set; } = String.Empty;
         public string? ModifiedBy { get; set; } = "";
-        public string? Remarks { get; set; } = "";
+        [Required(ErrorMessage = "Remarks is required")]
+        public string Remarks { get; set; } = "";
     }
 }

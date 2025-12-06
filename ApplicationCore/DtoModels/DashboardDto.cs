@@ -26,7 +26,14 @@ namespace ApplicationCore.DtoModels
         public List<CustomerCountDto> TodayContactWiseCustomerList { get;set; }
 
         public List<string> PieLabels { get; set; }
-        public List<string> PieData { get; set; }   
+        public List<string> PieData { get; set; }
+
+        public string BookingCancelRequestQty { get; set; } = "";
+        public string BookingShiftRequestQty { get; set; } = "";
+        public string AmountChangeRequestQty { get; set; } = "";
+        public string VoucherApproveRequestQty { get; set; } = "";
+        public string AdvanceApproveRequestQty { get; set; } = "";
+
 
     }
 }

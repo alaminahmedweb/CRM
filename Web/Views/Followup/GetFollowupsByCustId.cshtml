@@ -234,9 +234,9 @@
                         <td>
                             Status
                         </td>
-                        <td>
+                        @* <td>
                             Action
-                        </td>
+                        </td> *@
                     </tr>
                 </thead>
                 <tbody>
@@ -279,13 +279,12 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.Status)
                             </td>
-                            <td>
+                            @* <td>
                                 @if (item.Status == "Confirmed")
                                 {
-                                    @*<a asp-action="Index" asp-controller="Booking" asp-route-followupId="@item.FollowupId">Add Booking</a>*@
-                                    @Html.DisplayFor(modelItem => item.FollowupId)
+                                    <a asp-action="Index" asp-controller="Booking" asp-route-followupId="@item.FollowupId">Add Booking</a>
                                 }
-                            </td>
+                            </td> *@
                         </tr>
                     }
                 </tbody>

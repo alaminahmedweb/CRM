@@ -65,7 +65,7 @@
         }
         var overlay = $('.modal-overlay');
         //Make sure that styles are applied, trigger relayout;
-        var clientLeft = modal[0].clientLeft;//这个不能删,删了actions动画没了.
+        var clientLeft = modal[0].clientLeft;//è¿™ä¸ªä¸èƒ½åˆ ,åˆ äº†actionsåŠ¨ç”»æ²¡äº†.
         // Trugger open event
         modal.trigger('open');
         // Classes for transition in
@@ -117,23 +117,25 @@
                 value = '';
             }
             var m = modal({
-                text: '<input class="modal-input" value="'+value+'"/>',
+                text: '<input class="modal-input" value="' + value + '"/>',
                 title: typeof title === 'undefined' ? modalTitle : title,
                 buttons: [
-                    {text: modalButtonCancel, onClick: callbackCancel},
-                    {text: modalButtonOk, bold: true, onClick: function(){
-                        var value = $('.modal-input').val();
-                        callbackOk && callbackOk(value);
-                    }}
+                    { text: modalButtonCancel, onClick: callbackCancel },
+                    {
+                        text: modalButtonOk, bold: true, onClick: function () {
+                            var value = $('.modal-input').val();
+                            callbackOk && callbackOk(value);
+                        }
+                    }
                 ]
             });
-            m.on('opened', function(){
+            m.on('opened', function () {
                 var $input = $('.modal-input');
                 $input.focus();
                 var input = $input.get(0);
                 var value = $input.val();
                 var valueLength = value ? value.length : 0;
-                input.setSelectionRange && input.setSelectionRange(valueLength,valueLength);
+                input.setSelectionRange && input.setSelectionRange(valueLength, valueLength);
             });
             return m;
         },
@@ -146,7 +148,7 @@
                 text: text || '',
                 title: typeof title === 'undefined' ? modalTitle : title,
                 buttons: [
-                    {text: modalButtonOk, bold: true, onClick: callbackOk}
+                    { text: modalButtonOk, bold: true, onClick: callbackOk }
                 ]
             });
         },
@@ -160,8 +162,8 @@
                 text: text || '',
                 title: typeof title === 'undefined' ? modalTitle : title,
                 buttons: [
-                    {text: modalButtonCancel, onClick: callbackCancel},
-                    {text: modalButtonOk, bold: true, onClick: callbackOk}
+                    { text: modalButtonCancel, onClick: callbackCancel },
+                    { text: modalButtonOk, bold: true, onClick: callbackOk }
                 ]
             });
         },
@@ -177,7 +179,7 @@
         },
         showIndicator: function () {
             //$('body').append('<div class="preloader-indicator-overlay"></div><div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
-            //去掉全屏透明遮盖层
+            //åŽ»æŽ‰å…¨å±é€æ˜Žé®ç›–å±‚
             $('body').append('<div class="preloader-indicator-modal"><span class="preloader preloader-white"></span></div>');
         },
         hideIndicator: function () {
@@ -259,7 +261,7 @@
 
 
 /*========================================================
- * 一Basic tool packages
+ * ä¸€Basic tool packages
  * =======================================================*/
 $.extend({
     device: (function () {
