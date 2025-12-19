@@ -55,29 +55,64 @@ namespace Web.Controllers
                     transactionDetails.ModifiedBy = voucherEntryVM.VoucherEntryMasterVM.ModifiedBy;
                     transactionDto.TransactionDetails.Add(transactionDetails);
                 }
+
+                if (voucherEntryVM.VoucherEntryMasterVM.VoucherType=="PV" && voucherEntryVM.VoucherEntryMasterVM.Attachment == null)
+                {
+                    ModelState.AddModelError("Attachment", "Please Upload Image..");
+                    return BadRequest(ModelState);
+                }
+
+                if (voucherEntryVM.VoucherEntryMasterVM.Attachment != null &&
+            voucherEntryVM.VoucherEntryMasterVM.Attachment.Length > 0)
+                {
+                    // Validate file size (5MB max)
+                    if (voucherEntryVM.VoucherEntryMasterVM.Attachment.Length > 5 * 1024 * 1024)
+                    {
+                        ModelState.AddModelError("Attachment", "File size exceeds 5MB limit.");
+                        return BadRequest(ModelState);
+                    }
+
+                    // Validate file type
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".pdf", ".doc", ".docx" };
+                    var fileExtension = Path.GetExtension(voucherEntryVM.VoucherEntryMasterVM.Attachment.FileName).ToLowerInvariant();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        ModelState.AddModelError("Attachment", "Invalid file type. Allowed types: JPG, PNG, PDF, DOC.");
+                        return BadRequest(ModelState);
+                    }
+
+                    using var memoryStream = new MemoryStream();
+                    await voucherEntryVM.VoucherEntryMasterVM.Attachment.CopyToAsync(memoryStream);
+
+                    transactionDto.Attachment = memoryStream.ToArray();
+                    transactionDto.AttachmentFileName = voucherEntryVM.VoucherEntryMasterVM.Attachment.FileName;
+                    transactionDto.AttachmentContentType = voucherEntryVM.VoucherEntryMasterVM.Attachment.ContentType;
+                    transactionDto.AttachmentDescription = voucherEntryVM.VoucherEntryMasterVM.AttachmentDescription;
+                }
+
                 int transactionId = await _transactionService.AddEntity(transactionDto);
                 if (transactionId != 0)
                 {
                     TempData["SuccessMessage"] = "Saved Successfully..";
                     return Json(new { redirecturl = "/VoucherEntry/Index/" });
                 }
-                //int followupId = await _customerFollowupService.AddEntity(customerFollowupDto);
-                //if (followupId != 0)
-                //{
-                //    if (customerFollowupDto.Status == "Confirmed")
-                //    {
-                //        TempData["SuccessMessage"] = "Saved Successfully..";
-                //        return Json(new { redirecturl = "/Booking/Index?followupId=" + followupId });
-                //    }
-                //    else
-                //    {
-                //        TempData["SuccessMessage"] = "Saved Successfully..";
-                //        return Json(new { redirecturl = "/CustomerFollowup/Index/" });
-                //    }
-                //}
+               
             }
             return BadRequest(ModelState);
         }
+
+        //private string GetFileExtension(string contentType)
+        //{
+        //    return contentType switch
+        //    {
+        //        "image/jpeg" => ".jpg",
+        //        "image/png" => ".png",
+        //        "application/pdf" => ".pdf",
+        //        "application/msword" => ".doc",
+        //        "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => ".docx",
+        //        _ => ".dat"
+        //    };
+        //}
 
         public async Task<JsonResult> GetList(string param)
         {

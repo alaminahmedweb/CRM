@@ -14,5 +14,8 @@ namespace Web.ViewModels
         public string? ModifiedBy { get; set; } = "";
         [Required(ErrorMessage = "Remarks is required")]
         public string Remarks { get; set; } = "";
+
+        public IFormFile? Attachment { get; set; }
+        public string? AttachmentDescription { get; set; }
     }
 }

@@ -6,6 +6,7 @@ using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Web.Controllers
@@ -68,5 +69,47 @@ namespace Web.Controllers
             return Json("Declined");
         }
 
+        //[HttpGet("ViewAttachment/{id}")]
+        public async Task<IActionResult> ViewAttachment(int id)
+        {
+            var transaction = _transactionService.FindData(id => id == id);
+
+            //if (transaction == null || transaction.Attachment == null)
+            //    return NotFound("Attachment not found");
+
+            // Return the image/file
+            foreach(var  item in transaction)
+            {
+                return File(item.Attachment, item.AttachmentContentType,
+                            item.AttachmentFileName);
+
+            }
+            return null;
+        }
+
+        public async Task<IActionResult> PreviewAttachment(int id)
+        {
+            var transaction = await _transactionService.GetDataByIdAsync(id);
+
+            if (transaction == null || transaction.Attachment == null)
+                return NotFound("Attachment not found");
+
+            // For images: display in browser
+            if (transaction.AttachmentContentType.StartsWith("image/"))
+            {
+                return File(transaction.Attachment, transaction.AttachmentContentType);
+            }
+            // For PDFs: display in browser
+            else if (transaction.AttachmentContentType == "application/pdf")
+            {
+                return File(transaction.Attachment, transaction.AttachmentContentType);
+            }
+            // For other files: force download
+            else
+            {
+                return File(transaction.Attachment, transaction.AttachmentContentType,
+                            transaction.AttachmentFileName);
+            }
+        }
     }
 }

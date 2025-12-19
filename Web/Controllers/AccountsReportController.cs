@@ -88,6 +88,21 @@ namespace Web.Controllers
 
             return View(data);
         }
+
+        public async Task<IActionResult> ShowApprovedTransaction(DateRangeVM model)
+        {
+            if (!CheckUserDateSelectAuthority(model.DateFrom, model.DateTo))
+            {
+                return RedirectToAction("HttpStatusCodeHandler", "Error", new { statusCode = "401" });
+            }
+
+            ViewBag.DateRange = model;
+            ViewBag.ReportTitle = "Approved Transaction List";
+            ViewBag.PageSize = "Legal";
+            var data =  _misReportQueryService.ShowApprovedTransaction(model.DateFrom, model.DateTo);
+            return View(data);
+        }
+
         public bool CheckUserDateSelectAuthority(DateTime DateFrom, DateTime DateTo)
         {
             if (User.IsInRole("Super Admin") || User.IsInRole("Admin") || User.IsInRole("Accounts"))

@@ -8,6 +8,79 @@
         userid = userManager.GetUserId(User);
     }
 }
+<style>
+    .table td {
+        vertical-align: middle !important;
+    }
+
+    .attachment-cell {
+        min-width: 150px;
+    }
+
+    .image-popup img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 2px;
+        transition: transform 0.2s;
+    }
+
+        .image-popup img:hover {
+            transform: scale(1.05);
+            border-color: #007bff;
+        }
+
+    .btn-group-sm .btn-link {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    /* Ensure modal works properly */
+    .modal {
+        z-index: 1060 !important;
+    }
+
+    .modal-backdrop {
+        z-index: 1050 !important;
+    }
+
+    /* Button styling */
+    .btn-group-sm .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    /* Table styling */
+    #transactInfo td {
+        vertical-align: middle !important;
+    }
+
+    /* Modal image styling */
+    #modalImage {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        transition: transform 0.3s;
+    }
+
+        #modalImage:hover {
+            transform: scale(1.02);
+        }
+
+    /* Close button styling */
+    .close {
+        opacity: 1 !important;
+        text-shadow: none !important;
+    }
+
+        .close:hover {
+            opacity: 0.75 !important;
+        }
+
+    /* Modal footer button spacing */
+    .modal-footer .btn {
+        min-width: 100px;
+    }
+</style>
 
 <div class="row mb-2">
     <div class="col-lg-12 col-md-12 col-sm-12 col-12 bg-white">
@@ -36,6 +109,7 @@
                                 <th>Debit</th>
                                 <th>Credit</th>
                                 <th>Remarks</th>
+                                <th>Attachment</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -48,6 +122,30 @@
     </div>
 </div>
 
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title" id="imageModalLabel">Voucher Attachment</h5>
+                <button type="button" class="close text-white" onclick="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="Attachment" style="max-width: 100%; max-height: 70vh;">
+                <div id="nonImageContent" class="d-none">
+                    <iframe id="pdfViewer" style="width:100%; height:500px; border:none;"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -55,6 +153,22 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $('#imageModal').modal({
+                backdrop: true,
+                keyboard: true,
+                show: false
+            });
+
+            // Clear modal content when hidden
+            $('#imageModal').on('hidden.bs.modal', function () {
+                $('#modalImage').attr('src', '');
+                $('#pdfViewer').attr('src', '');
+                $('#downloadLink').attr('href', '#');
+                hideAllContent();
+                showLoading();
+            });
+
             $.ajax({
                 type: "GET",
                 url: "/VoucherApprove/GetAllPendingPendingTransactData",
@@ -67,6 +181,7 @@
                     var trDate = "";
                     var trno="";
                     var prevTrNo="";
+                    var prevRowId = 0;
 
                     $(data).each(function (index, data) {
                         if (data.trDate == null) {
@@ -76,21 +191,43 @@
                         }
 
                         var linkApproveOrCancelTransact = "";
+                        var attachmentLink="";
 
                         trno=data.trNo;
-                        
+
                         if(trno!=prevTrNo)
                         {
                             prevTrNo=trno;
+                            prevRowId = data.id;
                             linkApproveOrCancelTransact = '<a href="#" onclick="GetApproveTransact(\'' + data.trNo + '\')">Approve</a>';
                             linkApproveOrCancelTransact+=' | '+'<a href="#" onclick="GetDeclineTransact(\'' + data.trNo + '\')">Decline</a>';
                         }
+                        var checkId = data.id;
 
-
+                        if (data.attachmentFileName && data.attachmentFileName.length > 0) {
+                            if (data.attachmentContentType && data.attachmentContentType.startsWith('image/')) {
+                                attachmentLink = '<a href="#" onclick="openImageModal(' + checkId + ', \'' + data.attachmentFileName + '\', true)" ' +
+                                    'class="image-link" data-id="' + checkId + '">' +
+                                    '<img src="/VoucherApprove/PreviewAttachment/' + checkId + '" ' +
+                                    'style="max-width: 50px; max-height: 50px; cursor: pointer;" ' +
+                                    'title="Click to enlarge" />' +
+                                    '</a>';
+                            } else {
+                                // For PDF and other files
+                                attachmentLink = '<div class="btn-group">' +
+                                    '<a href="#" onclick="openImageModal(' + checkId + ', \'' + data.attachmentFileName + '\', false)" ' +
+                                    'class="btn btn-sm btn-info" title="View">' +
+                                    '<i class="fas fa-eye"></i></a>'  +
+                                    '</div>';
+                            }
+                        } else {
+                            // attachmentLink = '<span class="text-muted">No attachment</span>';
+                            attachmentLink = '';
+                        }
                         transactTable.append('<tr><td>' + trDate + '</td><td>' + data.trNo + '</td><td>' +
                             data.code + '</td><td>' + data.description + '</td><td>' + data.narration + '</td><td>' +
                             data.voucherType + '</td><td>' + data.debit + '</td><td>'
-                            + data.credit + '</td><td>' + data.remarks + '</td><td>' + linkApproveOrCancelTransact + '</td></tr>');
+                            + data.credit + '</td><td>' + data.remarks + '</td><td>' + attachmentLink  + '</td><td>' + linkApproveOrCancelTransact + '</td></tr>');
                     });
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
@@ -100,37 +237,92 @@
 
         });
         function GetApproveTransact(trNo) {
-                $.ajax({
-                    url: '/VoucherApprove/ApproveTransaction',
-                    data: { 'trNo': trNo},
-                    type: 'POST',
-                    datatype: JSON,
-                    success: function (data) {
-                        alert(data);
-                        location.reload(true);
-                    },
-                    error: function (errormessage) {
-                        alert(errormessage.responseText);
-                    }
-                });
-                return false;
+            $.ajax({
+                url: '/VoucherApprove/ApproveTransaction',
+                data: { 'trNo': trNo},
+                type: 'POST',
+                datatype: JSON,
+                success: function (data) {
+                    alert(data);
+                    location.reload(true);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
         }
 
         function GetDeclineTransact(trNo) {
-                $.ajax({
-                    url: '/VoucherApprove/DeclineTransaction',
-                    data: { 'trNo': trNo},
-                    type: 'POST',
-                    datatype: JSON,
-                    success: function (data) {
-                        alert(data);
-                        location.reload(true);
-                    },
-                    error: function (errormessage) {
-                        alert(errormessage.responseText);
-                    }
-                });
-                return false;
+            $.ajax({
+                url: '/VoucherApprove/DeclineTransaction',
+                data: { 'trNo': trNo},
+                type: 'POST',
+                datatype: JSON,
+                success: function (data) {
+                    alert(data);
+                    location.reload(true);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function openImageModal(id, fileName, isImage) {
+            if (isImage) {
+                // Show image, hide PDF viewer
+                $('#modalImage').show().attr('src', '/VoucherApprove/PreviewAttachment/' + id);
+                $('#pdfViewer').hide();
+                $('#nonImageContent').addClass('d-none');
+            } else {
+                // Show PDF viewer, hide image
+                $('#modalImage').hide();
+                $('#pdfViewer').show().attr('src', '/VoucherApprove/PreviewAttachment/' + id);
+                $('#nonImageContent').removeClass('d-none');
+            }
+
+            // Set download link
+            $('#downloadLink').attr('href', '/VoucherApprove/ViewAttachment/' + id);
+
+            // Set modal title
+            $('#imageModalLabel').text('Attachment: ' + fileName);
+
+            // Show modal
+            $('#imageModal').modal('show');
+        }
+
+        // Close modal with Escape key
+        $(document).keyup(function(e) {
+            if (e.key === "Escape" && $('#imageModal').hasClass('show')) {
+                $('#imageModal').modal('hide');
+            }
+        });
+
+        function hideAllContent() {
+            $('#imageContent').addClass('d-none');
+            $('#pdfContent').addClass('d-none');
+            $('#loadingContent').addClass('d-none');
+            $('#errorContent').addClass('d-none');
+        }
+
+        function showLoading() {
+            $('#loadingContent').removeClass('d-none');
+        }
+
+        function closeModal() {
+            // Try Bootstrap first
+            $('#imageModal').modal('hide');
+
+            // Backup: Hide manually
+            setTimeout(function() {
+                if ($('#imageModal').is(':visible')) {
+                    $('#imageModal').hide();
+                    $('.modal-backdrop').remove();
+                    $('body').removeClass('modal-open');
+                }
+            }, 100);
         }
     </script>
 }

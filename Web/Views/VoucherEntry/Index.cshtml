@@ -130,6 +130,30 @@
             </div>
         </div>
 
+        <!-- Add this after your remarks field -->
+        <div class="form-group row mt-2">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="form-floating">
+                    <input type="file" class="form-control" asp-for="Attachment"
+                           accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                    <label for="Attachment">Attachment (Optional)</label>
+                </div>
+                <small class="text-muted">Supported formats: JPG, PNG, PDF, DOC (Max 5MB)</small>
+                <span asp-validation-for="Attachment" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row mt-2">
+            <div class="col-12">
+                <div class="form-floating">
+                    <input class="form-control" asp-for="AttachmentDescription"
+                           placeholder="Attachment Description" />
+                    <label for="AttachmentDescription">Attachment Description</label>
+                </div>
+            </div>
+        </div>
+
+
         <div class="form-group text-center">
             <input type="button" value="Save" id="SaveTransaction" class="btn btn-primary" />
         </div>
@@ -208,11 +232,11 @@
             }
 
             $('#SaveTransaction').click(function () {
-                var vouchers = [];
                 var voucherNo = $('#VoucherNo').val();
                 var debitTotal = parseFloat($("#dbtTotal").val()) || 0;
                 var creditTotal = parseFloat($("#cdtTotal").val()) || 0;
 
+                // Validation
                 if(debitTotal != creditTotal) {
                     alert("Debit & Credit Is Not Same..Please Check..");
                     return false;
@@ -221,6 +245,24 @@
                 var tTransaction = $('#tbltransactDetails');
                 var rowCount = 0;
 
+                // Create FormData
+                var formData = new FormData();
+
+                // Add attachment file
+                var fileInput = $('#Attachment')[0];
+                if (fileInput.files.length > 0) {
+                    formData.append('VoucherEntryMasterVM.Attachment', fileInput.files[0]);
+                }
+
+                // Add other form data
+                formData.append('VoucherEntryMasterVM.VoucherNo', $('#VoucherNo').val());
+                formData.append('VoucherEntryMasterVM.VoucherType', $('#VoucherType option:selected').val());
+                formData.append('VoucherEntryMasterVM.ModifiedBy', $('#ModifiedBy').val());
+                formData.append('VoucherEntryMasterVM.Remarks', $('#Remarks').val());
+                formData.append('VoucherEntryMasterVM.AttachmentDescription', $('#AttachmentDescription').val());
+
+                // Add voucher details as separate form fields
+                var index = 0;
                 tTransaction.find('tr').each(function () {
                     var $ctd = $(this).find('td');
                     if ($ctd.length > 0) {
@@ -230,40 +272,35 @@
                         var tcDebit = parseFloat($ctd.eq(3).text().trim()) || 0;
                         var tcCredit = parseFloat($ctd.eq(4).text().trim()) || 0;
 
-                        var Voucher = {
-                            AcCode: tcAcCode,
-                            AcDesc: tcAcDesc,
-                            Narration: tcNarration,
-                            Debit: tcDebit,
-                            Credit: tcCredit,
-                        };
-                        vouchers.push(Voucher);
+                        formData.append(`VoucherEntryDetailsVM[${index}].AcCode`, tcAcCode);
+                        formData.append(`VoucherEntryDetailsVM[${index}].AcDesc`, tcAcDesc);
+                        formData.append(`VoucherEntryDetailsVM[${index}].Narration`, tcNarration);
+                        formData.append(`VoucherEntryDetailsVM[${index}].Debit`, tcDebit);
+                        formData.append(`VoucherEntryDetailsVM[${index}].Credit`, tcCredit);
+
+                        index++;
                         rowCount++;
                     }
                 });
+
+                console.log("Total rows: " + rowCount);
+
+                // Debug: Log all form data entries
+                for (var pair of formData.entries()) {
+                    console.log(pair[0] + ', ' + pair[1]);
+                }
 
                 if (rowCount == 0) {
                     alert("Add Transaction Details Please..");
                     return false;
                 }
 
-                var voucher = {
-                    VoucherNo: $('#VoucherNo').val(),
-                    VoucherType: $('#VoucherType option:selected').val(),
-                    ModifiedBy: $('#ModifiedBy').val(),
-                    Remarks: $('#Remarks').val(),
-                }
-
-                var model = {
-                    "VoucherEntryDetailsVM": vouchers,
-                    "VoucherEntryMasterVM": voucher
-                }
-
                 $.ajax({
                     type: "POST",
                     url: "/VoucherEntry/Save",
-                    data: model,
-                    dataType: "json",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
                     success: function (data) {
                         if (data.redirecturl) {
                             window.location.href = data.redirecturl;
@@ -271,17 +308,38 @@
                     },
                     error: function (response) {
                         if (response.status == 400) {
-                            var errors = response.responseJSON;
-                            for (var fieldName in errors) {
-                                var errorMessage = errors[fieldName].join('<br>');
-                                fieldName = fieldName.substr(fieldName.indexOf(".") + 1, 100);
-                                $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
+                            try {
+                                var errors = response.responseJSON;
+                                if (errors) {
+                                    for (var fieldName in errors) {
+                                        var errorMessage = errors[fieldName].join('<br>');
+                                        if (fieldName.includes('.')) {
+                                            fieldName = fieldName.substr(fieldName.indexOf(".") + 1, 100);
+                                        }
+                                        $('span[data-valmsg-for="' + fieldName + '"]').html(errorMessage);
+                                    }
+                                } else {
+                                    alert('Validation error occurred: ' + response.responseText);
+                                }
+                            } catch (e) {
+                                alert('Error processing response: ' + response.responseText);
                             }
                         } else {
-                            alert('No Valid Data');
+                            alert('Server error: ' + response.statusText);
                         }
                     }
                 });
+            });
+
+            $('#Attachment').change(function() {
+                var file = this.files[0];
+                if (file) {
+                    // Show file info
+                    var fileSize = (file.size / 1024).toFixed(2) + ' KB';
+                    $('#attachmentInfo').remove();
+                    $(this).after('<div id="attachmentInfo" class="mt-1"><small>Selected: ' +
+                                 file.name + ' (' + fileSize + ')</small></div>');
+                }
             });
         });
     </script>

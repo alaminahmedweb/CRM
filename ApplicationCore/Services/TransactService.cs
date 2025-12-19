@@ -16,7 +16,8 @@ namespace ApplicationCore.Services
         private readonly IUnitOfWok _unitOfWok;
         private readonly ITransactQueryService _transactQueryService;
         public TransactService(IRepository<Transact> transactionRepository,
-            IUnitOfWok unitOfWok,ITransactQueryService transactQueryService)
+            IUnitOfWok unitOfWok,
+            ITransactQueryService transactQueryService)
         {
             this._transactionRepository = transactionRepository;
             this._unitOfWok = unitOfWok;
@@ -26,6 +27,8 @@ namespace ApplicationCore.Services
         public async Task<int> AddEntity(TransactDto entity)
         {
             int transactionId = 0;
+            int mainTransactionId = 0;
+            bool isFirstRecord = true;
             _unitOfWok.BeginTransaction();
             try
             {
@@ -44,7 +47,18 @@ namespace ApplicationCore.Services
                     transaction.ModifiedBy = item.ModifiedBy;
                     transaction.Remarks = item.Remarks;
                     transaction.TrNo = trno;
-                    transactionId= await _transactionRepository.AddEntity(transaction);
+                    if (entity.Attachment != null && isFirstRecord)
+                    {
+                        transaction.Attachment = entity.Attachment;
+                        transaction.AttachmentFileName = entity.AttachmentFileName;
+                        transaction.AttachmentContentType = entity.AttachmentContentType;
+                        transaction.AttachmentSize = entity.Attachment?.Length;
+                    }
+                    transactionId = await _transactionRepository.AddEntity(transaction);
+                    if (isFirstRecord)
+                        mainTransactionId = transactionId;
+
+                    isFirstRecord = false;
                 }
                 
                 await _unitOfWok.SaveChangesAsync();
@@ -69,6 +83,11 @@ namespace ApplicationCore.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<Transact> FindData(Expression<Func<Transact, bool>> expression)
+        {
+            return _transactionRepository.Find(expression);
+        }
+
         public Task<IEnumerable<TransactDto>> GetAllAsync()
         {
             throw new NotImplementedException();
@@ -77,6 +96,11 @@ namespace ApplicationCore.Services
         public Task<TransactDto> GetByIdAsync(object id)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<Transact> GetDataByIdAsync(object id)
+        {
+            return await _transactionRepository.GetByIdAsync(id);
         }
 
         public Task<bool> IsRecordExistsAsync(Expression<Func<TransactDto, bool>> expression)

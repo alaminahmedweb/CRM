@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.CodeAnalysis.Differencing;
 using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -916,6 +917,65 @@ namespace Infrastructure.Data.Queries
             }
             return response;
 
+        }
+
+        public List<Transact> ShowApprovedTransaction(DateTime dateFrom, DateTime dateTo)
+        {
+            var result = (from trn in _dbContext.Transact.Where(a=>a.Valid==1)
+                          .Where(a=>a.ApprovedDate>=dateFrom && a.ApprovedDate<=dateTo)
+                          select new
+                          {
+                              TrNo = trn.TrNo,
+                              TrDate = trn.ApprovedDate,
+                              VoucherNo = trn.VoucherNo,
+                              VoucherType = trn.VoucherType,
+                              Code = trn.Code,
+                              Description = trn.Description,
+                              Narration = trn.Narration,
+                              Debit = trn.Debit,
+                              Credit = trn.Credit,
+                              Remarks = trn.Remarks,
+                          }).ToList();
+
+            List<Transact> allTransact = new List<Transact>();
+
+            foreach (var data in result)
+            {
+                Transact transact = new Transact();
+                transact.TrNo = data.TrNo;
+                transact.TrDate = data.TrDate;
+                transact.VoucherNo = data.VoucherNo;
+                transact.VoucherType = data.VoucherType;
+                transact.Code = data.Code;
+                transact.Description = data.Description;
+                transact.Narration = data.Narration;
+                transact.Debit = data.Debit;
+                transact.Credit = data.Credit;
+                transact.Remarks = data.Remarks;
+                allTransact.Add(transact);
+            }
+            return allTransact;
+            //var query = _dbContext.Transact.Where(a => a.ApprovedDate.Date >=dateFrom.Date && a.ApprovedDate.Date<=dateTo.Date)
+            //                .Where(a=> a.Valid==1).ToList();
+            //List<Transact> list = new List<Transact>();
+
+            //foreach (var item in query)
+            //{
+            //    Transact dto = new Transact();
+            //    dto.TrDate = item.TrDate;
+            //    dto.TrNo = item.TrNo;
+            //    dto.VoucherNo = item.VoucherNo;
+            //    dto.VoucherType = item.VoucherType;
+            //    dto.Code = item.Code;
+            //    dto.Description = item.Description;
+            //    dto.Narration = item.Narration;
+            //    dto.Debit = item.Debit;
+            //    dto.Credit = item.Credit;
+            //    dto.Remarks = item.Remarks;
+            //    dto.Id = item.Id;
+            //    list.Add(dto);
+            //}
+            //return list;
         }
     }
 }

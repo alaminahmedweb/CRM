@@ -69,6 +69,13 @@ namespace Infrastructure.Data.Queries
                 dto.Debit=item.Debit;
                 dto.Credit=item.Credit;
                 dto.Remarks=item.Remarks;
+                dto.Id = item.Id;
+
+                dto.AttachmentFileName = item.AttachmentFileName;
+                dto.AttachmentContentType = item.AttachmentContentType;
+                dto.AttachmentSize = item.AttachmentSize;
+                dto.HasAttachment = item.Attachment != null && item.Attachment.Length > 0;
+
                 list.Add(dto);
             }
             return list;

@@ -40,6 +40,7 @@
                             <div class="d-grid gap-1">
                                 <button type="submit" id="btnReceiveAndPayment" class="btn btn-primary btn-block">Receive And Payment</button>
                                 <button type="submit" id="btnDailySalesAndCollection" class="btn btn-primary btn-block">Daily Sales And Collection Report</button>
+                                <button type="submit" id="btnTransactList" class="btn btn-primary btn-block">Transaction List</button>
                             </div>
                         </div>
                     </div>
@@ -100,7 +101,24 @@
                 }
             });
         });
-        
+
+        $('#btnTransactList').click(function () {
+            var dateFrom = $('#DateFrom').val();
+            var dateTo = $('#DateTo').val();
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetSuccessData", "AccountsReport")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = "/AccountsReport/ShowApprovedTransaction?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+        });
+
     </script>
 
 }
