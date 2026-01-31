@@ -1,4 +1,5 @@
 ﻿using ApplicationCore.DtoModels;
+using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -82,6 +83,7 @@ namespace Infrastructure.Data.Queries
                                         && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
                               join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                              join ck in _dbContext.Contacts on cus.ContactId equals ck.Id
                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
@@ -111,8 +113,12 @@ namespace Infrastructure.Data.Queries
                                   WorkingMonth = mnth.Name,
                                   FollowupCallDate = fol.FollowupCallDate.Date,
                                   Remarks = fol.Remarks,
-                                  BookingNote=bk.BookingNote+bk.PaymentStatus,
-                                  IsTransferred=bk.IsTransferred
+                                  BookingNote= bk.BookingNote == null ? "" : bk.BookingNote,
+                                  IsTransferred=bk.IsTransferred,
+                                  NoOfFloor=cus.NoOfFloor,
+                                  NoOfFlat=cus.NoOfFlat,
+                                  PaymentStatus= bk.PaymentStatus,
+                                  ContactName=ck.Name
                               });
 
             var resultFinal = (from tmSft in teamShiftAndDate
@@ -130,6 +136,7 @@ namespace Infrastructure.Data.Queries
             List<BookingItemDto> bookingDtos = new List<BookingItemDto>();
             foreach (var item in resultFinal)
             {
+
                 BookingItemDto bookingItemDto = new BookingItemDto();
                 bookingItemDto.TeamId = item.tmSft.TeamId;
                 bookingItemDto.TeamName = item.tmSft.TeamName;
@@ -155,9 +162,14 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.EmployeeName = item.result == null ? "" : item.result.EmployeeName;
                 bookingItemDto.WorkingMonth = item.result == null ? "" : item.result.WorkingMonth;
                 bookingItemDto.FollowupCallDate = item.result == null ? null : item.result.FollowupCallDate;
-                bookingItemDto.Remarks = item.result == null ? null : item.result.Remarks;
-                bookingItemDto.BookingId = item.result == null ? null : item.result.BookingId;
+                bookingItemDto.Remarks = item.result == null ? "" : item.result.Remarks;
+                bookingItemDto.BookingId = item.result == null ? 0 : item.result.BookingId;
                 bookingItemDto.IsTransferred = item.result == null ? 0 : item.result.IsTransferred;
+                bookingItemDto.NoOfFloor = item.result == null ? 0 : item.result.NoOfFloor;
+                bookingItemDto.NoOfFlat = item.result == null ? 0 : item.result.NoOfFlat;
+                bookingItemDto.PaymentStatus = item.result == null ? "" : item.result.PaymentStatus;
+                bookingItemDto.ContactName = item.result == null ? "" : item.result.ContactName;
+
                 if (item.tmSft.TeamStatus=="Active")
                 {
                     bookingDtos.Add(bookingItemDto);

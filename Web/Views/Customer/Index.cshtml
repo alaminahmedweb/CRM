@@ -17,22 +17,11 @@
         <div class="form-group row pt-1 pb-3" style="margin-left: 25px;margin-right:5px;opacity:1 !important;">
             <div class="col-lg-2 col-md-6 col-sm-12 col-6">
                 <div>
-                    <label for="Mobile" class="form-label">Mobile</label>
+                    <label for="Mobile" class="form-label">Enter Search Key</label>
                     <input id="Mobile" name="Mobile" class="form-control" />
                 </div>
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
-                <div>
-                    <label for="Name" class="form-label">Customer Name</label>
-                    <input id="Name" name="Name" class="form-control" />
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-12 col-6">
-                <div>
-                    <label for="Address" class="form-label">Address</label>
-                    <input id="Address" name="Address" class="form-control" />
-                </div>
-            </div>
+           
             <div class="col-lg-1 col-md-12 col-sm-12 col-12">
                 <div class="form-group d-grid gap-2 d-md-block">
                     <br />
@@ -134,10 +123,7 @@
                             "type": "get",
                             datatype: "json",
                             "data": function (d) {
-                                d.customerName = $('#Name').val();
-                                d.address = $('#Address').val();
-                                d.mobileNo = $('#Mobile').val();
-
+                                d.searchString = $('#Mobile').val();
                             }
                         },
 

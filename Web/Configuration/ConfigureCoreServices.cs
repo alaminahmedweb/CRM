@@ -64,7 +64,7 @@ namespace Web.Configuration
             services.AddScoped<IAdvanceLedgerQueryService, AdvanceLedgerQueryService>();
             services.AddScoped<ItmpReceiveAndPayment, tmpReceiveAndPaymentService>();
             services.AddScoped<ItmpDailySalesAndCollection, tmpDailySalesAndCollectionService>();
-
+            services.AddScoped<ItmpCustomerListService, tmpCustomerListService>();
             return services;
         }
     }

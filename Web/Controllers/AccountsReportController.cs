@@ -69,7 +69,7 @@ namespace Web.Controllers
             ViewBag.DateRange = model;
             ViewBag.ReportTitle = "Daily Sales And Collection Statement";
             ViewBag.PageSize = "Legal";
-            var msg = await _misReportQueryService.GetReceiveAndPaymentReport(model.DateFrom, model.DateTo);
+            var msg = await _misReportQueryService.GetDailySalesAndCollection(model.DateFrom, model.DateTo);
             var returnData = await _tmpDailySalesAndCollection.GetAllAsync();
             List<tmpDailySalesAndCollection> data = new List<tmpDailySalesAndCollection>();
             foreach (var item in returnData)

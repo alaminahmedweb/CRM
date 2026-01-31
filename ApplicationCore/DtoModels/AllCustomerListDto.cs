@@ -22,5 +22,8 @@ namespace ApplicationCore.DtoModels
         public string DesignationName { get; set; }
         public string Status { get; set; }
 
+        public string ContractPerson {  get; set; }
+        public string Designation { get; set; }
+
     }
 }

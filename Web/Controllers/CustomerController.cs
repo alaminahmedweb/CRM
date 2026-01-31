@@ -305,10 +305,9 @@ namespace Web.Controllers
 
         
         [HttpGet]
-        public JsonResult GetAllCustomersBySearchString(string customerName="",
-            string address="", string mobileNo = "")
+        public async Task<JsonResult> GetAllCustomersBySearchString(string searchString = "")
         {
-            var data = _customerQueryService.GetAllCustomersBySearchString(customerName, address, mobileNo);
+            var data =await _customerQueryService.GetAllCustomersBySearchString(searchString);
             var jsonResult = Json(new { data });
             return jsonResult;
         }

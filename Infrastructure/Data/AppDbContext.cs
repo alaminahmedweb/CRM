@@ -101,5 +101,7 @@ namespace Infrastructure.Data
         public DbSet<AdvanceLedger> AdvanceLedger { get; set; }
         public DbSet<tmpReceiveAndPayment> tmpReceiveAndPayment { get; set; }
         public DbSet<tmpDailySalesAndCollection> tmpDailySalesAndCollection { get; set; }
+        public DbSet<tmpCustomerList> tmpCustomerList { get; set; }
+        
     }
 }

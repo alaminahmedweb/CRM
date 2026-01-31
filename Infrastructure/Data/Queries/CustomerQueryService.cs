@@ -201,124 +201,57 @@ namespace Infrastructure.Data.Queries
             return customer;
         }
 
-        public IEnumerable<AllCustomerListDto> GetAllCustomersBySearchString(string customerName,
-            string address, string mobileNo)
+        public async Task<IEnumerable<AllCustomerListDto>> GetAllCustomersBySearchString(string searchString)
         {
-
-            List<Customer> customerList = new List<Customer>();
-            List<CustomerContractDetails> customerContractDetails=new List<CustomerContractDetails>();
-
-            if (customerName != null && address != null)
-            {
-                customerList = _dbContext.Customers.Where(a => a.Address.Contains(address) && a.ClientName.Contains(customerName)).ToList();
-            }
-
-
-            if (address != null && customerName == null)
-            {
-                customerList = _dbContext.Customers.Where(a => a.Address.Contains(address)).ToList();
-            }
-
-            if (customerName != null && address == null)
-            {
-                customerList = _dbContext.Customers.Where(a => a.ClientName.Contains(customerName)).ToList();
-            }
-
-            if (customerName == null && address == null)
-            {
-                customerList = _dbContext.Customers.ToList();
-            }
-
-
-            //var mobileNoWithCustomer = (from e in _dbContext.ContractDetails
-            //                         where e.MobileNo != ""
-            //                         && (from e2 in _dbContext.Customers
-            //                             where e2.ClientName != ""
-            //                             select e2.Id).ToList().Contains(e.CustomerId)
-            //                         select e);
-
-            var contractDetails = (from mob in _dbContext.ContractDetails
-                                  select mob).ToList();
-
-            if (mobileNo == null)
-            {
-                var mobileNoWithCustomer = (from mob in contractDetails
-                                            join cus in customerList
-                                           on mob.CustomerId equals cus.Id
-                                           select mob).ToList();
-
-                var mobileNoWithIds = mobileNoWithCustomer
-                           .GroupBy(a => a.CustomerId)
-                           .Select(r => new
-                           {
-                               CustomerId = r.Key,
-                               MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                           }).ToList();
-                foreach (var data in mobileNoWithIds)
-                {
-                    CustomerContractDetails customer = new CustomerContractDetails();
-                    customer.CustomerId = data.CustomerId;
-                    customer.MobileNo = data.MobileNo;
-                    customerContractDetails.Add(customer);
-                }
+            var query = from customer in _dbContext.Customers
+                        join subArea in _dbContext.SubAreas on customer.SubAreaId equals subArea.Id
+                        join area in _dbContext.Areas on subArea.AreaId equals area.Id
+                        join contract in _dbContext.ContractDetails on customer.Id equals contract.CustomerId
+                        join designation in _dbContext.Designations on contract.DesignationId equals designation.Id
+                        join employee in _dbContext.Employees on customer.EmployeeId equals employee.Id
+                        join city in _dbContext.Cities on area.CityId equals city.Id
+                        where string.IsNullOrEmpty(searchString) ||
+                              customer.ClientName.Contains(searchString) ||
+                              customer.Address.Contains(searchString) ||
+                              area.Name.Contains(searchString) ||
+                              subArea.Name.Contains(searchString) ||
+                              contract.Name.Contains(searchString) ||
+                              contract.MobileNo.Contains(searchString) ||
+                              designation.Name.Contains(searchString) ||
+                              employee.Name.Contains(searchString) ||
+                              city.Name.Contains(searchString)
+                        select new CustomerSearchResultDto
+                        {
+                            CustomerId = customer.Id,
+                            CustomerName = customer.ClientName,
+                            Address = customer.Address,
+                            AreaName = area.Name,
+                            SubAreaName = subArea.Name,
+                            ContractPerson = contract.Name,
+                            MobileNo = contract.MobileNo,
+                            Designation = designation.Name,
+                            EmployeeName = employee.Name,
+                            CityName = city.Name
+                        };
+            List<AllCustomerListDto> allCustomerListDto=new List<AllCustomerListDto>();
 
 
-            }
-            else
-            {
-                var mobileNoWithIds = _dbContext.ContractDetails.Where(a => a.MobileNo.Contains(mobileNo))
-                    .GroupBy(a => a.CustomerId)
-                    .Select(r => new
-                    {
-                        CustomerId = r.Key,
-                        MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-                    }).ToList();
-
-                foreach (var data in mobileNoWithIds)
-                {
-                    CustomerContractDetails customer = new CustomerContractDetails();
-                    customer.CustomerId = data.CustomerId;
-                    customer.MobileNo = data.MobileNo;
-                    customerContractDetails.Add(customer);
-                }
-            }
-
-            var result = from cus in customerList
-                         join mob in customerContractDetails on cus.Id equals mob.CustomerId
-                         join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
-                         join ar in _dbContext.Areas on sar.AreaId equals ar.Id
-                         join cty in _dbContext.Cities on ar.CityId equals cty.Id
-                         join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
-                         select new
-                         {
-                             CustomerId = cus.Id,
-                             CustomerName = cus.ClientName,
-                             Address = cus.Address,
-                             CityName = cty.Name,
-                             AreaName = ar.Name,
-                             SubAreaName = sar.Name,
-                             EmployeeName = emp.Name,
-                             MobileNo = mob.MobileNo
-                         };
-
-            List<AllCustomerListDto> allCustomerList = new List<AllCustomerListDto>();
-
-            foreach (var data in result)
+            foreach (var data in query)
             {
                 AllCustomerListDto customer = new AllCustomerListDto();
                 customer.CustomerId = data.CustomerId;
                 customer.CustomerName = data.CustomerName;
                 customer.Address = data.Address;
                 customer.AreaName = data.AreaName;
-                customer.EmployeeName = data.EmployeeName;
-                customer.CityName = data.CityName;
                 customer.SubAreaName = data.SubAreaName;
+                customer.ContractPerson = data.ContractPerson;
+                customer.EmployeeName = data.EmployeeName;
                 customer.MobileNo = data.MobileNo;
-                allCustomerList.Add(customer);
-
+                customer.CityName = data.CityName;
+                customer.Designation = data.Designation;
+                allCustomerListDto.Add(customer);
             }
-
-            return allCustomerList;
+            return allCustomerListDto;
         }
     }
 }

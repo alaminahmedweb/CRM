@@ -63,5 +63,10 @@ namespace ApplicationCore.DtoModels
         public double PendingAgreeAmount { get; set; } = 0;
         public int IsTransferred { get; set; } = 0;
 
+        public int NoOfFloor {  get; set; } = 0;
+        public int NoOfFlat { get; set; }
+        public string PaymentStatus { get; set; }
+        public string ContactName { get; set; }
+
     }
 }

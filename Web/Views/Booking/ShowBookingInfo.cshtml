@@ -47,16 +47,20 @@
                     <table id="bookinginfo" class="table table-bordered cell-border compact hover stripe dataTable" style="width:100%">
                         <thead>
                             <tr>
+                                <th>Bk.Id</th>
                                 <th>Working Dt</th>
-                                <th>Team</th>
                                 <th>Shift</th>
-                                <th>Status</th>
-                                <th>Service</th>
-                                <th>Mobile No</th>
                                 <th>Organization Name</th>
                                 <th>Address</th>
+                                <th>Sub Area</th>
+                                <th>Mobile No</th>
                                 <th>Amount</th>
+                                <th>Contact</th>
+                                <th>Service</th>
+                                <th>Flat No</th>
+                                <th>Flor No</th>
                                 <th>Note</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -99,7 +103,6 @@
                     var bookingTable = $('#bookinginfo tbody');
                     bookingTable.empty();
                     $(result).each(function (index, data) {
-                        console.log(data);
                         var linkShiftOrCancelBooking = "";
                         var trDate = "";
                         if (data.trDate == null) {
@@ -126,14 +129,16 @@
                             }
                         }
 
-                        
-                        bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
-                            data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
-                            data.name + '</td><td>' + data.address + '</td><td>'
-                            + data.agreeAmount + '</td><td>' + bookingNote + '</td><td>' + linkShiftOrCancelBooking + '</td></tr>');
+                        bookingTable.append('<tr><td>' + data.bookingId + '</td><td>' + trDate + '</td><td>' +
+                            data.shiftName + '</td><td>' + data.name + '</td><td>' + data.address
+                            + '</td><td>' + data.subAreaName + '</td><td>' + data.mobileNo + '</td><td>'
+                            + data.agreeAmount + '</td><td>' + data.contactName + '</td><td>' +
+                            data.serviceName + '</td><td>' + data.noOfFlat + '</td><td>' + data.noOfFloor + '</td><td>'
+                            + data.bookingNote + '</td><td>' + bookingNote + '</td><td>' + linkShiftOrCancelBooking + '</td></tr>');
                     });
-                    bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Total Amount</td><td>'
-                        + Math.round(bookingAmt) + '</td><td></td><td></td></tr>');
+                    bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>' + 'Total Amount' + '</td><td>'
+                            + Math.round(bookingAmt) + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
+
 
                     $('#totalSlot').html('Total Slot : ' + result.length);
                     $('#totalbookings').html(' | Total Booked : ' + totalbooked);
@@ -160,10 +165,10 @@
                         var bookingTable = $('#bookinginfo tbody');
                         bookingTable.empty();
                         $(result).each(function (index, data) {
-                            console.log(data);
                             var linkShiftOrCancelBooking = "";
                             var trDate = "";
                             var bookingNote = "";
+
                             if (data.bookingNote == null) {
                                 bookingNote = "";
                             } else {
@@ -187,18 +192,17 @@
                                     linkShiftOrCancelBooking += ' | ' + '<a href="#" onclick="MakeDueForBooking(\'' + data.followupId + '\')">Due</a>';
                                 }
                             }
-                            
-    
-                            bookingTable.append('<tr><td>' + trDate + '</td><td>' + data.teamName + '</td><td>' +
-                                data.shiftName + '</td><td>' + data.status + '</td><td>' + data.serviceName + '</td><td>' + data.mobileNo + '</td><td>' +
-                                data.name + '</td><td>' + data.address + '</td><td>'
-                                + data.agreeAmount + '</td><td>' + bookingNote + '</td><td>' + linkShiftOrCancelBooking + '</td></tr>');
-                        });
-                        //bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>' + 'Total Amount' + '</td><td>'
-                        //    + Math.round(bookingAmt) + '</td><td></td></tr>');
 
-                        bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Total Amount</td><td>'
-                            + Math.round(bookingAmt) + '</td><td></td><td></td></tr>');
+                            bookingTable.append('<tr><td>' + data.bookingId + '</td><td>' + trDate + '</td><td>' +
+                                data.shiftName + '</td><td>' + data.name + '</td><td>' + data.address
+                                + '</td><td>' + data.subAreaName + '</td><td>' + data.mobileNo + '</td><td>'
+                                + data.agreeAmount + '</td><td>' + data.contactName + '</td><td>' +
+                                data.serviceName + '</td><td>' + data.noOfFlat + '</td><td>' + data.noOfFloor + '</td><td>'
+                                + data.bookingNote + '</td><td>' + bookingNote + '</td><td>' + linkShiftOrCancelBooking + '</td></tr>');
+                        });
+
+                        bookingTable.append('<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>' + 'Total Amount' + '</td><td>'
+                            + Math.round(bookingAmt) + '</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>');
 
                         $('#totalSlot').html('Total Slot : ' + result.length);
                         $('#totalbookings').html(' | Total Booked : ' + totalbooked);
