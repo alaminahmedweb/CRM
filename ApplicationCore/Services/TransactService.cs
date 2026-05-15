@@ -47,6 +47,7 @@ namespace ApplicationCore.Services
                     transaction.ModifiedBy = item.ModifiedBy;
                     transaction.Remarks = item.Remarks;
                     transaction.TrNo = trno;
+                    transaction.TrDate = item.TrDate;
                     if (entity.Attachment != null && isFirstRecord)
                     {
                         transaction.Attachment = entity.Attachment;
@@ -124,7 +125,7 @@ namespace ApplicationCore.Services
                     var data = await _transactionRepository.GetByIdAsync(item);
                     data.Valid = valid;
                     data.ApprovedBy = userName;
-                    if (valid == 1)
+                    if (valid == 1 && data.VoucherType!="Journal")
                     {
                         data.TrDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
                     }

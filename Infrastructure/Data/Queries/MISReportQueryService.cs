@@ -15,8 +15,8 @@ namespace Infrastructure.Data.Queries
     public class MISReportQueryService : IMISReportQueryService
     {
         private readonly AppDbContext _dbContext;
-        private readonly ItmpReceiveAndPayment _tmpReceiveAndPayment;
-        public MISReportQueryService(AppDbContext appDbContext, ItmpReceiveAndPayment tmpReceiveAndPayment  )
+        private readonly ItmpReceiveAndPaymentService _tmpReceiveAndPayment;
+        public MISReportQueryService(AppDbContext appDbContext, ItmpReceiveAndPaymentService tmpReceiveAndPayment  )
         {
             this._dbContext = appDbContext;
             this._tmpReceiveAndPayment = tmpReceiveAndPayment;
@@ -976,6 +976,48 @@ namespace Infrastructure.Data.Queries
             //    list.Add(dto);
             //}
             //return list;
+        }
+
+        public async Task<ResponseDto> GetDailyReceiveAndPaymentReport(DateTime dateFrom, DateTime dateTo)
+        {
+            ResponseDto response = new ResponseDto();
+
+            var message = await _dbContext.Database.SqlQuery<string>(
+                             @$"exec sp_DailyReceiveAndPayment @DateFrom={dateFrom},@DateTo={dateTo}")
+                         .ToListAsync();
+            foreach (var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
+        }
+
+        public async Task<ResponseDto> GetProfitAndLossAcc(DateTime dateFrom, DateTime dateTo)
+        {
+            ResponseDto response = new ResponseDto();
+
+            var message = await _dbContext.Database.SqlQuery<string>(
+                             @$"exec sp_ProfitAndLossAcc @DateFrom={dateFrom},@DateTo={dateTo}")
+                         .ToListAsync();
+            foreach (var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
+        }
+
+        public async Task<ResponseDto> GetLedgerQuery(string Code, DateTime dateFrom, DateTime dateTo)
+        {
+            ResponseDto response = new ResponseDto();
+
+            var message = await _dbContext.Database.SqlQuery<string>(
+                             @$"exec sp_LedgerQuery @Code={Code},@DateFrom={dateFrom},@DateTo={dateTo}")
+                         .ToListAsync();
+            foreach (var data in message)
+            {
+                response.Message = data;
+            }
+            return response;
         }
     }
 }

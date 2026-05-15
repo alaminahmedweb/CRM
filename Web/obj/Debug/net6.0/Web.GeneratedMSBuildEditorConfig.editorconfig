@@ -30,8 +30,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd0FwcHJvdmVkVHJhbnNhY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowDailyReceiveAndPayment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd0RhaWx5UmVjZWl2ZUFuZFBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowDailySalesAndCollection.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd0RhaWx5U2FsZXNBbmRDb2xsZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowLedgerQuery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd0xlZGdlclF1ZXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowProfitAndLossAcc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNSZXBvcnRcU2hvd1Byb2ZpdEFuZExvc3NBY2MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CRM_By_Zahid_21_06_2023/Web/Views/AccountsReport/ShowReceiveAndPayment.cshtml]

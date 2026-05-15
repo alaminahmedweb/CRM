@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Services
 {
-    public class tmpReceiveAndPaymentService : ItmpReceiveAndPayment
+    public class tmpReceiveAndPaymentService : ItmpReceiveAndPaymentService
     {
         private readonly IRepository<tmpReceiveAndPayment> _repository;
         private readonly IUnitOfWok _unitOfWok;

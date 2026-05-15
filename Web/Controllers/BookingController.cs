@@ -144,7 +144,6 @@ namespace Web.Controllers
                 modelToUpdate.PendingBookingNote = model.BookingNote;
                 modelToUpdate.Status = model.Status;
 
-                //model.PaymentDate = model.BookingDate;
                 bool isSuccess = await _bookingService.UpdateEntity(modelToUpdate);
                 if (isSuccess)
                 {
@@ -169,6 +168,13 @@ namespace Web.Controllers
         }
 
         [HttpGet]
+        public JsonResult GetNextFiveDaysVacantTeamsPerShift(DateTime dateTo)
+        {
+            var bookingItems = _bookingQueryService.GetVacantTeamsPerShift(dateTo);
+            return Json(bookingItems);
+        }
+
+        [HttpGet]
         public IActionResult ShowDueBookingInfo()
         {
             return View();
@@ -182,7 +188,7 @@ namespace Web.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> UpdateBookingAmount(int followupId)
         {
             Followup fol = await _followupService.GetByIdAsync(followupId);
@@ -190,17 +196,11 @@ namespace Web.Controllers
             updateBookingAmountVM.AgreeAmount = fol.AgreeAmount;
             updateBookingAmountVM.Remarks = fol.Remarks;
 
-            //IEnumerable<Booking> booking = _bookingService.Find(a=>a.FollowupId== followupId);
-            //foreach (Booking bookingItem in booking)
-            //{
-            //    updateBookingAmountVM.PaymentStatus = bookingItem.PaymentStatus;
-            //}
-
             return View(updateBookingAmountVM);
         }
 
         [HttpPost]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> UpdateBookingAmount(UpdateBookingAmountVM model)
         {
             if (ModelState.IsValid)
@@ -295,7 +295,7 @@ namespace Web.Controllers
             foreach (var item in bookingList)
             {
                 Booking booking = await _bookingService.GetByIdAsync(item);
-                booking.PaymentDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time");
+                booking.PaymentDate = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.Now, "Bangladesh Standard Time").Date;
                 booking.PaymentStatus = "Paid";
                 isBookingUpdateSuccess = await _bookingService.UpdateEntity(booking);
             }
@@ -344,14 +344,14 @@ namespace Web.Controllers
         public async Task<JsonResult> ApprovePendingBookingShiftData(int bookingId)
         {
             Booking model = await _bookingService.GetByIdAsync(bookingId);
-            model.BookingDate =model.PendingShiftDate;
+            model.BookingDate =model.PendingShiftDate.Date;
             model.EntryDate= model.PendingEntryDate;
             model.TeamId = model.PendingTeamId ;
             model.ShiftId= model.PendingShiftId ;
             model.BookingById= model.PendingBookingById ;
             model.BookingNote= model.PendingBookingNote ;
             model.Status = "Shifted";
-            model.PaymentDate = model.PendingShiftDate;
+            model.PaymentDate = model.PendingShiftDate.Date;
             bool isSuccess = await _bookingService.UpdateEntity(model);
             return Json("Approved");
         }

@@ -22,8 +22,11 @@ namespace ApplicationCore.Interfaces
         IEnumerable<CustomerCountDto> GetStatusWiseCustomersListByDate(DateTime dateFrom, DateTime dateTo);
         IEnumerable<CustomerCountDto> GetStatusWiseFollowupDoneListByDate(DateTime dateFrom, DateTime dateTo);
         Task<ResponseDto> GetReceiveAndPaymentReport(DateTime dateFrom, DateTime dateTo);
+        Task<ResponseDto> GetDailyReceiveAndPaymentReport(DateTime dateFrom, DateTime dateTo);
         Task<ResponseDto> GetDailySalesAndCollection(DateTime dateFrom, DateTime dateTo);
+        Task<ResponseDto> GetProfitAndLossAcc(DateTime dateFrom, DateTime dateTo);
         List<Transact> ShowApprovedTransaction(DateTime dateFrom, DateTime dateTo);
+        Task<ResponseDto> GetLedgerQuery(string Code,DateTime dateFrom, DateTime dateTo);
 
     }
 }

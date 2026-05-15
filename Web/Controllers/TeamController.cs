@@ -52,7 +52,7 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> Update(int id)
         {
             var _data = await _teamService.GetByIdAsync(id);
@@ -60,7 +60,7 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> Update(Team model)
         {
             if (ModelState.IsValid)

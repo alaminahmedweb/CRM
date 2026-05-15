@@ -102,6 +102,8 @@ namespace Infrastructure.Data
         public DbSet<tmpReceiveAndPayment> tmpReceiveAndPayment { get; set; }
         public DbSet<tmpDailySalesAndCollection> tmpDailySalesAndCollection { get; set; }
         public DbSet<tmpCustomerList> tmpCustomerList { get; set; }
-        
+        public DbSet<tmpDailyReceiveAndPayment> tmpDailyReceiveAndPayment { get; set; }
+        public DbSet<tmpProfitAndLossAcc> tmpProfitAndLossAcc { get; set; }
+        public DbSet<tmpQueryHandel> tmpQueryHandel { get; set; }
     }
 }

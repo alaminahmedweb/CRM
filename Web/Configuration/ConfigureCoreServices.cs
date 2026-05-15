@@ -62,9 +62,12 @@ namespace Web.Configuration
             services.AddScoped<ITransactQueryService, TransactQueryService>();
             services.AddScoped<IAdvanceLedgerService, AdvanceLedgerService>();
             services.AddScoped<IAdvanceLedgerQueryService, AdvanceLedgerQueryService>();
-            services.AddScoped<ItmpReceiveAndPayment, tmpReceiveAndPaymentService>();
-            services.AddScoped<ItmpDailySalesAndCollection, tmpDailySalesAndCollectionService>();
+            services.AddScoped<ItmpReceiveAndPaymentService, tmpReceiveAndPaymentService>();
+            services.AddScoped<ItmpDailySalesAndCollectionService, tmpDailySalesAndCollectionService>();
             services.AddScoped<ItmpCustomerListService, tmpCustomerListService>();
+            services.AddScoped<ItmpDailyReceiveAndPaymentService, tmpDailyReceiveAndPaymentService>();
+            services.AddScoped<ItmpProfitAndLossAccService, tmpProfitAndLossAccService>();
+            services.AddScoped<ItmpQueryHandelService, tmpQueryHandelService>();
             return services;
         }
     }

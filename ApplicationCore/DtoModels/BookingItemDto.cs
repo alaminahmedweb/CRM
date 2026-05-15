@@ -67,6 +67,7 @@ namespace ApplicationCore.DtoModels
         public int NoOfFlat { get; set; }
         public string PaymentStatus { get; set; }
         public string ContactName { get; set; }
+        public string Capacity { get; set; }
 
     }
 }

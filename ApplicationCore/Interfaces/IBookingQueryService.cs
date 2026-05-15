@@ -16,6 +16,6 @@ namespace ApplicationCore.Interfaces
         bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate);
         bool IsPendingBookedAlready(int teamId, int shiftId, DateTime bookingDate);
         List<BookingItemDto> GetPendingBookingAmountChangeList(DateTime dateFrom, DateTime dateTo);
-
+        IEnumerable<NextFiveDaysVacantDto> GetVacantTeamsPerShift(DateTime dateTo);
     }
 }

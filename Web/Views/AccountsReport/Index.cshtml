@@ -28,6 +28,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="form-group row pb-6" style="margin-left: 38px;margin-right:20px;opacity:1 !important;">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div>
+                        <label for="AcCode" class="form-label">Ac/Code</label>
+                        <select asp-for="AcCode" class="form-control js-example-basic-single" title="searchableDropdown">
+                            <option value="-1">Please Select Code</option>
+                            @foreach (var data in ViewBag.CodeList)
+                            {
+                                <option value="@data.Code">@string.Concat(@data.Code, "-", @data.Description)</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -41,6 +56,9 @@
                                 <button type="submit" id="btnReceiveAndPayment" class="btn btn-primary btn-block">Receive And Payment</button>
                                 <button type="submit" id="btnDailySalesAndCollection" class="btn btn-primary btn-block">Daily Sales And Collection Report</button>
                                 <button type="submit" id="btnTransactList" class="btn btn-primary btn-block">Transaction List</button>
+                                <button type="submit" id="btnDailyReceiveAndPayment" class="btn btn-primary btn-block">Daily Receive And Payment</button>
+                                <button type="submit" id="btnProfitAndLossAc" class="btn btn-primary btn-block">Profit And Loss A/C</button>
+                                <button type="submit" id="btnLedgerQuery" class="btn btn-primary btn-block">Ledger Query</button>
                             </div>
                         </div>
                     </div>
@@ -66,6 +84,7 @@
             $('#DateTo').val(currentDate);
             var datefrom = currentDate;
             var dateto = currentDate;
+            $('.js-example-basic-single').select2();
         });
 
         $('#btnReceiveAndPayment').click(function () {
@@ -119,6 +138,57 @@
             });
         });
 
+        $('#btnDailyReceiveAndPayment').click(function () {
+            var dateFrom = $('#DateFrom').val();
+            var dateTo = $('#DateTo').val();
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetSuccessData", "AccountsReport")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = "/AccountsReport/ShowDailyReceiveAndPayment?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+        });
+
+        $('#btnProfitAndLossAc').click(function () {
+            var dateFrom = $('#DateFrom').val();
+            var dateTo = $('#DateTo').val();
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetSuccessData", "AccountsReport")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = "/AccountsReport/ShowProfitAndLossAcc?dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+        });
+
+        $('#btnLedgerQuery').click(function () {
+            var dateFrom = $('#DateFrom').val();
+            var dateTo = $('#DateTo').val();
+            var acCode = $('#AcCode').val();
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetSuccessData", "AccountsReport")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = "/AccountsReport/ShowLedgerQuery?acCode="+ acCode +"&dateFrom=" + dateFrom + "&dateTo=" + dateTo + "";
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    // handle error
+                }
+            });
+        });
     </script>
 
 }

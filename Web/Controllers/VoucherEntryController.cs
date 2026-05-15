@@ -53,6 +53,7 @@ namespace Web.Controllers
                     transactionDetails.Remarks = voucherEntryVM.VoucherEntryMasterVM.Remarks;
                     transactionDetails.VoucherType = voucherEntryVM.VoucherEntryMasterVM.VoucherType;
                     transactionDetails.ModifiedBy = voucherEntryVM.VoucherEntryMasterVM.ModifiedBy;
+                    transactionDetails.TrDate = voucherEntryVM.VoucherEntryMasterVM.VoucherDate;
                     transactionDto.TransactionDetails.Add(transactionDetails);
                 }
 

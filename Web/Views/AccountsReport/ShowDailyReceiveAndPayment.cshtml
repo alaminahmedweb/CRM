@@ -1,0 +1,144 @@
+﻿@model List<tmpDailyReceiveAndPayment>
+@{
+    Layout = "_Report";
+    var total = 0;
+    var total2 = 0;
+    var totalCash = 0;
+    var totalCash2 = 0;
+    var totalBank = 0;
+    var totalBank2 = 0;
+    var cash = 0;
+    var bank = 0;
+    var cash2 = 0;
+    var bank2 = 0;
+
+
+    var bankToCashReceive = 0;
+    var cashToBankReceive = 0;
+    var cashToBankPayment = 0;
+    var bankToCashPayment = 0;
+
+    var totalBankToCashReceive = 0;
+    var totalCashToBankReceive = 0;
+    var totalCashToBankPayment = 0;
+    var totalBankToCashPayment = 0;
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Cash </th>
+                    <th>Bank</th>
+                    <th>Bank To Cash</th>
+                    <th>Cash To Bank</th>
+                    <th>Total</th>
+                    <th>Sl No</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Cash </th>
+                    <th>Bank</th>
+                    <th>Cash To Bank</th>
+                    <th>Bank To Cash</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    {
+                        total = total + (int)data.Total;
+                        total2 = total2 + (int)data.Total2;
+                        cash = 0;
+                        bank = 0;
+                        cash2 = 0;
+                        bank2 = 0;
+                        bankToCashReceive = 0;
+                        cashToBankReceive = 0;
+                        cashToBankPayment = 0;
+                        bankToCashPayment = 0;
+
+                        if (data.Code.Length > 6 && data.Code.Substring(0, 6) == "220401" && (int)data.Bank > 0)
+                        {
+                            totalBankToCashReceive += (int)data.Bank;
+                            bankToCashReceive = (int)data.Bank;
+
+                        }
+                        else if (data.Code.Length > 6 && data.Code.Substring(0, 6) == "220402" && (int)data.Cash > 0)
+                        {
+                            totalCashToBankReceive += (int)data.Cash;
+                            cashToBankReceive = (int)data.Cash;
+                        }
+                        else
+                        {
+                            totalCash = totalCash + (int)data.Cash;
+                            totalBank = totalBank + (int)data.Bank;
+                            cash = (int)data.Cash;
+                            bank = (int)data.Bank;
+                        }
+
+                        if (data.Code2.Length > 6 && data.Code2.Substring(0, 6) == "220401" && (int)data.Bank2 > 0)
+                        {
+                            totalBankToCashPayment += (int)data.Bank2;
+                            bankToCashPayment = (int)data.Bank2;
+
+                        }
+                        else if (data.Code2.Length > 6 && data.Code2.Substring(0, 6) == "220402" && (int)data.Cash2 > 0)
+                        {
+                            totalCashToBankPayment += (int)data.Cash2;
+                            cashToBankPayment = (int)data.Cash2;
+                        }
+                        else
+                        {
+                            totalCash2 = totalCash2 + (int)data.Cash2;
+                            totalBank2 = totalBank2 + (int)data.Bank2;
+                            cash2 = (int)data.Cash2;
+                            bank2 = (int)data.Bank2;
+                        }
+                        
+                    }
+                    <tr>
+                        <td>@data.SlNo</td>
+                        <td>@data.Code</td>
+                        <td>@data.Particulars</td>
+                        <td>@cash</td>
+                        <td>@bank </td>
+                        <td>@bankToCashReceive </td>
+                        <td>@cashToBankReceive </td>
+                        <td>@data.Total </td>
+                        <td>@data.SLNo2</td>
+                        <td>@data.Code2</td>
+                        <td>@data.Particulars2</td>
+                        <td>@cash2</td>
+                        <td>@bank2</td>
+                        <td>@cashToBankPayment </td>
+                        <td>@bankToCashPayment </td>
+                        <td>@data.Total2 </td>
+                    </tr>
+                }
+                <tr>
+                    <td>Grand Total</td>
+                    <td></td>
+                    <td></td>
+                    <td>@totalCash</td>
+                    <td>@totalBank</td>
+                    <td>@totalBankToCashReceive</td>
+                    <td>@totalCashToBankReceive</td>
+                    <td>@total</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@totalCash2</td>
+                    <td>@totalBank2</td>
+                    <td>@totalCashToBankPayment</td>
+                    <td>@totalBankToCashPayment</td>
+                    <td>@total2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -212,7 +212,7 @@
                                     </div>
                                 </a>
                             </div>
-                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin") || User.IsInRole("Accounts"))
+                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin"))
                             {
                                 <div class="nav-item-wrapper">
                                     <a class="nav-link dropdown-indicator label-1" href="#requestApprove" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="requestApprove">
@@ -240,9 +240,11 @@
                                         </ul>
                                     </div>
                                 </div>
-                            
-                                <!-- parent pages-->
+                            }
 
+                            <!-- parent pages-->
+                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin") || User.IsInRole("Accounts"))
+                            {
                                 <div class="nav-item-wrapper">
                                     <a class="nav-link dropdown-indicator label-1" href="#accounts" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="accounts">
                                         <div class="d-flex align-items-center">
@@ -266,22 +268,28 @@
                                                     <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Entry</span></div>
                                                 </a><!-- more inner pages-->
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" asp-controller="VoucherApprove" asp-action="Index" data-bs-toggle="" aria-expanded="false">
-                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Approve</span></div>
-                                                </a><!-- more inner pages-->
-                                            </li>
+                                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin"))
+                                            {
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-controller="VoucherApprove" asp-action="Index" data-bs-toggle="" aria-expanded="false">
+                                                        <div class="d-flex align-items-center"><span class="nav-link-text">Voucher Approve</span></div>
+                                                    </a><!-- more inner pages-->
+                                                </li>
+                                            }
                                             <li class="nav-item">
                                                 <a class="nav-link" asp-controller="AdvanceLedger" asp-action="Create" data-bs-toggle="" aria-expanded="false">
                                                     <div class="d-flex align-items-center"><span class="nav-link-text">Advance Entry</span></div>
                                                 </a><!-- more inner pages-->
                                             </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetAllPendingAdvanceList" data-bs-toggle="" aria-expanded="false">
-                                                    <div class="d-flex align-items-center"><span class="nav-link-text">Advance Approve</span></div>
-                                                </a><!-- more inner pages-->
-                                            </li>
+                                            @if (signInManager.IsSignedIn(User) && (User.IsInRole("Super Admin")) || User.IsInRole("Admin"))
+                                            {
 
+                                                <li class="nav-item">
+                                                    <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetAllPendingAdvanceList" data-bs-toggle="" aria-expanded="false">
+                                                        <div class="d-flex align-items-center"><span class="nav-link-text">Advance Approve</span></div>
+                                                    </a><!-- more inner pages-->
+                                                </li>
+                                            }
                                             <li class="nav-item">
                                                 <a class="nav-link" asp-controller="AdvanceLedger" asp-action="GetApprovedDueAdvanceAmt" data-bs-toggle="" aria-expanded="false">
                                                     <div class="d-flex align-items-center"><span class="nav-link-text">Advance Adjustment</span></div>
@@ -295,9 +303,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            
-                                <!-- parent pages-->
                             }
+                            <!-- parent pages-->
                         </li>
                     </ul>
                 </div>

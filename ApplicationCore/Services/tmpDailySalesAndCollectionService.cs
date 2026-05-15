@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Services
 {
-    public class tmpDailySalesAndCollectionService : ItmpDailySalesAndCollection
+    public class tmpDailySalesAndCollectionService : ItmpDailySalesAndCollectionService
     {
         private readonly IRepository<tmpDailySalesAndCollection> _repository;
         private readonly IUnitOfWok _unitOfWok;

@@ -56,7 +56,7 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> Update(int id)
         {
             var _data = await _areaService.GetByIdAsync(id);
@@ -66,7 +66,7 @@ namespace Web.Controllers
 
         [HttpPost]
         [ActionName("Update")]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> UpdateMpo(Area model)
         {
             if (ModelState.IsValid)

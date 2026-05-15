@@ -1,6 +1,7 @@
 ﻿using ApplicationCore.DtoModels;
 using ApplicationCore.Entities;
 using ApplicationCore.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,29 +31,29 @@ namespace Infrastructure.Data.Queries
 
             //cross join Team And Shift
             var teamShift = (from tm in _dbContext.Teams//.Where(a => a.Status == "Active")
-                            from sft in _dbContext.ShiftInfos
-                            select new
-                            {
-                                TeamId = tm.Id,
-                                TeamName = tm.Name,
-                                ShiftId = sft.Id,
-                                ShiftName = sft.Name,
-                                TeamStatus=tm.Status,                              
-                                TeamLeaderName = tm.TeamLeaderName,
-                            }).ToList();
+                             from sft in _dbContext.ShiftInfos
+                             select new
+                             {
+                                 TeamId = tm.Id,
+                                 TeamName = tm.Name,
+                                 ShiftId = sft.Id,
+                                 ShiftName = sft.Name,
+                                 TeamStatus = tm.Status,
+                                 TeamLeaderName = tm.TeamLeaderName,
+                             }).ToList();
 
             var teamShiftAndDate = (from tm in teamShift
-                                   from dt in dateList
-                                   select new
-                                   {
-                                       TeamId = tm.TeamId,
-                                       TeamName = tm.TeamName,
-                                       ShiftId = tm.ShiftId,
-                                       ShiftName = tm.ShiftName,
-                                       TeamLeaderName = tm.TeamLeaderName,
-                                       TeamStatus=tm.TeamStatus,
-                                       BookingDate = dt
-                                   });
+                                    from dt in dateList
+                                    select new
+                                    {
+                                        TeamId = tm.TeamId,
+                                        TeamName = tm.TeamName,
+                                        ShiftId = tm.ShiftId,
+                                        ShiftName = tm.ShiftName,
+                                        TeamLeaderName = tm.TeamLeaderName,
+                                        TeamStatus = tm.TeamStatus,
+                                        BookingDate = dt
+                                    });
 
             var mobileNoWithIds = (from con in _dbContext.ContractDetails
                                    join fol in _dbContext.Followups on con.CustomerId equals fol.CustomerId
@@ -68,70 +69,75 @@ namespace Infrastructure.Data.Queries
                         MobileNo = string.Join(",", r.Select(a => a.MobileNo))
                     });
 
-            //var mobileNoWithIds = _dbContext.ContractDetails
-            //        .GroupBy(a => a.CustomerId)
-            //        .Select(r => new
-            //        {
-            //            CustomerId = r.Key,
-            //            MobileNo = string.Join(",", r.Select(a => a.MobileNo))
-            //        });
+            var buildingCapacity = (from con in _dbContext.BuildingDetails
+                                    select con
+                               )
+                    .GroupBy(a => a.CustomerId)
+                    .Select(r => new
+                    {
+                        CustomerId = r.Key,
+                        Capacity = string.Join(",", r.Select(a => a.Capacity))
+                    });
+
 
 
             //retrive booking,followup,customer,area
-            
+
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.BookingDate >= dateFrom.Date
                                         && a.BookingDate <= dateTo.Date).Where(a => a.Status != "Cancel")
-                              join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
-                              join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
-                              join ck in _dbContext.Contacts on cus.ContactId equals ck.Id
-                              join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
-                              join ar in _dbContext.Areas on sar.AreaId equals ar.Id
-                              join cty in _dbContext.Cities on ar.CityId equals cty.Id
-                              join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
-                              join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
-                              join mnth in _dbContext.MonthList on fol.CustomerDoTheWorkingMonth equals mnth.Id
-                              join numb in mobileNoWithIds on cus.Id equals numb.CustomerId
-                              select new
-                              {
-                                  BookingId = bk.Id,
-                                  TeamId = bk.TeamId,
-                                  ShiftId = bk.ShiftId,
-                                  EntryDate = bk.EntryDate.Date,
-                                  BookingDate = bk.BookingDate.Date,
-                                  FollowupId = bk.FollowupId,
-                                  Status = bk.Status,
-                                  AgreeAmount = fol.AgreeAmount,
-                                  CustomerId = cus.Id,
-                                  OrganizationName = cus.ClientName,
-                                  Address = cus.Address,
-                                  MobileNo=numb.MobileNo.Substring(0, 11),
-                                  CityName = cty.Name,
-                                  AreaName = ar.Name,
-                                  SubAreaName = sar.Name,
-                                  ServiceName = srv.Name,
-                                  EmployeeName = emp.Name,
-                                  WorkingMonth = mnth.Name,
-                                  FollowupCallDate = fol.FollowupCallDate.Date,
-                                  Remarks = fol.Remarks,
-                                  BookingNote= bk.BookingNote == null ? "" : bk.BookingNote,
-                                  IsTransferred=bk.IsTransferred,
-                                  NoOfFloor=cus.NoOfFloor,
-                                  NoOfFlat=cus.NoOfFlat,
-                                  PaymentStatus= bk.PaymentStatus,
-                                  ContactName=ck.Name
-                              });
+                               join fol in _dbContext.Followups on bk.FollowupId equals fol.Id
+                               join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
+                               join ck in _dbContext.Contacts on cus.ContactId equals ck.Id
+                               join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
+                               join ar in _dbContext.Areas on sar.AreaId equals ar.Id
+                               join cty in _dbContext.Cities on ar.CityId equals cty.Id
+                               join srv in _dbContext.ServiceTypes on fol.ServiceTypeId equals srv.Id
+                               join emp in _dbContext.Employees on cus.EmployeeId equals emp.Id
+                               join mnth in _dbContext.MonthList on fol.CustomerDoTheWorkingMonth equals mnth.Id
+                               join numb in mobileNoWithIds on cus.Id equals numb.CustomerId
+                               join cap in buildingCapacity on cus.Id equals cap.CustomerId
+                               select new
+                               {
+                                   BookingId = bk.Id,
+                                   TeamId = bk.TeamId,
+                                   ShiftId = bk.ShiftId,
+                                   EntryDate = bk.EntryDate.Date,
+                                   BookingDate = bk.BookingDate.Date,
+                                   FollowupId = bk.FollowupId,
+                                   Status = bk.Status,
+                                   AgreeAmount = fol.AgreeAmount,
+                                   CustomerId = cus.Id,
+                                   OrganizationName = cus.ClientName,
+                                   Address = cus.Address,
+                                   MobileNo = numb.MobileNo.Substring(0, 11),
+                                   CityName = cty.Name,
+                                   AreaName = ar.Name,
+                                   SubAreaName = sar.Name,
+                                   ServiceName = srv.Name,
+                                   EmployeeName = emp.Name,
+                                   WorkingMonth = mnth.Name,
+                                   FollowupCallDate = fol.FollowupCallDate.Date,
+                                   Remarks = fol.Remarks,
+                                   BookingNote = bk.BookingNote == null ? "" : bk.BookingNote,
+                                   IsTransferred = bk.IsTransferred,
+                                   NoOfFloor = cus.NoOfFloor,
+                                   NoOfFlat = cus.NoOfFlat,
+                                   PaymentStatus = bk.PaymentStatus,
+                                   ContactName = ck.Name,
+                                   Capacity=cap.Capacity
+                               });
 
             var resultFinal = (from tmSft in teamShiftAndDate
-                              join bk in bookingInfo
-                              on new { tmSft.ShiftId, tmSft.TeamId, tmSft.BookingDate.Date } equals new { bk.ShiftId, bk.TeamId, bk.BookingDate.Date }
-                              into tmSftbk
-                              from result in tmSftbk.DefaultIfEmpty()
-                              orderby tmSft.BookingDate.Date
-                              select new
-                              {
-                                  tmSft,
-                                  result
-                              });
+                               join bk in bookingInfo
+                               on new { tmSft.ShiftId, tmSft.TeamId, tmSft.BookingDate.Date } equals new { bk.ShiftId, bk.TeamId, bk.BookingDate.Date }
+                               into tmSftbk
+                               from result in tmSftbk.DefaultIfEmpty()
+                               orderby tmSft.BookingDate.Date
+                               select new
+                               {
+                                   tmSft,
+                                   result
+                               });
 
             List<BookingItemDto> bookingDtos = new List<BookingItemDto>();
             foreach (var item in resultFinal)
@@ -169,12 +175,13 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.NoOfFlat = item.result == null ? 0 : item.result.NoOfFlat;
                 bookingItemDto.PaymentStatus = item.result == null ? "" : item.result.PaymentStatus;
                 bookingItemDto.ContactName = item.result == null ? "" : item.result.ContactName;
+                bookingItemDto.Capacity = item.result == null ? "" : item.result.Capacity;
 
-                if (item.tmSft.TeamStatus=="Active")
+                if (item.tmSft.TeamStatus == "Active")
                 {
                     bookingDtos.Add(bookingItemDto);
                 }
-                if (item.tmSft.TeamStatus == "Inactive" && bookingItemDto.BookingId != null)
+                if (item.tmSft.TeamStatus == "Inactive" && bookingItemDto.BookingId != 0)
                 {
                     bookingDtos.Add(bookingItemDto);
                 }
@@ -224,10 +231,10 @@ namespace Infrastructure.Data.Queries
                              FollowupId = bk.FollowupId,
                              Status = bk.Status,
                              BookingId = bk.Id,
-                             BookingNote=bk.BookingNote,
-                             ContactName=cont.Name,
-                             CategoryName=cat.Name,
-                             ReferenceBy=cus.ReferenceBy
+                             BookingNote = bk.BookingNote,
+                             ContactName = cont.Name,
+                             CategoryName = cat.Name,
+                             ReferenceBy = cus.ReferenceBy
                          };
 
             BookingDto bookingDto = new BookingDto();
@@ -263,9 +270,9 @@ namespace Infrastructure.Data.Queries
                 bookingDto.ContactName = data.ContactName;
                 bookingDto.CategoryName = data.CategoryName;
                 bookingDto.ReferenceBy = data.ReferenceBy;
-    }
+            }
 
-    var buildingDetails = from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == bookingDto.CustomerId)
+            var buildingDetails = from bld in _dbContext.BuildingDetails.Where(a => a.CustomerId == bookingDto.CustomerId)
                                   join brnd in _dbContext.Brands
                                   on bld.BrandId equals brnd.Id
                                   select new
@@ -346,9 +353,9 @@ namespace Infrastructure.Data.Queries
                                    FollowupCallDate = fol.FollowupCallDate.Date,
                                    Remarks = fol.Remarks,
                                    BookingNote = bk.BookingNote,
-                                   TeamName=tm.Name,
-                                   TeamLeaderName=tm.TeamLeaderName,
-                                   ShiftName=sft.Name,
+                                   TeamName = tm.Name,
+                                   TeamLeaderName = tm.TeamLeaderName,
+                                   ShiftName = sft.Name,
                                });
 
 
@@ -395,7 +402,7 @@ namespace Infrastructure.Data.Queries
             //retrive booking,followup,customer,area
             var bookingInfo = (from bk in _dbContext.Bookings.Where(a => a.ModifiedDate.Date >= dateFrom.Date
                                         && a.ModifiedDate.Date <= dateTo.Date)
-                               join fol in _dbContext.Followups.Where(a=>a.PendingAgreeAmount>0) on bk.FollowupId equals fol.Id
+                               join fol in _dbContext.Followups.Where(a => a.PendingAgreeAmount > 0) on bk.FollowupId equals fol.Id
                                join cus in _dbContext.Customers on fol.CustomerId equals cus.Id
                                join sar in _dbContext.SubAreas on cus.SubAreaId equals sar.Id
                                join ar in _dbContext.Areas on sar.AreaId equals ar.Id
@@ -415,7 +422,7 @@ namespace Infrastructure.Data.Queries
                                    FollowupId = bk.FollowupId,
                                    Status = bk.Status,
                                    AgreeAmount = fol.AgreeAmount,
-                                   PendingAgreeAmount=fol.PendingAgreeAmount,
+                                   PendingAgreeAmount = fol.PendingAgreeAmount,
                                    CustomerId = cus.Id,
                                    OrganizationName = cus.ClientName,
                                    Address = cus.Address,
@@ -452,7 +459,7 @@ namespace Infrastructure.Data.Queries
                 bookingItemDto.FollowupId = item.FollowupId;
                 bookingItemDto.Status = item.Status;
                 bookingItemDto.AgreeAmount = item.AgreeAmount;
-                bookingItemDto.PendingAgreeAmount=item.PendingAgreeAmount;
+                bookingItemDto.PendingAgreeAmount = item.PendingAgreeAmount;
                 bookingItemDto.CustomerId = item.CustomerId;
                 bookingItemDto.Name = item.OrganizationName;
                 bookingItemDto.Address = item.Address;
@@ -473,6 +480,70 @@ namespace Infrastructure.Data.Queries
             }
             return bookingDtos;
 
+        }
+
+        public IEnumerable<NextFiveDaysVacantDto> GetVacantTeamsPerShift(DateTime dateTo)
+        {
+            var nextFiveDates = Enumerable.Range(1, 5)
+                .Select(i => dateTo.Date.AddDays(i))
+                .ToList();
+
+            // Get active teams
+            var activeTeams = _dbContext.Teams
+                .Where(t => t.Status == "Active")
+                .ToList();
+
+            // Get all shifts
+            var shifts = _dbContext.ShiftInfos.ToList();
+
+            // Cross join teams, shifts, and dates
+            var crossJoined = from team in activeTeams
+                              from shift in shifts
+                              from bookingDate in nextFiveDates
+                              select new
+                              {
+                                  TeamId = team.Id,
+                                  TeamName = team.Name,
+                                  TeamLeaderName = team.TeamLeaderName,
+                                  Status = team.Status,
+                                  ShiftId = shift.Id,
+                                  ShiftName = shift.Name,
+                                  BookingDate = bookingDate
+                              };
+
+            // Left join with bookings
+            var withBookings = from cross in crossJoined
+                               join booking in _dbContext.Bookings.Where(a => a.Status != "Cancel")
+                                   on new { cross.BookingDate, cross.TeamId, cross.ShiftId }
+                                   equals new { booking.BookingDate, booking.TeamId, booking.ShiftId }
+                                   into bookingGroup
+                               from booking in bookingGroup.DefaultIfEmpty()
+                               where booking == null || booking.PaymentStatus == null
+                               select new
+                               {
+                                   cross.TeamId,
+                                   cross.TeamName,
+                                   cross.TeamLeaderName,
+                                   cross.Status,
+                                   cross.ShiftId,
+                                   cross.ShiftName,
+                                   cross.BookingDate,
+                                   PaymentStatus = booking != null ? booking.PaymentStatus : null
+                               };
+
+            // Group and count
+            var result = withBookings
+                .GroupBy(x => new { x.BookingDate, x.ShiftName })
+                .Select(g => new NextFiveDaysVacantDto
+                {
+                    BookingDate = g.Key.BookingDate,
+                    ShiftName = g.Key.ShiftName,
+                    TotalVacant = g.Count()
+                })
+                .OrderBy(r => r.BookingDate)
+                .ToList();
+
+            return result;
         }
 
         public bool IsBookedAlready(int teamId, int shiftId, DateTime bookingDate)

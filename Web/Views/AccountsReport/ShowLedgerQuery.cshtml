@@ -1,0 +1,65 @@
+﻿@using ApplicationCore.DtoModels;
+@model List<tmpQueryHandel>
+@{
+    Layout = "_Report";
+    var totalDebit = 0;
+    var totalCredit = 0;
+    var totalBalance = 0;
+    var totalNetCollection = 0;
+    var totalDue = 0;
+    var totaldayDue = 0;
+    var dayDue = 0;
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Tr No</th>
+                    <th>Date</th>
+                    <th>V.Type</th>
+                    <th>Particulars</th>
+                    <th>Remarks</th>
+                    <th>Debit</th>
+                    <th>Credit</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var data in Model)
+                {
+                    {
+                        totalDebit = totalDebit + (int)data.Debit;
+                        totalCredit = totalCredit + (int)data.Credit;
+                    }
+                    <tr>
+                        <td>@data.Code</td>
+                        <td>@data.TrNo</td>
+                        <td>@data.Trans_dt</td>
+                        <td>@data.VoucherType</td>
+                        <td>@data.ContraDesc </td>
+                        <td>@data.Remark </td>
+                        <td>@data.Debit</td>
+                        <td>@data.Credit </td>
+                        <td>@data.opbal </td>
+                    </tr>
+
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Grand Total</td>
+                    <td>@totalDebit</td>
+                    <td>@totalCredit</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

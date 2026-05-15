@@ -1,0 +1,147 @@
+﻿@model List<tmpProfitAndLossAcc>
+@{
+    Layout = "_Report";
+
+    // Group first by ModifiedBy, then by GName
+    var groupedData = Model.GroupBy(x => x.ModifiedBy)
+                          .Select(modifiedByGroup => new
+                          {
+                              ModifiedBy = modifiedByGroup.Key,
+                              GNameGroups = modifiedByGroup.GroupBy(y => y.GName)
+                                                          .Select(gNameGroup => new
+                                                          {
+                                                              GName = gNameGroup.Key,
+                                                              Items = gNameGroup.ToList(),
+                                                              GroupTotal = gNameGroup.Sum(x => x.InnerAmt)
+                                                          })
+                                                          .ToList(),
+                              ModifiedByTotal = modifiedByGroup.Sum(x => x.InnerAmt)
+                          })
+                          .ToList();
+
+    var grandTotal = Model.Sum(x => x.InnerAmt);
+}
+
+<div style="overflow-x: auto;">
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Modified By</th>
+                    <th>Particulars</th>
+                    <th>Amount</th>
+                    <th>Total Amt</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var modifiedByGroup in groupedData)
+                {
+                    // Display ModifiedBy group header
+                    <tr style="background-color: #b8daff; font-weight: bold;">
+                        <td colspan="5" style="text-align: left; padding: 10px; font-size: 1.1em;">
+                            @modifiedByGroup.ModifiedBy
+                        </td>
+                    </tr>
+                    
+                    // Display GName subgroups and their items
+                    @foreach (var gNameGroup in modifiedByGroup.GNameGroups)
+                    {
+                        <tr style="background-color: #d0d0d0; font-weight: bold;">
+                            <td></td>
+                            <td style="text-align: left;">@gNameGroup.GName</td>
+                            
+                            @if (gNameGroup.GroupTotal != 0)
+                            {
+                                <td style="text-align: right;">@gNameGroup.GroupTotal.ToString("N2")</td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        </tr>
+                        // Display items in the GName subgroup
+                        @foreach (var data in gNameGroup.Items)
+                        {
+                            <tr>
+                                <td style="text-align: left;"></td>
+                                @if (data.Description == "SUB TOTAL")
+                                {
+                                    <td style="text-align: left !important; font-weight: bold;">@data.Description</td>
+                                }
+                                else
+                                {
+                                    <td>@data.Description</td>
+                                }
+
+                                @if (data.InnerAmt == 0)
+                                {
+                                    <td></td>
+                                }
+                                else
+                                {
+                                    <td style="text-align: right;">@data.InnerAmt.ToString("N2")</td>
+                                }
+
+                                @if (data.TotalAmt == 0)
+                                {
+                                    <td></td>
+                                }
+                                else
+                                {
+                                    <td style="text-align: right !important; font-weight: bold;">@data.TotalAmt.ToString("N2")</td>
+                                }
+                            </tr>
+                        }
+
+                    }
+
+                    
+
+                    // Add a blank row between ModifiedBy groups for better readability
+                    <tr style="height: 10px;">
+                        <td colspan="4"></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    td {
+        padding: 8px;
+        border: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* Custom styles for grouped rows */
+    tr[style*="background-color: #b8daff"] td {
+        border-bottom: 2px solid #007bff;
+    }
+
+    tr[style*="background-color: #90caf9"] td {
+        border-top: 2px solid #007bff;
+    }
+</style>

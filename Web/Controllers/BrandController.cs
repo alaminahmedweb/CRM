@@ -52,7 +52,7 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> Update(int id)
         {
             var data = await _brandService.GetByIdAsync(id);
@@ -60,7 +60,7 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Super Admin,Admin")]
+        [Authorize(Roles = "Super Admin,Admin,Accounts")]
         public async Task<IActionResult> Update(Brand model)
         {
             if (ModelState.IsValid)
